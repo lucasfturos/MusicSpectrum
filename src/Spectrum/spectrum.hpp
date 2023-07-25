@@ -5,7 +5,7 @@
 
 class Spectrum {
   private:
-    float volume = 0.f;
+    float volume = 20.f;
     bool isPlaying = false;
 
     sf::Sound sound;
