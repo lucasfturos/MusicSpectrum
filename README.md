@@ -16,7 +16,7 @@ mkdir assets
 mkdir build && build
 ```
 
-Após baixar, entrar na pasta, criar e entrar na pasta build, é só compilar:
+Após baixar, entrar na pasta, criar e entrar a pasta build, é só compilar:
 ```
 cmake .. && make
 ```
