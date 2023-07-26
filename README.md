@@ -15,6 +15,7 @@ git clone https://github.com/lucasfturos/MusicSpectrum.git && cd MusicSpectrum
 mkdir assets
 mkdir build && build
 ```
+Coloque as músicas antes de executar os próximos comandos.
 
 Após baixar, entrar na pasta, criar e entrar a pasta build, é só compilar:
 ```
@@ -23,7 +24,7 @@ cmake .. && make
 
 Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 ```
-./MusicSpectrum FFT assets/nome_audio.wav
+./MusicSpectrum Espectro FFT assets/nome_audio.wav
 ```
 
 ## Créditos
