@@ -17,7 +17,11 @@ set(PROJECT_HEADER                    # Directory of all header file
 )
 
 set(PROJECT_SOURCE                    # Directory of all source file
+  src/Spectrum/waves_senoide.cpp
+  src/Spectrum/waves_rect.cpp
+  src/Spectrum/controller.cpp
   src/Spectrum/spectrum.cpp
+  src/Spectrum/samples.cpp
   src/FFT/fft.cpp
   src/main.cpp
 )
