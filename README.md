@@ -10,19 +10,19 @@ Desenvolvido em C++ e SFML.
 
 **Senoidal com FFT**
 
-![SineWaveFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png)
+<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png" width="350" />
 
 **Senoidal puro**
 
-![SineWaveNoFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveNoFFT.png)
+<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveNoFFT.png" width="350" />
 
 **Espectro com FFT**
 
-![SpectrumFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png)
+<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png" width="350" />
 
 **Espectro puro**
 
-![SpectrumNoFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png)
+<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png" width="350" />
 
 ## Instalação e como usar
 
