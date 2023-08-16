@@ -10,6 +10,8 @@ class Spectrum {
 
     sf::Sound sound;
     sf::SoundBuffer sound_buffer;
+    sf::Color start_color = sf::Color::Red;
+    sf::Color end_color = sf::Color::Blue;
 
     std::vector<sf::Int16> sample_buffer;
     std::vector<sf::RectangleShape> rectangles;
