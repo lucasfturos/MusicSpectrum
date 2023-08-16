@@ -8,24 +8,29 @@ Desenvolvido em C++ e SFML.
 
 ### Tipos de visualização
 
-<p align="center">
 
 **Senoidal com FFT**
 
+<p align="center">
 <img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png" width="70%" />
+</p>
 
 **Senoidal puro**
 
+<p align="center">
 <img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveNoFFT.png" width="70%" />
+</p>
 
 **Espectro com FFT**
 
+<p align="center">
 <img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png" width="70%" />
+</p>
 
 **Espectro puro**
 
+<p align="center">
 <img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumNoFFT.png" width="70%" />
-
 </p>
 
 ## Instalação e como usar
