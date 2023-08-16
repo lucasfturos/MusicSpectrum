@@ -6,6 +6,24 @@ Suporta audios no formato WAV, OGG/Vorbis e FLAC.
 
 Desenvolvido em C++ e SFML.
 
+### Tipos de visualização
+
+**Senoidal com FFT**
+
+![SineWaveFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png)
+
+**Senoidal puro**
+
+![SineWaveNoFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveNoFFT.png)
+
+**Espectro com FFT**
+
+![SpectrumFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png)
+
+**Espectro puro**
+
+![SpectrumNoFFT](https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png)
+
 ## Instalação e como usar
 
 Precisa do cmake, gcc, g++, make e a lib do SFML. Após instalar é só seguir os seguintes passos:
