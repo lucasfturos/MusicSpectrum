@@ -9,6 +9,7 @@ Desenvolvido em C++ e SFML.
 ### Tipos de visualização
 
 <p align="center">
+
 **Senoidal com FFT**
 
 <img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png" width="70%" />
