@@ -10,7 +10,7 @@ Desenvolvido em C++ e SFML.
 
 **Senoidal com FFT**
 
-<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png" width="70%" />
+<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png" width="70%" align="center" />
 
 **Senoidal puro**
 
