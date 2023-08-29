@@ -8,6 +8,7 @@ class Spectrum {
     float volume = 20.f;
     bool isPlaying = false;
 
+    sf::Clock clock;
     sf::Sound sound;
     sf::SoundBuffer sound_buffer;
     sf::Color start_color = sf::Color::Red;
