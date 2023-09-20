@@ -9,6 +9,47 @@ std::size_t FFT::bitReverse(std::size_t k, std::size_t n) {
     return reversed;
 }
 
+void FFT::applyHannWindow(std::vector<sf::Int16> &in, size_t n) {
+    for (size_t i = 0; i < n; ++i) {
+        float t = static_cast<float>(i) / (n - 1);
+        float hann = 0.5 - 0.5 * std::cos(2 * M_PI * t);
+        in[i] *= hann;
+    }
+}
+
+void FFT::fftAnalyze(std::vector<sf::Int16> &in, size_t stride,
+                      std::vector<std::complex<float>> &out, size_t n) {
+    applyHannWindow(in, n);
+
+    std::vector<std::complex<float>> complex_output(n, 0.0f);
+
+    fft(in, stride, complex_output, n);
+
+    float step = 1.06;
+    float lowf = 1.0f;
+    size_t m = 0;
+    float max_amp = 1.0f;
+
+    for (float f = lowf; static_cast<size_t>(f) < n / 2;
+         f = std::ceil(f * step)) {
+        float f1 = std::ceil(f * step);
+        float a = 0.0f;
+        for (size_t q = static_cast<size_t>(f);
+             q < n / 2 && q < static_cast<size_t>(f1); ++q) {
+            float b = amp(complex_output[q]);
+            if (b > a)
+                a = b;
+        }
+        if (max_amp < a)
+            max_amp = a;
+        out[m++] = a;
+    }
+
+    for (size_t i = 0; i < n / 2; ++i) {
+        out[i] /= max_amp;
+    }
+}
+
 void FFT::fft(std::vector<sf::Int16> &in, size_t stride,
               std::vector<std::complex<float>> &out, size_t n) {
     if (n == 1) {
