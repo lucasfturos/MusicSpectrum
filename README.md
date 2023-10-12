@@ -58,7 +58,7 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 
 - Use <kbd>space</kbd> para dar Play/Pause no áudio
 - Use <kbd>enter</kbd> para dar Stop no áudio
-- Use <kbd>up</kbd> ou <kbd>down</kbd> para Aumentar ou Diminuir o volume
+- Use <kbd>⬆</kbd> ou <kbd>⬇</kbd> para Aumentar ou Diminuir o volume
 - Use <kbd>q</kbd> para Sair do programa.
 
 ## Créditos
