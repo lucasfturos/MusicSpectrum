@@ -54,6 +54,13 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 ./MusicSpectrum Espectro FFT assets/nome_audio.wav
 ```
 
+## Teclas
+
+- Use <kbd>space</kbd> para dar Play/Pause no áudio
+- Use <kbd>enter</kbd> para dar Stop no áudio
+- Use <kbd>up</kbd> ou <kbd>down</kbd> para Aumentar ou Diminuir o volume
+- Use <kbd>q</kbd> para Sair do programa.
+
 ## Créditos
 
 [SFML](https://www.sfml-dev.org/index.php)
