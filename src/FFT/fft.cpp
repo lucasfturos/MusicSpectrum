@@ -1,6 +1,14 @@
 #include "fft.hpp"
 
-std::size_t FFT::bitReverse(std::size_t k, std::size_t n) {
+// Função para calcular a amplitude de um número complexo
+template <class T> inline float FFT<T>::amp(Float_Complex z) {
+    float a = z.real();
+    float b = z.imag();
+    return sqrtf(a * a + b * b);
+}
+
+template <class T>
+std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) {
     std::size_t reversed = 0;
     for (std::size_t i = 0; i < n; i++) {
         reversed = (reversed << 1) | (k & 1);
@@ -9,16 +17,18 @@ std::size_t FFT::bitReverse(std::size_t k, std::size_t n) {
     return reversed;
 }
 
-void FFT::applyHannWindow(std::vector<sf::Int16> &in, size_t n) {
-    for (size_t i = 0; i < n; ++i) {
+template <class T>
+void FFT<T>::applyHannWindow(std::vector<T> &in, std::size_t n) {
+    for (std::size_t i = 0; i < n; ++i) {
         float t = static_cast<float>(i) / (n - 1);
         float hann = 0.5 - 0.5 * std::cos(2 * M_PI * t);
         in[i] *= hann;
     }
 }
 
-void FFT::fftAnalyze(std::vector<sf::Int16> &in, size_t stride,
-                      std::vector<std::complex<float>> &out, size_t n) {
+template <class T>
+void FFT<T>::fftAnalyze(std::vector<T> &in, std::size_t stride,
+                        std::vector<std::complex<float>> &out, std::size_t n) {
     applyHannWindow(in, n);
 
     std::vector<std::complex<float>> complex_output(n, 0.0f);
@@ -27,15 +37,15 @@ void FFT::fftAnalyze(std::vector<sf::Int16> &in, size_t stride,
 
     float step = 1.06;
     float lowf = 1.0f;
-    size_t m = 0;
+    std::size_t m = 0;
     float max_amp = 1.0f;
 
-    for (float f = lowf; static_cast<size_t>(f) < n / 2;
+    for (float f = lowf; static_cast<std::size_t>(f) < n / 2;
          f = std::ceil(f * step)) {
         float f1 = std::ceil(f * step);
         float a = 0.0f;
-        for (size_t q = static_cast<size_t>(f);
-             q < n / 2 && q < static_cast<size_t>(f1); ++q) {
+        for (std::size_t q = static_cast<std::size_t>(f);
+             q < n / 2 && q < static_cast<std::size_t>(f1); ++q) {
             float b = amp(complex_output[q]);
             if (b > a)
                 a = b;
@@ -45,19 +55,20 @@ void FFT::fftAnalyze(std::vector<sf::Int16> &in, size_t stride,
         out[m++] = a;
     }
 
-    for (size_t i = 0; i < n / 2; ++i) {
+    for (std::size_t i = 0; i < n / 2; ++i) {
         out[i] /= max_amp;
     }
 }
 
-void FFT::fft(std::vector<sf::Int16> &in, size_t stride,
-              std::vector<std::complex<float>> &out, size_t n) {
+template <class T>
+void FFT<T>::fft(std::vector<T> &in, std::size_t stride,
+                 std::vector<std::complex<float>> &out, std::size_t n) {
     if (n == 1) {
         out[0] = in[0];
         return;
     }
 
-    std::vector<sf::Int16> in_reversed(n, 0);
+    std::vector<T> in_reversed(n, 0);
     for (std::size_t k = 0; k < n; k++) {
         std::size_t rev_k = bitReverse(k, static_cast<std::size_t>(log2(n)));
         in_reversed[k] = in[rev_k * stride];

@@ -32,13 +32,14 @@ void Spectrum::viewFormWaveRect() {
     window->display();
 }
 
-void Spectrum::viewFormWaveRectFFT(std::vector<std::complex<float>> &spectrum) {
+void Spectrum::viewFormWaveRectFFT() {
     window->clear();
 
     float rect_width = 3.f;
     float centerY = HEIGHT - 10.f;
+    static std::vector<float> prev_amplitudes(buffer_size, 0.0f);
 
-    for (std::size_t j = 0; j < buffer_size - 1; j += 3) {
+    for (std::size_t j = 0; j < buffer_size - 1; j += 6) {
         float amplitude = std::abs(sample_buffer[j]) / 32767.f;
         float rect_height = amplitude * HEIGHT;
 
@@ -52,10 +53,19 @@ void Spectrum::viewFormWaveRectFFT(std::vector<std::complex<float>> &spectrum) {
             static_cast<sf::Uint8>(start_color.b * (1 - t) + end_color.b * t));
 
         rectangle.setFillColor(vertex_color);
-        rectangle.setPosition(static_cast<float>(j) * rect_width + rect_width,
-                              centerY - rect_height);
+        sf::Vector2f position(j * rect_width, centerY - rect_height);
+        rectangle.setPosition(position);
 
         window->draw(rectangle);
+
+        sf::RectangleShape gravity_rect(sf::Vector2f(10.f, 5.f));
+        gravity_rect.setFillColor(vertex_color);
+        sf::Vector2f rect_pos =
+            sf::Vector2f(position.x + rect_width / 2 - 5.f, position.y);
+        gravity_rect.setPosition(rect_pos);
+
+        window->draw(gravity_rect);
     }
+
     window->display();
 }

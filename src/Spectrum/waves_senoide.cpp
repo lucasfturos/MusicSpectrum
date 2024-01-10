@@ -31,8 +31,7 @@ void Spectrum::viewFormWave() {
     window->display();
 }
 
-void Spectrum::viewFormWaveFFT(
-    const std::vector<std::complex<float>> &spectrum) {
+void Spectrum::viewFormWaveFFT() {
     sf::VertexArray waveform(sf::LineStrip, buffer_size);
     float centerY = HEIGHT - 10.f;
 

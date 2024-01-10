@@ -5,7 +5,7 @@
 
 class Spectrum {
   private:
-    float volume = 20.f;
+    float volume = 0.f;
     bool isPlaying = false;
 
     sf::Clock clock;
@@ -17,20 +17,20 @@ class Spectrum {
     std::vector<sf::Int16> sample_buffer;
     std::vector<sf::RectangleShape> rectangles;
 
-    std::shared_ptr<FFT> fft_ptr;
+    std::shared_ptr<FFT<sf::Int16>> fft_ptr;
     std::shared_ptr<sf::VideoMode> desktop;
     std::shared_ptr<sf::RenderWindow> window;
 
     void monoSample();
     void viewFormWave();
+    void viewFormWaveFFT();
     void getSampleBuffer();
     void viewFormWaveRect();
+    void viewFormWaveRectFFT();
     void toggleMusicPlayback();
     void optionKeyboard(sf::Event &event);
     void optionsPlot(int opc, std::vector<std::complex<float>> spectrum,
                      std::size_t fft_size);
-    void viewFormWaveRectFFT(std::vector<std::complex<float>> &spectrum);
-    void viewFormWaveFFT(const std::vector<std::complex<float>> &spectrum);
 
   public:
     void run(int opc);
@@ -40,9 +40,9 @@ class Spectrum {
         : sound(std::move(sound)), sound_buffer(std::move(sound_buffer)),
           sample_buffer(std::move(sample_buffer)) {
 
-        fft_ptr = std::make_shared<FFT>();
+        fft_ptr = std::make_shared<FFT<sf::Int16>>();
         window = std::make_shared<sf::RenderWindow>(
-            sf::VideoMode(WIDTH, HEIGHT), "Music Espectro",
+            sf::VideoMode(WIDTH, HEIGHT), "Music Spectrum",
             sf::Style::Titlebar | sf::Style::Close);
         desktop =
             std::make_shared<sf::VideoMode>(sf::VideoMode::getDesktopMode());

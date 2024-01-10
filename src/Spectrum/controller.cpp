@@ -5,14 +5,14 @@ void Spectrum::optionsPlot(int opc, std::vector<std::complex<float>> spectrum,
     switch (opc) {
     case 1:
         fft_ptr->fftAnalyze(sample_buffer, 1, spectrum, fft_size);
-        viewFormWaveFFT(spectrum);
+        viewFormWaveFFT();
         break;
     case 2:
         viewFormWave();
         break;
     case 3:
         fft_ptr->fftAnalyze(sample_buffer, 1, spectrum, fft_size);
-        viewFormWaveRectFFT(spectrum);
+        viewFormWaveRectFFT();
         break;
     case 4:
         viewFormWaveRect();

@@ -11,18 +11,18 @@ project(${PROJECT_NAME})              # Create project "MusicSpectrum"
 set(CMAKE_CXX_STANDARD 17)            # Enable c++11 standard
 
 set(PROJECT_HEADER                    # Directory of all header file
-  src/Spectrum/spectrum.hpp
   src/music_espectro.hpp
   src/FFT/fft.hpp
+  src/Spectrum/spectrum.hpp
 )
 
 set(PROJECT_SOURCE                    # Directory of all source file
+  src/FFT/fft.cpp
   src/Spectrum/waves_senoide.cpp
   src/Spectrum/waves_rect.cpp
   src/Spectrum/controller.cpp
   src/Spectrum/spectrum.cpp
   src/Spectrum/samples.cpp
-  src/FFT/fft.cpp
   src/main.cpp
 )
 
@@ -34,6 +34,11 @@ set(RESOURCES_DIRECTORY
 # Copy the entire assets directory to the binary directory during build
 file(COPY ${RESOURCES_DIRECTORY} 
   DESTINATION ${CMAKE_BINARY_DIR}
+)
+
+# Flags of compiling
+add_compile_options(
+  -Wall -Wextra -Wpedantic -Werror -pedantic -g -Ofast 
 )
 
 # Add executable target with source and header files listed in PROJECT_HEADER and PROJECT_SOURCE variable
