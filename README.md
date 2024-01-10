@@ -64,7 +64,9 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 ## Créditos
 
 [SFML](https://www.sfml-dev.org/index.php)
+
 [Dear ImGUI](https://github.com/ocornut/imgui)
+
 [ImGUI-SFML](https://github.com/SFML/imgui-sfml)
 
 ## Referências
