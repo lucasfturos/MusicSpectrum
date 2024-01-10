@@ -11,12 +11,27 @@ project(${PROJECT_NAME})              # Create project "MusicSpectrum"
 set(CMAKE_CXX_STANDARD 17)            # Enable c++11 standard
 
 set(PROJECT_HEADER                    # Directory of all header file
+  external/imgui.h
+  external/imconfig.h
+  external/imgui-SFML.h
+  external/imconfig-SFML.h
+  external/imgui_internal.h
+  external/imstb_rectpack.h
+  external/imstb_textedit.h
+  external/imstb_truetype.h
+  external/imgui-SFML_export.h
   src/music_espectro.hpp
   src/FFT/fft.hpp
   src/Spectrum/spectrum.hpp
 )
 
 set(PROJECT_SOURCE                    # Directory of all source file
+  external/imgui.cpp
+  external/imgui-SFML.cpp
+  external/imgui_demo.cpp
+  external/imgui_draw.cpp
+  external/imgui_tables.cpp
+  external/imgui_widgets.cpp
   src/FFT/fft.cpp
   src/Spectrum/waves_senoide.cpp
   src/Spectrum/waves_rect.cpp

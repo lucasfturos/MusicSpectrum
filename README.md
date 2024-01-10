@@ -12,25 +12,25 @@ Desenvolvido em C++ e SFML.
 **Senoidal com FFT**
 
 <p align="center">
-<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveFFT.png" width="70%" />
+<img src="/img/Screenshot/SineWaveFFT.png" width="70%" />
 </p>
 
 **Senoidal puro**
 
 <p align="center">
-<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SineWaveNoFFT.png" width="70%" />
+<img src="/img/Screenshot/SineWaveNoFFT.png" width="70%" />
 </p>
 
 **Espectro com FFT**
 
 <p align="center">
-<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumFFT.png" width="70%" />
+<img src="/img/Screenshot/SpectrumFFT.png" width="70%" />
 </p>
 
 **Espectro puro**
 
 <p align="center">
-<img src="https://github.com/lucasfturos/MusicSpectrum/blob/main/img/SpectrumNoFFT.png" width="70%" />
+<img src="/img/Screenshot/SpectrumNoFFT.png" width="70%" />
 </p>
 
 ## Instalação e como usar
@@ -64,6 +64,8 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 ## Créditos
 
 [SFML](https://www.sfml-dev.org/index.php)
+[Dear ImGUI](https://github.com/ocornut/imgui)
+[ImGUI-SFML](https://github.com/SFML/imgui-sfml)
 
 ## Referências
 
