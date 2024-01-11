@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../music_espectro.hpp"
+#include "../util.hpp"
 
 using namespace std::complex_literals;
 using Float_Complex = std::complex<float>;

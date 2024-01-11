@@ -45,6 +45,6 @@ int main(int argc, char *argv[]) {
 
         spectrum->run(opc);
     } catch (const std::exception &e) {
-        std::cerr << e.what() << '\n';
+        std::cerr << "Exception: " << e.what() << '\n';
     }
 }

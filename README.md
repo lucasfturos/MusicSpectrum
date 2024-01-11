@@ -51,7 +51,7 @@ cmake .. && make
 
 Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 ```
-./MusicSpectrum Espectro FFT assets/nome_audio.wav
+./src/MusicSpectrum Espectro FFT assets/nome_audio.wav
 ```
 
 ## Teclas

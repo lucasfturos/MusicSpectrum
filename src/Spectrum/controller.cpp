@@ -1,6 +1,6 @@
 #include "spectrum.hpp"
 
-void Spectrum::optionsPlot(int opc, std::vector<std::complex<float>> spectrum,
+void Spectrum::handlePlot(int opc, std::vector<std::complex<float>> spectrum,
                            std::size_t fft_size) {
     switch (opc) {
     case 1:
@@ -22,7 +22,7 @@ void Spectrum::optionsPlot(int opc, std::vector<std::complex<float>> spectrum,
     }
 }
 
-void Spectrum::optionKeyboard(sf::Event &event) {
+void Spectrum::handleEvents(sf::Event &event) {
     event.key.code == sf::Keyboard::Space ? toggleMusicPlayback() : (void(0));
 
     event.key.code == sf::Keyboard::Q ? window->close() : (void(0));
