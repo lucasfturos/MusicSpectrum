@@ -1,7 +1,6 @@
 #include "spectrum.hpp"
 
 void Spectrum::viewFormWave() {
-    window->clear();
     sf::VertexArray waveform(sf::LineStrip, buffer_size);
     float offsetY = HEIGHT / 2.f;
 
@@ -27,6 +26,7 @@ void Spectrum::viewFormWave() {
         waveform[i].color = vertex_color;
     }
 
+    window->clear();
     window->draw(waveform);
     window->display();
 }

@@ -1,54 +1,63 @@
 #include "spectrum.hpp"
 
-Spectrum::Spectrum(sf::Sound sound, sf::SoundBuffer sound_buffer,
-                   std::vector<sf::Int16> sample_buffer)
-    : sound(std::move(sound)), sound_buffer(std::move(sound_buffer)),
-      sample_buffer(std::move(sample_buffer)) {
-    window = std::make_shared<sf::RenderWindow>(
-        sf::VideoMode(WIDTH, HEIGHT), "Music Spectrum",
-        sf::Style::Titlebar | sf::Style::Close);
-    desktop = std::make_shared<sf::VideoMode>(sf::VideoMode::getDesktopMode());
-
+Spectrum::Spectrum(std::shared_ptr<sf::RenderWindow> win) : window(win) {
     fft_ptr = std::make_shared<FFT<sf::Int16>>();
-    hud_ptr = std::make_shared<HUD>(window, sound);
+    sample_buffer.reserve(buffer_size);
+    if (!filename.empty()) {
+        if (!sound_buffer.loadFromFile(filename)) {
+            throw std::invalid_argument("Erro ao carregar a música!!");
+        }
+        sound.setBuffer(sound_buffer);
+    } else {
+        if (!sound_buffer.loadFromFile(
+                "./assets/KUTE-TECHNO_KILLA.wav")) {
+            throw std::invalid_argument("Erro ao carregar a música!!");
+        }
+        sound.setBuffer(sound_buffer);
+    }
 }
 
-void Spectrum::run(int opc) {
-    opc == 0 ? throw std::invalid_argument("Opção de gráfico inválida!") : 0;
+void Spectrum::setOption(int newOption) { option = newOption; }
 
-    window->setPosition(
-        sf::Vector2i(desktop->width / 2.f - window->getSize().x / 2.f,
-                     desktop->height / 2.f - window->getSize().y / 2.f));
-    window->setFramerateLimit(60);
-    window->setVerticalSyncEnabled(true);
+void Spectrum::setFileName(std::string newFilename) { filename = newFilename; }
 
-    while (window->isOpen()) {
-        sf::Event event;
-        while (window->pollEvent(event)) {
-            ImGui::SFML::ProcessEvent(event);
-            if (event.type == sf::Event::Closed) {
-                window->close();
-            } else if (event.type == sf::Event::KeyPressed) {
-                handleEvents(event);
-            }
-        }
-
-        hud_ptr->run();
-
-        monoSample();
-        std::vector<std::complex<float>> spectrum;
-        if (sound.getStatus() == sf::SoundSource::Playing) {
-            getSampleBuffer();
-
-            std::size_t fft_size = 1;
-            while (fft_size < buffer_size) {
-                fft_size *= 2;
-            }
-
-            spectrum.resize(fft_size, 0);
-            handlePlot(opc, spectrum, fft_size);
-        }
-
-        sf::sleep(sf::milliseconds(10));
+void Spectrum::handlePlot(std::vector<std::complex<float>> spectrum,
+                          std::size_t fft_size) {
+    switch (option) {
+    case 1:
+        fft_ptr->fftAnalyze(sample_buffer, 1, spectrum, fft_size);
+        viewFormWaveFFT();
+        break;
+    case 2:
+        viewFormWave();
+        break;
+    case 3:
+        fft_ptr->fftAnalyze(sample_buffer, 1, spectrum, fft_size);
+        viewFormWaveRectFFT();
+        break;
+    case 4:
+        viewFormWaveRect();
+        break;
+    default:
+        break;
     }
+}
+
+void Spectrum::run() {
+    monoSample();
+    std::vector<std::complex<float>> spectrum;
+    if (sound.getStatus() == sf::SoundSource::Playing) {
+        getSampleBuffer();
+
+        std::size_t fft_size = 1;
+        while (fft_size < buffer_size) {
+            fft_size *= 2;
+        }
+
+        spectrum.resize(fft_size, 0);
+
+        handlePlot(spectrum, fft_size);
+    }
+
+    sf::sleep(sf::milliseconds(10));
 }

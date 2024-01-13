@@ -69,6 +69,8 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 
 [ImGUI-SFML](https://github.com/SFML/imgui-sfml)
 
+[tinyfiledialogs](https://github.com/native-toolkit/libtinyfiledialogs)
+
 ## Referências
 
 Video do Tsoding Daily: [Music Visualizer (Fast Fourier Transform)](https://youtu.be/Xdbk1Pr5WXU)

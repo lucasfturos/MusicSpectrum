@@ -1,31 +1,31 @@
 #pragma once
 
-#include "../../external/imgui-SFML.h"
-#include "../../external/imgui.h"
+#include "../Spectrum/spectrum.hpp"
 #include "../util.hpp"
 
 class HUD {
   private:
-    float volume;
-    bool isPlaying;
-    bool isStop;
     int fftMode = 0;
     int spectrumMode = 0;
 
+    sf::Clock clock;
     std::shared_ptr<sf::RenderWindow> window;
 
-    sf::Clock clock;
-    sf::Sound sound;
+    std::shared_ptr<Spectrum> spectrum_ptr;
 
-    std::vector<std::string> openFileDialog();
-
+    void openFileDialog();
     void modeAudio();
     void styleWidget();
     void controlAudio();
 
   public:
+    int option;
+    float volume = 10.f;
+    std::string filename;
+    bool isPlaying = false;
+
     void run();
 
-    HUD(std::shared_ptr<sf::RenderWindow> win, sf::Sound sound);
+    HUD(std::shared_ptr<sf::RenderWindow> win);
     ~HUD();
 };

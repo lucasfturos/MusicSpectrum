@@ -1,26 +1,26 @@
 #pragma once
 
 #include "../FFT/fft.hpp"
-#include "../HUD/hud.hpp"
 
 class Spectrum {
-  private:
-    float volume = 10.f;
-    bool isStop = true;
-    bool isPlaying = false;
+  public:
+    void setOption(int newOption);
+    void setFileName(std::string newFilename);
 
+  private:
     sf::Clock clock;
-    sf::Sound sound;
-    sf::SoundBuffer sound_buffer;
+    sf::Clock deltaTime;
     sf::Color start_color = sf::Color::Blue;
     sf::Color end_color = sf::Color::Magenta;
 
-    std::vector<sf::Int16> sample_buffer;
     std::vector<sf::RectangleShape> rectangles;
 
-    std::shared_ptr<HUD> hud_ptr;
+    sf::SoundBuffer sound_buffer;
+    std::vector<sf::Int16> sample_buffer;
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
-    std::shared_ptr<sf::VideoMode> desktop;
+    std::shared_ptr<sf::RenderWindow> window;
+    int option = 3;
+    std::string filename;
 
     void monoSample();
     void viewFormWave();
@@ -29,15 +29,13 @@ class Spectrum {
     void viewFormWaveRect();
     void viewFormWaveRectFFT();
     void toggleMusicPlayback();
-    void handleEvents(sf::Event &event);
-    void handlePlot(int opc, std::vector<std::complex<float>> spectrum,
+    void handlePlot(std::vector<std::complex<float>> spectrum,
                     std::size_t fft_size);
 
   public:
-    std::shared_ptr<sf::RenderWindow> window;
+    sf::Sound sound;
 
-    void run(int opc);
+    void run();
 
-    Spectrum(sf::Sound sound, sf::SoundBuffer sound_buffer,
-             std::vector<sf::Int16> sample_buffer);
+    Spectrum(std::shared_ptr<sf::RenderWindow> win);
 };
