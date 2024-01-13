@@ -8,12 +8,6 @@ Spectrum::Spectrum(std::shared_ptr<sf::RenderWindow> win) : window(win) {
             throw std::invalid_argument("Erro ao carregar a música!!");
         }
         sound.setBuffer(sound_buffer);
-    } else {
-        if (!sound_buffer.loadFromFile(
-                "./assets/KUTE-TECHNO_KILLA.wav")) {
-            throw std::invalid_argument("Erro ao carregar a música!!");
-        }
-        sound.setBuffer(sound_buffer);
     }
 }
 
