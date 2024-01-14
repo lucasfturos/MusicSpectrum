@@ -26,9 +26,7 @@ void Spectrum::viewFormWave() {
         waveform[i].color = vertex_color;
     }
 
-    window->clear();
     window->draw(waveform);
-    window->display();
 }
 
 void Spectrum::viewFormWaveFFT() {
@@ -50,7 +48,5 @@ void Spectrum::viewFormWaveFFT() {
         waveform[i].color = vertex_color;
     }
 
-    window->clear();
     window->draw(waveform);
-    window->display();
 }

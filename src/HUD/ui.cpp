@@ -32,10 +32,10 @@ void HUD::openFileDialog() {
 
     if (ImGui::Button("Select File")) {
         const char *filters[] = {"*.wav"};
-        const char *selectedFilename = tinyfd_openFileDialog(
-            "Open File", "./assets", 1, filters, "Wave files", 0);
-        if (selectedFilename != nullptr) {
-            filename = selectedFilename;
+        const char *filename = tinyfd_openFileDialog("Open File", "./assets", 1,
+                                                     filters, "Wave files", 0);
+        if (filename != nullptr) {
+            spectrum_ptr->setFileName(filename);
             std::cout << "Selected file: " << filename << '\n';
         } else {
             std::cerr << "No file selected.\n";
@@ -49,11 +49,11 @@ void HUD::controlAudio() {
 
     if (ImGui::Button(!isPlaying ? "Play###ViewMode" : "Pause###ViewMode")) {
         if (isPlaying) {
-            spectrum_ptr->sound.pause();
+            sound.pause();
             isPlaying = false;
         } else {
-            spectrum_ptr->sound.play();
-            spectrum_ptr->sound.setVolume(volume);
+            sound.play();
+            sound.setVolume(volume);
             isPlaying = true;
         }
     }
@@ -63,7 +63,7 @@ void HUD::controlAudio() {
 
     ImGui::SameLine();
     if (ImGui::Button("Stop")) {
-        spectrum_ptr->sound.stop();
+        sound.stop();
         isPlaying = false;
     }
 
@@ -73,12 +73,20 @@ void HUD::controlAudio() {
     ImGui::Spacing();
     ImGui::Spacing();
     if (ImGui::Button("Mute")) {
+        isMuted = !isMuted;
+        if (isMuted) {
+            orig_volume = volume;
+            volume = 0.f;
+        } else {
+            volume = orig_volume;
+        }
+        sound.setVolume(volume);
     }
     ImGui::SameLine();
     if (ImGui::SliderFloat("Volume", &volume, 0.f, 100.f, "%.0f")) {
         volume += 0.f;
         volume = std::max(0.f, std::min(100.f, volume));
-        spectrum_ptr->sound.setVolume(volume);
+        sound.setVolume(volume);
     }
 }
 
@@ -103,4 +111,5 @@ void HUD::modeAudio() {
     } else if (!fftMode && spectrumMode) {
         option = 4;
     }
+    spectrum_ptr->setOption(option);
 }

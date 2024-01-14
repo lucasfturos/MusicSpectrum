@@ -3,24 +3,19 @@
 #include "../FFT/fft.hpp"
 
 class Spectrum {
-  public:
-    void setOption(int newOption);
-    void setFileName(std::string newFilename);
-
   private:
-    sf::Clock clock;
-    sf::Clock deltaTime;
+    int option;
+    std::string filename;
+
     sf::Color start_color = sf::Color::Blue;
     sf::Color end_color = sf::Color::Magenta;
 
-    std::vector<sf::RectangleShape> rectangles;
-
+    sf::Clock clock;
     sf::SoundBuffer sound_buffer;
     std::vector<sf::Int16> sample_buffer;
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
     std::shared_ptr<sf::RenderWindow> window;
-    int option = 3;
-    std::string filename;
+    std::vector<sf::RectangleShape> rectangles;
 
     void monoSample();
     void viewFormWave();
@@ -34,6 +29,9 @@ class Spectrum {
 
   public:
     sf::Sound sound;
+
+    void setOption(int newOption);
+    void setFileName(std::string newFilename);
 
     void run();
 

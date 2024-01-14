@@ -1,8 +1,8 @@
 #include "hud.hpp"
 
-HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
-    spectrum_ptr = std::make_shared<Spectrum>(window);
-
+HUD::HUD(std::shared_ptr<sf::RenderWindow> win,
+         std::shared_ptr<Spectrum> spectrum)
+    : window(win), spectrum_ptr(spectrum), sound(spectrum_ptr->sound) {
     if (!ImGui::SFML::Init(*window, false)) {
         throw std::runtime_error("Erro ao inicializar RenderWindow!");
     }
@@ -14,6 +14,9 @@ HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
     if (!ImGui::SFML::UpdateFontTexture()) {
         throw std::runtime_error("Update Font Texture");
     }
+
+    orig_volume = 10.f;
+    volume = orig_volume;
 }
 
 HUD::~HUD() { ImGui::SFML::Shutdown(); }
@@ -45,7 +48,5 @@ void HUD::run() {
     ImGui::PopFont();
     ImGui::End();
 
-    window->clear();
     ImGui::SFML::Render(*window);
-    window->display();
 }

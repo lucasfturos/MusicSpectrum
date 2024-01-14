@@ -5,27 +5,28 @@
 
 class HUD {
   private:
+    int option;
     int fftMode = 0;
     int spectrumMode = 0;
+    float orig_volume;
 
-    sf::Clock clock;
     std::shared_ptr<sf::RenderWindow> window;
-
     std::shared_ptr<Spectrum> spectrum_ptr;
 
-    void openFileDialog();
     void modeAudio();
     void styleWidget();
     void controlAudio();
+    void openFileDialog();
 
   public:
-    int option;
+    sf::Sound sound;
     float volume = 10.f;
-    std::string filename;
+    bool isMuted = false;
     bool isPlaying = false;
 
     void run();
 
-    HUD(std::shared_ptr<sf::RenderWindow> win);
+    HUD(std::shared_ptr<sf::RenderWindow> win,
+        std::shared_ptr<Spectrum> spectrum);
     ~HUD();
 };

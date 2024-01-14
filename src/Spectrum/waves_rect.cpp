@@ -1,8 +1,6 @@
 #include "spectrum.hpp"
 
 void Spectrum::viewFormWaveRect() {
-    window->clear();
-
     float rect_width = 3.0f;
     float rect_spacing = 1.f;
     float offsetY = HEIGHT / 2.f;
@@ -28,13 +26,9 @@ void Spectrum::viewFormWaveRect() {
                               offsetY - rect_height);
         window->draw(rectangle);
     }
-
-    window->display();
 }
 
 void Spectrum::viewFormWaveRectFFT() {
-    window->clear();
-
     float rect_width = 3.f;
     float centerY = HEIGHT - 10.f;
     static std::vector<float> prev_amplitudes(buffer_size, 0.0f);
@@ -66,6 +60,4 @@ void Spectrum::viewFormWaveRectFFT() {
 
         window->draw(gravity_rect);
     }
-
-    window->display();
 }

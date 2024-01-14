@@ -9,8 +9,8 @@ Render::Render() {
         sf::Vector2i(desktop->width / 2.f - window->getSize().x / 2.f,
                      desktop->height / 2.f - window->getSize().y / 2.f));
 
-    hud_ptr = std::make_shared<HUD>(window);
     spectrum_ptr = std::make_shared<Spectrum>(window);
+    hud_ptr = std::make_shared<HUD>(window, spectrum_ptr);
 }
 
 void Render::run() {
@@ -27,12 +27,14 @@ void Render::run() {
                 handleEvents(event);
             }
         }
+
         ImGui::SFML::Update(*window, clock.restart());
 
-        spectrum_ptr->setFileName(hud_ptr->filename);
-        spectrum_ptr->setOption(hud_ptr->option);
+        window->clear();
 
         hud_ptr->run();
         spectrum_ptr->run();
+
+        window->display();
     }
 }

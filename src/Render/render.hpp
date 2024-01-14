@@ -1,5 +1,6 @@
+#pragma once
+
 #include "../HUD/hud.hpp"
-#include "../Spectrum/spectrum.hpp"
 #include "../util.hpp"
 
 class Render {
@@ -11,6 +12,7 @@ class Render {
     std::shared_ptr<HUD> hud_ptr;
     std::shared_ptr<Spectrum> spectrum_ptr;
 
+    void toggleMusicMute();
     void toggleMusicPlayback();
     void handleEvents(sf::Event &event);
 
