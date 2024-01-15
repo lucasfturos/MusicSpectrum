@@ -32,11 +32,13 @@ void HUD::openFileDialog() {
 
     if (ImGui::Button("Select File")) {
         const char *filters[] = {"*.wav"};
-        const char *selectedFilename = tinyfd_openFileDialog(
-            "Open File", "./assets", 1, filters, "Wave files", 0);
-        if (selectedFilename != nullptr) {
-            filename = selectedFilename;
-            std::cout << "Selected file: " << selectedFilename << '\n';
+        const char *filename = tinyfd_openFileDialog("Open File", "./assets", 1,
+                                                     filters, "Wave files", 0);
+        if (filename != nullptr) {
+            std::cout << "Selected file: " << filename << '\n';
+            sound_buffer.loadFromFile(filename);
+            sound.setBuffer(sound_buffer);
+            resetControls();
         } else {
             std::cerr << "No file selected.\n";
         }
@@ -48,14 +50,7 @@ void HUD::controlAudio() {
     ImGui::Spacing();
 
     if (ImGui::Button(!isPlaying ? "Play###ViewMode" : "Pause###ViewMode")) {
-        if (isPlaying) {
-            sound.pause();
-            isPlaying = false;
-        } else {
-            sound.play();
-            sound.setVolume(volume);
-            isPlaying = true;
-        }
+        toggleMusicPlayback();
     }
     ImGui::SameLine();
     if (ImGui::Button("<")) {
@@ -75,8 +70,7 @@ void HUD::controlAudio() {
     ImGui::Spacing();
     ImGui::Spacing();
     if (ImGui::Button("Mute")) {
-        isMuted = !isMuted;
-        sound.setVolume(isMuted ? 0.f : volume);
+        toggleMusicMute();
     }
     ImGui::SameLine();
     if (ImGui::SliderFloat("Volume", &volume, 0.f, 100.f, "%.0f")) {

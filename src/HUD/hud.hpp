@@ -9,28 +9,26 @@
 #include <memory>
 
 const int WIDTH = 1000;
-const int HEIGHT = 600;
+const int HEIGHT = 720;
 const size_t buffer_size = 1000;
 
 class HUD {
   private:
     int fftMode = 0;
     int spectrumMode = 0;
-
     float volume = 10.f;
-
     bool isMuted = false;
     bool isPlaying = false;
-
-    std::string filename;
 
     std::shared_ptr<sf::RenderWindow> window;
 
     void modeAudio();
-    void styleWidget();
     void skipForward();
-    void skipBackward();
+    void styleWidget();
+    void drawAudioHUD();
     void controlAudio();
+    void skipBackward();
+    void resetControls();
     void openFileDialog();
     void toggleMusicMute();
     void toggleMusicPlayback();

@@ -14,12 +14,6 @@ HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
     }
 
     sample_buffer.reserve(buffer_size);
-    if (!filename.empty()) {
-        if (!sound_buffer.loadFromFile(filename)) {
-            throw std::invalid_argument("Erro ao carregar a música!!");
-        }
-        sound.setBuffer(sound_buffer);
-    }
 }
 
 HUD::~HUD() { ImGui::SFML::Shutdown(); }

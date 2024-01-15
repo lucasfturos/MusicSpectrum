@@ -56,3 +56,11 @@ void HUD::skipBackward() {
     sf::Time newOffset = currentOffset - sf::seconds(10.0f);
     sound.setPlayingOffset(newOffset);
 }
+
+void HUD::resetControls() {
+    isPlaying = false;
+    isMuted = false;
+    volume = 10.f;
+    sound.stop();
+    sound.setVolume(volume);
+}
