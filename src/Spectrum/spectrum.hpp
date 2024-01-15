@@ -9,8 +9,6 @@
 
 class Spectrum {
   private:
-    const size_t buffer_size = 1000;
-
     int option;
     std::string filename;
 

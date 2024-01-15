@@ -19,12 +19,6 @@ HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
             throw std::invalid_argument("Erro ao carregar a música!!");
         }
         sound.setBuffer(sound_buffer);
-    } else {
-        if (!sound_buffer.loadFromFile(
-                "./assets/Clouded-Bad_Habits-feat_Amaline.wav")) {
-            throw std::invalid_argument("Erro ao carregar a música!!");
-        }
-        sound.setBuffer(sound_buffer);
     }
 }
 
@@ -34,7 +28,7 @@ void HUD::run() {
     ImGui::Begin("HUD Audio", nullptr,
                  ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
                      ImGuiWindowFlags_NoScrollbar);
-    ImGui::SetWindowPos(ImVec2((WIDTH - 400) / 2.f, 0));
+    ImGui::SetWindowPos(ImVec2(0, 0));
     ImGui::SetWindowSize(ImVec2(400, 300));
 
     ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[0]);

@@ -10,11 +10,10 @@
 
 const int WIDTH = 1000;
 const int HEIGHT = 600;
+const size_t buffer_size = 1000;
 
 class HUD {
   private:
-    const size_t buffer_size = 1000;
-
     int fftMode = 0;
     int spectrumMode = 0;
 
