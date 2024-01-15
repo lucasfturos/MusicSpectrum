@@ -1,7 +1,10 @@
 #pragma once
 
-#include "../util.hpp"
+#include <cmath>
+#include <complex>
+#include <vector>
 
+const float pi = M_PI;
 using namespace std::complex_literals;
 using Float_Complex = std::complex<float>;
 

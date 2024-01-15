@@ -2,16 +2,12 @@
 
 # List all the header files in the src directory
 set(SRC_HEADERS
-  # Util 
-  util.hpp
   # FFT 
   FFT/fft.hpp
   # HUD
   HUD/hud.hpp
   # Spectrum 
   Spectrum/spectrum.hpp
-  # Render
-  Render/render.hpp
 )
 
 # List all the source files in the src directory
@@ -21,14 +17,12 @@ set(SRC_SOURCES
   # HUD
   HUD/hud.cpp
   HUD/ui.cpp
+  HUD/events.cpp
   # Spectrum
   Spectrum/waves_senoide.cpp
   Spectrum/waves_rect.cpp
   Spectrum/spectrum.cpp
   Spectrum/samples.cpp
-  # Render
-  Render/render.cpp
-  Render/events.cpp
   # Main
   main.cpp
 )

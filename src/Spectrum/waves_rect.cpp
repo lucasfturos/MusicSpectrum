@@ -6,7 +6,7 @@ void Spectrum::viewFormWaveRect() {
     float offsetY = HEIGHT / 2.f;
 
     for (std::size_t i = 0; i < buffer_size - 1; i += 5) {
-        sf::Int16 sample_value = sample_buffer[i];
+        sf::Int16 sample_value = hud_ptr->sample_buffer[i];
         float normalized_value = static_cast<float>(sample_value) / 32767.f;
 
         float rect_height = normalized_value * 150;
@@ -34,7 +34,7 @@ void Spectrum::viewFormWaveRectFFT() {
     static std::vector<float> prev_amplitudes(buffer_size, 0.0f);
 
     for (std::size_t j = 0; j < buffer_size - 1; j += 6) {
-        float amplitude = std::abs(sample_buffer[j]) / 32767.f;
+        float amplitude = std::abs(hud_ptr->sample_buffer[j]) / 32767.f;
         float rect_height = amplitude * HEIGHT;
 
         sf::RectangleShape rectangle(sf::Vector2f(rect_width, rect_height));

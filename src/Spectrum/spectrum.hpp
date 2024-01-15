@@ -1,9 +1,16 @@
 #pragma once
 
 #include "../FFT/fft.hpp"
+#include "../HUD/hud.hpp"
+#include <SFML/Audio.hpp>
+#include <SFML/Graphics.hpp>
+#include <iostream>
+#include <memory>
 
 class Spectrum {
   private:
+    const size_t buffer_size = 1000;
+
     int option;
     std::string filename;
 
@@ -11,11 +18,12 @@ class Spectrum {
     sf::Color end_color = sf::Color::Magenta;
 
     sf::Clock clock;
-    sf::SoundBuffer sound_buffer;
-    std::vector<sf::Int16> sample_buffer;
-    std::shared_ptr<FFT<sf::Int16>> fft_ptr;
+    std::shared_ptr<sf::VideoMode> desktop;
     std::shared_ptr<sf::RenderWindow> window;
     std::vector<sf::RectangleShape> rectangles;
+
+    std::shared_ptr<HUD> hud_ptr;
+    std::shared_ptr<FFT<sf::Int16>> fft_ptr;
 
     void monoSample();
     void viewFormWave();
@@ -28,12 +36,6 @@ class Spectrum {
                     std::size_t fft_size);
 
   public:
-    sf::Sound sound;
-
-    void setOption(int newOption);
-    void setFileName(std::string newFilename);
-
     void run();
-
-    Spectrum(std::shared_ptr<sf::RenderWindow> win);
+    Spectrum();
 };

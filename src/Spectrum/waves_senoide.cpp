@@ -7,7 +7,7 @@ void Spectrum::viewFormWave() {
     sf::Time interval = sf::milliseconds(80);
 
     for (std::size_t i = 0; i < buffer_size; ++i) {
-        sf::Int16 sample_value = sample_buffer[i];
+        sf::Int16 sample_value = hud_ptr->sample_buffer[i];
         float normalized_value = static_cast<float>(sample_value) / 32767.f;
         waveform[i].position = sf::Vector2f(
             static_cast<float>(i), normalized_value * offsetY + offsetY);
@@ -34,7 +34,7 @@ void Spectrum::viewFormWaveFFT() {
     float centerY = HEIGHT - 10.f;
 
     for (std::size_t i = 0; i < buffer_size; ++i) {
-        float amplitude = std::abs(sample_buffer[i]) / 32767.f;
+        float amplitude = std::abs(hud_ptr->sample_buffer[i]) / 32767.f;
         float offsetY = amplitude * HEIGHT;
         waveform[i].position =
             sf::Vector2f(static_cast<float>(i), centerY - offsetY);

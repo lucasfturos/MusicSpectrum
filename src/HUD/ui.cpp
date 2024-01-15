@@ -32,11 +32,11 @@ void HUD::openFileDialog() {
 
     if (ImGui::Button("Select File")) {
         const char *filters[] = {"*.wav"};
-        const char *filename = tinyfd_openFileDialog("Open File", "./assets", 1,
-                                                     filters, "Wave files", 0);
-        if (filename != nullptr) {
-            spectrum_ptr->setFileName(filename);
-            std::cout << "Selected file: " << filename << '\n';
+        const char *selectedFilename = tinyfd_openFileDialog(
+            "Open File", "./assets", 1, filters, "Wave files", 0);
+        if (selectedFilename != nullptr) {
+            filename = selectedFilename;
+            std::cout << "Selected file: " << selectedFilename << '\n';
         } else {
             std::cerr << "No file selected.\n";
         }
@@ -58,7 +58,8 @@ void HUD::controlAudio() {
         }
     }
     ImGui::SameLine();
-    if (ImGui::Button("Prev")) {
+    if (ImGui::Button("<")) {
+        skipBackward();
     }
 
     ImGui::SameLine();
@@ -68,19 +69,14 @@ void HUD::controlAudio() {
     }
 
     ImGui::SameLine();
-    if (ImGui::Button("Next")) {
+    if (ImGui::Button(">")) {
+        skipForward();
     }
     ImGui::Spacing();
     ImGui::Spacing();
     if (ImGui::Button("Mute")) {
         isMuted = !isMuted;
-        if (isMuted) {
-            orig_volume = volume;
-            volume = 0.f;
-        } else {
-            volume = orig_volume;
-        }
-        sound.setVolume(volume);
+        sound.setVolume(isMuted ? 0.f : volume);
     }
     ImGui::SameLine();
     if (ImGui::SliderFloat("Volume", &volume, 0.f, 100.f, "%.0f")) {
@@ -111,5 +107,4 @@ void HUD::modeAudio() {
     } else if (!fftMode && spectrumMode) {
         option = 4;
     }
-    spectrum_ptr->setOption(option);
 }
