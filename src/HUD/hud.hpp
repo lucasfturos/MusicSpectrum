@@ -34,7 +34,7 @@ class HUD {
     void toggleMusicPlayback();
 
   public:
-    int option = 2;
+    int option = 3;
 
     sf::Sound sound;
     sf::SoundBuffer sound_buffer;

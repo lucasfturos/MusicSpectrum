@@ -9,8 +9,8 @@
 
 class Spectrum {
   private:
-    int option;
-    std::string filename;
+    float gravity_velocity = 0.001f;
+    const float gravity_acceleration = 9.81f;
 
     sf::Color start_color = sf::Color::Blue;
     sf::Color end_color = sf::Color::Magenta;

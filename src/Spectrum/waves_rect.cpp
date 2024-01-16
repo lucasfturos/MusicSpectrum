@@ -54,8 +54,17 @@ void Spectrum::viewFormWaveRectFFT() {
 
         sf::RectangleShape gravity_rect(sf::Vector2f(10.f, 5.f));
         gravity_rect.setFillColor(vertex_color);
-        sf::Vector2f rect_pos =
-            sf::Vector2f(position.x + rect_width / 2 - 5.f, position.y);
+        sf::Vector2f rect_pos = sf::Vector2f(
+            position.x + (rect_width - 10.f) / 2, position.y - 5.f);
+
+        gravity_velocity += gravity_acceleration;
+        rect_pos.y += gravity_velocity;
+
+        if (rect_pos.y > centerY - 5.f) {
+            rect_pos.y = centerY - 5.f;
+            gravity_velocity = -gravity_velocity;
+        }
+
         gravity_rect.setPosition(rect_pos);
 
         window->draw(gravity_rect);
