@@ -15,7 +15,7 @@ set(PROJECT_NAME                      # Define all project info
 
 project(${PROJECT_NAME})              # Create project "MusicSpectrum"
 
-set(CMAKE_CXX_STANDARD 17)            # Enable c++11 standard
+set(CMAKE_CXX_STANDARD 20)            # Enable c++20 standard
 
 # List all the music files
 set(RESOURCES_DIRECTORY 
