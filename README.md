@@ -9,7 +9,7 @@ Desenvolvido em C++ e SFML.
 ### Tela do programa
 
 <p align="cente">
-<img src="./img/Screenshot/WindowSoftware.png" width="70%" />
+<img src="/assets/img/Screenshot/WindowSoftware.png" width="70%" />
 </p>
 
 ### Tipos de visualização
@@ -18,25 +18,25 @@ Desenvolvido em C++ e SFML.
 **Senoidal com FFT**
 
 <p align="center">
-<img src="/img/Screenshot/SineWaveFFT.png" width="70%" />
+<img src="/assets/img/Screenshot/SineWaveFFT.png" width="70%" />
 </p>
 
 **Senoidal puro**
 
 <p align="center">
-<img src="/img/Screenshot/SineWaveNoFFT.png" width="70%" />
+<img src="/assets/img/Screenshot/SineWaveNoFFT.png" width="70%" />
 </p>
 
 **Espectro com FFT**
 
 <p align="center">
-<img src="/img/Screenshot/SpectrumFFT.png" width="70%" />
+<img src="/assets/img/Screenshot/SpectrumFFT.png" width="70%" />
 </p>
 
 **Espectro puro**
 
 <p align="center">
-<img src="/img/Screenshot/SpectrumNoFFT.png" width="70%" />
+<img src="/assets/img/Screenshot/SpectrumNoFFT.png" width="70%" />
 </p>
 
 ## Instalação e como usar
