@@ -6,6 +6,12 @@ Suporta audios no formato WAV, OGG/Vorbis e FLAC.
 
 Desenvolvido em C++ e SFML.
 
+### Tela do programa
+
+<p align="cente">
+<img src="./img/Screenshot/WindowSoftware.png" width="70%" />
+</p>
+
 ### Tipos de visualização
 
 
@@ -46,7 +52,7 @@ Coloque as músicas antes de executar os próximos comandos.
 
 Após baixar, entrar na pasta, criar e entrar a pasta build, é só compilar:
 ```
-cmake .. && make
+cmake .. && make -j4
 ```
 
 Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
@@ -58,7 +64,9 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 
 - Use <kbd>space</kbd> para dar Play/Pause no áudio
 - Use <kbd>enter</kbd> para dar Stop no áudio
+- Use <kbd>M</kbd> para dar Mute no áudio
 - Use <kbd>⬆</kbd> ou <kbd>⬇</kbd> para Aumentar ou Diminuir o volume
+- Use <kbd>←</kbd> ou <kbd>→</kbd> para Avançar ou Retroceder a música
 - Use <kbd>q</kbd> para Sair do programa.
 
 ## Créditos
