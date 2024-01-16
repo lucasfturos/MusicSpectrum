@@ -6,6 +6,7 @@ void HUD::styleWidget() {
     style.WindowRounding = 5.3f;
     style.FrameRounding = 2.3f;
     style.ScrollbarRounding = 0;
+
     style.Colors[ImGuiCol_Text] = ImVec4(0.9f, 0.9f, 0.9f, 0.9f);
     style.Colors[ImGuiCol_TextDisabled] = ImVec4(0.6f, 0.6f, 0.6f, 1.0f);
     style.Colors[ImGuiCol_WindowBg] = ImVec4(0.3f, 0.3f, 0.3f, 0.3f);
@@ -25,23 +26,33 @@ void HUD::styleWidget() {
         ImVec4(0.30f, 0.30f, 0.30f, 0.84f);
     // RadioButton
     style.Colors[ImGuiCol_CheckMark] = ImVec4(0.90f, 0.90f, 0.90f, 0.83f);
+    // Header
+    style.Colors[ImGuiCol_Header] = ImVec4(0.12f, 0.12f, 0.12f, 1.0f);
+    style.Colors[ImGuiCol_HeaderHovered] = ImVec4(0.24f, 0.24f, 0.24f, 1.0f);
+    style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.31f, 0.31f, 0.31f, 1.0f);
 }
 
 void HUD::openFileDialog() {
     ImGui::Text("Select Audio File");
 
     if (ImGui::Button("Select File")) {
-        const char *filters[] = {"*.wav"};
-        const char *filename = tinyfd_openFileDialog("Open File", "./assets", 1,
-                                                     filters, "Wave files", 0);
-        if (filename != nullptr) {
-            std::cout << "Selected file: " << filename << '\n';
-            sound_buffer.loadFromFile(filename);
-            sound.setBuffer(sound_buffer);
-            resetControls();
-        } else {
-            std::cerr << "No file selected.\n";
+        IGFD::FileDialogConfig config;
+        config.path = ".";
+        config.sidePaneWidth = 350.0f;
+
+        ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey",
+                                                "Choose File", ".wav", config);
+    }
+
+    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) {
+        if (ImGuiFileDialog::Instance()->IsOk()) {
+            std::string filePathName =
+                ImGuiFileDialog::Instance()->GetFilePathName();
+
+            listAudio.push_back(filePathName);
         }
+
+        ImGuiFileDialog::Instance()->Close();
     }
 }
 
@@ -100,5 +111,44 @@ void HUD::modeAudio() {
         option = 3;
     } else if (!fftMode && spectrumMode) {
         option = 4;
+    }
+}
+
+void HUD::audioList(std::size_t &selectedIndex) {
+    for (auto item = 0UL; item < listAudio.size(); ++item) {
+        const bool isSelected = (selectedIndex == item);
+
+        size_t lastSlash = listAudio[item].find_last_of('/');
+        std::string filename = listAudio[item].substr(lastSlash + 1);
+
+        if (ImGui::Selectable(filename.c_str(), isSelected)) {
+            selectedIndex = item;
+            std::cout << listAudio[selectedIndex] << '\n';
+            sound_buffer.loadFromFile(listAudio[selectedIndex]);
+            sound.setBuffer(sound_buffer);
+            resetControls();
+        }
+        if (isSelected) {
+            ImGui::SetItemDefaultFocus();
+        }
+    }
+}
+
+
+void HUD::showAudioListWindow() {
+    if (ImGui::Button("Show Audio List")) {
+        audioListWindow = !audioListWindow;
+    }
+
+    if (audioListWindow) {
+        ImGui::Begin("Audio List", nullptr,
+                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
+        ImGui::SetWindowPos(ImVec2(HUD_WIDTH + 10, 0));
+        ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT));
+
+        std::size_t selectedIndex = 0;
+        audioList(selectedIndex);
+
+        ImGui::End();
     }
 }

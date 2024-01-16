@@ -2,7 +2,7 @@
 
 Visualizador de espectro de audio. Aplicação da transformada de Fourier FFT em conjunto com a fórmula de Euler
 
-Suporta audios no formato WAV, OGG/Vorbis e FLAC.
+Suporta audios no formato WAV.
 
 Desenvolvido em C++ e SFML.
 
@@ -77,7 +77,7 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 
 [ImGUI-SFML](https://github.com/SFML/imgui-sfml)
 
-[tinyfiledialogs](https://github.com/native-toolkit/libtinyfiledialogs)
+[ImGuiFileDialog](https://github.com/aiekick/ImGuiFileDialog)
 
 ## Referências
 

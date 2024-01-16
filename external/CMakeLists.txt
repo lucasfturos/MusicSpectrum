@@ -11,7 +11,8 @@ set(EXTERNAL_HEADERS
   imstb_textedit.h
   imstb_truetype.h
   imgui-SFML_export.h
-  tinyfiledialogs.h
+  ImGuiFileDialog.h
+  ImGuiFileDialogConfig.h
 )
 
 # List all the source files in the external directory
@@ -22,7 +23,7 @@ set(EXTERNAL_SOURCES
   imgui_draw.cpp
   imgui_tables.cpp
   imgui_widgets.cpp
-  tinyfiledialogs.cpp
+  ImGuiFileDialog.cpp
 )
 
 # Apply the compile flags to each source file in the external directory

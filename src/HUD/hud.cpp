@@ -19,16 +19,19 @@ HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
 HUD::~HUD() { ImGui::SFML::Shutdown(); }
 
 void HUD::run() {
-    ImGui::Begin("HUD Audio", nullptr,
-                 ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove |
-                     ImGuiWindowFlags_NoScrollbar);
+    ImGui::Begin("Audio HUD", nullptr,
+                 ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
     ImGui::SetWindowPos(ImVec2(0, 0));
-    ImGui::SetWindowSize(ImVec2(400, 300));
+    ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT));
 
     ImGui::PushFont(ImGui::GetIO().Fonts->Fonts[0]);
 
     ImGui::Separator();
     openFileDialog();
+
+    ImGui::SameLine();
+
+    showAudioListWindow();
 
     ImGui::Spacing();
     ImGui::Separator();

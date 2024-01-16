@@ -29,7 +29,7 @@ file(COPY ${RESOURCES_DIRECTORY}
 
 # Flags of compiling
 add_compile_options(
-  -Wall -Wextra -Wpedantic -Werror -pedantic -g -Ofast 
+  -Wall -Wextra -Wpedantic -Werror -pedantic -Wno-unknown-pragmas -g -Ofast 
 )
 
 # Add subdirectories for external and src

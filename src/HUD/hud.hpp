@@ -1,8 +1,8 @@
 #pragma once
 
+#include "../../external/ImGuiFileDialog.h"
 #include "../../external/imgui-SFML.h"
 #include "../../external/imgui.h"
-#include "../../external/tinyfiledialogs.h"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -10,6 +10,8 @@
 
 const int WIDTH = 1000;
 const int HEIGHT = 720;
+const int HUD_WIDTH = 400;
+const int HUD_HEIGHT = 300;
 const size_t buffer_size = 1000;
 
 class HUD {
@@ -19,6 +21,8 @@ class HUD {
     float volume = 10.f;
     bool isMuted = false;
     bool isPlaying = false;
+    bool audioListWindow = false;
+    std::vector<std::string> listAudio;
 
     std::shared_ptr<sf::RenderWindow> window;
 
@@ -31,7 +35,9 @@ class HUD {
     void resetControls();
     void openFileDialog();
     void toggleMusicMute();
+    void showAudioListWindow();
     void toggleMusicPlayback();
+    void audioList(std::size_t &selectedIndex);
 
   public:
     int option = 3;
