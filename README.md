@@ -8,7 +8,7 @@ Desenvolvido em C++ e SFML.
 
 ### Tela do programa
 
-<p align="cente">
+<p align="center">
 <img src="/assets/img/Screenshot/WindowSoftware.png" width="70%" />
 </p>
 
