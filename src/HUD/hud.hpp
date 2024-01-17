@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../../external/ImGuiFileDialog.h"
-#include "../../external/imgui-SFML.h"
-#include "../../external/imgui.h"
+#include "../../external/ImGui-SFML/imgui-SFML.h"
+#include "../../external/ImGuiFileDialog/ImGuiFileDialog.h"
+#include "../../external/imgui/imgui.h"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <iostream>

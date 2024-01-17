@@ -2,28 +2,33 @@
 
 # List all the header files in the external directory
 set(EXTERNAL_HEADERS
-  imgui.h
-  imconfig.h
-  imconfig-SFML.h
-  imgui-SFML.h
-  imgui_internal.h
-  imstb_rectpack.h
-  imstb_textedit.h
-  imstb_truetype.h
-  imgui-SFML_export.h
-  ImGuiFileDialog.h
-  ImGuiFileDialogConfig.h
+  # Dear ImGui
+  imgui/imgui.h
+  imgui/imconfig.h
+  imgui/imgui_internal.h
+  imgui/imstb_rectpack.h
+  imgui/imstb_textedit.h
+  imgui/imstb_truetype.h
+  # ImGui-SFML
+  ImGui-SFML/imgui-SFML.h
+  ImGui-SFML/imconfig-SFML.h
+  ImGui-SFML/imgui-SFML_export.h
+  # ImGuiFileDialog
+  ImGuiFileDialog/ImGuiFileDialog.h
+  ImGuiFileDialog/ImGuiFileDialogConfig.h
 )
 
 # List all the source files in the external directory
 set(EXTERNAL_SOURCES
-  imgui.cpp
-  imgui-SFML.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
-  ImGuiFileDialog.cpp
+  # Dear ImGui
+  imgui/imgui.cpp
+  imgui/imgui_draw.cpp
+  imgui/imgui_tables.cpp
+  imgui/imgui_widgets.cpp
+  # ImGui-SFML
+  ImGui-SFML/imgui-SFML.cpp
+  # ImGuiFileDialog
+  ImGuiFileDialog/ImGuiFileDialog.cpp
 )
 
 # Apply the compile flags to each source file in the external directory
