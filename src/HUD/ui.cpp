@@ -37,7 +37,7 @@ void HUD::openFileDialog() {
 
     if (ImGui::Button("Select File")) {
         IGFD::FileDialogConfig config;
-        config.path = ".";
+        config.path = "../audio";
         config.sidePaneWidth = 350.0f;
 
         ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey",
