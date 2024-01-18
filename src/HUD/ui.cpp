@@ -17,7 +17,7 @@ void HUD::styleWidget() {
     style.Colors[ImGuiCol_TitleBg] = ImVec4(0.0f, 0.0f, 0.0f, 0.8f);
     style.Colors[ImGuiCol_TitleBgActive] = ImVec4(0.1f, 0.1f, 0.1f, 0.8f);
     // Botões
-    style.Colors[ImGuiCol_Button] = ImVec4(0.16f, 0.16f, 0.16f, 1.0f);
+    style.Colors[ImGuiCol_Button] = ImVec4(0.16f, 0.16f, 0.16f, 0.0f);
     style.Colors[ImGuiCol_ButtonHovered] = ImVec4(0.16f, 0.16f, 0.16f, 0.5f);
     style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.31f, 0.28f, 0.28f, 1.0f);
     // Slider
@@ -48,8 +48,17 @@ void HUD::openFileDialog() {
         if (ImGuiFileDialog::Instance()->IsOk()) {
             std::string filePathName =
                 ImGuiFileDialog::Instance()->GetFilePathName();
+            if (list_audio.empty()) {
+                setSoundBuffer(filePathName);
+            }
 
-            listAudio.push_back(filePathName);
+            auto it =
+                std::find(list_audio.begin(), list_audio.end(), filePathName);
+            if (it == list_audio.end()) {
+                list_audio.push_back(filePathName);
+            } else {
+                setSoundBuffer(filePathName);
+            }
         }
 
         ImGuiFileDialog::Instance()->Close();
@@ -59,32 +68,39 @@ void HUD::openFileDialog() {
 void HUD::controlAudio() {
     ImGui::Text("Audio");
     ImGui::Spacing();
-
-    if (ImGui::Button(!isPlaying ? "Play###ViewMode" : "Pause###ViewMode")) {
+    if (ImGui::ImageButton(!isPlaying ? play_tex : pause_tex,
+                           sf::Vector2f(icon_size, icon_size))) {
         toggleMusicPlayback();
     }
     ImGui::SameLine();
-    if (ImGui::Button("<")) {
+    if (ImGui::ImageButton(previous_tex, sf::Vector2f(icon_size, icon_size))) {
+        playPreviousAudio();
+    }
+    ImGui::SameLine();
+    if (ImGui::ImageButton(backward_tex, sf::Vector2f(icon_size, icon_size))) {
         skipBackward();
     }
-
     ImGui::SameLine();
-    if (ImGui::Button("Stop")) {
+    if (ImGui::ImageButton(stop_tex, sf::Vector2f(icon_size, icon_size))) {
         sound.stop();
         isPlaying = false;
     }
-
     ImGui::SameLine();
-    if (ImGui::Button(">")) {
+    if (ImGui::ImageButton(forward_tex, sf::Vector2f(icon_size, icon_size))) {
         skipForward();
+    }
+    ImGui::SameLine();
+    if (ImGui::ImageButton(next_tex, sf::Vector2f(icon_size, icon_size))) {
+        playNextAudio();
     }
     ImGui::Spacing();
     ImGui::Spacing();
-    if (ImGui::Button("Mute")) {
+    if (ImGui::ImageButton(isMuted ? mute_tex : volume_tex,
+                           sf::Vector2f(icon_size + 3, icon_size + 3))) {
         toggleMusicMute();
     }
     ImGui::SameLine();
-    if (ImGui::SliderFloat("Volume", &volume, 0.f, 100.f, "%.0f")) {
+    if (ImGui::SliderFloat(" ", &volume, 0.f, 100.f, "%.0f")) {
         volume += 0.f;
         volume = std::max(0.f, std::min(100.f, volume));
         sound.setVolume(volume);
@@ -114,26 +130,20 @@ void HUD::modeAudio() {
     }
 }
 
-void HUD::audioList(std::size_t &selectedIndex) {
-    for (auto item = 0UL; item < listAudio.size(); ++item) {
+void HUD::audioList() {
+    for (auto item = 0UL; item < list_audio.size(); ++item) {
         const bool isSelected = (selectedIndex == item);
 
-        size_t lastSlash = listAudio[item].find_last_of('/');
-        std::string filename = listAudio[item].substr(lastSlash + 1);
+        size_t lastSlash = list_audio[item].find_last_of('/');
+        std::string filename = list_audio[item].substr(lastSlash + 1);
 
         if (ImGui::Selectable(filename.c_str(), isSelected)) {
             selectedIndex = item;
-            std::cout << listAudio[selectedIndex] << '\n';
-            sound_buffer.loadFromFile(listAudio[selectedIndex]);
-            sound.setBuffer(sound_buffer);
-            resetControls();
-        }
-        if (isSelected) {
-            ImGui::SetItemDefaultFocus();
+            std::cout << list_audio[selectedIndex] << '\n';
+            setSoundBuffer(list_audio[selectedIndex]);
         }
     }
 }
-
 
 void HUD::showAudioListWindow() {
     if (ImGui::Button("Show Audio List")) {
@@ -146,8 +156,7 @@ void HUD::showAudioListWindow() {
         ImGui::SetWindowPos(ImVec2(HUD_WIDTH + 10, 0));
         ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT));
 
-        std::size_t selectedIndex = 0;
-        audioList(selectedIndex);
+        audioList();
 
         ImGui::End();
     }

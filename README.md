@@ -67,6 +67,7 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 - Use <kbd>M</kbd> para dar Mute no áudio
 - Use <kbd>↑</kbd> ou <kbd>↓</kbd> para Aumentar ou Diminuir o volume
 - Use <kbd>←</kbd> ou <kbd>→</kbd> para Avançar ou Retroceder a música
+- Use <kbd>,</kbd> ou <kbd>.</kbd> para Voltar ou pular para a Próxima música
 - Use <kbd>q</kbd> para Sair do programa.
 
 ## Créditos
@@ -78,6 +79,25 @@ Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
 [ImGUI-SFML](https://github.com/SFML/imgui-sfml)
 
 [ImGuiFileDialog](https://github.com/aiekick/ImGuiFileDialog)
+
+[FlatIcon - Icon Play](https://www.flaticon.com/br/icones-gratis/botao-play)
+
+[FlatIcon - Icon Pause](https://www.flaticon.com/br/icones-gratis/pausa)
+
+[FlatIcon - Icon Stop](https://www.flaticon.com/br/icones-gratis/pare)
+
+[FlatIcon - Icon Volume](https://www.flaticon.com/br/icones-gratis/volume)
+
+[FlatIcon - Icon Mute](https://www.flaticon.com/br/icones-gratis/silencio)
+
+[FlatIcon - Icon Foward](https://www.flaticon.com/br/icones-gratis/jogar)
+
+[FlatIcon - Icon Backward](https://www.flaticon.com/br/icones-gratis/rebobinar)
+
+[FlatIcon - Icon Next](https://www.flaticon.com/br/icones-gratis/proximo)
+
+[FlatIcon - Icon Back](https://www.flaticon.com/br/icones-gratis/rebobinar)
+
 
 ## Referências
 

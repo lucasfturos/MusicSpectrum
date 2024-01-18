@@ -16,28 +16,42 @@ const size_t buffer_size = 1000;
 
 class HUD {
   private:
+    const float icon_size = 17.0f;
+
     int fftMode = 0;
     int spectrumMode = 0;
     float volume = 10.f;
     bool isMuted = false;
     bool isPlaying = false;
     bool audioListWindow = false;
-    std::vector<std::string> listAudio;
+    std::size_t selectedIndex = 0;
+    std::vector<std::string> list_audio;
+
+    sf::Texture play_tex, pause_tex;
+    sf::Texture stop_tex, forward_tex;
+    sf::Texture backward_tex, previous_tex;
+    sf::Texture next_tex, mute_tex;
+    sf::Texture volume_tex;
 
     std::shared_ptr<sf::RenderWindow> window;
 
+    void initFont();
+    void audioList();
     void modeAudio();
+    void initTexture();
     void skipForward();
     void styleWidget();
     void drawAudioHUD();
     void controlAudio();
     void skipBackward();
+    void playNextAudio();
     void resetControls();
     void openFileDialog();
     void toggleMusicMute();
+    void playPreviousAudio();
     void showAudioListWindow();
     void toggleMusicPlayback();
-    void audioList(std::size_t &selectedIndex);
+    void setSoundBuffer(const std::string &filename);
 
   public:
     int option = 3;

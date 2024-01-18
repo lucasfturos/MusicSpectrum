@@ -11,6 +11,10 @@ void HUD::handleEvents(sf::Event &event) {
 
     event.key.code == sf::Keyboard::Right ? skipForward() : (void(0));
 
+    event.key.code == sf::Keyboard::Period ? playNextAudio() : (void(0));
+
+    event.key.code == sf::Keyboard::Comma ? playPreviousAudio() : (void(0));
+
     if (event.key.code == sf::Keyboard::Enter) {
         sound.stop();
         isPlaying = false;
@@ -55,6 +59,23 @@ void HUD::skipBackward() {
     sf::Time currentOffset = sound.getPlayingOffset();
     sf::Time newOffset = currentOffset - sf::seconds(10.0f);
     sound.setPlayingOffset(newOffset);
+}
+
+void HUD::playNextAudio() {
+    if (!list_audio.empty()) {
+        selectedIndex = (selectedIndex + 1) % list_audio.size();
+        setSoundBuffer(list_audio[selectedIndex]);
+        toggleMusicPlayback();
+    }
+}
+
+void HUD::playPreviousAudio() {
+    if (!list_audio.empty()) {
+        selectedIndex =
+            (selectedIndex - 1 + list_audio.size()) % list_audio.size();
+        setSoundBuffer(list_audio[selectedIndex]);
+        toggleMusicPlayback();
+    }
 }
 
 void HUD::resetControls() {
