@@ -33,18 +33,22 @@ void HUD::styleWidget() {
 }
 
 void HUD::openFileDialog() {
+    ImVec2 dialog_maxsize = ImVec2(HUD_WIDTH * 2.f, HUD_HEIGHT * 2.f);
     ImGui::Text("Select Audio File");
 
     if (ImGui::Button("Select File")) {
         IGFD::FileDialogConfig config;
         config.path = "../audio";
-        config.sidePaneWidth = 350.0f;
+        config.sidePaneWidth = 450.0f;
 
         ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey",
                                                 "Choose File", ".wav", config);
     }
 
-    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey")) {
+    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey",
+                                             ImGuiWindowFlags_NoCollapse |
+                                                 ImGuiWindowFlags_NoResize,
+                                             dialog_maxsize, dialog_maxsize)) {
         if (ImGuiFileDialog::Instance()->IsOk()) {
             std::string filePathName =
                 ImGuiFileDialog::Instance()->GetFilePathName();
