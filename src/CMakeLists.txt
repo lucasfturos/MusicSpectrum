@@ -8,6 +8,8 @@ set(SRC_HEADERS
   HUD/hud.hpp
   # Spectrum 
   Spectrum/spectrum.hpp
+  # Render
+  Render/render.hpp
 )
 
 # List all the source files in the src directory
@@ -19,10 +21,12 @@ set(SRC_SOURCES
   HUD/ui.cpp
   HUD/events.cpp
   # Spectrum
-  Spectrum/waves_senoide.cpp
-  Spectrum/waves_rect.cpp
   Spectrum/spectrum.cpp
   Spectrum/samples.cpp
+  Spectrum/waves_rect.cpp
+  Spectrum/waves_senoide.cpp
+  # Render
+  Render/render.cpp
   # Main
   main.cpp
 )

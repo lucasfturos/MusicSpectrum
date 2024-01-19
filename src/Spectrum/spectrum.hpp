@@ -4,6 +4,7 @@
 #include "../HUD/hud.hpp"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
+#include <functional>
 #include <iostream>
 #include <memory>
 
@@ -16,24 +17,23 @@ class Spectrum {
     sf::Color end_color = sf::Color::Magenta;
 
     sf::Clock clock;
-    std::shared_ptr<sf::VideoMode> desktop;
     std::shared_ptr<sf::RenderWindow> window;
     std::vector<sf::RectangleShape> rectangles;
 
     std::shared_ptr<HUD> hud_ptr;
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
 
+  public:
+    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
+                 handlePlot);
     void monoSample();
+    void getSampleBuffer();
+
     void viewFormWave();
     void viewFormWaveFFT();
-    void getSampleBuffer();
     void viewFormWaveRect();
     void viewFormWaveRectFFT();
-    void toggleMusicPlayback();
-    void handlePlot(std::vector<std::complex<float>> spectrum,
-                    std::size_t fft_size);
 
-  public:
-    void run();
-    Spectrum();
+    Spectrum(std::shared_ptr<sf::RenderWindow> win, std::shared_ptr<HUD> hud,
+             std::shared_ptr<FFT<sf::Int16>> fft);
 };
