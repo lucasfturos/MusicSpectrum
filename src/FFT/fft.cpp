@@ -21,15 +21,48 @@ template <class T>
 void FFT<T>::applyHannWindow(std::vector<T> &in, std::size_t n) {
     for (std::size_t i = 0; i < n; ++i) {
         float t = static_cast<float>(i) / (n - 1);
-        float hann = 0.5 - 0.5 * std::cos(2 * M_PI * t);
+        float hann = 0.5 - 0.5 * std::cos(2 * pi * t);
         in[i] *= hann;
+    }
+}
+
+template <class T>
+void FFT<T>::applyHammingWindow(std::vector<T> &in, std::size_t n) {
+    for (std::size_t i = 0; i < n; ++i) {
+        float t = static_cast<float>(i) / (n - 1);
+        float hamming = 0.54 - 0.46 * std::cos(2 * pi * t);
+        in[i] *= hamming;
+    }
+}
+
+template <class T>
+void FFT<T>::applyBlackmanWindow(std::vector<T> &in, std::size_t n) {
+    for (std::size_t i = 0; i < n; ++i) {
+        float t = static_cast<float>(i) / (n - 1);
+        float blackman =
+            0.42 + 0.5 * std::cos(2 * pi * t) + 0.8 * std::cos(4 * pi * t);
+        in[i] *= blackman;
+    }
+}
+
+template <class T>
+void FFT<T>::applyFlattopWindow(std::vector<T> &in, std::size_t n) {
+    for (std::size_t i = 0; i < n; ++i) {
+        float t = static_cast<float>(i) / (n - 1);
+        float flattop =
+            1 - 1.93 * std::cos(2 * pi * t) + 1.29 * std::cos(4 * pi * t) -
+            0.388 * std::cos(6 * pi * t) + 0.032 * std::cos(8 * pi * t);
+        in[i] *= flattop;
     }
 }
 
 template <class T>
 void FFT<T>::fftAnalyze(std::vector<T> &in, std::size_t stride,
                         std::vector<std::complex<float>> &out, std::size_t n) {
-    applyHannWindow(in, n);
+    // applyHannWindow(in, n);
+    applyHammingWindow(in, n);
+    // applyBlackmanWindow(in, n);
+    // applyFlattopWindow(in, n);
 
     std::vector<std::complex<float>> complex_output(n, 0.0f);
 

@@ -15,6 +15,9 @@ template <class T> class FFT {
     std::size_t bitReverse(std::size_t k, std::size_t n);
 
     void applyHannWindow(std::vector<T> &in, std::size_t n);
+    void applyHammingWindow(std::vector<T> &in, std::size_t n);
+    void applyBlackmanWindow(std::vector<T> &in, std::size_t n);
+    void applyFlattopWindow(std::vector<T> &in, std::size_t n);
 
     void fft(std::vector<T> &in, std::size_t stride,
              std::vector<std::complex<float>> &out, std::size_t n);

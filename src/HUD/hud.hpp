@@ -21,9 +21,11 @@ class HUD {
     int fftMode = 0;
     int spectrumMode = 0;
     float volume = 10.f;
+
     bool isMuted = false;
     bool isPlaying = false;
     bool audioListWindow = false;
+
     std::size_t selectedIndex = 0;
     std::vector<std::string> list_audio;
 
@@ -35,22 +37,27 @@ class HUD {
 
     std::shared_ptr<sf::RenderWindow> window;
 
+    // GUI
     void initFont();
     void audioList();
     void modeAudio();
     void initTexture();
-    void skipForward();
     void styleWidget();
     void drawAudioHUD();
     void controlAudio();
+    void openFileDialog();
+    void showAudioListWindow();
+
+    // Events
+    void skipForward();
     void skipBackward();
     void playNextAudio();
     void resetControls();
-    void openFileDialog();
     void toggleMusicMute();
     void playPreviousAudio();
-    void showAudioListWindow();
     void toggleMusicPlayback();
+
+    // Util
     void setSoundBuffer(const std::string &filename);
 
   public:
