@@ -2,7 +2,7 @@
 
 #include <cmath>
 #include <complex>
-#include <stdint.h>
+#include <cstdint>
 #include <vector>
 
 const float pi = M_PI;
