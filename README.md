@@ -50,12 +50,12 @@ mkdir build && build
 ```
 Coloque as músicas antes de executar os próximos comandos.
 
-Após baixar, entrar na pasta, criar e entrar a pasta build, é só compilar:
+Após baixar, entrar na pasta raiz do projeto, criar e entrar na pasta build, é só compilar:
 ```
 cmake .. && make -j4
 ```
 
-Para usar coloque um audio na pasta assets e execute como no exemplo abaixo:
+Para usar execute como no exemplo abaixo:
 ```
 ./src/MusicSpectrum
 ```
