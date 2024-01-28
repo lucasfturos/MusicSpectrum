@@ -4,7 +4,7 @@ Visualizador de espectro de audio. Aplicação da transformada de Fourier FFT em
 
 Suporta audios no formato WAV.
 
-Desenvolvido em C++ e SFML.
+Desenvolvido em C++ com a biblioteca SFML.
 
 ## Screenshot
 
