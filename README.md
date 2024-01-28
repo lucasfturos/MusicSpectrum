@@ -6,6 +6,12 @@ Suporta audios no formato WAV.
 
 Desenvolvido em C++ e SFML.
 
+## Screenshot
+
+Algumas fotos do ambiente do programa.
+
+<details><summary>Show</summary>
+
 ### Tela do programa
 
 <p align="center">
@@ -38,6 +44,8 @@ Desenvolvido em C++ e SFML.
 <p align="center">
 <img src="/assets/img/Screenshot/SpectrumNoFFT.png" width="70%" />
 </p>
+
+</details>
 
 ## Instalação e como usar
 
