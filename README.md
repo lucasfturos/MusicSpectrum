@@ -47,7 +47,7 @@ Algumas fotos do ambiente do programa.
 
 </details>
 
-## Instalação e como usar
+## Instalação e Execução 
 
 Precisa do cmake, gcc, g++, make e a lib do SFML. Após instalar é só seguir os seguintes passos:
 
@@ -70,6 +70,10 @@ Para usar execute como no exemplo abaixo:
 
 ## Teclas
 
+Teclas de funções do programa:
+
+<details><summary>Show</summary>
+
 - Use <kbd>space</kbd> para dar Play/Pause no áudio
 - Use <kbd>↵</kbd> para dar Stop no áudio
 - Use <kbd>M</kbd> para dar Mute no áudio
@@ -77,6 +81,8 @@ Para usar execute como no exemplo abaixo:
 - Use <kbd>←</kbd> ou <kbd>→</kbd> para Avançar ou Retroceder a música
 - Use <kbd>,</kbd> ou <kbd>.</kbd> para Voltar ou pular para a Próxima música
 - Use <kbd>Q</kbd> para Sair do programa.
+
+</details>
 
 ## Créditos
 
