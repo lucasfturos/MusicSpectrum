@@ -29,10 +29,10 @@ class Spectrum {
     void monoSample();
     void getSampleBuffer();
 
-    void viewFormWave();
-    void viewFormWaveFFT();
-    void viewFormWaveRect();
-    void viewFormWaveRectFFT();
+    void viewWaveform();
+    void viewWaveformFFT();
+    void viewWaveformRect();
+    void viewWaveformRectFFT();
 
     Spectrum(std::shared_ptr<sf::RenderWindow> win, std::shared_ptr<HUD> hud,
              std::shared_ptr<FFT<sf::Int16>> fft);

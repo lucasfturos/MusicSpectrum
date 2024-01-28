@@ -19,17 +19,17 @@ void Render::handlePlot(std::vector<std::complex<float>> spectrum,
     switch (hud_ptr->option) {
     case 1:
         fft_ptr->fftAnalyze(hud_ptr->sample_buffer, 1, spectrum, fft_size);
-        spectrum_ptr->viewFormWaveFFT();
+        spectrum_ptr->viewWaveformFFT();
         break;
     case 2:
-        spectrum_ptr->viewFormWave();
+        spectrum_ptr->viewWaveform();
         break;
     case 3:
         fft_ptr->fftAnalyze(hud_ptr->sample_buffer, 1, spectrum, fft_size);
-        spectrum_ptr->viewFormWaveRectFFT();
+        spectrum_ptr->viewWaveformRectFFT();
         break;
     case 4:
-        spectrum_ptr->viewFormWaveRect();
+        spectrum_ptr->viewWaveformRect();
         break;
     default:
         break;
@@ -59,7 +59,6 @@ void Render::run() {
         spectrum_ptr->run(std::bind(&Render::handlePlot, this,
                                     std::placeholders::_1,
                                     std::placeholders::_2));
-
         window->display();
     }
 }

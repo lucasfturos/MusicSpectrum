@@ -119,18 +119,40 @@ void HUD::modeAudio() {
     ImGui::SameLine();
     ImGui::RadioButton("FFT", &fftMode, 1);
     ImGui::Spacing();
+    ImGui::RadioButton("Spectrum", &spectrumMode, 1);
+    ImGui::SameLine();
     ImGui::RadioButton("Oscillation", &spectrumMode, 0);
     ImGui::SameLine();
-    ImGui::RadioButton("Spectrum", &spectrumMode, 1);
+    ImGui::RadioButton("Oscillation3D", &spectrumMode, 2);
 
-    if (!fftMode && !spectrumMode) {
-        option = 2;
-    } else if (fftMode && !spectrumMode) {
-        option = 1;
-    } else if (fftMode && spectrumMode) {
-        option = 3;
-    } else if (!fftMode && spectrumMode) {
-        option = 4;
+    if (fftMode == 0) {
+        switch (spectrumMode) {
+        case 0:
+            option = 2;
+            break;
+        case 1:
+            option = 4;
+            break;
+        case 2:
+            option = 5;
+            break;
+        default:
+            break;
+        }
+    } else if (fftMode == 1) {
+        switch (spectrumMode) {
+        case 0:
+            option = 1;
+            break;
+        case 1:
+            option = 3;
+            break;
+        case 2:
+            option = 6;
+            break;
+        default:
+            break;
+        }
     }
 }
 

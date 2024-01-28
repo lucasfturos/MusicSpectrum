@@ -24,14 +24,14 @@ set(SRC_SOURCES
   Spectrum/spectrum.cpp
   Spectrum/samples.cpp
   Spectrum/waves_rect.cpp
-  Spectrum/waves_senoide.cpp
+  Spectrum/waves_sine.cpp
   # Render
   Render/render.cpp
   # Main
   main.cpp
 )
 
-# Find OpenGL libraries
+# Find OpenGL libraries and their derivatives
 find_package(OpenGL REQUIRED)
 
 # Add executable target with source and header files
@@ -53,10 +53,12 @@ target_link_libraries(${PROJECT_NAME}
 
 # Specify libraries or flags to use when linking
 target_link_libraries(${PROJECT_NAME}
+  # SFML
   PRIVATE sfml-graphics
   PRIVATE sfml-window
   PRIVATE sfml-system
   PRIVATE sfml-audio
+  # OpenGL
   PRIVATE ${OPENGL_LIBRARIES}
 )
 
