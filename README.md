@@ -49,7 +49,11 @@ Algumas fotos do ambiente do programa.
 
 ## Instalação e Execução 
 
-Precisa do cmake, gcc, g++, make e a lib do SFML. Após instalar é só seguir os seguintes passos:
+Instalação, dependências e uso do programa:
+
+<details><summary>Show</summary>
+
+Precisa do cmake, gcc, g++, make, a biblioteca do SFML e o OpenGL. Após instalar é só seguir os seguintes passos:
 
 ```
 git clone https://github.com/lucasfturos/MusicSpectrum.git && cd MusicSpectrum
@@ -67,6 +71,8 @@ Para usar execute como no exemplo abaixo:
 ```
 ./src/MusicSpectrum
 ```
+
+</details>
 
 ## Teclas
 
