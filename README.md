@@ -86,6 +86,10 @@ Teclas de funções do programa:
 
 ## Créditos
 
+Créditos de Bibliotecas e Icones usados no programa:
+
+<details><summary>Show</summary>
+
 [SFML](https://www.sfml-dev.org/index.php)
 
 [Dear ImGUI](https://github.com/ocornut/imgui)
@@ -112,6 +116,7 @@ Teclas de funções do programa:
 
 [FlatIcon - Icon Back](https://www.flaticon.com/br/icones-gratis/rebobinar)
 
+</details>
 
 ## Referências
 
