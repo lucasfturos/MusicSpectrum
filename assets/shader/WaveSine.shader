@@ -14,7 +14,7 @@ void main() {
 
 layout(location = 0) out vec4 fColor;
 
-uniform mat4 uColor;
+uniform vec4 uColor;
 
 void main() {
     fColor = uColor;

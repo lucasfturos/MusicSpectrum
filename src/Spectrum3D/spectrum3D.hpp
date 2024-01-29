@@ -20,6 +20,8 @@ class Spectrum3D {
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
 
   private:
+    sf::Clock clock;
+
     glm::mat4 proj_mat, view_mat;
 
     std::unique_ptr<Renderer> renderer_ptr;
@@ -34,6 +36,7 @@ class Spectrum3D {
   public:
     void viewWaveform();
     void viewWaveformFFT();
+    void handleMouse();
 
     void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
                  handlePlot);

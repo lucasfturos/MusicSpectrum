@@ -6,9 +6,10 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
                        std::shared_ptr<Spectrum> spectrum,
                        std::shared_ptr<FFT<sf::Int16>> fft)
     : window(win), hud_ptr(hud), spectrum_ptr(spectrum), fft_ptr(fft),
-      proj_mat(glm::perspective(60.0f, 4.0f / 3.0f, 0.1f, 100.0f)),
-      view_mat(glm::lookAt(glm::vec3(0.0f, 0.0f, -1.6f),
-                           glm::vec3(0.0f, -0.1f, 0.0f),
+      proj_mat(
+          glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
+      view_mat(glm::lookAt(glm::vec3(0.0f, 0.0f, 1.6f),
+                           glm::vec3(0.0f, 0.1f, 0.0f),
                            glm::vec3(0.0f, 1.0f, 0.0f))) {
     glewExperimental = GL_TRUE;
     GLenum error = glewInit();
@@ -30,7 +31,9 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
     initOpenGL();
 }
 
-Spectrum3D::~Spectrum3D() { ImGui_ImplOpenGL3_Shutdown(); }
+Spectrum3D::~Spectrum3D() {
+    ImGui_ImplOpenGL3_Shutdown();
+}
 
 void Spectrum3D::run(
     std::function<void(std::vector<std::complex<float>>, std::size_t)>

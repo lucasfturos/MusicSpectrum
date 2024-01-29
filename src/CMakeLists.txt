@@ -51,6 +51,7 @@ set(SRC_SOURCES
   Spectrum3D/opengl.cpp
   Spectrum3D/spectrum3D.cpp
   Spectrum3D/waves_sine.cpp
+  Spectrum3D/mouse_event.cpp
   # Render
   Render/render.cpp
   # Main

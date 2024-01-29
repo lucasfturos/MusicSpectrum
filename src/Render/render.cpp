@@ -61,6 +61,7 @@ void Render::run() {
                 hud_ptr->handleEvents(event);
             }
         }
+        spectrum3D_ptr->handleMouse();
 
         ImGui::SFML::Update(*window, clock.restart());
 
@@ -81,6 +82,7 @@ void Render::run() {
                                       std::placeholders::_1,
                                       std::placeholders::_2));
 
+        spectrum3D_ptr->viewWaveform();
         window->pushGLStates();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         window->popGLStates();
