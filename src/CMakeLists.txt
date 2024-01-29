@@ -38,7 +38,6 @@ set(SRC_SOURCES
   Spectrum/waves_rect.cpp
   Spectrum/waves_sine.cpp
   # Spectrum 3D
-  Spectrum3D/mouse.cpp
   Spectrum3D/opengl.cpp
   Spectrum3D/spectrum3D.cpp
   Spectrum3D/waves_sine.cpp
