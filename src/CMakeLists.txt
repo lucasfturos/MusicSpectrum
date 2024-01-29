@@ -12,11 +12,6 @@ set(SRC_HEADERS
   # OpenGL
   OpenGL/util.hpp
   OpenGL/shader.hpp
-  OpenGL/renderer.hpp
-  OpenGL/index_buffer.hpp
-  OpenGL/vertex_array.hpp
-  OpenGL/vertex_buffer.hpp
-  OpenGL/vertex_buffer_layout.hpp
   # Spectrum 
   Spectrum/spectrum.hpp
   # Spectrum 3D
@@ -37,22 +32,18 @@ set(SRC_SOURCES
   Object/cylinder.cpp
   # OpenGL
   OpenGL/shader.cpp
-  OpenGL/renderer.cpp
-  OpenGL/index_buffer.cpp
-  OpenGL/vertex_array.cpp
-  OpenGL/vertex_buffer.cpp
-  OpenGL/vertex_buffer_layout.cpp
   # Spectrum
   Spectrum/spectrum.cpp
   Spectrum/samples.cpp
   Spectrum/waves_rect.cpp
   Spectrum/waves_sine.cpp
   # Spectrum 3D
+  Spectrum3D/mouse.cpp
   Spectrum3D/opengl.cpp
   Spectrum3D/spectrum3D.cpp
   Spectrum3D/waves_sine.cpp
-  Spectrum3D/mouse_event.cpp
   # Render
+  Render/plot.cpp
   Render/render.cpp
   # Main
   main.cpp

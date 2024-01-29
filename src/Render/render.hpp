@@ -8,6 +8,7 @@
 class Render {
   private:
     const int FPS = 60;
+    const double frame_duration = 1.0 / FPS;
 
     sf::Clock clock;
 

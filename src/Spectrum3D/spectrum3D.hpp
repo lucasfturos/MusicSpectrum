@@ -2,10 +2,8 @@
 
 #include "../FFT/fft.hpp"
 #include "../HUD/hud.hpp"
+#include "../OpenGL/shader.hpp"
 #include "../Spectrum/spectrum.hpp"
-
-#include "../OpenGL/renderer.hpp"
-#include "../OpenGL/vertex_buffer_layout.hpp"
 
 #include <GL/glew.h>
 #include <glm/glm.hpp>
@@ -24,19 +22,15 @@ class Spectrum3D {
 
     glm::mat4 proj_mat, view_mat;
 
-    std::unique_ptr<Renderer> renderer_ptr;
     std::unique_ptr<Shader> shader_ptr;
-    std::unique_ptr<VertexArray> vao_ptr;
-    std::unique_ptr<IndexBuffer> indexbuffer_ptr;
-    std::unique_ptr<VertexBuffer> vertexbuffer_ptr;
-    std::unique_ptr<VertexBufferLayout> layout_ptr;
 
+    void clear();
     void initOpenGL();
+    void handleMouse();
 
   public:
     void viewWaveform();
     void viewWaveformFFT();
-    void handleMouse();
 
     void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
                  handlePlot);

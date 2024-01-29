@@ -11,6 +11,7 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
       view_mat(glm::lookAt(glm::vec3(0.0f, 0.0f, 1.6f),
                            glm::vec3(0.0f, 0.1f, 0.0f),
                            glm::vec3(0.0f, 1.0f, 0.0f))) {
+
     glewExperimental = GL_TRUE;
     GLenum error = glewInit();
     if (error != GLEW_OK) {
@@ -22,25 +23,21 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
     std::cout << "GLEW version: " << glewGetString(GLEW_VERSION) << "\n";
     std::cout << "GL version: " << glGetString(GL_VERSION) << '\n';
 
-    if (!window->setActive(true)) {
+    if (!window->setActive()) {
         throw std::runtime_error("Failed to set window to active");
     }
 
     ImGui_ImplOpenGL3_Init();
-    renderer_ptr = std::make_unique<Renderer>();
     initOpenGL();
 }
 
-Spectrum3D::~Spectrum3D() {
-    ImGui_ImplOpenGL3_Shutdown();
-}
+Spectrum3D::~Spectrum3D() { ImGui_ImplOpenGL3_Shutdown(); }
 
 void Spectrum3D::run(
     std::function<void(std::vector<std::complex<float>>, std::size_t)>
         handlePlot) {
     spectrum_ptr->monoSample();
     std::vector<std::complex<float>> spectrum;
-
     if (hud_ptr->sound.getStatus() == sf::SoundSource::Playing) {
         spectrum_ptr->getSampleBuffer();
 
