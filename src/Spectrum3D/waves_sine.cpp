@@ -22,8 +22,8 @@ void Spectrum3D::viewWaveform() {
 
     shader_ptr->bind();
     shader_ptr->setUniformMat4f("uMVP", mvp);
-    // renderer_ptr->draw(*vao_ptr, *indexbuffer_ptr, *shader_ptr);
-    glClear(GL_COLOR_BUFFER_BIT);
+
+    renderer_ptr->clear();
     glBegin(GL_TRIANGLES);
     glVertex3f(-0.5, -0.5, 0.0);
     glVertex3f(0.5, -0.5, 0.0);

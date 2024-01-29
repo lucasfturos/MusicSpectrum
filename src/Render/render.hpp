@@ -7,6 +7,8 @@
 
 class Render {
   private:
+    const int FPS = 60;
+
     sf::Clock clock;
 
     std::shared_ptr<HUD> hud_ptr;

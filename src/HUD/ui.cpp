@@ -180,7 +180,7 @@ void HUD::showAudioListWindow() {
         ImGui::Begin("Audio List", nullptr,
                      ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
         ImGui::SetWindowPos(ImVec2(HUD_WIDTH + 10, 0));
-        ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT));
+        ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT - 100));
 
         audioList();
 

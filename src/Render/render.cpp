@@ -1,5 +1,7 @@
 #include "render.hpp"
 #include "../../external/imgui/imgui_impl_opengl3.h"
+#include <chrono>
+#include <thread>
 
 Render::Render() {
     window = std::make_shared<sf::RenderWindow>(
@@ -49,7 +51,8 @@ void Render::handlePlot(std::vector<std::complex<float>> spectrum,
 
 void Render::run() {
     window->setVerticalSyncEnabled(true);
-    window->setFramerateLimit(60);
+    const double target_frame_duration = 1.0 / FPS;
+    auto previous_time = std::chrono::high_resolution_clock::now();
 
     while (window->isOpen()) {
         sf::Event event;
@@ -82,11 +85,25 @@ void Render::run() {
                                       std::placeholders::_1,
                                       std::placeholders::_2));
 
-        spectrum3D_ptr->viewWaveform();
         window->pushGLStates();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         window->popGLStates();
 
         window->display();
+
+        auto current_time = std::chrono::high_resolution_clock::now();
+        auto elapsed_time =
+            std::chrono::duration_cast<std::chrono::duration<double>>(
+                current_time - previous_time);
+
+        if (elapsed_time.count() < target_frame_duration) {
+            auto sleep_duration = std::chrono::duration<double>(
+                target_frame_duration - elapsed_time.count());
+            std::this_thread::sleep_for(
+                std::chrono::duration_cast<std::chrono::milliseconds>(
+                    sleep_duration));
+        }
+
+        previous_time = std::chrono::high_resolution_clock::now();
     }
 }

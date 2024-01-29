@@ -63,6 +63,9 @@ find_package(OpenGL REQUIRED)
 find_package(glm REQUIRED)
 find_package(GLEW REQUIRED)
 
+# Find Threads library
+find_package(Threads REQUIRED)
+
 # Add executable target with source and header files
 add_executable(${PROJECT_NAME} 
   ${SRC_HEADERS} 
@@ -82,6 +85,8 @@ target_link_libraries(${PROJECT_NAME}
 
 # Specify libraries or flags to use when linking
 target_link_libraries(${PROJECT_NAME}
+  # Threads
+  PRIVATE Threads::Threads
   # SFML
   PRIVATE sfml-graphics
   PRIVATE sfml-window
