@@ -3,23 +3,36 @@
 Cylinder::Cylinder(GLfloat h, GLfloat r_top, GLfloat r_bottom, GLint num_seg)
     : height(h), radius_top(r_top), radius_bottom(r_bottom),
       num_segments(num_seg) {
-    generateIndices();
     generateVertices();
+    generateIndices();
 }
 
 Cylinder::~Cylinder() {}
 
-std::vector<glm::vec3> Cylinder::setIndices() const { return indices; }
+std::vector<glm::uvec3> Cylinder::setIndices() const { return indices; }
 
 std::vector<glm::vec3> Cylinder::setVertices() const { return vertices; }
 
 void Cylinder::generateIndices() {
-    for (int i = 0; i < num_segments; ++i) {
-        const unsigned int current = i * 2;
-        const unsigned int next = (i + 1) % (num_segments + 1) * 2;
+    for (auto i = 0; i < num_segments; ++i) {
+        GLuint current = i * 2;
+        GLuint next = (i + 1) % (num_segments + 1) * 2;
 
-        indices.push_back(glm::vec3(current, next, current + 1));
-        indices.push_back(glm::vec3(next + 1, current + 1, next));
+        indices.push_back(glm::uvec3(current, next, current + 1));
+        indices.push_back(glm::uvec3(next + 1, current + 1, next));
+    }
+
+    const GLuint base_center_index = vertices.size() / 3;
+    const GLuint top_center_index = base_center_index + num_segments + 1;
+
+    for (auto i = 0; i < num_segments; ++i) {
+        indices.push_back(
+            glm::uvec3(i * 2, (i + 1) % num_segments * 2, base_center_index));
+    }
+
+    for (auto i = 0; i < num_segments; ++i) {
+        indices.push_back(glm::uvec3((i + 1) % num_segments * 2 + 1, i * 2 + 1,
+                                     top_center_index));
     }
 }
 

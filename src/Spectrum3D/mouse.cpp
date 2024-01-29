@@ -14,7 +14,7 @@ void Spectrum3D::handleMouse() {
             float angle = atan2(delta.y, delta.x);
 
             view_mat = glm::rotate(view_mat, glm::radians(angle),
-                                   glm::vec3(1.0f, 0.0f, 0.0f));
+                                   glm::vec3(1.0f, 1.0f, 0.0f));
             prev_pos = curr_pos;
         }
     } else {

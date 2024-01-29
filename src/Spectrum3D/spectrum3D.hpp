@@ -2,6 +2,7 @@
 
 #include "../FFT/fft.hpp"
 #include "../HUD/hud.hpp"
+#include "../Object/cylinder.hpp"
 #include "../OpenGL/shader.hpp"
 #include "../Spectrum/spectrum.hpp"
 
@@ -19,10 +20,10 @@ class Spectrum3D {
 
   private:
     sf::Clock clock;
-
     glm::mat4 proj_mat, view_mat;
 
     std::unique_ptr<Shader> shader_ptr;
+    std::unique_ptr<Cylinder> cylinder_ptr;
 
     void clear();
     void initOpenGL();
