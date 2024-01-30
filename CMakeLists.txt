@@ -1,9 +1,11 @@
 # -------------------------------------------------------------------
 
-cmake_minimum_required(VERSION 3.5)  # CMake version check
+cmake_minimum_required(VERSION 3.4...3.20 FATAL_ERROR)  # CMake version check
 
-# Set policy to prefer GLVND when finding OpenGL (suppresses warning)
-cmake_policy(SET CMP0072 NEW)
+# Set policy to prefer GLVND when finding OpenGL
+if(POLICY CMP0072)
+    cmake_policy(SET CMP0072 NEW)
+endif()
 
 # -------------------------------------------------------------------
 
