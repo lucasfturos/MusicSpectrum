@@ -53,14 +53,13 @@ Instalação, dependências e uso do programa:
 
 <details><summary>Show</summary>
 
-Precisa do cmake, gcc, g++, make, a biblioteca do SFML e o OpenGL. Após instalar é só seguir os seguintes passos:
+Para rodar o programa é necessário ter instalado o cmake, gcc, g++, make, a biblioteca do SFML e o OpenGL. Após instalar elas, é só seguir os seguintes passos:
 
 ```
 git clone https://github.com/lucasfturos/MusicSpectrum.git && cd MusicSpectrum
 mkdir assets
 mkdir build && build
 ```
-Coloque as músicas antes de executar os próximos comandos.
 
 Após baixar, entrar na pasta raiz do projeto, criar e entrar na pasta build, é só compilar:
 ```
