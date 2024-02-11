@@ -13,9 +13,14 @@ void Spectrum3D::initOpenGL() {
     Gl_Call(glCullFace(GL_BACK));
     Gl_Call(glEnable(GL_BLEND));
 
-    shader_ptr = std::make_unique<Shader>("./assets/shader/WaveSine.shader");
-    shader_ptr->bind();
-    shader_ptr->setUniform4f("uColor", glm::vec4(1.f, 0.f, 0.f, 1.f));
+    shader_wave_ptr =
+        std::make_unique<Shader>("./assets/shader/WaveSine.shader");
+    shader_wave_ptr->bind();
+    shader_wave_ptr->setUniform4f("uColor", glm::vec4(1.f, 0.f, 0.f, 1.f));
+    shader_wfft_ptr =
+        std::make_unique<Shader>("./assets/shader/WaveSineFFT.shader");
+    shader_wfft_ptr->bind();
+    shader_wfft_ptr->setUniform4f("uColor", glm::vec4(0.f, 0.f, 1.f, 1.f));
 }
 
 void Spectrum3D::handleMouse() {
