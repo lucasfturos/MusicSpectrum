@@ -13,7 +13,7 @@ void Spectrum3D::viewWaveform() {
     shader_wave_ptr->setUniform4f("uColor", glm::vec4(red, green, blue, 1.0f));
 
     glm::mat4 view_mat_string =
-        glm::lookAt(glm::vec3(0.0f, 0.0f, 20.0f), glm::vec3(0.0f, 0.1f, 0.0f),
+        glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.1f, 0.0f),
                     glm::vec3(0.0f, 1.0f, 0.0f));
 
     handleMouse();
@@ -37,15 +37,29 @@ void Spectrum3D::viewWaveform() {
 
     for (size_t i = 0; i < indices.size(); ++i) {
         glm::uvec3 indice = indices[i];
+        sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
+        GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
 
         glm::vec3 v1 = vertices[indice.x];
         glm::vec3 v2 = vertices[indice.y];
         glm::vec3 v3 = vertices[indice.z];
 
+        glm::vec3 e1 = v2 - v1;
+        glm::vec3 e2 = v3 - v1;
+
+        glm::vec3 normal = glm::cross(e1, e2);
+
+        normal = glm::normalize(normal);
+
+        v1 += normal * amplitude;
+        v2 += normal;
+        v3 += normal * amplitude;
+
         glVertex3fv(glm::value_ptr(v1));
         glVertex3fv(glm::value_ptr(v2));
         glVertex3fv(glm::value_ptr(v3));
     }
+
     glEnd();
     glFlush();
 }
