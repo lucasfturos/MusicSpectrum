@@ -27,9 +27,10 @@ void Grid::generateIndices() {
 void Grid::generateVertices() {
     for (auto i = 0; i <= num_segments; ++i) {
         for (auto j = 0; j <= num_segments; ++j) {
-            GLfloat x = static_cast<GLfloat>(i) / num_segments;
-            GLfloat y = static_cast<GLfloat>(j) / num_segments;
-            GLfloat z = sin(x * 2.0f * M_PI) * sin(y * 2.0f * M_PI) * 0.1f;
+            GLfloat x = (static_cast<GLfloat>(i) / num_segments - 0.5f) * width;
+            GLfloat y = 0.0f;
+            GLfloat z =
+                (static_cast<GLfloat>(j) / num_segments - 0.5f) * height;
             vertices.push_back(glm::vec3(x, y, z));
         }
     }
