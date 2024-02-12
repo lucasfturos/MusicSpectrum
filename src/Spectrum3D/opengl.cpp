@@ -13,6 +13,8 @@ void Spectrum3D::initOpenGL() {
     Gl_Call(glCullFace(GL_BACK));
     Gl_Call(glEnable(GL_BLEND));
 
+    Gl_Call(glMatrixMode(GL_PROJECTION));
+
     shader_wave_ptr =
         std::make_unique<Shader>("./assets/shader/WaveSine.shader");
     shader_wave_ptr->bind();
