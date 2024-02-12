@@ -33,6 +33,9 @@ void Render::run() {
             } else if (event.type == sf::Event::KeyPressed) {
                 hud_ptr->handleEvents(event);
             }
+            event.type == sf::Event::MouseWheelMoved
+                ? spectrum3D_ptr->getWhellDelta(event.mouseWheel.delta)
+                : void(0);
         }
 
         ImGui::SFML::Update(*window, clock.restart());

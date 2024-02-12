@@ -18,7 +18,7 @@ void Spectrum3D::viewWaveform() {
 
     handleMouse();
 
-    glm::mat4 mvp = proj_mat * view_mat_string * view_mat;
+    glm::mat4 mvp = proj_mat * view_mat_string * view_wave_mat;
 
     float angle = time * glm::radians(90.0f);
     glm::mat4 rotationMatrix =
@@ -49,11 +49,7 @@ void Spectrum3D::viewWaveform() {
 
         glm::vec3 normal = glm::cross(e1, e2);
 
-        normal = glm::normalize(normal);
-
-        v1 += normal * amplitude;
-        v2 += normal;
-        v3 += normal * amplitude;
+        normal = glm::normalize(normal) * amplitude;
 
         glVertex3fv(glm::value_ptr(v1));
         glVertex3fv(glm::value_ptr(v2));
@@ -78,9 +74,9 @@ void Spectrum3D::viewWaveformFFT() {
         glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.1f, 0.0f),
                     glm::vec3(0.0f, 1.0f, 0.0f));
 
-    // handleMouse();
+    handleMouse();
 
-    glm::mat4 mvp = proj_mat * view_mat_cubo * view_mat;
+    glm::mat4 mvp = proj_mat * view_mat_cubo * view_wff_mat;
 
     float angle = seconds * glm::radians(90.0f);
     glm::mat4 rotationMatrix =

@@ -36,11 +36,31 @@ void Spectrum3D::handleMouse() {
             sf::Vector2i delta = curr_pos - prev_pos;
             float angle = atan2(delta.y, delta.x);
 
-            view_mat = glm::rotate(view_mat, glm::radians(angle),
-                                   glm::vec3(1.0f, 1.0f, 0.0f));
+            if (hud_ptr->option == 6) {
+                view_wave_mat = glm::rotate(view_wave_mat, glm::radians(angle),
+                                            glm::vec3(1.0f, 1.0f, 0.0f));
+            } else if (hud_ptr->option == 5) {
+                view_wff_mat = glm::rotate(view_wff_mat, glm::radians(angle),
+                                           glm::vec3(1.0f, 1.0f, 0.0f));
+            }
             prev_pos = curr_pos;
         }
     } else {
         first_click = true;
+    }
+
+    float zoom_factor = 0.5f;
+    if (whell_delta != 0) {
+        float zoom_amount = 1.0f + zoom_factor * abs(whell_delta) / 10.0f;
+        if (whell_delta > 0) {
+            view_wave_mat = glm::scale(view_wave_mat, glm::vec3(zoom_amount));
+            view_wff_mat = glm::scale(view_wff_mat, glm::vec3(zoom_amount));
+        } else if (whell_delta < 0) {
+            view_wave_mat =
+                glm::scale(view_wave_mat, glm::vec3(1.0f / zoom_amount));
+            view_wff_mat =
+                glm::scale(view_wff_mat, glm::vec3(1.0f / zoom_amount));
+        }
+        whell_delta = 0;
     }
 }

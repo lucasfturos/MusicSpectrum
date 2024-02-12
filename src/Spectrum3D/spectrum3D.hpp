@@ -19,8 +19,14 @@ class Spectrum3D {
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
 
   private:
+    const glm::mat4 view_default_mat =
+        glm::lookAt(glm::vec3(0.0f, 0.0f, 1.6f), glm::vec3(0.0f, 0.1f, 0.0f),
+                    glm::vec3(0.0f, 1.0f, 0.0f));
+
+    int whell_delta = 0;
     sf::Clock clock;
-    glm::mat4 proj_mat, view_mat;
+    glm::mat4 proj_mat;
+    glm::mat4 view_wave_mat, view_wff_mat;
 
     std::unique_ptr<Shader> shader_wave_ptr;
     std::unique_ptr<Shader> shader_wfft_ptr;
@@ -33,6 +39,8 @@ class Spectrum3D {
   public:
     void viewWaveform();
     void viewWaveformFFT();
+
+    void getWhellDelta(int w_delta);
 
     void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
                  handlePlot);
