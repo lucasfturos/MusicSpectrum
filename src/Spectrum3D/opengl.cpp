@@ -24,6 +24,10 @@ void Spectrum3D::initOpenGL() {
 }
 
 void Spectrum3D::handleMouse() {
+    std::vector<bool> view_mode = {
+        hud_ptr->option == 5,
+        hud_ptr->option == 6,
+    };
     static sf::Vector2i prev_pos;
     static bool first_click = true;
 
@@ -36,30 +40,41 @@ void Spectrum3D::handleMouse() {
             sf::Vector2i delta = curr_pos - prev_pos;
             float angle = atan2(delta.y, delta.x);
 
-            if (hud_ptr->option == 6) {
-                view_wave_mat = glm::rotate(view_wave_mat, glm::radians(angle),
-                                            glm::vec3(1.0f, 1.0f, 0.0f));
-            } else if (hud_ptr->option == 5) {
+            if (view_mode[0]) {
                 view_wff_mat = glm::rotate(view_wff_mat, glm::radians(angle),
                                            glm::vec3(1.0f, 1.0f, 0.0f));
             }
+            if (view_mode[1]) {
+                view_wave_mat = glm::rotate(view_wave_mat, glm::radians(angle),
+                                            glm::vec3(1.0f, 1.0f, 0.0f));
+            }
+
             prev_pos = curr_pos;
         }
     } else {
         first_click = true;
     }
 
-    float zoom_factor = 0.5f;
+    std::vector<float> zoom_factor = {0.5f, 0.5f};
     if (whell_delta != 0) {
-        float zoom_amount = 1.0f + zoom_factor * abs(whell_delta) / 10.0f;
+        std::vector<float> zoom_amount = {
+            1.0f + zoom_factor[0] * abs(whell_delta) / 10.0f,
+            1.0f + zoom_factor[1] * abs(whell_delta) / 10.0f};
+
         if (whell_delta > 0) {
-            view_wave_mat = glm::scale(view_wave_mat, glm::vec3(zoom_amount));
-            view_wff_mat = glm::scale(view_wff_mat, glm::vec3(zoom_amount));
+            if (view_mode[1])
+                view_wave_mat =
+                    glm::scale(view_wave_mat, glm::vec3(zoom_amount[0]));
+            else if (view_mode[0])
+                view_wff_mat =
+                    glm::scale(view_wff_mat, glm::vec3(zoom_amount[1]));
         } else if (whell_delta < 0) {
-            view_wave_mat =
-                glm::scale(view_wave_mat, glm::vec3(1.0f / zoom_amount));
-            view_wff_mat =
-                glm::scale(view_wff_mat, glm::vec3(1.0f / zoom_amount));
+            if (view_mode[1])
+                view_wave_mat =
+                    glm::scale(view_wave_mat, glm::vec3(1.0f / zoom_amount[0]));
+            else if (view_mode[0])
+                view_wff_mat =
+                    glm::scale(view_wff_mat, glm::vec3(1.0f / zoom_amount[1]));
         }
         whell_delta = 0;
     }

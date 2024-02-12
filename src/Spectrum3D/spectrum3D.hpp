@@ -23,7 +23,7 @@ class Spectrum3D {
         glm::lookAt(glm::vec3(0.0f, 0.0f, 1.6f), glm::vec3(0.0f, 0.1f, 0.0f),
                     glm::vec3(0.0f, 1.0f, 0.0f));
 
-    int whell_delta = 0;
+    int whell_delta;
     sf::Clock clock;
     glm::mat4 proj_mat;
     glm::mat4 view_wave_mat, view_wff_mat;
