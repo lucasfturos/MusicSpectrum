@@ -40,14 +40,12 @@ void Spectrum3D::handleMouse() {
             sf::Vector2i delta = curr_pos - prev_pos;
             float angle = atan2(delta.y, delta.x);
 
-            if (view_mode[0]) {
+            if (view_mode[0])
                 view_wff_mat = glm::rotate(view_wff_mat, glm::radians(angle),
                                            glm::vec3(1.0f, 1.0f, 0.0f));
-            }
-            if (view_mode[1]) {
+            if (view_mode[1])
                 view_wave_mat = glm::rotate(view_wave_mat, glm::radians(angle),
                                             glm::vec3(1.0f, 1.0f, 0.0f));
-            }
 
             prev_pos = curr_pos;
         }
