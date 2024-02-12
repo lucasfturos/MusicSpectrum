@@ -88,25 +88,21 @@ void Spectrum3D::viewWaveformFFT() {
     shader_wfft_ptr->setUniformMat4f("uMVP", mvp);
 
     clear();
-    glBegin(GL_TRIANGLES);
-    for (size_t i = 0; i < Cubo::indices.size(); i += 3) {
-        glm::uvec3 indices(Cubo::indices[i], Cubo::indices[i + 1],
-                           Cubo::indices[i + 2]);
+    glBegin(GL_LINES);
 
-        glm::vec3 v1 = glm::vec3(Cubo::vertices[indices[0] * 3],
-                                 Cubo::vertices[indices[0] * 3 + 1],
-                                 Cubo::vertices[indices[0] * 3 + 2]);
-        glm::vec3 v2 = glm::vec3(Cubo::vertices[indices[1] * 3],
-                                 Cubo::vertices[indices[1] * 3 + 1],
-                                 Cubo::vertices[indices[1] * 3 + 2]);
-        glm::vec3 v3 = glm::vec3(Cubo::vertices[indices[2] * 3],
-                                 Cubo::vertices[indices[2] * 3 + 1],
-                                 Cubo::vertices[indices[2] * 3 + 2]);
+    std::vector<glm::uvec3> indices = grid_ptr->setIndices();
+    std::vector<glm::vec3> vertices = grid_ptr->setVertices();
+
+    for (const auto &indice : indices) {
+        glm::vec3 v1 = vertices[indice.x];
+        glm::vec3 v2 = vertices[indice.y];
+        glm::vec3 v3 = vertices[indice.z];
 
         glVertex3fv(glm::value_ptr(v1));
         glVertex3fv(glm::value_ptr(v2));
         glVertex3fv(glm::value_ptr(v3));
     }
+
     glEnd();
     glFlush();
 }
