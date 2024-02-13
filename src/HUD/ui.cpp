@@ -134,7 +134,7 @@ void HUD::modeAudio() {
             option = 4;
             break;
         case 2:
-            option = 5;
+            option = 6;
             break;
         default:
             break;
@@ -148,7 +148,7 @@ void HUD::modeAudio() {
             option = 3;
             break;
         case 2:
-            option = 6;
+            option = 5;
             break;
         default:
             break;

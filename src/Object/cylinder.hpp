@@ -14,12 +14,9 @@ class Cylinder {
     std::vector<glm::vec3> vertices;
     std::vector<glm::uvec3> indices;
 
-    void generateIndices();
-    void generateVertices();
-
   public:
-    std::vector<glm::vec3> setVertices() const;
-    std::vector<glm::uvec3> setIndices() const;
+    std::vector<glm::uvec3> genIndices();
+    std::vector<glm::vec3> genVertices();
 
     Cylinder(GLfloat h, GLfloat r_top, GLfloat r_bottom, GLint num_seg);
     ~Cylinder();

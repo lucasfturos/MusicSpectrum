@@ -2,18 +2,11 @@
 
 Cylinder::Cylinder(GLfloat h, GLfloat r_top, GLfloat r_bottom, GLint num_seg)
     : height(h), radius_top(r_top), radius_bottom(r_bottom),
-      num_segments(num_seg) {
-    generateVertices();
-    generateIndices();
-}
+      num_segments(num_seg) {}
 
 Cylinder::~Cylinder() {}
 
-std::vector<glm::uvec3> Cylinder::setIndices() const { return indices; }
-
-std::vector<glm::vec3> Cylinder::setVertices() const { return vertices; }
-
-void Cylinder::generateIndices() {
+std::vector<glm::uvec3> Cylinder::genIndices() {
     for (auto i = 0; i < num_segments; ++i) {
         GLuint current = i * 2;
         GLuint next = (i + 1) % (num_segments + 1) * 2;
@@ -34,9 +27,10 @@ void Cylinder::generateIndices() {
         indices.push_back(glm::uvec3((i + 1) % num_segments * 2 + 1, i * 2 + 1,
                                      top_center_index));
     }
+    return indices;
 }
 
-void Cylinder::generateVertices() {
+std::vector<glm::vec3> Cylinder::genVertices() {
     const GLfloat angle_increment = (2 * M_PI) / num_segments;
     for (auto i = 0; i <= num_segments; ++i) {
         GLfloat angle = i * angle_increment;
@@ -49,4 +43,5 @@ void Cylinder::generateVertices() {
         GLfloat yBottom = radius_bottom * sin(angle);
         vertices.push_back(glm::vec3(xBottom, yBottom, -height / 2));
     }
+    return vertices;
 }

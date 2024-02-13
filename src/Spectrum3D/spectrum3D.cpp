@@ -28,7 +28,7 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
     ImGui_ImplOpenGL3_Init();
     initOpenGL();
 
-    grid_ptr = std::make_unique<Grid>(10.0f, 10.0f, 10);
+    grid_ptr = std::make_unique<Grid>(20.0f, 20.0f, 20);
     cylinder_ptr = std::make_unique<Cylinder>(20.0f, 0.5f, 0.5f, 20);
 }
 
@@ -53,6 +53,4 @@ void Spectrum3D::run(
 
         handlePlot(spectrum, fft_size);
     }
-    shader_wave_ptr->unbind();
-    shader_wfft_ptr->unbind();
 }

@@ -1,4 +1,3 @@
-#include "../Object/cubo.hpp"
 #include "spectrum3D.hpp"
 #include <glm/gtc/type_ptr.hpp>
 
@@ -32,8 +31,8 @@ void Spectrum3D::viewWaveform() {
     clear();
     glBegin(GL_TRIANGLES);
 
-    std::vector<glm::uvec3> indices = cylinder_ptr->setIndices();
-    std::vector<glm::vec3> vertices = cylinder_ptr->setVertices();
+    std::vector<glm::uvec3> indices = cylinder_ptr->genIndices();
+    std::vector<glm::vec3> vertices = cylinder_ptr->genVertices();
 
     for (size_t i = 0; i < indices.size(); ++i) {
         glm::uvec3 indice = indices[i];
@@ -58,6 +57,8 @@ void Spectrum3D::viewWaveform() {
 
     glEnd();
     glFlush();
+
+    shader_wave_ptr->unbind();
 }
 
 void Spectrum3D::viewWaveformFFT() {
@@ -71,7 +72,7 @@ void Spectrum3D::viewWaveformFFT() {
     shader_wfft_ptr->setUniform4f("uColor", glm::vec4(red, green, blue, 1.0f));
 
     glm::mat4 view_mat_cubo =
-        glm::lookAt(glm::vec3(0.0f, 0.0f, 3.0f), glm::vec3(0.0f, 0.1f, 0.0f),
+        glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.1f, 0.0f),
                     glm::vec3(0.0f, 1.0f, 0.0f));
 
     handleMouse();
@@ -90,10 +91,18 @@ void Spectrum3D::viewWaveformFFT() {
     clear();
     glBegin(GL_LINES);
 
-    std::vector<glm::uvec3> indices = grid_ptr->setIndices();
-    std::vector<glm::vec3> vertices = grid_ptr->setVertices();
+    std::vector<glm::uvec3> indices = grid_ptr->genIndices();
 
-    for (const auto &indice : indices) {
+    for (size_t i = 0; i < indices.size(); ++i) {
+        glm::uvec3 indice = indices[i];
+        sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
+        GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
+        GLfloat normalize_value = 5 * amplitude;
+
+        GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds();
+        std::vector<glm::vec3> vertices =
+            grid_ptr->genVertices(normalize_value, t);
+
         glm::vec3 v1 = vertices[indice.x];
         glm::vec3 v2 = vertices[indice.y];
         glm::vec3 v3 = vertices[indice.z];
@@ -105,4 +114,6 @@ void Spectrum3D::viewWaveformFFT() {
 
     glEnd();
     glFlush();
+
+    shader_wfft_ptr->unbind();
 }

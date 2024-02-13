@@ -7,7 +7,6 @@ set(SRC_HEADERS
   # HUD
   HUD/hud.hpp
   # Object
-  Object/cubo.hpp
   Object/cylinder.hpp
   Object/grid.hpp
   # OpenGL
