@@ -37,12 +37,13 @@ void HUD::openFileDialog() {
     ImGui::Text("Select Audio File");
 
     if (ImGui::Button("Select File")) {
+        const char *filter = "Audio File (*.flac,*.wav){.flac,.wav}";
         IGFD::FileDialogConfig config;
         config.path = "../audio";
         config.sidePaneWidth = 450.0f;
 
         ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey",
-                                                "Choose File", ".wav", config);
+                                                "Choose File", filter, config);
     }
 
     if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey",
@@ -160,7 +161,7 @@ void HUD::audioList() {
     for (auto item = 0UL; item < list_audio.size(); ++item) {
         const bool isSelected = (selectedIndex == item);
 
-        size_t lastSlash = list_audio[item].find_last_of('/');
+        std::size_t lastSlash = list_audio[item].find_last_of('/');
         std::string filename = list_audio[item].substr(lastSlash + 1);
 
         if (ImGui::Selectable(filename.c_str(), isSelected)) {

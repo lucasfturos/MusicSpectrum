@@ -2,7 +2,7 @@
 
 Visualizador de espectro de audio. Aplicação da transformada de Fourier FFT em conjunto com a fórmula de Euler
 
-Suporta audios no formato WAV.
+Suporta audios no formato WAV e FLAC.
 
 Desenvolvido em C++ com a biblioteca SFML.
 
