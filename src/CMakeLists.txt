@@ -8,7 +8,7 @@ set(SRC_HEADERS
   HUD/hud.hpp
   # Object
   Object/cylinder.hpp
-  Object/grid.hpp
+  Object/plane.hpp
   # OpenGL
   OpenGL/util.hpp
   OpenGL/shader.hpp
@@ -30,7 +30,7 @@ set(SRC_SOURCES
   HUD/events.cpp
   # Object
   Object/cylinder.cpp
-  Object/grid.cpp
+  Object/plane.cpp
   # OpenGL
   OpenGL/shader.cpp
   # Spectrum

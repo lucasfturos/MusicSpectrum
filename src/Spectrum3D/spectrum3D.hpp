@@ -3,7 +3,7 @@
 #include "../FFT/fft.hpp"
 #include "../HUD/hud.hpp"
 #include "../Object/cylinder.hpp"
-#include "../Object/grid.hpp"
+#include "../Object/plane.hpp"
 #include "../OpenGL/shader.hpp"
 #include "../Spectrum/spectrum.hpp"
 
@@ -32,7 +32,7 @@ class Spectrum3D {
     std::unique_ptr<Shader> shader_wave_ptr;
     std::unique_ptr<Shader> shader_wfft_ptr;
 
-    std::unique_ptr<Grid> grid_ptr;
+    std::unique_ptr<Plane> plane_ptr;
     std::unique_ptr<Cylinder> cylinder_ptr;
 
     void clear();

@@ -83,33 +83,27 @@ void Spectrum3D::viewWaveformFFT() {
     glm::mat4 rotationMatrix =
         glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0f, 1.0f, 0.0f));
 
-    mvp = mvp * rotationMatrix;
+    mvp *= rotationMatrix;
 
     shader_wfft_ptr->bind();
     shader_wfft_ptr->setUniformMat4f("uMVP", mvp);
 
     clear();
-    glBegin(GL_LINES);
+    glBegin(GL_LINE_STRIP);
 
-    std::vector<glm::uvec3> indices = grid_ptr->genIndices();
-
+    std::vector<GLuint> indices = plane_ptr->genIndices();
     for (size_t i = 0; i < indices.size(); ++i) {
-        glm::uvec3 indice = indices[i];
         sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
         GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
-        GLfloat normalize_value = 5 * amplitude;
+        GLfloat normalize_value = 4.5f * amplitude;
 
         GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds();
         std::vector<glm::vec3> vertices =
-            grid_ptr->genVertices(normalize_value, t);
+            plane_ptr->genVertices(normalize_value, t);
 
-        glm::vec3 v1 = vertices[indice.x];
-        glm::vec3 v2 = vertices[indice.y];
-        glm::vec3 v3 = vertices[indice.z];
+        glm::vec3 v1 = vertices[indices[i]];
 
         glVertex3fv(glm::value_ptr(v1));
-        glVertex3fv(glm::value_ptr(v2));
-        glVertex3fv(glm::value_ptr(v3));
     }
 
     glEnd();
