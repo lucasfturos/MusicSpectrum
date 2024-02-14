@@ -32,7 +32,7 @@ std::vector<glm::vec3> Plane::genVertices(GLfloat &amp, GLfloat &time) {
             GLfloat z = (s - 0.5f) * height;
 
             GLfloat distance = sqrt(x * x + z * z);
-            GLfloat frequency = (time != 0) ? 1 / time : 0;
+            GLfloat frequency = (time != 0) ? 1 / time : 1;
 
             GLfloat y = amp * sin(-M_PI * distance * frequency + time);
 

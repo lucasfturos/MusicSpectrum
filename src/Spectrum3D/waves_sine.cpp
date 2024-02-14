@@ -97,7 +97,7 @@ void Spectrum3D::viewWaveformFFT() {
         GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
         GLfloat normalize_value = 4.5f * amplitude;
 
-        GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds();
+        GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds() / 60.f;
         std::vector<glm::vec3> vertices =
             plane_ptr->genVertices(normalize_value, t);
 
