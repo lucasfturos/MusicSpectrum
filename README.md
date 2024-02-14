@@ -47,7 +47,7 @@ Algumas fotos do ambiente do programa.
 
 **Senoide 3D com FFT**
 <p align="center">
-<img src="/assets/img/Screenshot/WaveFFT3D.gif" width="70%" />
+<img src="/assets/img/Screenshot/WaveFFT3D.png" width="70%" />
 </p>
 
 </details>
