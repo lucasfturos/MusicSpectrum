@@ -45,6 +45,11 @@ Algumas fotos do ambiente do programa.
 <img src="/assets/img/Screenshot/SpectrumNoFFT.png" width="70%" />
 </p>
 
+**Senoide 3D com FFT**
+<p align="center">
+<img src="/assets/img/Screenshot/WaveFFT3D.gif" width="70%" />
+</p>
+
 </details>
 
 ## Instalação e Execução 
