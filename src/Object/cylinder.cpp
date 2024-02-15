@@ -37,11 +37,13 @@ std::vector<glm::vec3> Cylinder::genVertices() {
 
         GLfloat top_x = radius_top * cos(angle);
         GLfloat top_y = radius_top * sin(angle);
-        vertices.push_back(glm::vec3(top_x, top_y, height / 2));
+        GLfloat top_z = height / 2.0f;
+        vertices.push_back(glm::vec3(top_x, top_y, top_z));
 
-        GLfloat xBottom = radius_bottom * cos(angle);
-        GLfloat yBottom = radius_bottom * sin(angle);
-        vertices.push_back(glm::vec3(xBottom, yBottom, -height / 2));
+        GLfloat bottom_x = radius_bottom * cos(angle);
+        GLfloat bottom_y = radius_bottom * sin(angle);
+        GLfloat bottom_z = -height / 2.0f;
+        vertices.push_back(glm::vec3(bottom_x, bottom_y, bottom_z));
     }
     return vertices;
 }

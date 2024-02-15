@@ -29,7 +29,7 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
     initOpenGL();
 
     plane_ptr = std::make_unique<Plane>(20.0f, 20.0f, 20);
-    cylinder_ptr = std::make_unique<Cylinder>(20.0f, 0.5f, 0.5f, 20);
+    cylinder_ptr = std::make_unique<Cylinder>(20.0f, 0.5f, 0.5f, 15);
 }
 
 Spectrum3D::~Spectrum3D() { ImGui_ImplOpenGL3_Shutdown(); }
