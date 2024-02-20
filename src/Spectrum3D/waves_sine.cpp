@@ -86,13 +86,14 @@ void Spectrum3D::viewWaveformFFT() {
     for (size_t i = 0; i < indices.size(); ++i) {
         sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
         GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
-        GLfloat normalize_value = 4.5f * amplitude;
-
         GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds() / 60.f;
-        std::vector<glm::vec3> vertices =
-            plane_ptr->genVertices(normalize_value, t);
+        std::vector<glm::vec3> vertices = plane_ptr->genVertices();
 
         glm::vec3 v1 = vertices[indices[i]];
+        GLfloat distance = sqrt(v1.x * v1.x + v1.z * v1.z);
+        GLfloat frequency = (t != 0) ? 1 / t : 1;
+
+        v1.y = 4.5f * amplitude * sin(-M_PI * distance * frequency + t);
 
         glVertex3fv(glm::value_ptr(v1));
     }

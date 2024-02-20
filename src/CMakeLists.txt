@@ -12,6 +12,8 @@ set(SRC_HEADERS
   # OpenGL
   OpenGL/util.hpp
   OpenGL/shader.hpp
+  # Sample
+  Sample/sample.hpp
   # Spectrum 
   Spectrum/spectrum.hpp
   # Spectrum 3D
@@ -33,9 +35,10 @@ set(SRC_SOURCES
   Object/plane.cpp
   # OpenGL
   OpenGL/shader.cpp
+  # Sample
+  Sample/sample.cpp
   # Spectrum
   Spectrum/spectrum.cpp
-  Spectrum/samples.cpp
   Spectrum/waves_rect.cpp
   Spectrum/waves_sine.cpp
   # Spectrum 3D

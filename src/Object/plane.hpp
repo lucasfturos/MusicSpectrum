@@ -13,7 +13,7 @@ class Plane {
 
   public:
     std::vector<GLuint> genIndices();
-    std::vector<glm::vec3> genVertices(GLfloat &amp, GLfloat &time);
+    std::vector<glm::vec3> genVertices();
 
     Plane(GLfloat w, GLfloat h, GLint num_seg);
     ~Plane();

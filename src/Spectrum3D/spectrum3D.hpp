@@ -5,6 +5,7 @@
 #include "../Object/cylinder.hpp"
 #include "../Object/plane.hpp"
 #include "../OpenGL/shader.hpp"
+#include "../Sample/sample.hpp"
 #include "../Spectrum/spectrum.hpp"
 
 #include <GL/glew.h>
@@ -33,6 +34,7 @@ class Spectrum3D {
     std::unique_ptr<Shader> shader_wfft_ptr;
 
     std::unique_ptr<Plane> plane_ptr;
+    std::unique_ptr<Sample> sample_ptr;
     std::unique_ptr<Cylinder> cylinder_ptr;
 
     void clear();

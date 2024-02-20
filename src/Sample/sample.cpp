@@ -1,6 +1,8 @@
-#include "spectrum.hpp"
+#include "sample.hpp"
 
-void Spectrum::monoSample() {
+Sample::Sample(std::shared_ptr<HUD> hud) : hud_ptr(hud) {}
+
+void Sample::monoSample() {
     if (hud_ptr->sound_buffer.getChannelCount() == 2) {
         const sf::Int16 *samples = hud_ptr->sound_buffer.getSamples();
         hud_ptr->sample_buffer.reserve(buffer_size);
@@ -12,7 +14,7 @@ void Spectrum::monoSample() {
     }
 }
 
-void Spectrum::getSampleBuffer() {
+void Sample::getSampleBuffer() {
     std::size_t sample_count = hud_ptr->sound.getBuffer()->getSampleCount();
     std::size_t buffer_start = hud_ptr->sound.getPlayingOffset().asSeconds() *
                                hud_ptr->sound.getBuffer()->getSampleRate();

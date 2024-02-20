@@ -18,9 +18,6 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
             reinterpret_cast<const char *>(glewGetErrorString(error)));
     }
 
-    // std::cout << "GLEW version: " << glewGetString(GLEW_VERSION) << "\n";
-    // std::cout << "GL version: " << glGetString(GL_VERSION) << '\n';
-
     if (!window->setActive()) {
         throw std::runtime_error("Failed to set window to active");
     }
@@ -28,6 +25,7 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
     ImGui_ImplOpenGL3_Init();
     initOpenGL();
 
+    sample_ptr = std::make_unique<Sample>(hud);
     plane_ptr = std::make_unique<Plane>(20.0f, 20.0f, 20);
     cylinder_ptr = std::make_unique<Cylinder>(20.0f, 0.5f, 0.5f, 15);
 }
@@ -39,10 +37,10 @@ void Spectrum3D::getWhellDelta(int w_delta) { whell_delta = w_delta; }
 void Spectrum3D::run(
     std::function<void(std::vector<std::complex<float>>, std::size_t)>
         handlePlot) {
-    spectrum_ptr->monoSample();
+    sample_ptr->monoSample();
     std::vector<std::complex<float>> spectrum;
     if (hud_ptr->sound.getStatus() == sf::SoundSource::Playing) {
-        spectrum_ptr->getSampleBuffer();
+        sample_ptr->getSampleBuffer();
 
         std::size_t fft_size = 1;
         while (fft_size < buffer_size) {

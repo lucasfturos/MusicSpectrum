@@ -21,7 +21,7 @@ std::vector<GLuint> Plane::genIndices() {
     return indices;
 }
 
-std::vector<glm::vec3> Plane::genVertices(GLfloat &amp, GLfloat &time) {
+std::vector<glm::vec3> Plane::genVertices() {
     std::vector<glm::vec3> vertices;
     for (auto i = 0; i <= num_segments; ++i) {
         for (auto j = 0; j <= num_segments; ++j) {
@@ -29,12 +29,8 @@ std::vector<glm::vec3> Plane::genVertices(GLfloat &amp, GLfloat &time) {
             GLfloat s = static_cast<GLfloat>(j) / num_segments;
 
             GLfloat x = (t - 0.5f) * width;
+            GLfloat y = 0.0f;
             GLfloat z = (s - 0.5f) * height;
-
-            GLfloat distance = sqrt(x * x + z * z);
-            GLfloat frequency = (time != 0) ? 1 / time : 1;
-
-            GLfloat y = amp * sin(-M_PI * distance * frequency + time);
 
             vertices.push_back(glm::vec3(x, y, z));
         }
