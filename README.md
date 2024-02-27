@@ -1,10 +1,23 @@
 # Music Spectrum
 
-Visualizador de espectro de audio. Aplicação da transformada de Fourier FFT em conjunto com a fórmula de Euler
+Visualizador de espectro de áudio com transformada de Fourier rápida (FFT) e fórmula de Euler
 
-Suporta audios no formato WAV e FLAC.
+## Descrição
 
-Desenvolvido em C++ com a biblioteca SFML.
+Music Spectrum é um aplicativo que permite visualizar o espectro de frequência de arquivos de áudio em tempo real. O programa utiliza a transformada de Fourier rápida (FFT) para calcular o espectro de frequência e a fórmula de Euler para gerar visualizações vibrantes e interativas.
+
+## Funcionalidades
+
+- Suporte para arquivos WAV e FLAC
+- Vários tipos de visualização de espectro:
+  - Senoidal com FFT
+  - Senoidal puro
+  - Espectro com FFT
+  - Espectro puro
+  - Senóide 3D com FFT
+- Controles de reprodução
+- Teclas de atalho para facilitar o uso
+- HUD do player com ImGui
 
 ## Screenshot
 
@@ -54,24 +67,42 @@ Algumas fotos do ambiente do programa.
 
 ## Instalação e Execução 
 
-Instalação, dependências e uso do programa:
+Detalhes logo abaixo:
 
 <details><summary>Show</summary>
 
-Para rodar o programa é necessário ter instalado o cmake, gcc, g++, make, a biblioteca do SFML e o OpenGL. Após instalar elas, é só seguir os seguintes passos:
+### Requisitos
+
+- CMake
+- GCC/G++
+- Make
+- SFML
+- OpenGL
+- GLEW
+- GLM
+
+### Instruções:
+
+1. Clone o repositório:
 
 ```
 git clone https://github.com/lucasfturos/MusicSpectrum.git && cd MusicSpectrum
-mkdir assets
-mkdir build && build
 ```
 
-Após baixar, entrar na pasta raiz do projeto, criar e entrar na pasta build, é só compilar:
+2. Crie a pasta build:
+
+```
+mkdir build && cd build
+```
+
+3. Compile o programa:
+
 ```
 cmake .. && make -j4
 ```
 
-Para usar execute como no exemplo abaixo:
+4. Execute o programa:
+
 ```
 ./src/MusicSpectrum
 ```
@@ -131,3 +162,7 @@ Créditos de Bibliotecas e Icones usados no programa:
 ## Referências
 
 Video do Tsoding Daily: [Music Visualizer (Fast Fourier Transform)](https://youtu.be/Xdbk1Pr5WXU)
+
+## License
+
+Este projeto está licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais informações.
