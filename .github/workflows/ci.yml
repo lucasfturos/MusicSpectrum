@@ -24,3 +24,15 @@ jobs:
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@v1.9.1
+        with:
+          doxyfile-path: "docs/Doxyfile"
+          working-directory: "docs/"
+    
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/html
