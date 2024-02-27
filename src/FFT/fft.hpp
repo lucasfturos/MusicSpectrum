@@ -24,7 +24,6 @@ template <class T> class FFT {
              std::vector<std::complex<float>> &out, std::size_t n);
 
   public:
-    FFT<T>() = default;
     void fftAnalyze(std::vector<T> &in, std::size_t stride,
                     std::vector<std::complex<float>> &out, std::size_t n);
 };
