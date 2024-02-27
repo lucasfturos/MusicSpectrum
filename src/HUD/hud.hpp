@@ -8,12 +8,22 @@
 #include <iostream>
 #include <memory>
 
+// Constantes
 const int WIDTH = 1000;
 const int HEIGHT = 720;
 const int HUD_WIDTH = 400;
 const int HUD_HEIGHT = 300;
 const size_t buffer_size = 1000;
 
+/*
+ * Classe que representa a interface gráfica do usuário (GUI) para interagir com
+ * arquivos de áudio.
+ *
+ * A classe `HUD` (Heads-Up Display) gerencia a interface gráfica do usuário
+ * para interação com arquivos de áudio. Ela fornece controles para reproduzir,
+ * pausar, avançar, retroceder, ajustar volume, exibir e selecionar arquivos de
+ * áudio, entre outras funcionalidades.
+ */
 class HUD {
   private:
     const float icon_size = 17.0f;
@@ -67,9 +77,26 @@ class HUD {
     sf::SoundBuffer sound_buffer;
     std::vector<sf::Int16> sample_buffer;
 
+    /*
+     * @brief Executa o loop principal da interface gráfica.
+     */
     void run();
+
+    /*
+     * @brief Manipula os eventos da interface gráfica.
+     * @param event: O evento a ser processado.
+     */
     void handleEvents(sf::Event &event);
 
+    /*
+     * @brief Construtor da classe HUD.
+     * @param win: Um ponteiro compartilhado para a janela SFML onde a GUI será
+     * renderizada.
+     */
     HUD(std::shared_ptr<sf::RenderWindow> win);
+
+    /*
+     * @brief Destrutor da classe HUD.
+     */
     ~HUD();
 };

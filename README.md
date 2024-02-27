@@ -22,8 +22,6 @@ Music Spectrum é um aplicativo que permite visualizar o espectro de frequência
 
 Algumas fotos do ambiente do programa.
 
-<details><summary>Show</summary>
-
 ### Tela do programa
 
 <p align="center">
@@ -62,13 +60,9 @@ Algumas fotos do ambiente do programa.
 <img src="/assets/img/Screenshot/WaveFFT3D.gif" width="70%" />
 </p>
 
-</details>
-
 ## Instalação e Execução 
 
 Detalhes logo abaixo:
-
-<details><summary>Show</summary>
 
 ### Requisitos
 
@@ -106,13 +100,9 @@ cmake .. && make -j4
 ./src/MusicSpectrum
 ```
 
-</details>
-
 ## Teclas
 
 Teclas de funções do programa:
-
-<details><summary>Show</summary>
 
 - Use <kbd>space</kbd> para dar Play/Pause no áudio
 - Use <kbd>↵</kbd> para dar Stop no áudio
@@ -122,13 +112,9 @@ Teclas de funções do programa:
 - Use <kbd>,</kbd> ou <kbd>.</kbd> para Voltar ou pular para a Próxima música
 - Use <kbd>Q</kbd> para Sair do programa.
 
-</details>
-
 ## Créditos
 
 Créditos de Bibliotecas e Icones usados no programa:
-
-<details><summary>Show</summary>
 
 [SFML](https://www.sfml-dev.org/index.php)
 
@@ -138,25 +124,7 @@ Créditos de Bibliotecas e Icones usados no programa:
 
 [ImGuiFileDialog](https://github.com/aiekick/ImGuiFileDialog)
 
-[FlatIcon - Icon Play](https://www.flaticon.com/br/icones-gratis/botao-play)
-
-[FlatIcon - Icon Pause](https://www.flaticon.com/br/icones-gratis/pausa)
-
-[FlatIcon - Icon Stop](https://www.flaticon.com/br/icones-gratis/pare)
-
-[FlatIcon - Icon Volume](https://www.flaticon.com/br/icones-gratis/volume)
-
-[FlatIcon - Icon Mute](https://www.flaticon.com/br/icones-gratis/silencio)
-
-[FlatIcon - Icon Foward](https://www.flaticon.com/br/icones-gratis/jogar)
-
-[FlatIcon - Icon Backward](https://www.flaticon.com/br/icones-gratis/rebobinar)
-
-[FlatIcon - Icon Next](https://www.flaticon.com/br/icones-gratis/proximo)
-
-[FlatIcon - Icon Back](https://www.flaticon.com/br/icones-gratis/rebobinar)
-
-</details>
+[FlatIcon](https://www.flaticon.com/)
 
 ## Referências
 

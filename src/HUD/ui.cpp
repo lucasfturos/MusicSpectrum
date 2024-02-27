@@ -1,5 +1,6 @@
 #include "hud.hpp"
 
+// Função para estilizar os elementos do ImGui
 void HUD::styleWidget() {
     ImGuiStyle &style = ImGui::GetStyle();
     // Window
@@ -32,7 +33,11 @@ void HUD::styleWidget() {
     style.Colors[ImGuiCol_HeaderActive] = ImVec4(0.31f, 0.31f, 0.31f, 1.0f);
 }
 
+// Função para abrir a caixa de diálogo de seleção de arquivo de áudio
 void HUD::openFileDialog() {
+    // Implementação para abrir a caixa de diálogo e lidar com a seleção de
+    // arquivos de áudio
+
     ImVec2 dialog_maxsize = ImVec2(HUD_WIDTH * 2.f, HUD_HEIGHT * 2.f);
     ImGui::Text("Select Audio File");
 
@@ -70,6 +75,7 @@ void HUD::openFileDialog() {
     }
 }
 
+// Função para exibir controles de reprodução de áudio
 void HUD::controlAudio() {
     ImGui::Text("Audio");
     ImGui::Spacing();
@@ -112,6 +118,7 @@ void HUD::controlAudio() {
     }
 }
 
+// Função para exibir opções de modo de áudio
 void HUD::modeAudio() {
     ImGui::Text("Mode");
     ImGui::Spacing();
@@ -157,6 +164,7 @@ void HUD::modeAudio() {
     }
 }
 
+// Função para exibir a lista de áudio disponível
 void HUD::audioList() {
     for (auto item = 0UL; item < list_audio.size(); ++item) {
         const bool isSelected = (selectedIndex == item);
@@ -172,6 +180,7 @@ void HUD::audioList() {
     }
 }
 
+// Função para exibir a janela de lista de áudio
 void HUD::showAudioListWindow() {
     if (ImGui::Button("Show Audio List")) {
         audioListWindow = !audioListWindow;

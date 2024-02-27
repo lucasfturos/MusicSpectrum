@@ -19,7 +19,7 @@ project(${PROJECT_NAME})              # Create project "MusicSpectrum"
 
 set(CMAKE_CXX_STANDARD 20)            # Enable c++20 standard
 
-# List all the music files
+# List all the files
 set(RESOURCES_DIRECTORY 
   "${CMAKE_SOURCE_DIR}/assets"
 )
@@ -37,5 +37,8 @@ add_compile_options(
 # Add subdirectories for external and src
 add_subdirectory(external)
 add_subdirectory(src)
+
+# Add subdirectory for documentation
+add_subdirectory("doc")
 
 # -------------------------------------------------------------------
