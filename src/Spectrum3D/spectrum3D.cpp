@@ -1,5 +1,7 @@
 #include "spectrum3D.hpp"
 #include "../../external/imgui/imgui_impl_opengl3.h"
+#include <chrono>
+#include <thread>
 
 Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
                        std::shared_ptr<HUD> hud,
@@ -27,7 +29,6 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
 
     sample_ptr = std::make_unique<Sample>(hud);
     plane_ptr = std::make_unique<Plane>(20.0f, 20.0f, 20);
-    cylinder_ptr = std::make_unique<Cylinder>(20.0f, 0.5f, 0.5f, 15);
 }
 
 Spectrum3D::~Spectrum3D() { ImGui_ImplOpenGL3_Shutdown(); }
@@ -39,6 +40,7 @@ void Spectrum3D::run(
         handlePlot) {
     sample_ptr->monoSample();
     std::vector<std::complex<float>> spectrum;
+
     if (hud_ptr->sound.getStatus() == sf::SoundSource::Playing) {
         sample_ptr->getSampleBuffer();
 
@@ -51,4 +53,5 @@ void Spectrum3D::run(
 
         handlePlot(spectrum, fft_size);
     }
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
 }

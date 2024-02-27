@@ -28,27 +28,6 @@ void Spectrum3D::viewWaveform() {
     shader_wave_ptr->bind();
     shader_wave_ptr->setUniformMat4f("uMVP", mvp);
 
-    clear();
-    glBegin(GL_TRIANGLES);
-
-    std::vector<glm::uvec3> indices = cylinder_ptr->genIndices();
-    std::vector<glm::vec3> vertices = cylinder_ptr->genVertices();
-
-    for (size_t i = 0; i < indices.size(); ++i) {
-        glm::uvec3 indice = indices[i];
-
-        glm::vec3 v1 = vertices[indice.x];
-        glm::vec3 v2 = vertices[indice.y];
-        glm::vec3 v3 = vertices[indice.z];
-
-        glVertex3fv(glm::value_ptr(v1));
-        glVertex3fv(glm::value_ptr(v2));
-        glVertex3fv(glm::value_ptr(v3));
-    }
-
-    glEnd();
-    glFlush();
-
     shader_wave_ptr->unbind();
 }
 
@@ -83,19 +62,20 @@ void Spectrum3D::viewWaveformFFT() {
     glBegin(GL_LINE_STRIP);
 
     std::vector<GLuint> indices = plane_ptr->genIndices();
-    for (size_t i = 0; i < indices.size(); ++i) {
+    std::vector<glm::vec3> vertices = plane_ptr->genVertices();
+
+    for (std::size_t i = 0; i < indices.size(); ++i) {
         sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
         GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
         GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds() / 60.f;
-        std::vector<glm::vec3> vertices = plane_ptr->genVertices();
 
-        glm::vec3 v1 = vertices[indices[i]];
-        GLfloat distance = sqrt(v1.x * v1.x + v1.z * v1.z);
+        glm::vec3 vertex = vertices[indices[i]];
+        GLfloat distance = sqrt(vertex.x * vertex.x + vertex.z * vertex.z);
         GLfloat frequency = (t != 0) ? 1 / t : 1;
 
-        v1.y = 4.5f * amplitude * sin(-M_PI * distance * frequency + t);
+        vertex.y = 4.5f * amplitude * sin(-pi * distance * frequency + t);
 
-        glVertex3fv(glm::value_ptr(v1));
+        glVertex3fv(glm::value_ptr(vertex));
     }
 
     glEnd();

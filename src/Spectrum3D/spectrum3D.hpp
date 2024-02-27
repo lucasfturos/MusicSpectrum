@@ -2,7 +2,6 @@
 
 #include "../FFT/fft.hpp"
 #include "../HUD/hud.hpp"
-#include "../Object/cylinder.hpp"
 #include "../Object/plane.hpp"
 #include "../OpenGL/shader.hpp"
 #include "../Sample/sample.hpp"
@@ -35,7 +34,6 @@ class Spectrum3D {
 
     std::unique_ptr<Plane> plane_ptr;
     std::unique_ptr<Sample> sample_ptr;
-    std::unique_ptr<Cylinder> cylinder_ptr;
 
     void clear();
     void initOpenGL();

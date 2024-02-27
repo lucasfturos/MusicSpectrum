@@ -4,6 +4,10 @@
 #include "../HUD/hud.hpp"
 #include "../Spectrum/spectrum.hpp"
 #include "../Spectrum3D/spectrum3D.hpp"
+#include <chrono>
+#include <thread>
+
+using namespace std::chrono;
 
 class Render {
   private:
@@ -22,6 +26,7 @@ class Render {
 
     void handlePlot(std::vector<std::complex<float>> spectrum,
                     std::size_t fft_size);
+    void frameRate(time_point<high_resolution_clock> &prev_time);
 
   public:
     void run();

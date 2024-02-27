@@ -1,0 +1,28 @@
+name: CI Build
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+env:
+  BUILD_TYPE: Debug
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update packages list
+        run: sudo apt-get update
+
+      - name: Install build-essential, CMake, SFML, OpenGL, GLM, GLEW
+        run: sudo apt-get install -y build-essential cmake libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev
+
+      - uses: actions/checkout@v3
+
+      - name: Configure CMake
+        run: cmake -S . -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}

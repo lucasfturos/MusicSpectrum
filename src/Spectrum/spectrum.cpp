@@ -1,4 +1,6 @@
 #include "spectrum.hpp"
+#include <chrono>
+#include <thread>
 
 Spectrum::Spectrum(std::shared_ptr<sf::RenderWindow> win,
                    std::shared_ptr<HUD> hud,
@@ -26,5 +28,5 @@ void Spectrum::run(
         handlePlot(spectrum, fft_size);
     }
 
-    sf::sleep(sf::milliseconds(10));
+    std::this_thread::sleep_for(std::chrono::milliseconds(10));
 }

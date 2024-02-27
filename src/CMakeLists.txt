@@ -7,7 +7,6 @@ set(SRC_HEADERS
   # HUD
   HUD/hud.hpp
   # Object
-  Object/cylinder.hpp
   Object/plane.hpp
   # OpenGL
   OpenGL/util.hpp
@@ -31,7 +30,6 @@ set(SRC_SOURCES
   HUD/ui.cpp
   HUD/events.cpp
   # Object
-  Object/cylinder.cpp
   Object/plane.cpp
   # OpenGL
   OpenGL/shader.cpp

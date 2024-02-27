@@ -1,7 +1,5 @@
 #include "render.hpp"
 #include "../../external/imgui/imgui_impl_opengl3.h"
-#include <chrono>
-#include <thread>
 
 Render::Render() {
     window = std::make_shared<sf::RenderWindow>(
@@ -20,9 +18,24 @@ Render::Render() {
         std::make_shared<Spectrum3D>(window, hud_ptr, spectrum_ptr, fft_ptr);
 }
 
+void Render::frameRate(time_point<high_resolution_clock> &prev_time) {
+    auto current_time = high_resolution_clock::now();
+    auto elapsed_time =
+        duration_cast<duration<double>>(current_time - prev_time);
+
+    if (elapsed_time.count() < frame_duration) {
+        auto sleep_duration =
+            duration<double>(frame_duration - elapsed_time.count());
+        std::this_thread::sleep_for(
+            duration_cast<milliseconds>(sleep_duration));
+    }
+
+    prev_time = high_resolution_clock::now();
+}
+
 void Render::run() {
     window->setVerticalSyncEnabled(true);
-    auto prev_time = std::chrono::high_resolution_clock::now();
+    auto prev_time = high_resolution_clock::now();
 
     while (window->isOpen()) {
         sf::Event event;
@@ -40,42 +53,26 @@ void Render::run() {
 
         ImGui::SFML::Update(*window, clock.restart());
 
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         window->clear();
 
-        window->pushGLStates();
+        ImGui_ImplOpenGL3_NewFrame();
+
         hud_ptr->run();
+        window->pushGLStates();
         spectrum_ptr->run(std::bind(&Render::handlePlot, this,
                                     std::placeholders::_1,
                                     std::placeholders::_2));
-        window->popGLStates();
-
-        window->pushGLStates();
-        ImGui_ImplOpenGL3_NewFrame();
         window->popGLStates();
 
         spectrum3D_ptr->run(std::bind(&Render::handlePlot, this,
                                       std::placeholders::_1,
                                       std::placeholders::_2));
 
-        window->pushGLStates();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-        window->popGLStates();
 
         window->display();
 
-        auto current_time = std::chrono::high_resolution_clock::now();
-        auto elapsed_time =
-            std::chrono::duration_cast<std::chrono::duration<double>>(
-                current_time - prev_time);
-
-        if (elapsed_time.count() < frame_duration) {
-            auto sleep_duration = std::chrono::duration<double>(
-                frame_duration - elapsed_time.count());
-            std::this_thread::sleep_for(
-                std::chrono::duration_cast<std::chrono::milliseconds>(
-                    sleep_duration));
-        }
-
-        prev_time = std::chrono::high_resolution_clock::now();
+        frameRate(prev_time);
     }
 }
