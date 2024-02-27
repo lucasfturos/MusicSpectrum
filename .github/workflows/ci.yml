@@ -10,14 +10,14 @@ env:
   BUILD_TYPE: Debug
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build_debian:
+    runs-on: debian-latest
     steps:
       - name: Update packages list
-        run: sudo apt-get update
+        run: sudo apt update
 
       - name: Install build-essential, CMake, SFML, OpenGL, GLM, GLEW
-        run: sudo apt-get install -y build-essential cmake libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev
+        run: sudo apt install -y build-essential cmake libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev
 
       - uses: actions/checkout@v3
 
@@ -26,3 +26,44 @@ jobs:
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+  build_macos:
+    runs-on: macos-latest
+    steps:
+      - name: Install CMake
+        run: |
+          brew update
+          brew install cmake
+
+      - name: Install SFML, GLEW, GLM (Assuming they are available via Homebrew)
+        run: |
+          brew install sfml glew glm
+
+      - uses: actions/checkout@v3
+
+      - name: Configure CMake
+        run: cmake -S . -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+  build_windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install CMake
+        run: |
+          choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+
+      - name: Install SFML, GLEW, GLM (Assuming they are available via vcpkg)
+        run: |
+          choco install vcpkg
+          vcpkg install sfml glew glm
+
+      - name: Configure CMake
+        run: cmake -S . -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+      - name: Build
+        run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
