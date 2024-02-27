@@ -39,6 +39,6 @@ add_subdirectory(external)
 add_subdirectory(src)
 
 # Add subdirectory for documentation
-add_subdirectory("doc")
+add_subdirectory("docs")
 
 # -------------------------------------------------------------------
