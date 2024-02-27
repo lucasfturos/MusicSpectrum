@@ -16,7 +16,6 @@ Music Spectrum é um aplicativo que permite visualizar o espectro de frequência
   - Espectro puro
   - Senóide 3D com FFT
 - Controles de reprodução
-- Teclas de atalho para facilitar o uso
 - HUD do player com ImGui
 
 ## Screenshot
