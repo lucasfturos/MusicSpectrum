@@ -14,8 +14,8 @@ jobs:
       - name: Update packages list
         run: sudo apt update
 
-      - name: Install build-essential, CMake, SFML, OpenGL, GLM, GLEW, Doxygen
-        run: sudo apt install -y build-essential cmake libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev doxygen
+      - name: Install gcc g++, CMake, SFML, OpenGL, GLM, GLEW, Doxygen
+        run: sudo apt install -y gcc g++ cmake libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev doxygen
 
       - uses: actions/checkout@v3
 
@@ -30,11 +30,3 @@ jobs:
         with:
           working-directory: "."
           doxyfile-path: "./Doxyfile"
-    
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/html/
-          enable_jekyll: false
-
