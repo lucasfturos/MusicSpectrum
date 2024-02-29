@@ -1,3 +1,9 @@
 build/
 audio/
-docs/html/
+docs/html/*.js
+docs/html/*.css
+docs/html/*.html
+docs/html/*.png
+docs/html/*.svg
+docs/html/*.md5
+docs/html/search

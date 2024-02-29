@@ -14,8 +14,8 @@ jobs:
       - name: Update packages list
         run: sudo apt update
 
-      - name: Install gcc g++, CMake, SFML, OpenGL, GLM, GLEW, Doxygen
-        run: sudo apt install -y gcc g++ cmake libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev doxygen
+      - name: Install gcc, g++, CMake, Make, SFML, OpenGL, GLM, GLEW, Doxygen, Graphviz
+        run: sudo apt install -y gcc g++ cmake make libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev doxygen graphviz
 
       - uses: actions/checkout@v3
 
@@ -25,8 +25,10 @@ jobs:
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-      - name: Doxygen Action
-        uses: mattnotmitt/doxygen-action@v1.9.1
+      - name: Doxygen GitHub Pages Deploy Action
+        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
         with:
-          working-directory: "."
-          doxyfile-path: "./Doxyfile"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: docs/html
+          config_file: Doxyfile
