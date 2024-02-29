@@ -26,7 +26,7 @@ jobs:
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
       - name: Doxygen GitHub Pages Deploy Action
-        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        uses: DenverCoder1/doxygen-github-pages-action@v1.9.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
