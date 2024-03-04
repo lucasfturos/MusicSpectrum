@@ -27,7 +27,6 @@ void Spectrum3D::viewWaveform() {
 
     shader_wave_ptr->bind();
     shader_wave_ptr->setUniformMat4f("uMVP", mvp);
-
     shader_wave_ptr->unbind();
 }
 
