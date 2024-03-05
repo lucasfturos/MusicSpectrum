@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MusicSpectrum: Código-Fonte de /home/runner/work/MusicSpectrum/MusicSpectrum/src/Timer/timer.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MusicSpectrum
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">timer.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="timer_8hpp.html">Vá para a documentação desse arquivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classTimer.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTimer.html">Timer</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classTimer.html#a5f16e8da27d2a5a5242dead46de05d97">Timer</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classTimer.html#a14fa469c4c295c5fa6e66a4ad1092146">~Timer</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTimer.html#a9020542d73357a4eef512eefaf57524b">reset</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classTimer.html#a3589431ef916588e0fd75e35164b81f1">elapsed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classTimer.html#a2b65bc504bcac3f364cbf3d871d9a11a">   19</a></span>&#160;    <span class="keyword">typedef</span> std::chrono::high_resolution_clock <a class="code" href="classTimer.html#a2b65bc504bcac3f364cbf3d871d9a11a">clock_</a>;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classTimer.html#a7ce648b3ad84c8ccbba948269c1fd440">   20</a></span>&#160;    <span class="keyword">typedef</span> std::chrono::duration&lt;float, std::ratio&lt;1&gt;&gt; <a class="code" href="classTimer.html#a7ce648b3ad84c8ccbba948269c1fd440">second_</a>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classTimer.html#a7c8f5e6cbb5b92faba2cedc5df6b3b54">   21</a></span>&#160;    std::chrono::time_point&lt;clock_&gt; <a class="code" href="classTimer.html#a7c8f5e6cbb5b92faba2cedc5df6b3b54">beg_</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="ttc" id="aclassTimer_html"><div class="ttname"><a href="classTimer.html">Timer</a></div><div class="ttdef"><b>Definition:</b> timer.hpp:11</div></div>
+<div class="ttc" id="aclassTimer_html_a14fa469c4c295c5fa6e66a4ad1092146"><div class="ttname"><a href="classTimer.html#a14fa469c4c295c5fa6e66a4ad1092146">Timer::~Timer</a></div><div class="ttdeci">~Timer()</div><div class="ttdef"><b>Definition:</b> timer.cpp:16</div></div>
+<div class="ttc" id="aclassTimer_html_a2b65bc504bcac3f364cbf3d871d9a11a"><div class="ttname"><a href="classTimer.html#a2b65bc504bcac3f364cbf3d871d9a11a">Timer::clock_</a></div><div class="ttdeci">std::chrono::high_resolution_clock clock_</div><div class="ttdef"><b>Definition:</b> timer.hpp:19</div></div>
+<div class="ttc" id="aclassTimer_html_a3589431ef916588e0fd75e35164b81f1"><div class="ttname"><a href="classTimer.html#a3589431ef916588e0fd75e35164b81f1">Timer::elapsed</a></div><div class="ttdeci">float elapsed() const</div><div class="ttdef"><b>Definition:</b> timer.cpp:30</div></div>
+<div class="ttc" id="aclassTimer_html_a5f16e8da27d2a5a5242dead46de05d97"><div class="ttname"><a href="classTimer.html#a5f16e8da27d2a5a5242dead46de05d97">Timer::Timer</a></div><div class="ttdeci">Timer()</div><div class="ttdef"><b>Definition:</b> timer.cpp:8</div></div>
+<div class="ttc" id="aclassTimer_html_a7c8f5e6cbb5b92faba2cedc5df6b3b54"><div class="ttname"><a href="classTimer.html#a7c8f5e6cbb5b92faba2cedc5df6b3b54">Timer::beg_</a></div><div class="ttdeci">std::chrono::time_point&lt; clock_ &gt; beg_</div><div class="ttdef"><b>Definition:</b> timer.hpp:21</div></div>
+<div class="ttc" id="aclassTimer_html_a7ce648b3ad84c8ccbba948269c1fd440"><div class="ttname"><a href="classTimer.html#a7ce648b3ad84c8ccbba948269c1fd440">Timer::second_</a></div><div class="ttdeci">std::chrono::duration&lt; float, std::ratio&lt; 1 &gt; &gt; second_</div><div class="ttdef"><b>Definition:</b> timer.hpp:20</div></div>
+<div class="ttc" id="aclassTimer_html_a9020542d73357a4eef512eefaf57524b"><div class="ttname"><a href="classTimer.html#a9020542d73357a4eef512eefaf57524b">Timer::reset</a></div><div class="ttdeci">void reset()</div><div class="ttdef"><b>Definition:</b> timer.cpp:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6acd24eea7f3fe579df422711269a2fc.html">Timer</a></li><li class="navelem"><a class="el" href="timer_8hpp.html">timer.hpp</a></li>
+    <li class="footer">Gerado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+var classSpectrum3D =
+[
+    [ "Spectrum3D", "classSpectrum3D.html#afd2baa718dc78ce0c83a27cc64c10e39", null ],
+    [ "~Spectrum3D", "classSpectrum3D.html#a7bb30387ab42e558c2855236b430f0ac", null ],
+    [ "clear", "classSpectrum3D.html#abe92e5941ff421e4cefaee4c6c02aacc", null ],
+    [ "getWhellDelta", "classSpectrum3D.html#aa6bbaba918458bc32355411b32576e2e", null ],
+    [ "handleMouse", "classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670", null ],
+    [ "initOpenGL", "classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df", null ],
+    [ "run", "classSpectrum3D.html#add8b4207679944e86558809c06ba6a66", null ],
+    [ "viewWaveform", "classSpectrum3D.html#a67f834b73924bf9d1b7a06be4866d71b", null ],
+    [ "viewWaveformFFT", "classSpectrum3D.html#a54fbe3e0cbe308410713ff303fca2ec7", null ],
+    [ "fft_ptr", "classSpectrum3D.html#aaa22dd2b1ad12e3251646a08b8b9f0d2", null ],
+    [ "hud_ptr", "classSpectrum3D.html#a671422b035690583b641d98764486143", null ],
+    [ "plane_ptr", "classSpectrum3D.html#afcac0b2f5219ddb2cececef3f0c0c6d4", null ],
+    [ "proj_mat", "classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab", null ],
+    [ "sample_ptr", "classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994", null ],
+    [ "shader_wave_ptr", "classSpectrum3D.html#a81783c45f380d96a6d9bcfba0f7a5a1c", null ],
+    [ "shader_wfft_ptr", "classSpectrum3D.html#accf2fcb6cf9ef59b67a2d4fb99d8d7f1", null ],
+    [ "spectrum_ptr", "classSpectrum3D.html#a7fa0c437b083317378272896b2453154", null ],
+    [ "timer_ptr", "classSpectrum3D.html#ae1b50316082161744a8200abd9dd1ae4", null ],
+    [ "view_default_mat", "classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c", null ],
+    [ "view_wave_mat", "classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4", null ],
+    [ "view_wff_mat", "classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5", null ],
+    [ "whell_delta", "classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5", null ],
+    [ "window", "classSpectrum3D.html#ac61a13a5ea9996abb09351cb121a49a2", null ]
+];
