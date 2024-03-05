@@ -24,33 +24,61 @@ Algumas fotos do ambiente do programa.
 
 ### Tela do programa
 
-![](/assets/img/Screenshot/WindowSoftware.png){:width=70%}
+<div style="width:70%;">
+
+![](/assets/img/Screenshot/WindowSoftware.png)
+
+</div>
 
 ### Tipos de visualização
 
 **Senoidal com FFT**
 
+<div style="width:70%;">
+
 ![](/assets/img/Screenshot/SineWaveFFT.png)
+
+</div>
 
 **Senoidal puro**
 
+<div style="width:70%;">
+
 ![](/assets/img/Screenshot/SineWaveNoFFT.png)
+
+</div>
 
 **Espectro com FFT**
 
+<div style="width:70%;">
+
 ![](/assets/img/Screenshot/SpectrumFFT.png)
+
+</div>
 
 **Espectro puro**
 
+<div style="width:70%;">
+
 ![](/assets/img/Screenshot/SpectrumNoFFT.png)
+
+</div>
 
 **Senoide 3D com FFT**
 
+<div style="width:70%;">
+
 ![](/assets/img/Screenshot/WaveFFT3D.gif)
+
+</div>
 
 **Senoide 3D Puro**
 
+<div style="width:70%;">
+
 ![](/assets/img/Screenshot/WaveNoFFT3D.gif)
+
+</div>
 
 ## Instalação e Execução 
 
