@@ -35,5 +35,5 @@ jobs:
       - name: Deploy Documentation
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.gh-pages }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/build/docs/html
