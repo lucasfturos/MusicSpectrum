@@ -25,5 +25,12 @@ jobs:
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-      - name: Documentation
+      - name: Build Documentation
         run: cmake --build ${{github.workspace}}/build --target documentation
+
+      - name: Deploy Documentation
+        deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_API_TOKEN
+        local_dir: build/docs/html
