@@ -1,16 +1,15 @@
 #include "hud.hpp"
 
-// Construtor da classe HUD
+/*
+ * Construtor da classe HUD.
+ *
+ * Inicializa a interface gráfica do usuário (GUI) utilizando a biblioteca
+ * ImGui. Carrega a fonte e as texturas necessárias.
+ *
+ * `win`: Um ponteiro compartilhado para uma janela RenderWindow do
+ * SFML.
+ */
 HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
-    /*
-     * Inicializa a interface gráfica do usuário (GUI) utilizando a biblioteca
-     * ImGui. Carrega a fonte e as texturas necessárias.
-     *
-     * @param win: Um ponteiro compartilhado para uma janela RenderWindow do
-     * SFML.
-     * @throws std::runtime_error: Se ocorrer um erro ao inicializar a
-     * RenderWindow.
-     */
     if (!ImGui::SFML::Init(*window, false)) {
         throw std::runtime_error("Error when Initializing RenderWindow!");
     }
@@ -23,20 +22,19 @@ HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
     sample_buffer.reserve(buffer_size);
 }
 
-// Destrutor da classe HUD.
+/* Destrutor da classe HUD. */
 HUD::~HUD() { ImGui::SFML::Shutdown(); }
 
-// Função de inicialização da fonte da interface
+/* Função de inicialização da fonte da interface */
 void HUD::initFont() {
     ImGui::GetIO().Fonts->Clear();
-    ImGui::GetIO().Fonts->AddFontFromFileTTF("./assets/font/Roboto-Regular.ttf",
-                                             18.f);
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("./assets/font/Roboto-Regular.ttf", 18.f);
     if (!ImGui::SFML::UpdateFontTexture()) {
         throw std::runtime_error("Update Font Texture");
     }
 }
 
-// Função de inicialização dos icones
+/* Função de inicialização dos icones */
 void HUD::initTexture() {
     if (!play_tex.loadFromFile("./assets/img/icon/botao-play.png")) {
         throw std::invalid_argument("Error Loading Texture Play");
@@ -67,22 +65,20 @@ void HUD::initTexture() {
     }
 }
 
-// Função define o buffer de áudio
+/*
+ * Define o buffer de som a partir de um arquivo de áudio.
+ *
+ * `filename`: O caminho do arquivo de áudio.
+ */
 void HUD::setSoundBuffer(const std::string &filename) {
-    /*
-     * @brief Define o buffer de som a partir de um arquivo de áudio.
-     *
-     * @param filename O caminho do arquivo de áudio.
-     */
     sound_buffer.loadFromFile(filename);
     sound.setBuffer(sound_buffer);
     resetControls();
 }
 
-// Função principal para execução da interface gráfica
+/* Executa o loop principal da interface gráfica. */
 void HUD::run() {
-    ImGui::Begin("Audio HUD", nullptr,
-                 ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
+    ImGui::Begin("Audio HUD", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
     ImGui::SetWindowPos(ImVec2(0, 0));
     ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT));
 

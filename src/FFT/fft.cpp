@@ -1,30 +1,31 @@
 #include "fft.hpp"
 
-// Função para calcular a amplitude de um número complexo
+/*
+ * `Função para calcular a amplitude de um número complexo`
+ *
+ * Calcula a amplitude (módulo) de um número complexo `z`.
+ *
+ * `z`: Um número complexo do tipo `std::complex<float>`.
+ * Rertono: A amplitude (módulo) do número complexo `z`, calculada como a
+ * raiz quadrada da soma dos quadrados das partes real e imaginária.
+ */
 template <class T> inline float FFT<T>::amp(Float_Complex z) {
-    /*
-     * Calcula a amplitude (módulo) de um número complexo `z`.
-     *
-     * @param z Um número complexo do tipo `std::complex<float>`.
-     * @return A amplitude (módulo) do número complexo `z`, calculada como a
-     * raiz quadrada da soma dos quadrados das partes real e imaginária.
-     */
     float a = z.real();
     float b = z.imag();
     return sqrtf(a * a + b * b);
 }
 
-// Função para reversão de bits
-template <class T>
-std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) {
-    /*
-     * Realiza a reversão de bits de um índice `k` em um número
-     * binário de `n` bits.
-     *
-     * @param k O índice a ser revertido.
-     * @param n O número de bits do índice `k`.
-     * @return O índice `k` com seus bits revertidos.
-     */
+/*
+ * `Função para reversão de bits`
+ *
+ * Realiza a reversão de bits de um índice `k` em um número
+ * binário de `n` bits.
+ *
+ * `k O índice a ser revertido.
+ * `n O número de bits do índice `k`.
+ * @return O índice `k` com seus bits revertidos.
+ */
+template <class T> std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) {
     std::size_t reversed = 0;
     for (std::size_t i = 0; i < n; i++) {
         reversed = (reversed << 1) | (k & 1);
@@ -33,17 +34,15 @@ std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) {
     return reversed;
 }
 
-// Funções para aplicar diferentes janelas
-
-// Janela de Hann
-template <class T>
-void FFT<T>::applyHannWindow(std::vector<T> &in, std::size_t n) {
-    /*
-     * Aplica a janela de Hann aos dados de entrada `in` com tamanho `n`.
-     *
-     * @param in Uma referência a um vetor de dados de entrada do tipo `T`.
-     * @param n O tamanho do vetor de dados de entrada.
-     */
+/*
+ * `Janela de Hann`
+ *
+ * Aplica a janela de Hann aos dados de entrada `in` com tamanho `n`.
+ *
+ * `in`: Uma referência a um vetor de dados de entrada do tipo `T`.
+ * `n`: O tamanho do vetor de dados de entrada.
+ */
+template <class T> void FFT<T>::applyHannWindow(std::vector<T> &in, std::size_t n) {
     for (std::size_t i = 0; i < n; ++i) {
         float t = static_cast<float>(i) / (n - 1);
         float hann = 0.5 - 0.5 * std::cos(2 * pi * t);
@@ -51,15 +50,15 @@ void FFT<T>::applyHannWindow(std::vector<T> &in, std::size_t n) {
     }
 }
 
-// Janela de Hamming
-template <class T>
-void FFT<T>::applyHammingWindow(std::vector<T> &in, std::size_t n) {
-    /*
-     * Aplica a janela de Hamming aos dados de entrada `in` com tamanho `n`.
-     *
-     * @param in Uma referência a um vetor de dados de entrada do tipo `T`.
-     * @param n O tamanho do vetor de dados de entrada.
-     */
+/*
+ * `Janela de Hamming`
+ *
+ * Aplica a janela de Hamming aos dados de entrada `in` com tamanho `n`.
+ *
+ * `in`: Uma referência a um vetor de dados de entrada do tipo `T`.
+ * `n`: O tamanho do vetor de dados de entrada.
+ */
+template <class T> void FFT<T>::applyHammingWindow(std::vector<T> &in, std::size_t n) {
     for (std::size_t i = 0; i < n; ++i) {
         float t = static_cast<float>(i) / (n - 1);
         float hamming = 0.54 - 0.46 * std::cos(2 * pi * t);
@@ -67,54 +66,53 @@ void FFT<T>::applyHammingWindow(std::vector<T> &in, std::size_t n) {
     }
 }
 
-// Janela de Blackman
-template <class T>
-void FFT<T>::applyBlackmanWindow(std::vector<T> &in, std::size_t n) {
-    /*
-     * Aplica a janela de Blackman aos dados de entrada `in` com tamanho `n`.
-     *
-     * @param in Uma referência a um vetor de dados de entrada do tipo `T`.
-     * @param n O tamanho do vetor de dados de entrada.
-     */
+/*
+ * Janela de Blackman
+ *
+ * Aplica a janela de Blackman aos dados de entrada `in` com tamanho `n`.
+ *
+ * `in`: Uma referência a um vetor de dados de entrada do tipo `T`.
+ * `n`: O tamanho do vetor de dados de entrada.
+ */
+template <class T> void FFT<T>::applyBlackmanWindow(std::vector<T> &in, std::size_t n) {
     for (std::size_t i = 0; i < n; ++i) {
         float t = static_cast<float>(i) / (n - 1);
-        float blackman =
-            0.42 + 0.5 * std::cos(2 * pi * t) + 0.8 * std::cos(4 * pi * t);
+        float blackman = 0.42 + 0.5 * std::cos(2 * pi * t) + 0.8 * std::cos(4 * pi * t);
         in[i] *= blackman;
     }
 }
 
-// Janela de Flattop
-template <class T>
-void FFT<T>::applyFlattopWindow(std::vector<T> &in, std::size_t n) {
-    /*
-     * Aplica a janela de Flattop aos dados de entrada `in` com tamanho `n`.
-     *
-     * @param in Uma referência a um vetor de dados de entrada do tipo `T`.
-     * @param n O tamanho do vetor de dados de entrada.
-     */
+/*
+ * Janela de Flattop
+ *
+ * Aplica a janela de Flattop aos dados de entrada `in` com tamanho `n`.
+ *
+ * `in`: Uma referência a um vetor de dados de entrada do tipo `T`.
+ * `n`: O tamanho do vetor de dados de entrada.
+ */
+template <class T> void FFT<T>::applyFlattopWindow(std::vector<T> &in, std::size_t n) {
     for (std::size_t i = 0; i < n; ++i) {
         float t = static_cast<float>(i) / (n - 1);
-        float flattop =
-            1 - 1.93 * std::cos(2 * pi * t) + 1.29 * std::cos(4 * pi * t) -
-            0.388 * std::cos(6 * pi * t) + 0.032 * std::cos(8 * pi * t);
+        float flattop = 1 - 1.93 * std::cos(2 * pi * t) + 1.29 * std::cos(4 * pi * t) -
+                        0.388 * std::cos(6 * pi * t) + 0.032 * std::cos(8 * pi * t);
         in[i] *= flattop;
     }
 }
 
-// Função recursiva para realizar a FFT
+/*
+ * `Função recursiva para realizar a FFT`
+ *
+ * Realiza a Transformada Rápida de Fourier (FFT) nos dados de entrada.
+ *
+ * `in`: Uma referência a um vetor de dados de entrada do tipo `T`.
+ * `stride`: O passo entre os elementos do vetor de entrada.
+ * `out`: Uma referência a um vetor de número complexo do tipo
+ * `std::complex<float>` para armazenar a saída da FFT.
+ * `n`: O tamanho do vetor de dados de entrada e saída.
+ */
 template <class T>
-void FFT<T>::fft(std::vector<T> &in, std::size_t stride,
-                 std::vector<std::complex<float>> &out, std::size_t n) {
-    /*
-     * Realiza a Transformada Rápida de Fourier (FFT) nos dados de entrada.
-     *
-     * @param in Uma referência a um vetor de dados de entrada do tipo `T`.
-     * @param stride O passo entre os elementos do vetor de entrada.
-     * @param out Uma referência a um vetor de número complexo do tipo
-     * `std::complex<float>` para armazenar a saída da FFT.
-     * @param n O tamanho do vetor de dados de entrada e saída.
-     */
+void FFT<T>::fft(std::vector<T> &in, std::size_t stride, std::vector<std::complex<float>> &out,
+                 std::size_t n) {
     if (n == 1) {
         out[0] = in[0];
         return;
@@ -138,20 +136,21 @@ void FFT<T>::fft(std::vector<T> &in, std::size_t stride,
     }
 }
 
-// Função principal para análise de espectro
+/*
+ * `Função principal para análise de espectro`
+ *
+ * Realiza a análise do espectro dos dados de entrada usando a Transformada
+ * Rápida de Fourier (FFT) e armazena o resultado em `out`.
+ *
+ * `in`: Uma referência a um vetor de dados de entrada do tipo `T`.
+ * `stride`: O passo entre os elementos do vetor de entrada.
+ * `out`: Uma referência a um vetor de números complexos do tipo
+ * `std::complex<float>` para armazenar o espectro calculado.
+ * `n`: O tamanho do vetor de dados de entrada e saída.
+ */
 template <class T>
 void FFT<T>::fftAnalyze(std::vector<T> &in, std::size_t stride,
                         std::vector<std::complex<float>> &out, std::size_t n) {
-    /*
-     * Realiza a análise do espectro dos dados de entrada usando a Transformada
-     * Rápida de Fourier (FFT) e armazena o resultado em `out`.
-     *
-     * @param in Uma referência a um vetor de dados de entrada do tipo `T`.
-     * @param stride O passo entre os elementos do vetor de entrada.
-     * @param out Uma referência a um vetor de números complexos do tipo
-     * `std::complex<float>` para armazenar o espectro calculado.
-     * @param n O tamanho do vetor de dados de entrada e saída.
-     */
     applyHammingWindow(in, n);
     // applyHannWindow(in, n);
     // applyBlackmanWindow(in, n);
@@ -166,8 +165,7 @@ void FFT<T>::fftAnalyze(std::vector<T> &in, std::size_t stride,
     std::size_t m = 0;
     float max_amp = 1.0f;
 
-    for (float f = lowf; static_cast<std::size_t>(f) < n / 2;
-         f = std::ceil(f * step)) {
+    for (float f = lowf; static_cast<std::size_t>(f) < n / 2; f = std::ceil(f * step)) {
         float f1 = std::ceil(f * step);
         float a = 0.0f;
         for (std::size_t q = static_cast<std::size_t>(f);

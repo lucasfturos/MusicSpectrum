@@ -32,20 +32,6 @@ template <class T> class FFT {
              std::vector<std::complex<float>> &out, std::size_t n);
 
   public:
-    /*
-     * Realiza a análise de espectro dos dados de entrada usando a FFT.
-     * Calcula o espectro considerando diferentes frequências dentro do
-     * intervalo de frequências de interesse e armazena o resultado no vetor de
-     * números complexos `out`. Antes de calcular a FFT, é aplicada uma janela
-     * aos dados de entrada para reduzir o vazamento espectral. O resultado é
-     * normalizado dividindo pelo valor máximo de amplitude encontrado durante
-     * a análise de frequência.
-     * @param in Referência ao vetor de dados de entrada.
-     * @param stride O passo entre os elementos do vetor de entrada.
-     * @param out Referência ao vetor de números complexos para armazenar o
-     * espectro calculado.
-     * @param n Tamanho do vetor de dados de entrada e saída.
-     */
     void fftAnalyze(std::vector<T> &in, std::size_t stride,
                     std::vector<std::complex<float>> &out, std::size_t n);
 };

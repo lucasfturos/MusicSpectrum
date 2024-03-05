@@ -3,6 +3,7 @@
 #include "../FFT/fft.hpp"
 #include "../HUD/hud.hpp"
 #include "../Sample/sample.hpp"
+#include "../Timer/timer.hpp"
 #include <SFML/Graphics.hpp>
 #include <functional>
 #include <iostream>
@@ -21,14 +22,13 @@ class Spectrum {
     sf::Color start_color = sf::Color::Blue;
     sf::Color end_color = sf::Color::Magenta;
 
-    sf::Clock clock;
     std::vector<sf::RectangleShape> rectangles;
 
+    std::unique_ptr<Timer> timer_ptr;
     std::unique_ptr<Sample> sample_ptr;
 
   public:
-    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
-                 handlePlot);
+    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)> handlePlot);
 
     void viewWaveform();
     void viewWaveformFFT();

@@ -9,6 +9,14 @@
 
 using namespace std::chrono;
 
+/*
+ * `Classe responsável pela renderização do programa.`
+ *
+ * A classe Render é responsável por inicializar a janela principal, gerenciar
+ * objetos como HUD, Spectrum e Spectrum3D, processar eventos, controlar a taxa
+ * de quadros e realizar a renderização do espectro de áudio de acordo com a
+ * opção selecionada na HUD.
+ */
 class Render {
   private:
     const int FPS = 60;
@@ -24,8 +32,7 @@ class Render {
     std::shared_ptr<sf::VideoMode> desktop;
     std::shared_ptr<sf::RenderWindow> window;
 
-    void handlePlot(std::vector<std::complex<float>> spectrum,
-                    std::size_t fft_size);
+    void handlePlot(std::vector<std::complex<float>> spectrum, std::size_t fft_size);
     void frameRate(time_point<high_resolution_clock> &prev_time);
 
   public:

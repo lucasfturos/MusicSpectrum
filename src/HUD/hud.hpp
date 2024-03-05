@@ -77,26 +77,9 @@ class HUD {
     sf::SoundBuffer sound_buffer;
     std::vector<sf::Int16> sample_buffer;
 
-    /*
-     * @brief Executa o loop principal da interface gráfica.
-     */
     void run();
-
-    /*
-     * @brief Manipula os eventos da interface gráfica.
-     * @param event: O evento a ser processado.
-     */
     void handleEvents(sf::Event &event);
-
-    /*
-     * @brief Construtor da classe HUD.
-     * @param win: Um ponteiro compartilhado para a janela SFML onde a GUI será
-     * renderizada.
-     */
+ 
     HUD(std::shared_ptr<sf::RenderWindow> win);
-
-    /*
-     * @brief Destrutor da classe HUD.
-     */
     ~HUD();
 };

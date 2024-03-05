@@ -19,6 +19,8 @@ set(SRC_HEADERS
   Spectrum3D/spectrum3D.hpp
   # Render
   Render/render.hpp
+  # Timer
+  Timer/timer.hpp
 )
 
 # List all the source files in the src directory
@@ -46,6 +48,8 @@ set(SRC_SOURCES
   # Render
   Render/plot.cpp
   Render/render.cpp
+  # Timer
+  Timer/timer.cpp
   # Main
   main.cpp
 )

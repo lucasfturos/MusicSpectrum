@@ -13,16 +13,14 @@ void Spectrum::viewWaveformRect() {
 
         float t = static_cast<float>(i * 4) / buffer_size;
         t = t * t * (3.0f - 2.0f * t);
-        sf::Color vertex_color(
-            static_cast<sf::Uint8>(start_color.r * (1 - t) + end_color.r * t),
-            static_cast<sf::Uint8>(start_color.g * (1 - t) + end_color.g * t),
-            static_cast<sf::Uint8>(start_color.b * (1 - t) + end_color.b * t));
+        sf::Color vertex_color(static_cast<sf::Uint8>(start_color.r * (1 - t) + end_color.r * t),
+                               static_cast<sf::Uint8>(start_color.g * (1 - t) + end_color.g * t),
+                               static_cast<sf::Uint8>(start_color.b * (1 - t) + end_color.b * t));
 
         sf::RectangleShape rectangle(sf::Vector2f(rect_width, rect_height));
         rectangle.setFillColor(vertex_color);
 
-        rectangle.setPosition(static_cast<float>(i) *
-                                  (rect_width + rect_spacing),
+        rectangle.setPosition(static_cast<float>(i) * (rect_width + rect_spacing),
                               offsetY - rect_height);
         window->draw(rectangle);
     }
@@ -41,10 +39,9 @@ void Spectrum::viewWaveformRectFFT() {
 
         float t = static_cast<float>(j * 3) / buffer_size;
         t = t * t * (3.0f - 2.0f * t);
-        sf::Color vertex_color(
-            static_cast<sf::Uint8>(start_color.r * (1 - t) + end_color.r * t),
-            static_cast<sf::Uint8>(start_color.g * (1 - t) + end_color.g * t),
-            static_cast<sf::Uint8>(start_color.b * (1 - t) + end_color.b * t));
+        sf::Color vertex_color(static_cast<sf::Uint8>(start_color.r * (1 - t) + end_color.r * t),
+                               static_cast<sf::Uint8>(start_color.g * (1 - t) + end_color.g * t),
+                               static_cast<sf::Uint8>(start_color.b * (1 - t) + end_color.b * t));
 
         rectangle.setFillColor(vertex_color);
         sf::Vector2f position(j * rect_width, centerY - rect_height);
@@ -54,8 +51,8 @@ void Spectrum::viewWaveformRectFFT() {
 
         sf::RectangleShape gravity_rect(sf::Vector2f(10.f, 5.f));
         gravity_rect.setFillColor(vertex_color);
-        sf::Vector2f rect_pos = sf::Vector2f(
-            position.x + (rect_width - 10.f) / 2, position.y - 5.f);
+        sf::Vector2f rect_pos =
+            sf::Vector2f(position.x + (rect_width - 10.f) / 2, position.y - 5.f);
 
         gravity_velocity += gravity_acceleration;
         rect_pos.y += gravity_velocity;
