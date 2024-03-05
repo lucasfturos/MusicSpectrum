@@ -60,7 +60,7 @@ Algumas fotos do ambiente do programa.
 <img src="/assets/img/Screenshot/WaveFFT3D.gif" width="70%" />
 </p>
 
-**Senoide 3D com FFT**
+**Senoide 3D Puro**
 <p align="center">
 <img src="/assets/img/Screenshot/WaveNoFFT3D.gif" width="70%" />
 </p>
