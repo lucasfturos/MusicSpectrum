@@ -14,8 +14,8 @@ jobs:
       - name: Update packages list
         run: sudo apt update
 
-      - name: Install gcc, g++, CMake, Make, SFML, OpenGL, GLM, GLEW
-        run: sudo apt install -y gcc g++ cmake make libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev
+      - name: Install gcc, g++, CMake, Make, SFML, OpenGL, GLM, GLEW, Doxygen
+        run: sudo apt install -y gcc g++ cmake make libsfml-dev libglew-dev libglm-dev mesa-common-dev libgl1-mesa-dev doxygen
 
       - uses: actions/checkout@v3
 
@@ -24,3 +24,6 @@ jobs:
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+      - name: Documentation
+        run: cmake --build ${{github.workspace}}/build --target documentation

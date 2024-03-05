@@ -60,6 +60,11 @@ Algumas fotos do ambiente do programa.
 <img src="/assets/img/Screenshot/WaveFFT3D.gif" width="70%" />
 </p>
 
+**Senoide 3D com FFT**
+<p align="center">
+<img src="/assets/img/Screenshot/WaveNoFFT3D.gif" width="70%" />
+</p>
+
 ## Instalação e Execução 
 
 Detalhes logo abaixo:
@@ -129,6 +134,10 @@ Créditos de Bibliotecas e Icones usados no programa:
 ## Referências
 
 Video do Tsoding Daily: [Music Visualizer (Fast Fourier Transform)](https://youtu.be/Xdbk1Pr5WXU)
+
+Tutorial para criar uma docs: [CMake-Episode 026: Generating the documentation with Doxygen: doxygen_add_doc | CMake Starts Here](https://youtu.be/_IJZqf_kJ8A?si=B5-FVa62y-6MhmDS)
+
+Repositório com configurações do Doxygen: [SCINE: Common CMake Files](https://github.com/qcscine/cmake)
 
 ## License
 
