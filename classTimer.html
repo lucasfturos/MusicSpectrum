@@ -120,7 +120,7 @@ Atributos Privados</h2></td></tr>
 <tr class="separator:a7c8f5e6cbb5b92faba2cedc5df6b3b54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
-<div class="textblock"><p><code>Classe simples para medir tempo decorrido.</code></p>
+<div class="textblock"><p>Classe simples para medir tempo decorrido.</p>
 <p>A classe <code><a class="el" href="classTimer.html">Timer</a></code> fornece métodos para iniciar, resetar e obter o tempo decorrido desde o início ou último reset. </p>
 </div><h2 class="groupheader">Definições de tipos</h2>
 <a id="a2b65bc504bcac3f364cbf3d871d9a11a"></a>
@@ -182,6 +182,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor padrão.</p>
+<p>Inicia o timer automaticamente no momento da construção. </p>
 
 </div>
 </div>
@@ -199,6 +201,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destrutor padrão.</p>
+<p>Automaticamente reseta o timer para garantir que o objeto não mantenha referências desnecessárias a dados após sua destruição. </p>
 
 </div>
 </div>
@@ -218,7 +222,7 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Obtém o tempo decorrido desde o início do timer ou o último reset, em segundos.</p>
-<p><code>returno</code>: O tempo decorrido em segundos como um valor <code>float</code>. </p>
+<p><code>retorno</code>: O tempo decorrido em segundos como um valor <code>float</code>. </p>
 
 </div>
 </div>
@@ -236,6 +240,7 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Reinicia o timer, marcando o tempo atual como o novo ponto de início para medição. </p>
 
 </div>
 </div>

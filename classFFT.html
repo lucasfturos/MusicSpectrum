@@ -117,7 +117,13 @@ Membros Privados</h2></td></tr>
 <tr class="memitem:a3a5e1e62b599a1f54d1fd7c33d8062dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFFT.html#a3a5e1e62b599a1f54d1fd7c33d8062dd">fft</a> (std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; std::complex&lt; float &gt;&gt; &amp;out, std::size_t n)</td></tr>
 <tr class="separator:a3a5e1e62b599a1f54d1fd7c33d8062dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Funções membros</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class FFT&lt; T &gt;</h3>
+
+<p>Classe template para realizar <a class="el" href="classFFT.html">FFT</a> em dados unidimensionais.</p>
+<p>Esta classe implementa a Transformada de Fourier Rápida (<a class="el" href="classFFT.html">FFT</a>) para calcular a transformada discreta de Fourier de um sinal unidimensional. Suporta diferentes tipos de dados, como <code>int</code>, <code>short</code>, <code>uint8_t</code>, <code>uint16_t</code>, etc. </p>
+</div><h2 class="groupheader">Funções membros</h2>
 <a id="a6584b7e6690395f4276efd3f992db0aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6584b7e6690395f4276efd3f992db0aa">&#9670;&nbsp;</a></span>amp()</h2>
 
@@ -143,6 +149,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para calcular a amplitude de um número complexo</p>
+<p>Calcula a amplitude (módulo) de um número complexo <code>z</code>.</p>
+<p><code>z</code>: Um número complexo do tipo <code>std::complex&lt;float&gt;</code>. Rertono: A amplitude (módulo) do número complexo <code>z</code>, calculada como a raiz quadrada da soma dos quadrados das partes real e imaginária. </p>
 
 </div>
 </div>
@@ -181,6 +190,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Janela de Blackman</p>
+<p>Aplica a janela de Blackman aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
+<p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>. <code>n</code>: O tamanho do vetor de dados de entrada. </p>
 
 </div>
 </div>
@@ -219,6 +231,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Janela de Flattop</p>
+<p>Aplica a janela de Flattop aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
+<p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>. <code>n</code>: O tamanho do vetor de dados de entrada. </p>
 
 </div>
 </div>
@@ -257,6 +272,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Janela de Hamming</p>
+<p>Aplica a janela de Hamming aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
+<p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>. <code>n</code>: O tamanho do vetor de dados de entrada. </p>
 
 </div>
 </div>
@@ -295,6 +313,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Janela de Hann</p>
+<p>Aplica a janela de Hann aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
+<p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>. <code>n</code>: O tamanho do vetor de dados de entrada. </p>
 
 </div>
 </div>
@@ -333,6 +354,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para reversão de bits</p>
+<p>Realiza a reversão de bits de um índice <code>k</code> em um número binário de <code>n</code> bits.</p>
+<p><code>k</code>: O índice a ser revertido. <code>n</code>: O número de bits do índice <code>k</code>. </p><dl class="section return"><dt>Retorna</dt><dd>O índice <code>k</code> com seus bits revertidos. </dd></dl>
 
 </div>
 </div>
@@ -383,6 +407,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função recursiva para realizar a <a class="el" href="classFFT.html">FFT</a></p>
+<p>Realiza a Transformada Rápida de Fourier (<a class="el" href="classFFT.html">FFT</a>) nos dados de entrada.</p>
+<p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>. <code>stride</code>: O passo entre os elementos do vetor de entrada. <code>out</code>: Uma referência a um vetor de número complexo do tipo <code>std::complex&lt;float&gt;</code> para armazenar a saída da <a class="el" href="classFFT.html">FFT</a>. <code>n</code>: O tamanho do vetor de dados de entrada e saída. </p>
 
 </div>
 </div>
@@ -425,6 +452,9 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Função principal para análise de espectro</p>
+<p>Realiza a análise do espectro dos dados de entrada usando a Transformada Rápida de Fourier (<a class="el" href="classFFT.html">FFT</a>) e armazena o resultado em <code>out</code>.</p>
+<p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>. <code>stride</code>: O passo entre os elementos do vetor de entrada. <code>out</code>: Uma referência a um vetor de números complexos do tipo <code>std::complex&lt;float&gt;</code> para armazenar o espectro calculado. <code>n</code>: O tamanho do vetor de dados de entrada e saída. </p>
 
 </div>
 </div>

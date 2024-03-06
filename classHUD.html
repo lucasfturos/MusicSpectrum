@@ -197,7 +197,10 @@ Atributos Privados</h2></td></tr>
 <tr class="memitem:aa816e63dc71766f39b5a77f620730c47"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::RenderWindow &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHUD.html#aa816e63dc71766f39b5a77f620730c47">window</a></td></tr>
 <tr class="separator:aa816e63dc71766f39b5a77f620730c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Construtores e Destrutores</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe que representa a interface gráfica do usuário (GUI) para interagir com arquivos de áudio.</p>
+<p>A classe <code><a class="el" href="classHUD.html">HUD</a></code> (Heads-Up Display) gerencia a interface gráfica do usuário para interação com arquivos de áudio. Ela fornece controles para reproduzir, pausar, avançar, retroceder, ajustar volume, exibir e selecionar arquivos de áudio, entre outras funcionalidades. </p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="ac8e8a18d5a8f1a56e0abce314c4b3340"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8e8a18d5a8f1a56e0abce314c4b3340">&#9670;&nbsp;</a></span>HUD()</h2>
 
@@ -213,6 +216,9 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor da classe <a class="el" href="classHUD.html">HUD</a>.</p>
+<p>Inicializa a interface gráfica do usuário (GUI) utilizando a biblioteca ImGui. Carrega a fonte e as texturas necessárias.</p>
+<p><code>win</code>: Um ponteiro compartilhado para uma janela RenderWindow do SFML. </p>
 
 </div>
 </div>
@@ -230,6 +236,7 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destrutor da classe <a class="el" href="classHUD.html">HUD</a>. </p>
 
 </div>
 </div>
@@ -256,6 +263,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para exibir a lista de áudio disponível </p>
 
 </div>
 </div>
@@ -281,6 +289,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para exibir controles de reprodução de áudio </p>
 
 </div>
 </div>
@@ -324,6 +333,9 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Trata os eventos de entrada da janela SFML.</p>
+<p>Esta função trata os eventos de teclado da janela SFML, respondendo a diferentes teclas para controlar a reprodução de áudio, ajustar o volume, pular faixas e fechar a janela.</p>
+<p><code>event</code>: Referência ao objeto sf::Event que contém informações sobre o evento. </p>
 
 </div>
 </div>
@@ -349,6 +361,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função de inicialização da fonte da interface </p>
 
 </div>
 </div>
@@ -374,6 +387,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função de inicialização dos icones </p>
 
 </div>
 </div>
@@ -399,6 +413,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para exibir opções de modo de áudio </p>
 
 </div>
 </div>
@@ -424,6 +439,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Implementação para abrir a caixa de diálogo e lidar com a seleção de arquivos de áudio </p>
 
 </div>
 </div>
@@ -449,6 +465,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para reproduzir a próxima faixa de áudio na lista </p>
 
 </div>
 </div>
@@ -474,6 +491,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para reproduzir a faixa anterior de áudio na lista </p>
 
 </div>
 </div>
@@ -499,6 +517,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para resetar os controles de reprodução de áudio </p>
 
 </div>
 </div>
@@ -516,6 +535,7 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Executa o loop principal da interface gráfica. </p>
 
 </div>
 </div>
@@ -542,6 +562,8 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Define o buffer de som a partir de um arquivo de áudio.</p>
+<p><code>filename</code>: O caminho do arquivo de áudio. </p>
 
 </div>
 </div>
@@ -567,6 +589,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para exibir a janela de lista de áudio </p>
 
 </div>
 </div>
@@ -592,6 +615,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para retroceder a reprodução de áudio </p>
 
 </div>
 </div>
@@ -617,6 +641,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para avançar a reprodução de áudio </p>
 
 </div>
 </div>
@@ -642,6 +667,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função para estilizar os elementos do ImGui </p>
 
 </div>
 </div>
@@ -667,6 +693,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função que alterna o estado de mudo do áudio </p>
 
 </div>
 </div>
@@ -692,6 +719,7 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Função que alterna a reprodução de áudio </p>
 
 </div>
 </div>

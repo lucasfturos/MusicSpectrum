@@ -131,7 +131,10 @@ Atributos Privados</h2></td></tr>
 <tr class="memitem:acae8449a081e5ed2358660f2ac81b912"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; sf::RenderWindow &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a></td></tr>
 <tr class="separator:acae8449a081e5ed2358660f2ac81b912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Construtores e Destrutores</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe responsável pela renderização do programa.</p>
+<p>A classe <a class="el" href="classRender.html">Render</a> é responsável por inicializar a janela principal, gerenciar objetos como <a class="el" href="classHUD.html">HUD</a>, <a class="el" href="classSpectrum.html">Spectrum</a> e <a class="el" href="classSpectrum3D.html">Spectrum3D</a>, processar eventos, controlar a taxa de quadros e realizar a renderização do espectro de áudio de acordo com a opção selecionada na <a class="el" href="classHUD.html">HUD</a>. </p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a8610cc11739ef679b5935dd819021351"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8610cc11739ef679b5935dd819021351">&#9670;&nbsp;</a></span>Render()</h2>
 
@@ -146,6 +149,15 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor da classe <a class="el" href="classRender.html">Render</a>.</p>
+<p>Esta função inicializa os principais objetos usados pela classe <a class="el" href="classRender.html">Render</a>:</p><ul>
+<li><code>window</code>: Janela principal da aplicação.</li>
+<li><code>desktop</code>: Modo de exibição do desktop.</li>
+<li><code>hud_ptr</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classHUD.html">HUD</a>.</li>
+<li><code>fft_ptr</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classFFT.html">FFT</a>.</li>
+<li><code>spectrum_ptr</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classSpectrum.html">Spectrum</a>.</li>
+<li><code>spectrum3D_ptr</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classSpectrum3D.html">Spectrum3D</a>. </li>
+</ul>
 
 </div>
 </div>
@@ -173,6 +185,9 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Ajuste da taxa de quadros.</p>
+<p>Esta função controla a taxa de quadros da aplicação para manter uma renderização suave. Ela calcula o tempo decorrido desde o último frame e, se for menor que a duração desejada, coloca a thread em espera por um determinado tempo para garantir a taxa de quadros.</p>
+<p><code>prev_time</code>: Referência para o tempo do frame anterior. </p>
 
 </div>
 </div>
@@ -209,6 +224,9 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Processa o plot de acordo com a opção selecionada na <a class="el" href="classHUD.html">HUD</a>.</p>
+<p>A função verifica a opção selecionada na <a class="el" href="classHUD.html">HUD</a> e chama o método apropriado do objeto <code>spectrum_ptr</code> ou <code>spectrum3D_ptr</code> para visualizar o espectro ou a forma de onda.</p>
+<p><code>spectrum</code>: Um vetor de números complexos que representam o espectro. <code>fft_size</code>: O tamanho da transformada de Fourier rápida (<a class="el" href="classFFT.html">FFT</a>). </p>
 
 </div>
 </div>
@@ -226,6 +244,12 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Loop principal da aplicação.</p>
+<p>Esta função é o loop principal da aplicação e é responsável por:</p><ul>
+<li>Gerenciar eventos da janela e da <a class="el" href="classHUD.html">HUD</a>.</li>
+<li>Chamar os métodos <code>run</code> de <a class="el" href="classHUD.html">HUD</a>, <a class="el" href="classSpectrum.html">Spectrum</a> e <a class="el" href="classSpectrum3D.html">Spectrum3D</a> para realizar a atualização e renderização.</li>
+<li>Controlar a taxa de quadros da aplicação. </li>
+</ul>
 
 </div>
 </div>

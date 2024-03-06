@@ -115,7 +115,10 @@ Atributos Privados</h2></td></tr>
 <tr class="memitem:a62197f16600b65ec47103b1dc88b78d3"><td class="memItemLeft" align="right" valign="top">GLint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a></td></tr>
 <tr class="separator:a62197f16600b65ec47103b1dc88b78d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Construtores e Destrutores</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>A classe <a class="el" href="classPlane.html">Plane</a> representa um plano retangular simples no espaço 3D.</p>
+<p>Esta classe gera a geometria para um plano retangular com uma largura, altura e número de segmentos dados. Ela fornece funções para gerar índices e vértices para renderizar o plano usando OpenGL. </p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a1f81c64a149add49fb7706fb219287e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f81c64a149add49fb7706fb219287e4">&#9670;&nbsp;</a></span>Plane()</h2>
 
@@ -147,6 +150,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Constrói um novo objeto <a class="el" href="classPlane.html">Plane</a> com as dimensões e número de segmentos especificados.</p>
+<p><code>w</code>: A largura do plano. <code>h</code>: A altura do plano. <code>num_seg</code>: O número de segmentos (subdivisões) ao longo de cada lado do plano. </p>
 
 </div>
 </div>
@@ -164,6 +169,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destroi o objeto <a class="el" href="classPlane.html">Plane</a>.</p>
+<p>Libera quaisquer recursos alocados pelo objeto <a class="el" href="classPlane.html">Plane</a>. </p>
 
 </div>
 </div>
@@ -182,6 +189,9 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Gera índices para renderizar o plano.</p>
+<p>Esta função gera um vetor de índices representando a ordem em que os vértices devem ser renderizados para construir a geometria do plano.</p>
+<p><code>std::vector&lt;GLuint&gt;</code>: Um vetor de índices para renderizar o plano. </p>
 
 </div>
 </div>
@@ -199,6 +209,9 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Gera vértices para renderizar o plano.</p>
+<p>Esta função gera um vetor de vértices representando a geometria do plano com base em suas dimensões e número de segmentos.</p>
+<p><code>std::vector&lt;glm::vec3&gt;</code>: Um vetor de vértices para renderizar o plano. </p>
 
 </div>
 </div>

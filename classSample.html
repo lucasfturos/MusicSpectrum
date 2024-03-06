@@ -109,7 +109,10 @@ Atributos Privados</h2></td></tr>
 <tr class="memitem:aa557389534f68e24e6704d6ac2650935"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classHUD.html">HUD</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a></td></tr>
 <tr class="separator:aa557389534f68e24e6704d6ac2650935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Construtores e Destrutores</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>Classe auxiliar para processamento de amostras de áudio.</p>
+<p>A classe <code><a class="el" href="classSample.html">Sample</a></code> fornece métodos para converter amostras de áudio estéreo para mono e recuperar um buffer de amostras de acordo com o estado atual do objeto <code><a class="el" href="classHUD.html">HUD</a></code>. </p>
+</div><h2 class="groupheader">Construtores e Destrutores</h2>
 <a id="a5777262be0350b5544ca40cbb15e3788"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5777262be0350b5544ca40cbb15e3788">&#9670;&nbsp;</a></span>Sample()</h2>
 
@@ -125,6 +128,9 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Construtor da classe <a class="el" href="classSample.html">Sample</a>.</p>
+<p>Armazena o ponteiro compartilhado para a instância <a class="el" href="classHUD.html">HUD</a>.</p>
+<p><code>hud</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classHUD.html">HUD</a>. </p>
 
 </div>
 </div>
@@ -143,6 +149,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Pega o buffer de amostras do objeto <a class="el" href="classHUD.html">HUD</a>, considerando a posição de reprodução atual e o tamanho do buffer.</p>
+<p>O método calcula o índice inicial e final do buffer de amostras com base na posição de reprodução do som e na taxa de amostragem do buffer de som. Em seguida, copia os valores das amostras do buffer de som para o buffer de amostras da <a class="el" href="classHUD.html">HUD</a>, considerando o tamanho do buffer e o índice final calculado. Valores fora do intervalo válido são preenchidos com zeros. </p>
 
 </div>
 </div>
@@ -160,6 +168,8 @@ Atributos Privados</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Converte amostras de áudio estéreo para mono e as armazena no buffer de amostras do objeto <a class="el" href="classHUD.html">HUD</a>.</p>
+<p>O método verifica se o buffer de som da <a class="el" href="classHUD.html">HUD</a> possui dois canais (estéreo) e, caso positivo, realiza a conversão para mono (média dos canais esquerdo e direito) e armazena os valores no buffer de amostras. </p>
 
 </div>
 </div>
