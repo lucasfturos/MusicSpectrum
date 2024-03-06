@@ -2,8 +2,8 @@
 
 #include <chrono>
 
-/**
- * `Classe simples para medir tempo decorrido.`
+/*!
+ * Classe simples para medir tempo decorrido.
  *
  * A classe `Timer` fornece métodos para iniciar, resetar e obter o tempo
  * decorrido desde o início ou último reset.

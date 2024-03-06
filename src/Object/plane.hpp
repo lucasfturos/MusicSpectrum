@@ -5,7 +5,7 @@
 #include <glm/glm.hpp>
 #include <vector>
 
-/*
+/*!
  * A classe Plane representa um plano retangular simples no espaço 3D.
  *
  * Esta classe gera a geometria para um plano retangular com uma largura,

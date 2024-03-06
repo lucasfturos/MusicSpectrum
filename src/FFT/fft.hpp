@@ -10,8 +10,9 @@ const float pi = M_PI;
 using namespace std::complex_literals;
 using Float_Complex = std::complex<float>;
 
-/*
+/*!
  * Classe template para realizar FFT em dados unidimensionais.
+ *
  * Esta classe implementa a Transformada de Fourier Rápida (FFT) para calcular
  * a transformada discreta de Fourier de um sinal unidimensional.
  * Suporta diferentes tipos de dados, como `int`, `short`, `uint8_t`,

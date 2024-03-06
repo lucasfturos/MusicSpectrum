@@ -2,7 +2,7 @@
 
 #include "../HUD/hud.hpp"
 
-/*
+/*!
  * Classe auxiliar para processamento de amostras de áudio.
  *
  * A classe `Sample` fornece métodos para converter amostras de áudio estéreo

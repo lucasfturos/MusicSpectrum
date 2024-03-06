@@ -15,7 +15,7 @@ const int HUD_WIDTH = 400;
 const int HUD_HEIGHT = 300;
 const size_t buffer_size = 1000;
 
-/*
+/*!
  * Classe que representa a interface gráfica do usuário (GUI) para interagir com
  * arquivos de áudio.
  *

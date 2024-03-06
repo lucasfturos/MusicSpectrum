@@ -1,6 +1,6 @@
 #include "plane.hpp"
 
-/*
+/*!
  * Constrói um novo objeto Plane com as dimensões e número de
  * segmentos especificados.
  *
@@ -11,14 +11,14 @@
  */
 Plane::Plane(GLfloat w, GLfloat h, GLint num_seg) : width(w), height(h), num_segments(num_seg) {}
 
-/*
+/*!
  * Destroi o objeto Plane.
  *
  * Libera quaisquer recursos alocados pelo objeto Plane.
  */
 Plane::~Plane() {}
 
-/*
+/*!
  * Gera índices para renderizar o plano.
  *
  * Esta função gera um vetor de índices representando a ordem em que
@@ -42,7 +42,7 @@ std::vector<GLuint> Plane::genIndices() {
     return indices;
 }
 
-/*
+/*!
  * Gera vértices para renderizar o plano.
  *
  * Esta função gera um vetor de vértices representando a geometria do

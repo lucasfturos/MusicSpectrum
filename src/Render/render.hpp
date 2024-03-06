@@ -9,8 +9,8 @@
 
 using namespace std::chrono;
 
-/*
- * `Classe responsável pela renderização do programa.`
+/*!
+ * Classe responsável pela renderização do programa.
  *
  * A classe Render é responsável por inicializar a janela principal, gerenciar
  * objetos como HUD, Spectrum e Spectrum3D, processar eventos, controlar a taxa

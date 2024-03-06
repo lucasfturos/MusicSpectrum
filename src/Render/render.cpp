@@ -1,8 +1,8 @@
 #include "render.hpp"
 #include "../../external/imgui/imgui_impl_opengl3.h"
 
-/*
- * `Construtor da classe Render.`
+/*!
+ * Construtor da classe Render.
  *
  * Esta função inicializa os principais objetos usados pela classe Render:
  * - `window`: Janela principal da aplicação.
@@ -26,8 +26,8 @@ Render::Render() {
     spectrum3D_ptr = std::make_shared<Spectrum3D>(window, hud_ptr, spectrum_ptr, fft_ptr);
 }
 
-/*
- * `Ajuste da taxa de quadros.`
+/*!
+ * Ajuste da taxa de quadros.
  *
  * Esta função controla a taxa de quadros da aplicação para manter uma
  * renderização suave. Ela calcula o tempo decorrido desde o último frame e,
@@ -48,8 +48,8 @@ void Render::frameRate(time_point<high_resolution_clock> &prev_time) {
     prev_time = high_resolution_clock::now();
 }
 
-/*
- * `Loop principal da aplicação.`
+/*!
+ * Loop principal da aplicação.
  *
  * Esta função é o loop principal da aplicação e é responsável por:
  * - Gerenciar eventos da janela e da HUD.

@@ -1,6 +1,6 @@
 #include "sample.hpp"
 
-/*
+/*!
  * Construtor da classe Sample.
  *
  * Armazena o ponteiro compartilhado para a instância HUD.
@@ -9,7 +9,7 @@
  */
 Sample::Sample(std::shared_ptr<HUD> hud) : hud_ptr(hud) {}
 
-/*
+/*!
  * Converte amostras de áudio estéreo para mono e as armazena no
  * buffer de amostras do objeto HUD.
  *
@@ -29,7 +29,7 @@ void Sample::monoSample() {
     }
 }
 
-/*
+/*!
  * Pega o buffer de amostras do objeto HUD, considerando a
  * posição de reprodução atual e o tamanho do buffer.
  *

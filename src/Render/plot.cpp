@@ -1,7 +1,7 @@
 #include "render.hpp"
 
-/*
- * `Processa o plot de acordo com a opção selecionada na HUD.`
+/*!
+ * Processa o plot de acordo com a opção selecionada na HUD.
  *
  * A função verifica a opção selecionada na HUD e chama o método
  *          apropriado do objeto `spectrum_ptr` ou `spectrum3D_ptr` para

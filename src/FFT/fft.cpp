@@ -1,7 +1,7 @@
 #include "fft.hpp"
 
-/*
- * `Função para calcular a amplitude de um número complexo`
+/*!
+ * Função para calcular a amplitude de um número complexo
  *
  * Calcula a amplitude (módulo) de um número complexo `z`.
  *
@@ -15,14 +15,14 @@ template <class T> inline float FFT<T>::amp(Float_Complex z) {
     return sqrtf(a * a + b * b);
 }
 
-/*
- * `Função para reversão de bits`
+/*!
+ * Função para reversão de bits
  *
  * Realiza a reversão de bits de um índice `k` em um número
  * binário de `n` bits.
  *
- * `k O índice a ser revertido.
- * `n O número de bits do índice `k`.
+ * `k`: O índice a ser revertido.
+ * `n`: O número de bits do índice `k`.
  * @return O índice `k` com seus bits revertidos.
  */
 template <class T> std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) {
@@ -34,8 +34,8 @@ template <class T> std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) 
     return reversed;
 }
 
-/*
- * `Janela de Hann`
+/*!
+ * Janela de Hann
  *
  * Aplica a janela de Hann aos dados de entrada `in` com tamanho `n`.
  *
@@ -50,8 +50,8 @@ template <class T> void FFT<T>::applyHannWindow(std::vector<T> &in, std::size_t 
     }
 }
 
-/*
- * `Janela de Hamming`
+/*!
+ * Janela de Hamming
  *
  * Aplica a janela de Hamming aos dados de entrada `in` com tamanho `n`.
  *
@@ -66,7 +66,7 @@ template <class T> void FFT<T>::applyHammingWindow(std::vector<T> &in, std::size
     }
 }
 
-/*
+/*!
  * Janela de Blackman
  *
  * Aplica a janela de Blackman aos dados de entrada `in` com tamanho `n`.
@@ -82,7 +82,7 @@ template <class T> void FFT<T>::applyBlackmanWindow(std::vector<T> &in, std::siz
     }
 }
 
-/*
+/*!
  * Janela de Flattop
  *
  * Aplica a janela de Flattop aos dados de entrada `in` com tamanho `n`.
@@ -99,8 +99,8 @@ template <class T> void FFT<T>::applyFlattopWindow(std::vector<T> &in, std::size
     }
 }
 
-/*
- * `Função recursiva para realizar a FFT`
+/*!
+ * Função recursiva para realizar a FFT
  *
  * Realiza a Transformada Rápida de Fourier (FFT) nos dados de entrada.
  *
@@ -136,8 +136,8 @@ void FFT<T>::fft(std::vector<T> &in, std::size_t stride, std::vector<std::comple
     }
 }
 
-/*
- * `Função principal para análise de espectro`
+/*!
+ * Função principal para análise de espectro
  *
  * Realiza a análise do espectro dos dados de entrada usando a Transformada
  * Rápida de Fourier (FFT) e armazena o resultado em `out`.

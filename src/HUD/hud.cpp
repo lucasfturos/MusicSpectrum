@@ -1,6 +1,6 @@
 #include "hud.hpp"
 
-/*
+/*!
  * Construtor da classe HUD.
  *
  * Inicializa a interface gráfica do usuário (GUI) utilizando a biblioteca
@@ -22,10 +22,10 @@ HUD::HUD(std::shared_ptr<sf::RenderWindow> win) : window(win) {
     sample_buffer.reserve(buffer_size);
 }
 
-/* Destrutor da classe HUD. */
+/*! Destrutor da classe HUD. */
 HUD::~HUD() { ImGui::SFML::Shutdown(); }
 
-/* Função de inicialização da fonte da interface */
+/*! Função de inicialização da fonte da interface */
 void HUD::initFont() {
     ImGui::GetIO().Fonts->Clear();
     ImGui::GetIO().Fonts->AddFontFromFileTTF("./assets/font/Roboto-Regular.ttf", 18.f);
@@ -34,7 +34,7 @@ void HUD::initFont() {
     }
 }
 
-/* Função de inicialização dos icones */
+/*! Função de inicialização dos icones */
 void HUD::initTexture() {
     if (!play_tex.loadFromFile("./assets/img/icon/botao-play.png")) {
         throw std::invalid_argument("Error Loading Texture Play");
@@ -65,7 +65,7 @@ void HUD::initTexture() {
     }
 }
 
-/*
+/*!
  * Define o buffer de som a partir de um arquivo de áudio.
  *
  * `filename`: O caminho do arquivo de áudio.
@@ -76,7 +76,7 @@ void HUD::setSoundBuffer(const std::string &filename) {
     resetControls();
 }
 
-/* Executa o loop principal da interface gráfica. */
+/*! Executa o loop principal da interface gráfica. */
 void HUD::run() {
     ImGui::Begin("Audio HUD", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
     ImGui::SetWindowPos(ImVec2(0, 0));
