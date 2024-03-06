@@ -1,8 +1,10 @@
-name: CI Build
+name: CI
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
+      - docs
 
 env:
   BUILD_TYPE: Debug
@@ -35,6 +37,13 @@ jobs:
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/docs'
+    steps:
+      - uses: actions/checkout@v3
 
       - name: Build Documentation
         run: cmake --build ${{github.workspace}}/build --target documentation
