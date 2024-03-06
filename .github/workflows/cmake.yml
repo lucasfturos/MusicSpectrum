@@ -47,7 +47,7 @@ jobs:
           cp -r build/* .
           git add .
           git commit -m "Update build artifacts"
-          git push origin docs
+          git push -f origin docs
 
   deploy:
     runs-on: ubuntu-latest
