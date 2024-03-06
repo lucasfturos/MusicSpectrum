@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - docs
 
 env:
   BUILD_TYPE: Debug
@@ -38,6 +37,18 @@ jobs:
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
+      - name: Push artifacts to docs branch
+        if: success()
+        run: |
+          cd ${{github.workspace}}
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git checkout -b docs || git checkout docs
+          cp -r build/* .
+          git add .
+          git commit -m "Update build artifacts"
+          git push origin docs
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -52,4 +63,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{ github.workspace }}/build/html
+          publish_dir: ${{github.workspace}}/build/html
