@@ -15,18 +15,19 @@ jobs:
       - name: Update packages list
         run: sudo apt update
 
-      - name: Install gcc, g++, CMake, Make, SFML, OpenGL, GLM, GLEW, Doxygen
+      - name: Install gcc, g++, clang-tidy, CMake, Make, SFML, OpenGL, GLM, GLEW, Doxygen
         run: >
-          sudo apt install -y 
-          gcc 
-          g++ 
-          cmake 
-          make 
-          libsfml-dev 
-          libglew-dev 
-          libglm-dev 
-          mesa-common-dev 
-          libgl1-mesa-dev 
+          sudo apt install -y
+          gcc
+          g++
+          clang-tidy
+          cmake
+          make
+          libsfml-dev
+          libglew-dev
+          libglm-dev
+          mesa-common-dev
+          libgl1-mesa-dev
           doxygen
 
       - uses: actions/checkout@v3
@@ -36,25 +37,6 @@ jobs:
 
       - name: Build
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-
-      - name: Push artifacts to docs branch
-        if: success()
-        run: |
-          cd ${{github.workspace}}
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git checkout -b docs || git checkout docs
-          cp -r build/* .
-          git add .
-          git commit -m "Update build artifacts"
-          git push -f origin docs
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/docs'
-    steps:
-      - uses: actions/checkout@v3
 
       - name: Build Documentation
         run: cmake --build ${{github.workspace}}/build --target documentation
