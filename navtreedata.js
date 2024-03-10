@@ -57,8 +57,7 @@ var NAVTREE =
         [ "Todos", "globals.html", null ],
         [ "Funções", "globals_func.html", null ],
         [ "Variáveis", "globals_vars.html", null ],
-        [ "Definições de Tipos", "globals_type.html", null ],
-        [ "Definições e Macros", "globals_defs.html", null ]
+        [ "Definições de Tipos", "globals_type.html", null ]
       ] ]
     ] ]
   ] ]

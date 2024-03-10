@@ -96,5 +96,4 @@ var menudata={children:[
 {text:"Todos",url:"globals.html"},
 {text:"Funções",url:"globals_func.html"},
 {text:"Variáveis",url:"globals_vars.html"},
-{text:"Definições de Tipos",url:"globals_type.html"},
-{text:"Definições e Macros",url:"globals_defs.html"}]}]}]}
+{text:"Definições de Tipos",url:"globals_type.html"}]}]}]}
