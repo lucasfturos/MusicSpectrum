@@ -38,6 +38,5 @@ add_compile_options(
 add_subdirectory(docs)
 add_subdirectory(external)
 add_subdirectory(src)
-# add_subdirectory(tests)
 
 # -------------------------------------------------------------------
