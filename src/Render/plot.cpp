@@ -4,13 +4,15 @@
  * Processa o plot de acordo com a opção selecionada na HUD.
  *
  * A função verifica a opção selecionada na HUD e chama o método
- *          apropriado do objeto `spectrum_ptr` ou `spectrum3D_ptr` para
- *          visualizar o espectro ou a forma de onda.
+ * apropriado do objeto `spectrum_ptr` ou `spectrum3D_ptr` para
+ * visualizar o espectro ou a forma de onda.
  *
  * `spectrum`: Um vetor de números complexos que representam o espectro.
+ *
  * `fft_size`: O tamanho da transformada de Fourier rápida (FFT).
  */
-void Render::handlePlot(std::vector<std::complex<float>> spectrum, std::size_t fft_size) {
+void Render::handlePlot(std::vector<std::complex<float>> spectrum,
+                        std::size_t fft_size) {
     switch (hud_ptr->option) {
     case 1:
         fft_ptr->fftAnalyze(hud_ptr->sample_buffer, 1, spectrum, fft_size);

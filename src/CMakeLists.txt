@@ -6,19 +6,18 @@ set(SRC_HEADERS
   FFT/fft.hpp
   # HUD
   HUD/hud.hpp
-  # Object
-  Object/plane.hpp
-  # OpenGL
-  OpenGL/util.hpp
-  OpenGL/shader.hpp
+  # Plane
+  Plane/plane.hpp
+  # Render
+  Render/render.hpp
   # Sample
   Sample/sample.hpp
+  # Shader
+  Shader/shader.hpp
   # Spectrum 
   Spectrum/spectrum.hpp
   # Spectrum 3D
   Spectrum3D/spectrum3D.hpp
-  # Render
-  Render/render.hpp
   # Timer
   Timer/timer.hpp
 )
@@ -31,23 +30,23 @@ set(SRC_SOURCES
   HUD/hud.cpp
   HUD/ui.cpp
   HUD/events.cpp
-  # Object
-  Object/plane.cpp
-  # OpenGL
-  OpenGL/shader.cpp
+  # Plane
+  Plane/plane.cpp
+  # Render
+  Render/plot.cpp
+  Render/render.cpp
   # Sample
   Sample/sample.cpp
+  # Shader
+  Shader/shader.cpp
   # Spectrum
   Spectrum/spectrum.cpp
   Spectrum/waves_rect.cpp
   Spectrum/waves_sine.cpp
   # Spectrum 3D
-  Spectrum3D/opengl.cpp
+  Spectrum3D/setup.cpp
   Spectrum3D/spectrum3D.cpp
   Spectrum3D/waves_sine.cpp
-  # Render
-  Render/plot.cpp
-  Render/render.cpp
   # Timer
   Timer/timer.cpp
   # Main

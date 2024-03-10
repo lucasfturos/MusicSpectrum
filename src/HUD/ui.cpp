@@ -23,7 +23,8 @@ void HUD::styleWidget() {
     style.Colors[ImGuiCol_ButtonActive] = ImVec4(0.31f, 0.28f, 0.28f, 1.0f);
     // Slider
     style.Colors[ImGuiCol_SliderGrab] = ImVec4(0.70f, 0.70f, 0.70f, 0.62f);
-    style.Colors[ImGuiCol_SliderGrabActive] = ImVec4(0.30f, 0.30f, 0.30f, 0.84f);
+    style.Colors[ImGuiCol_SliderGrabActive] =
+        ImVec4(0.30f, 0.30f, 0.30f, 0.84f);
     // RadioButton
     style.Colors[ImGuiCol_CheckMark] = ImVec4(0.90f, 0.90f, 0.90f, 0.83f);
     // Header
@@ -47,19 +48,23 @@ void HUD::openFileDialog() {
         config.path = "../audio";
         config.sidePaneWidth = 450.0f;
 
-        ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey", "Choose File", filter, config);
+        ImGuiFileDialog::Instance()->OpenDialog("ChooseFileDlgKey",
+                                                "Choose File", filter, config);
     }
 
-    if (ImGuiFileDialog::Instance()->Display(
-            "ChooseFileDlgKey", ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize,
-            dialog_maxsize, dialog_maxsize)) {
+    if (ImGuiFileDialog::Instance()->Display("ChooseFileDlgKey",
+                                             ImGuiWindowFlags_NoCollapse |
+                                                 ImGuiWindowFlags_NoResize,
+                                             dialog_maxsize, dialog_maxsize)) {
         if (ImGuiFileDialog::Instance()->IsOk()) {
-            std::string filePathName = ImGuiFileDialog::Instance()->GetFilePathName();
+            std::string filePathName =
+                ImGuiFileDialog::Instance()->GetFilePathName();
             if (list_audio.empty()) {
                 setSoundBuffer(filePathName);
             }
 
-            auto it = std::find(list_audio.begin(), list_audio.end(), filePathName);
+            auto it =
+                std::find(list_audio.begin(), list_audio.end(), filePathName);
             if (it == list_audio.end()) {
                 list_audio.push_back(filePathName);
             } else {
@@ -75,7 +80,8 @@ void HUD::openFileDialog() {
 void HUD::controlAudio() {
     ImGui::Text("Audio");
     ImGui::Spacing();
-    if (ImGui::ImageButton(!isPlaying ? play_tex : pause_tex, sf::Vector2f(icon_size, icon_size))) {
+    if (ImGui::ImageButton(!isPlaying ? play_tex : pause_tex,
+                           sf::Vector2f(icon_size, icon_size))) {
         toggleMusicPlayback();
     }
     ImGui::SameLine();
@@ -182,7 +188,8 @@ void HUD::showAudioListWindow() {
     }
 
     if (audioListWindow) {
-        ImGui::Begin("Audio List", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
+        ImGui::Begin("Audio List", nullptr,
+                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
         ImGui::SetWindowPos(ImVec2(HUD_WIDTH + 10, 0));
         ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT - 100));
 

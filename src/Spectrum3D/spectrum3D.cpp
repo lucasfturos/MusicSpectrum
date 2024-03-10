@@ -1,20 +1,28 @@
 #include "spectrum3D.hpp"
 #include "../../external/imgui/imgui_impl_opengl3.h"
-#include <chrono>
 #include <thread>
 
-Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win, std::shared_ptr<HUD> hud,
-                       std::shared_ptr<Spectrum> spectrum, std::shared_ptr<FFT<sf::Int16>> fft)
-    : window(win), hud_ptr(hud), spectrum_ptr(spectrum), fft_ptr(fft),
-      proj_mat(glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
-      view_wave_mat(view_default_mat), view_wff_mat(view_default_mat),
-      timer_ptr(std::make_unique<Timer>()) {
+/*!
+ * Construtor da classe Spectrum3D.
+ *
+ * - win: Ponteiro compartilhado para a janela renderizada pelo SFML.
+ * - hud: Ponteiro compartilhado para a classe HUD.
+ * - fft: Ponteiro compartilhado para a classe FFT.
+ */
+Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
+                       std::shared_ptr<HUD> hud,
+                       std::shared_ptr<FFT<sf::Int16>> fft)
+    : window(win), hud_ptr(hud), fft_ptr(fft),
+      proj_mat(
+          glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
+      view_wave_mat(view_default_mat), view_wff_mat(view_default_mat) {
 
     glewExperimental = GL_TRUE;
     GLenum error = glewInit();
     if (error != GLEW_OK) {
-        throw std::runtime_error(std::string("Error: ") +
-                                 reinterpret_cast<const char *>(glewGetErrorString(error)));
+        throw std::runtime_error(
+            std::string("Error: ") +
+            reinterpret_cast<const char *>(glewGetErrorString(error)));
     }
 
     if (!window->setActive()) {
@@ -25,15 +33,31 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win, std::shared_ptr<HU
     initOpenGL();
 
     sample_ptr = std::make_unique<Sample>(hud);
-    plane_ptr = std::make_unique<Plane>(20.0f, 20.0f, 20);
+
+    timer_ptr = std::make_shared<Timer>();
+    plane_ptr = std::make_shared<Plane>(20.0f, 20.0f, 20);
 }
 
+//! Destrutor da classe Spectrum3D.
 Spectrum3D::~Spectrum3D() { ImGui_ImplOpenGL3_Shutdown(); }
 
+/*!
+ * Atualiza o delta do movimento da roda do mouse.
+ *
+ * `w_delta`: Valor do delta do movimento da roda do mouse.
+ */
 void Spectrum3D::getWhellDelta(int w_delta) { whell_delta = w_delta; }
 
+/*!
+ * Executa o loop principal da aplicação, renderizando a forma de onda
+ * ou FFT e chamando a função de callback para tratar os dados do plot.
+ *
+ * `handlePlot`: Função callback para processar os dados do plot (forma de onda
+ * ou FFT).
+ */
 void Spectrum3D::run(
-    std::function<void(std::vector<std::complex<float>>, std::size_t)> handlePlot) {
+    std::function<void(std::vector<std::complex<float>>, std::size_t)>
+        handlePlot) {
     sample_ptr->monoSample();
     std::vector<std::complex<float>> spectrum;
 

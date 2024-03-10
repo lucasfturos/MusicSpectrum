@@ -9,8 +9,18 @@
 #include <iostream>
 #include <memory>
 
+/*!
+ * Esta classe visualiza a forma de onda de um sinal de áudio utilizando
+ * retângulos coloridos. Ela também pode renderizar a FFT do sinal.
+ *
+ * A classe Spectrum utiliza bibliotecas como SFML e FFT para processar e
+ * renderizar a forma de onda do áudio fornecido. Ela interage com outras
+ * classes como HUD e Sample para auxiliar na exibição e processamento dos
+ * dados.
+ */
 class Spectrum {
   private:
+    // Variáveis privadas do constructor
     std::shared_ptr<sf::RenderWindow> window;
     std::shared_ptr<HUD> hud_ptr;
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
@@ -28,7 +38,8 @@ class Spectrum {
     std::unique_ptr<Sample> sample_ptr;
 
   public:
-    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)> handlePlot);
+    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
+                 handlePlot);
 
     void viewWaveform();
     void viewWaveformFFT();

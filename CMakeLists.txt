@@ -34,9 +34,10 @@ add_compile_options(
   -Wall -Wextra -Wpedantic -Werror -pedantic -Wno-unknown-pragmas -g -Ofast 
 )
 
-# Add subdirectories for docs, external and src
+# Add subdirectories for docs, external, src and tests
 add_subdirectory(docs)
 add_subdirectory(external)
 add_subdirectory(src)
+# add_subdirectory(tests)
 
 # -------------------------------------------------------------------

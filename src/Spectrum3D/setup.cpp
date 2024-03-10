@@ -1,26 +1,28 @@
-#include "../OpenGL/util.hpp"
 #include "spectrum3D.hpp"
 
+//! Limpa a tela.
 void Spectrum3D::clear() {
-    Gl_Call(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
+    glViewport(0, 0, window->getSize().x, window->getSize().y);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
+//! Inicializa o OpenGL.
 void Spectrum3D::initOpenGL() {
-    Gl_Call(glViewport(0, 0, window->getSize().x, window->getSize().y));
     clear();
 
-    Gl_Call(glEnable(GL_DEPTH_TEST));
-    Gl_Call(glCullFace(GL_BACK));
-    Gl_Call(glEnable(GL_BLEND));
+    glEnable(GL_DEPTH_TEST);
+    glCullFace(GL_BACK);
+    glEnable(GL_BLEND);
 
-    Gl_Call(glMatrixMode(GL_PROJECTION));
+    glMatrixMode(GL_PROJECTION);
 
     shader_wave_ptr =
-        std::make_unique<Shader>("./assets/shader/WaveSine.shader");
+        std::make_shared<Shader>("./assets/shader/WaveSine.shader");
     shader_wfft_ptr =
-        std::make_unique<Shader>("./assets/shader/WaveSineFFT.shader");
+        std::make_shared<Shader>("./assets/shader/WaveSineFFT.shader");
 }
 
+//! Trata o movimento do mouse.
 void Spectrum3D::handleMouse() {
     std::vector<bool> view_mode = {
         hud_ptr->option == 5,

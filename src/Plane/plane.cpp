@@ -5,11 +5,14 @@
  * segmentos especificados.
  *
  * `w`: A largura do plano.
+ *
  * `h`: A altura do plano.
+ *
  * `num_seg`: O número de segmentos (subdivisões) ao longo de cada lado
  * do plano.
  */
-Plane::Plane(GLfloat w, GLfloat h, GLint num_seg) : width(w), height(h), num_segments(num_seg) {}
+Plane::Plane(GLfloat w, GLfloat h, GLint num_seg)
+    : width(w), height(h), num_segments(num_seg) {}
 
 /*!
  * Destroi o objeto Plane.

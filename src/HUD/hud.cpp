@@ -28,7 +28,8 @@ HUD::~HUD() { ImGui::SFML::Shutdown(); }
 /*! Função de inicialização da fonte da interface */
 void HUD::initFont() {
     ImGui::GetIO().Fonts->Clear();
-    ImGui::GetIO().Fonts->AddFontFromFileTTF("./assets/font/Roboto-Regular.ttf", 18.f);
+    ImGui::GetIO().Fonts->AddFontFromFileTTF("./assets/font/Roboto-Regular.ttf",
+                                             18.f);
     if (!ImGui::SFML::UpdateFontTexture()) {
         throw std::runtime_error("Update Font Texture");
     }
@@ -78,7 +79,8 @@ void HUD::setSoundBuffer(const std::string &filename) {
 
 /*! Executa o loop principal da interface gráfica. */
 void HUD::run() {
-    ImGui::Begin("Audio HUD", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
+    ImGui::Begin("Audio HUD", nullptr,
+                 ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);
     ImGui::SetWindowPos(ImVec2(0, 0));
     ImGui::SetWindowSize(ImVec2(HUD_WIDTH, HUD_HEIGHT));
 

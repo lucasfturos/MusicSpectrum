@@ -32,7 +32,8 @@ class Render {
     std::shared_ptr<sf::VideoMode> desktop;
     std::shared_ptr<sf::RenderWindow> window;
 
-    void handlePlot(std::vector<std::complex<float>> spectrum, std::size_t fft_size);
+    void handlePlot(std::vector<std::complex<float>> spectrum,
+                    std::size_t fft_size);
     void frameRate(time_point<high_resolution_clock> &prev_time);
 
   public:

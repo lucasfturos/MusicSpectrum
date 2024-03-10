@@ -79,7 +79,7 @@ class HUD {
 
     void run();
     void handleEvents(sf::Event &event);
- 
+
     HUD(std::shared_ptr<sf::RenderWindow> win);
     ~HUD();
 };

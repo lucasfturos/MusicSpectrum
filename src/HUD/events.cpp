@@ -87,7 +87,8 @@ void HUD::playNextAudio() {
 /*! Função para reproduzir a faixa anterior de áudio na lista */
 void HUD::playPreviousAudio() {
     if (!list_audio.empty()) {
-        selectedIndex = (selectedIndex - 1 + list_audio.size()) % list_audio.size();
+        selectedIndex =
+            (selectedIndex - 1 + list_audio.size()) % list_audio.size();
         setSoundBuffer(list_audio[selectedIndex]);
         toggleMusicPlayback();
     }

@@ -10,20 +10,23 @@
  * - `hud_ptr`: Ponteiro compartilhado para a instância da classe HUD.
  * - `fft_ptr`: Ponteiro compartilhado para a instância da classe FFT.
  * - `spectrum_ptr`: Ponteiro compartilhado para a instância da classe Spectrum.
- * - `spectrum3D_ptr`: Ponteiro compartilhado para a instância da classe Spectrum3D.
+ * - `spectrum3D_ptr`: Ponteiro compartilhado para a instância da classe
+ * Spectrum3D.
  */
 Render::Render() {
-    window = std::make_shared<sf::RenderWindow>(sf::VideoMode(WIDTH, HEIGHT), "Music Spectrum",
-                                                sf::Style::Titlebar | sf::Style::Close);
+    window = std::make_shared<sf::RenderWindow>(
+        sf::VideoMode(WIDTH, HEIGHT), "Music Spectrum",
+        sf::Style::Titlebar | sf::Style::Close);
 
     desktop = std::make_shared<sf::VideoMode>(sf::VideoMode::getDesktopMode());
-    window->setPosition(sf::Vector2i(desktop->width / 2.f - window->getSize().x / 2.f,
-                                     desktop->height / 2.f - window->getSize().y / 2.f));
+    window->setPosition(
+        sf::Vector2i(desktop->width / 2.f - window->getSize().x / 2.f,
+                     desktop->height / 2.f - window->getSize().y / 2.f));
 
     hud_ptr = std::make_shared<HUD>(window);
     fft_ptr = std::make_shared<FFT<sf::Int16>>();
     spectrum_ptr = std::make_shared<Spectrum>(window, hud_ptr, fft_ptr);
-    spectrum3D_ptr = std::make_shared<Spectrum3D>(window, hud_ptr, spectrum_ptr, fft_ptr);
+    spectrum3D_ptr = std::make_shared<Spectrum3D>(window, hud_ptr, fft_ptr);
 }
 
 /*!
@@ -38,11 +41,14 @@ Render::Render() {
  */
 void Render::frameRate(time_point<high_resolution_clock> &prev_time) {
     auto current_time = high_resolution_clock::now();
-    auto elapsed_time = duration_cast<duration<double>>(current_time - prev_time);
+    auto elapsed_time =
+        duration_cast<duration<double>>(current_time - prev_time);
 
     if (elapsed_time.count() < frame_duration) {
-        auto sleep_duration = duration<double>(frame_duration - elapsed_time.count());
-        std::this_thread::sleep_for(duration_cast<milliseconds>(sleep_duration));
+        auto sleep_duration =
+            duration<double>(frame_duration - elapsed_time.count());
+        std::this_thread::sleep_for(
+            duration_cast<milliseconds>(sleep_duration));
     }
 
     prev_time = high_resolution_clock::now();
@@ -84,12 +90,14 @@ void Render::run() {
 
         hud_ptr->run();
         window->pushGLStates();
-        spectrum_ptr->run(
-            std::bind(&Render::handlePlot, this, std::placeholders::_1, std::placeholders::_2));
+        spectrum_ptr->run(std::bind(&Render::handlePlot, this,
+                                    std::placeholders::_1,
+                                    std::placeholders::_2));
         window->popGLStates();
 
-        spectrum3D_ptr->run(
-            std::bind(&Render::handlePlot, this, std::placeholders::_1, std::placeholders::_2));
+        spectrum3D_ptr->run(std::bind(&Render::handlePlot, this,
+                                      std::placeholders::_1,
+                                      std::placeholders::_2));
 
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 

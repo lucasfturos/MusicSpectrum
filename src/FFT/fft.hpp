@@ -14,9 +14,9 @@ using Float_Complex = std::complex<float>;
  * Classe template para realizar FFT em dados unidimensionais.
  *
  * Esta classe implementa a Transformada de Fourier Rápida (FFT) para calcular
- * a transformada discreta de Fourier de um sinal unidimensional.
- * Suporta diferentes tipos de dados, como `int`, `short`, `uint8_t`,
- * `uint16_t`, etc.
+ * a transformada discreta de Fourier de um sinal unidimensional. Esta
+ * implementação de FFT aplica o algoritmo de Cooley-Tukey. Suporta diferentes
+ * tipos de dados, como `int`, `short`, `uint8_t`, `uint16_t`, etc.
  */
 template <class T> class FFT {
   private:
