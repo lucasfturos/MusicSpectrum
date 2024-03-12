@@ -53,12 +53,7 @@ if(ENABLE_DEB_PACKAGE)
   set(CPACK_DEBIAN_PACKAGE_RELEASE 1)
   set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Music Spectrum - Audio Visualizer")
   set(CPACK_PACKAGE_DESCRIPTION
-  "Music Spectrum é um aplicativo que permite visualizar 
-  o espectro de frequência de arquivos de áudio em tempo real. 
-  O programa utiliza a transformada de Fourier rápida (FFT) 
-  para calcular o espectro de frequência e a fórmula de Euler 
-  para gerar visualizações vibrantes e interativas.
-  ")
+  "Music Spectrum é um aplicativo que permite visualizar o espectro de frequência de arquivos de áudio em tempo real. O programa utiliza a transformada de Fourier rápida (FFT) para calcular o espectro de frequência e a fórmula de Euler para gerar visualizações vibrantes e interativas.")
   set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Lucas Turos <@lucasfturos>")
   set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://github.com/lucasfturos/MusicSpectrum/")
   set(CPACK_DEBIAN_PACKAGE_DEPENDS "libsfml-dev, libglew-dev, libglm-dev, mesa-common-dev, libgl1-mesa-dev, doxygen")
