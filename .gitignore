@@ -2,3 +2,4 @@
 .cache
 build/
 audio/
+docs/*.css

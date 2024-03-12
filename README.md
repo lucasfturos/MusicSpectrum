@@ -146,6 +146,8 @@ Créditos de Bibliotecas e Icones usados no programa:
 
 [FlatIcon](https://www.flaticon.com/)
 
+[SVG Repo](https://www.svgrepo.com/)
+
 ## Referências
 
 Video do Tsoding Daily: [Music Visualizer (Fast Fourier Transform)](https://youtu.be/Xdbk1Pr5WXU)
