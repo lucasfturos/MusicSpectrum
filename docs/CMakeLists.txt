@@ -30,6 +30,12 @@ else()
     if (NOT DOXYGEN_IMAGE_PATH)
         set(DOXYGEN_IMAGE_PATH ${CMAKE_BINARY_DIR})
     endif()
+    if (NOT DOXYGEN_PROJECT_LOGO)
+        set(DOXYGEN_PROJECT_LOGO "${PROJECT_SOURCE_DIR}/assets/img/icon/favicon.ico")
+    endif()
+    if (NOT DOXYGEN_PROJECT_ICON)
+        set(DOXYGEN_PROJECT_ICON "${PROJECT_SOURCE_DIR}/assets/img/icon/favicon.ico")
+    endif()
     if (NOT DOXYGEN_GENERATE_TREEVIEW)
         set(DOXYGEN_GENERATE_TREEVIEW YES)
     endif()
@@ -51,7 +57,7 @@ else()
 
     doxygen_add_docs(documentation 
         ${PROJECT_SOURCE_DIR}/src 
-        "${PROJECT_SOURCE_DIR}/README.md" 
+        "${PROJECT_SOURCE_DIR}/README.md"
         COMMENT "Generating documentation")
 endif()
 
