@@ -179,7 +179,16 @@ Atributos Privados</h2></td></tr>
 <li>hud: Ponteiro compartilhado para a classe <a class="el" href="classHUD.html">HUD</a>.</li>
 <li>fft: Ponteiro compartilhado para a classe <a class="el" href="classFFT.html">FFT</a>. </li>
 </ul>
-
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>(win), <a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>(hud), <a class="code" href="classSpectrum.html#a175719d8e937f2de00784a7635e17bbc">fft_ptr</a>(fft) {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classSpectrum.html#a04c9705e5b03a8844647a554346da5e9">timer_ptr</a> = std::make_unique&lt;Timer&gt;();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a> = std::make_unique&lt;Sample&gt;(hud);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="ttc" id="aclassSpectrum_html_a04c9705e5b03a8844647a554346da5e9"><div class="ttname"><a href="classSpectrum.html#a04c9705e5b03a8844647a554346da5e9">Spectrum::timer_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; Timer &gt; timer_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:37</div></div>
+<div class="ttc" id="aclassSpectrum_html_a175719d8e937f2de00784a7635e17bbc"><div class="ttname"><a href="classSpectrum.html#a175719d8e937f2de00784a7635e17bbc">Spectrum::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:26</div></div>
+<div class="ttc" id="aclassSpectrum_html_a94057891da534f5c3fa21a3b0bb375e1"><div class="ttname"><a href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">Spectrum::sample_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; Sample &gt; sample_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:38</div></div>
+<div class="ttc" id="aclassSpectrum_html_a998ece9a9593d1b8e2723655d409b569"><div class="ttname"><a href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">Spectrum::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:24</div></div>
+<div class="ttc" id="aclassSpectrum_html_a9e423fcd322be6f1b985f087447efd0d"><div class="ttname"><a href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">Spectrum::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:25</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
@@ -200,7 +209,27 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Executa o loop principal da aplicação, processando e renderizando a forma de onda ou <a class="el" href="classFFT.html">FFT</a> do sinal de áudio. A função de callback <code>handlePlot</code> é utilizada para tratar os dados do plot (forma de onda ou <a class="el" href="classFFT.html">FFT</a>).</p>
 <p><code>handlePlot</code>: Função callback para processar os dados do plot (forma de onda ou <a class="el" href="classFFT.html">FFT</a>). </p>
-
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>-&gt;monoSample();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; spectrum;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sound.getStatus() == sf::SoundSource::Playing) {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>-&gt;getSampleBuffer();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::size_t fft_size = 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">while</span> (fft_size &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            fft_size *= 2;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        spectrum.resize(fft_size, 0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        handlePlot(spectrum, fft_size);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="ahud_8hpp_html_a9b2f6e031c4f0e3cc3f6c0eb4032f7b0"><div class="ttname"><a href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a></div><div class="ttdeci">const size_t buffer_size</div><div class="ttdef"><b>Definition:</b> hud.hpp:16</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac0005e1f2dadcb09426ed7c06ccf02ed"></a>
@@ -219,7 +248,38 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Renderiza a forma de onda do sinal de áudio utilizando linhas. </p>
-
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                            {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    sf::VertexArray waveform(sf::LineStrip, <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>);</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">float</span> offsetY = <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a> / 2.f;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    sf::Time interval = sf::milliseconds(80);</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>; ++i) {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        sf::Int16 sample_value = <a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sample_buffer[i];</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordtype">float</span> normalized_value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(sample_value) / 32767.f;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        waveform[i].position = sf::Vector2f(</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i), normalized_value * offsetY + offsetY);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordtype">float</span> milliseconds = <a class="code" href="classSpectrum.html#a04c9705e5b03a8844647a554346da5e9">timer_ptr</a>-&gt;elapsed() / 1000;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">float</span> t = milliseconds / interval.asMilliseconds() +</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                  (<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        t += std::fmod(t, -t);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        sf::Color vertex_color(</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.r * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.r * t),</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.g * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.g * t),</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.b * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.b * t));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        waveform[i].color = vertex_color;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>-&gt;draw(waveform);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="aclassSpectrum_html_a6e610525bb41fb223d0a07534068c07b"><div class="ttname"><a href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">Spectrum::start_color</a></div><div class="ttdeci">sf::Color start_color</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:32</div></div>
+<div class="ttc" id="aclassSpectrum_html_af69968db5b8a598fb4426425eecf0d6f"><div class="ttname"><a href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">Spectrum::end_color</a></div><div class="ttdeci">sf::Color end_color</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:33</div></div>
+<div class="ttc" id="ahud_8hpp_html_af728b7647e0b8c49832983a31f9a2e9b"><div class="ttname"><a href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a></div><div class="ttdeci">const int HEIGHT</div><div class="ttdef"><b>Definition:</b> hud.hpp:13</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a480c73698d87203dd347a040a2fb7fb9"></a>
@@ -238,7 +298,28 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Renderiza a <a class="el" href="classFFT.html">FFT</a> do sinal de áudio utilizando linhas. </p>
-
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                               {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    sf::VertexArray waveform(sf::LineStrip, <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">float</span> centerY = <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a> - 10.f;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>; ++i) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">float</span> amplitude = std::abs(<a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sample_buffer[i]) / 32767.f;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span> offsetY = amplitude * <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        waveform[i].position =</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            sf::Vector2f(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i), centerY - offsetY);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        sf::Color vertex_color(</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.r * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.r * t),</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.g * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.g * t),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.b * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.b * t));</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        waveform[i].color = vertex_color;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>-&gt;draw(waveform);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4345aa671788890c55531a7b7cdafe0e"></a>
@@ -257,7 +338,34 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Renderiza a forma de onda do sinal de áudio utilizando retângulo. </p>
-
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                                {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">float</span> rect_width = 3.0f;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">float</span> rect_spacing = 1.f;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">float</span> offsetY = <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a> / 2.f;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a> - 1; i += 5) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        sf::Int16 sample_value = <a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sample_buffer[i];</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordtype">float</span> normalized_value = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(sample_value) / 32767.f;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">float</span> rect_height = normalized_value * 150;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i * 4) / <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        t = t * t * (3.0f - 2.0f * t);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        sf::Color vertex_color(</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.r * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.r * t),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.g * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.g * t),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.b * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.b * t));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        sf::RectangleShape rectangle(sf::Vector2f(rect_width, rect_height));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        rectangle.setFillColor(vertex_color);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        rectangle.setPosition(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) *</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                                  (rect_width + rect_spacing),</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                              offsetY - rect_height);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>-&gt;draw(rectangle);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a8705367137c2d9b360e9c2a99a1a5ae7"></a>
@@ -276,7 +384,51 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Renderiza a <a class="el" href="classFFT.html">FFT</a> do sinal de áudio utilizando retângulos. </p>
-
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                   {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> rect_width = 3.f;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">float</span> centerY = <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a> - 10.f;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">static</span> std::vector&lt;float&gt; prev_amplitudes(<a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>, 0.0f);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a> - 1; j += 6) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">float</span> amplitude = std::abs(<a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sample_buffer[j]) / 32767.f;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span> rect_height = amplitude * <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        sf::RectangleShape rectangle(sf::Vector2f(rect_width, rect_height));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(j * 3) / <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        t = t * t * (3.0f - 2.0f * t);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        sf::Color vertex_color(</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.r * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.r * t),</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.g * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.g * t),</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">static_cast&lt;</span>sf::Uint8<span class="keyword">&gt;</span>(<a class="code" href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">start_color</a>.b * (1 - t) + <a class="code" href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">end_color</a>.b * t));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        rectangle.setFillColor(vertex_color);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        sf::Vector2f position(j * rect_width, centerY - rect_height);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        rectangle.setPosition(position);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>-&gt;draw(rectangle);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        sf::RectangleShape gravity_rect(sf::Vector2f(10.f, 5.f));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        gravity_rect.setFillColor(vertex_color);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        sf::Vector2f rect_pos = sf::Vector2f(</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            position.x + (rect_width - 10.f) / 2, position.y - 5.f);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classSpectrum.html#a7bf5f8b8f41f9eb98a04684720ca2b0d">gravity_velocity</a> += <a class="code" href="classSpectrum.html#a2f82e809fa159020ca68c4af7c69b716">gravity_acceleration</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        rect_pos.y += <a class="code" href="classSpectrum.html#a7bf5f8b8f41f9eb98a04684720ca2b0d">gravity_velocity</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (rect_pos.y &gt; centerY - 5.f) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            rect_pos.y = centerY - 5.f;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classSpectrum.html#a7bf5f8b8f41f9eb98a04684720ca2b0d">gravity_velocity</a> = -<a class="code" href="classSpectrum.html#a7bf5f8b8f41f9eb98a04684720ca2b0d">gravity_velocity</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        gravity_rect.setPosition(rect_pos);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>-&gt;draw(gravity_rect);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="ttc" id="aclassSpectrum_html_a2f82e809fa159020ca68c4af7c69b716"><div class="ttname"><a href="classSpectrum.html#a2f82e809fa159020ca68c4af7c69b716">Spectrum::gravity_acceleration</a></div><div class="ttdeci">const float gravity_acceleration</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:30</div></div>
+<div class="ttc" id="aclassSpectrum_html_a7bf5f8b8f41f9eb98a04684720ca2b0d"><div class="ttname"><a href="classSpectrum.html#a7bf5f8b8f41f9eb98a04684720ca2b0d">Spectrum::gravity_velocity</a></div><div class="ttdeci">float gravity_velocity</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:29</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Atributos</h2>

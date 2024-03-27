@@ -132,7 +132,9 @@ Atributos Privados</h2></td></tr>
 <p>Construtor da classe <a class="el" href="classSample.html">Sample</a>.</p>
 <p>Armazena o ponteiro compartilhado para a instância <a class="el" href="classHUD.html">HUD</a>.</p>
 <p><code>hud</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classHUD.html">HUD</a>. </p>
-
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;: <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>(hud) {}</div>
+<div class="ttc" id="aclassSample_html_aa557389534f68e24e6704d6ac2650935"><div class="ttname"><a href="classSample.html#aa557389534f68e24e6704d6ac2650935">Sample::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> sample.hpp:14</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
@@ -152,7 +154,29 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Pega o buffer de amostras do objeto <a class="el" href="classHUD.html">HUD</a>, considerando a posição de reprodução atual e o tamanho do buffer.</p>
 <p>O método calcula o índice inicial e final do buffer de amostras com base na posição de reprodução do som e na taxa de amostragem do buffer de som. Em seguida, copia os valores das amostras do buffer de som para o buffer de amostras da <a class="el" href="classHUD.html">HUD</a>, considerando o tamanho do buffer e o índice final calculado. Valores fora do intervalo válido são preenchidos com zeros. </p>
-
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                             {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::size_t sample_count = <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound.getBuffer()-&gt;getSampleCount();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::size_t buffer_start = <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound.getPlayingOffset().asSeconds() *</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                               <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound.getBuffer()-&gt;getSampleRate();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::size_t buffer_end = buffer_start + <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (buffer_end &gt;= sample_count) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        buffer_end = sample_count;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> sf::Int16 *samples = <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound.getBuffer()-&gt;getSamples();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>; ++j) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> (buffer_start + j &lt; buffer_end) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sample_buffer[j] = (samples[buffer_start + j * 2] +</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                         samples[buffer_start + j * 2 + 1]) /</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                        2;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sample_buffer[j] = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="ahud_8hpp_html_a9b2f6e031c4f0e3cc3f6c0eb4032f7b0"><div class="ttname"><a href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a></div><div class="ttdeci">const size_t buffer_size</div><div class="ttdef"><b>Definition:</b> hud.hpp:16</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a01d2e50a04862c4ece3c92c7610b0b27"></a>
@@ -171,7 +195,18 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Converte amostras de áudio estéreo para mono e as armazena no buffer de amostras do objeto <a class="el" href="classHUD.html">HUD</a>.</p>
 <p>O método verifica se o buffer de som da <a class="el" href="classHUD.html">HUD</a> possui dois canais (estéreo) e, caso positivo, realiza a conversão para mono (média dos canais esquerdo e direito) e armazena os valores no buffer de amostras. </p>
-
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound_buffer.getChannelCount() == 2) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> sf::Int16 *samples = <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound_buffer.getSamples();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sample_buffer.reserve(<a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>; ++i) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            sf::Int16 mono_sample = <span class="keyword">static_cast&lt;</span>sf::Int16<span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                (samples[i * 2] + samples[i * 2 + 1]) / 2);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sample_buffer.push_back(mono_sample);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Atributos</h2>

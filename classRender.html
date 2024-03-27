@@ -159,7 +159,30 @@ Atributos Privados</h2></td></tr>
 <li><code>spectrum_ptr</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classSpectrum.html">Spectrum</a>.</li>
 <li><code>spectrum3D_ptr</code>: Ponteiro compartilhado para a instância da classe <a class="el" href="classSpectrum3D.html">Spectrum3D</a>. </li>
 </ul>
-
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;               {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a> = std::make_shared&lt;sf::RenderWindow&gt;(</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        sf::VideoMode(<a class="code" href="hud_8hpp.html#a9649ab8139c4c2ea5c93625b30d92a05">WIDTH</a>, <a class="code" href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a>), <span class="stringliteral">&quot;Music Spectrum&quot;</span>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        sf::Style::Titlebar | sf::Style::Close);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a> = std::make_shared&lt;sf::VideoMode&gt;(sf::VideoMode::getDesktopMode());</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;setPosition(</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        sf::Vector2i(<a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a>-&gt;width / 2.f - <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;getSize().x / 2.f,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                     <a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a>-&gt;height / 2.f - <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;getSize().y / 2.f));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a> = std::make_shared&lt;HUD&gt;(<a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a> = std::make_shared&lt;FFT&lt;sf::Int16&gt;&gt;();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a> = std::make_shared&lt;Spectrum&gt;(<a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>, <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>, <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a> = std::make_shared&lt;Spectrum3D&gt;(<a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>, <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>, <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="ttc" id="aclassRender_html_a0c939879f84e1e0eb8409c65854148aa"><div class="ttname"><a href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">Render::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:27</div></div>
+<div class="ttc" id="aclassRender_html_a1a3f00fc4d778ad22337bad9051b04cd"><div class="ttname"><a href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">Render::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:30</div></div>
+<div class="ttc" id="aclassRender_html_a305d3c33676b2dd7bfe784d2db736019"><div class="ttname"><a href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">Render::spectrum_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum &gt; spectrum_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:28</div></div>
+<div class="ttc" id="aclassRender_html_ac935530df90770f016dc575c55c6a300"><div class="ttname"><a href="classRender.html#ac935530df90770f016dc575c55c6a300">Render::spectrum3D_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum3D &gt; spectrum3D_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:29</div></div>
+<div class="ttc" id="aclassRender_html_acae8449a081e5ed2358660f2ac81b912"><div class="ttname"><a href="classRender.html#acae8449a081e5ed2358660f2ac81b912">Render::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> render.hpp:33</div></div>
+<div class="ttc" id="aclassRender_html_ad2027accb38742b5771e5eb8d48febfd"><div class="ttname"><a href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">Render::desktop</a></div><div class="ttdeci">std::shared_ptr&lt; sf::VideoMode &gt; desktop</div><div class="ttdef"><b>Definition:</b> render.hpp:32</div></div>
+<div class="ttc" id="ahud_8hpp_html_a9649ab8139c4c2ea5c93625b30d92a05"><div class="ttname"><a href="hud_8hpp.html#a9649ab8139c4c2ea5c93625b30d92a05">WIDTH</a></div><div class="ttdeci">const int WIDTH</div><div class="ttdef"><b>Definition:</b> hud.hpp:12</div></div>
+<div class="ttc" id="ahud_8hpp_html_af728b7647e0b8c49832983a31f9a2e9b"><div class="ttname"><a href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a></div><div class="ttdeci">const int HEIGHT</div><div class="ttdef"><b>Definition:</b> hud.hpp:13</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
@@ -189,7 +212,22 @@ Atributos Privados</h2></td></tr>
 <p>Ajuste da taxa de quadros.</p>
 <p>Esta função controla a taxa de quadros da aplicação para manter uma renderização suave. Ela calcula o tempo decorrido desde o último frame e, se for menor que a duração desejada, coloca a thread em espera por um determinado tempo para garantir a taxa de quadros.</p>
 <p><code>prev_time</code>: Referência para o tempo do frame anterior. </p>
-
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">auto</span> current_time = high_resolution_clock::now();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">auto</span> elapsed_time =</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        duration_cast&lt;duration&lt;double&gt;&gt;(current_time - prev_time);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">if</span> (elapsed_time.count() &lt; <a class="code" href="classRender.html#af3dce3e2e6e7b0785f6cb7e5fd1b4125">frame_duration</a>) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">auto</span> sleep_duration =</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            duration&lt;double&gt;(<a class="code" href="classRender.html#af3dce3e2e6e7b0785f6cb7e5fd1b4125">frame_duration</a> - elapsed_time.count());</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::this_thread::sleep_for(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            duration_cast&lt;milliseconds&gt;(sleep_duration));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    prev_time = high_resolution_clock::now();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="ttc" id="aclassRender_html_af3dce3e2e6e7b0785f6cb7e5fd1b4125"><div class="ttname"><a href="classRender.html#af3dce3e2e6e7b0785f6cb7e5fd1b4125">Render::frame_duration</a></div><div class="ttdeci">const double frame_duration</div><div class="ttdef"><b>Definition:</b> render.hpp:23</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0c102b18dfce458e53fa5925a893071a"></a>
@@ -229,7 +267,34 @@ Atributos Privados</h2></td></tr>
 <p>A função verifica a opção selecionada na <a class="el" href="classHUD.html">HUD</a> e chama o método apropriado do objeto <code>spectrum_ptr</code> ou <code>spectrum3D_ptr</code> para visualizar o espectro ou a forma de onda.</p>
 <p><code>spectrum</code>: Um vetor de números complexos que representam o espectro.</p>
 <p><code>fft_size</code>: O tamanho da transformada de Fourier rápida (<a class="el" href="classFFT.html">FFT</a>). </p>
-
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                            {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">switch</span> (<a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>-&gt;option) {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>-&gt;fftAnalyze(<a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>-&gt;sample_buffer, 1, spectrum, fft_size);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>-&gt;viewWaveformFFT();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>-&gt;viewWaveform();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>-&gt;fftAnalyze(<a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>-&gt;sample_buffer, 1, spectrum, fft_size);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>-&gt;viewWaveformRectFFT();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>-&gt;viewWaveformRect();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">case</span> 5:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>-&gt;fftAnalyze(<a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>-&gt;sample_buffer, 1, spectrum, fft_size);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>-&gt;viewWaveformFFT();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">case</span> 6:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>-&gt;viewWaveform();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="afc8071b96073b5b628166aafdefbd62d"></a>
@@ -252,7 +317,59 @@ Atributos Privados</h2></td></tr>
 <li>Chamar os métodos <code>run</code> de <a class="el" href="classHUD.html">HUD</a>, <a class="el" href="classSpectrum.html">Spectrum</a> e <a class="el" href="classSpectrum3D.html">Spectrum3D</a> para realizar a atualização e renderização.</li>
 <li>Controlar a taxa de quadros da aplicação. </li>
 </ul>
-
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                 {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;setVerticalSyncEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">auto</span> prev_time = high_resolution_clock::now();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;isOpen()) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        sf::Event event;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;pollEvent(event)) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            ImGui::SFML::ProcessEvent(event);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">switch</span> (event.type) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="keywordflow">case</span> sf::Event::Closed:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;close();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">case</span> sf::Event::KeyPressed:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>-&gt;handleEvents(event);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <span class="keywordflow">case</span> sf::Event::MouseWheelMoved:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>-&gt;getWhellDelta(event.mouseWheel.delta);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        ImGui::SFML::Update(*<a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>, <a class="code" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">clock</a>.restart());</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;clear();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        ImGui_ImplOpenGL3_NewFrame();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>-&gt;run();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;pushGLStates();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>-&gt;run(std::bind(&amp;<a class="code" href="classRender.html#a0c102b18dfce458e53fa5925a893071a">Render::handlePlot</a>, <span class="keyword">this</span>,</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                    std::placeholders::_1,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                    std::placeholders::_2));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;popGLStates();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>-&gt;run(std::bind(&amp;<a class="code" href="classRender.html#a0c102b18dfce458e53fa5925a893071a">Render::handlePlot</a>, <span class="keyword">this</span>,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                      std::placeholders::_1,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                      std::placeholders::_2));</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>-&gt;display();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="classRender.html#ad70331c720486fdcea98bca2e0268fa6">frameRate</a>(prev_time);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="ttc" id="aclassRender_html_a0c102b18dfce458e53fa5925a893071a"><div class="ttname"><a href="classRender.html#a0c102b18dfce458e53fa5925a893071a">Render::handlePlot</a></div><div class="ttdeci">void handlePlot(std::vector&lt; std::complex&lt; float &gt;&gt; spectrum, std::size_t fft_size)</div><div class="ttdef"><b>Definition:</b> plot.cpp:14</div></div>
+<div class="ttc" id="aclassRender_html_aa2f522e42439e367cb3c4016ac7bb183"><div class="ttname"><a href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">Render::clock</a></div><div class="ttdeci">sf::Clock clock</div><div class="ttdef"><b>Definition:</b> render.hpp:25</div></div>
+<div class="ttc" id="aclassRender_html_ad70331c720486fdcea98bca2e0268fa6"><div class="ttname"><a href="classRender.html#ad70331c720486fdcea98bca2e0268fa6">Render::frameRate</a></div><div class="ttdeci">void frameRate(time_point&lt; high_resolution_clock &gt; &amp;prev_time)</div><div class="ttdef"><b>Definition:</b> render.cpp:42</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Atributos</h2>

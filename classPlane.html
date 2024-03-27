@@ -155,7 +155,11 @@ Atributos Privados</h2></td></tr>
 <p><code>w</code>: A largura do plano.</p>
 <p><code>h</code>: A altura do plano.</p>
 <p><code>num_seg</code>: O número de segmentos (subdivisões) ao longo de cada lado do plano. </p>
-
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    : <a class="code" href="classPlane.html#aa7ed9c478b1ab044c349b5299a615145">width</a>(w), <a class="code" href="classPlane.html#a664364394fa8a45a1d87ecbeb0d90b83">height</a>(h), <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>(num_seg) {}</div>
+<div class="ttc" id="aclassPlane_html_a62197f16600b65ec47103b1dc88b78d3"><div class="ttname"><a href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">Plane::num_segments</a></div><div class="ttdeci">GLint num_segments</div><div class="ttdef"><b>Definition:</b> plane.hpp:19</div></div>
+<div class="ttc" id="aclassPlane_html_a664364394fa8a45a1d87ecbeb0d90b83"><div class="ttname"><a href="classPlane.html#a664364394fa8a45a1d87ecbeb0d90b83">Plane::height</a></div><div class="ttdeci">GLfloat height</div><div class="ttdef"><b>Definition:</b> plane.hpp:18</div></div>
+<div class="ttc" id="aclassPlane_html_aa7ed9c478b1ab044c349b5299a615145"><div class="ttname"><a href="classPlane.html#aa7ed9c478b1ab044c349b5299a615145">Plane::width</a></div><div class="ttdeci">GLfloat width</div><div class="ttdef"><b>Definition:</b> plane.hpp:17</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a69abd86051c880dcb44b249ad10c4436"></a>
@@ -174,7 +178,8 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Destroi o objeto <a class="el" href="classPlane.html">Plane</a>.</p>
 <p>Libera quaisquer recursos alocados pelo objeto <a class="el" href="classPlane.html">Plane</a>. </p>
-
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
@@ -195,7 +200,22 @@ Atributos Privados</h2></td></tr>
 <p>Gera índices para renderizar o plano.</p>
 <p>Esta função gera um vetor de índices representando a ordem em que os vértices devem ser renderizados para construir a geometria do plano.</p>
 <p><code>std::vector&lt;GLuint&gt;</code>: Um vetor de índices para renderizar o plano. </p>
-
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                    {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector&lt;GLuint&gt; indices;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>; ++i) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j = 0; j &lt; <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>; ++j) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="comment">// Mesh</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="comment">// GLint row = (j + 1) * (num_segments + 1);</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="comment">// indices.push_back(row + i + 1);</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="comment">// indices.push_back(row + i);</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// Lines</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            GLint row = j * (<a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a> + 1);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            indices.push_back(row + i);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> indices;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a057e110171a9a22edc9b8eb643513c61"></a>
@@ -215,7 +235,23 @@ Atributos Privados</h2></td></tr>
 <p>Gera vértices para renderizar o plano.</p>
 <p>Esta função gera um vetor de vértices representando a geometria do plano com base em suas dimensões e número de segmentos.</p>
 <p><code>std::vector&lt;glm::vec3&gt;</code>: Um vetor de vértices para renderizar o plano. </p>
-
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                      {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::vector&lt;glm::vec3&gt; vertices;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt;= <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>; ++i) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> j = 0; j &lt;= <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>; ++j) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            GLfloat t = <span class="keyword">static_cast&lt;</span>GLfloat<span class="keyword">&gt;</span>(i) / <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            GLfloat s = <span class="keyword">static_cast&lt;</span>GLfloat<span class="keyword">&gt;</span>(j) / <a class="code" href="classPlane.html#a62197f16600b65ec47103b1dc88b78d3">num_segments</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            GLfloat x = (t - 0.5f) * <a class="code" href="classPlane.html#aa7ed9c478b1ab044c349b5299a615145">width</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            GLfloat y = 0.0f;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            GLfloat z = (s - 0.5f) * <a class="code" href="classPlane.html#a664364394fa8a45a1d87ecbeb0d90b83">height</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            vertices.push_back(glm::vec3(x, y, z));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> vertices;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Atributos</h2>
