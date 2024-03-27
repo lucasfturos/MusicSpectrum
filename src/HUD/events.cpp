@@ -11,35 +11,47 @@
  * sobre o evento.
  */
 void HUD::handleEvents(sf::Event &event) {
-    event.key.code == sf::Keyboard::Space ? toggleMusicPlayback() : (void(0));
-
-    event.key.code == sf::Keyboard::M ? toggleMusicMute() : (void(0));
-
-    event.key.code == sf::Keyboard::Q ? window->close() : (void(0));
-
-    event.key.code == sf::Keyboard::Left ? skipBackward() : (void(0));
-
-    event.key.code == sf::Keyboard::Right ? skipForward() : (void(0));
-
-    event.key.code == sf::Keyboard::Period ? playNextAudio() : (void(0));
-
-    event.key.code == sf::Keyboard::Comma ? playPreviousAudio() : (void(0));
-
-    if (event.key.code == sf::Keyboard::Enter) {
+    switch (event.key.code) {
+    case sf::Keyboard::Space:
+        toggleMusicPlayback();
+        break;
+    case sf::Keyboard::M:
+        toggleMusicMute();
+        break;
+    case sf::Keyboard::Q:
+        window->close();
+        break;
+    case sf::Keyboard::Left:
+        skipBackward();
+        break;
+    case sf::Keyboard::Right:
+        skipForward();
+        break;
+    case sf::Keyboard::Period:
+        playNextAudio();
+        break;
+    case sf::Keyboard::Comma:
+        playPreviousAudio();
+        break;
+    case sf::Keyboard::Enter: {
         sound.stop();
         isPlaying = false;
+        break;
     }
-
-    if (event.key.code == sf::Keyboard::Up) {
+    case sf::Keyboard::Up: {
         volume += 10.f;
         volume > 100.f ? volume = 100.f : 0;
         sound.setVolume(volume);
+        break;
     }
-
-    if (event.key.code == sf::Keyboard::Down) {
+    case sf::Keyboard::Down: {
         volume -= 10.f;
         volume < .0f ? volume = 0.f : 0;
         sound.setVolume(volume);
+        break;
+    }
+    default:
+        break;
     }
 }
 

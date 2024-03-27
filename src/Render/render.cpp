@@ -71,14 +71,20 @@ void Render::run() {
         sf::Event event;
         while (window->pollEvent(event)) {
             ImGui::SFML::ProcessEvent(event);
-            if (event.type == sf::Event::Closed) {
+
+            switch (event.type) {
+            case sf::Event::Closed:
                 window->close();
-            } else if (event.type == sf::Event::KeyPressed) {
+                break;
+            case sf::Event::KeyPressed:
                 hud_ptr->handleEvents(event);
+                break;
+            case sf::Event::MouseWheelMoved:
+                spectrum3D_ptr->getWhellDelta(event.mouseWheel.delta);
+                break;
+            default:
+                break;
             }
-            event.type == sf::Event::MouseWheelMoved
-                ? spectrum3D_ptr->getWhellDelta(event.mouseWheel.delta)
-                : void(0);
         }
 
         ImGui::SFML::Update(*window, clock.restart());
