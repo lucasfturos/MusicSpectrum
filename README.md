@@ -148,6 +148,10 @@ Créditos de Bibliotecas e Icones usados no programa:
 
 [SVG Repo](https://www.svgrepo.com/)
 
+## Documentação
+
+A documentação do projeto pode ser acessada através do link disponível na seção 'About' do repositório.
+
 ## Referências
 
 Video do Tsoding Daily: [Music Visualizer (Fast Fourier Transform)](https://youtu.be/Xdbk1Pr5WXU)
