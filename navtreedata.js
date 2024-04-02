@@ -38,8 +38,9 @@ var NAVTREE =
       ] ],
       [ "Teclas", "index.html#autotoc_md9", null ],
       [ "Créditos", "index.html#autotoc_md10", null ],
-      [ "Referências", "index.html#autotoc_md11", null ],
-      [ "License", "index.html#autotoc_md12", null ]
+      [ "Documentação", "index.html#autotoc_md11", null ],
+      [ "Referências", "index.html#autotoc_md12", null ],
+      [ "License", "index.html#autotoc_md13", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Lista de Classes", "annotated.html", "annotated_dup" ],
