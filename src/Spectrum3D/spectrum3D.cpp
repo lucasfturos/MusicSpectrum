@@ -1,5 +1,4 @@
 #include "spectrum3D.hpp"
-#include "../../external/imgui/imgui_impl_opengl3.h"
 #include <thread>
 
 /*!
@@ -14,7 +13,7 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
                        std::shared_ptr<FFT<sf::Int16>> fft)
     : window(win), hud_ptr(hud), fft_ptr(fft),
       proj_mat(
-          glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
+          glm::perspective(glm::radians(45.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
       view_wave_mat(view_default_mat), view_wff_mat(view_default_mat) {
 
     glewExperimental = GL_TRUE;
@@ -29,7 +28,6 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
         throw std::runtime_error("Failed to set window to active");
     }
 
-    ImGui_ImplOpenGL3_Init();
     initOpenGL();
 
     sample_ptr = std::make_unique<Sample>(hud);
@@ -37,9 +35,6 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
     timer_ptr = std::make_shared<Timer>();
     plane_ptr = std::make_shared<Plane>(20.0f, 20.0f, 20);
 }
-
-//! Destrutor da classe Spectrum3D.
-Spectrum3D::~Spectrum3D() { ImGui_ImplOpenGL3_Shutdown(); }
 
 /*!
  * Atualiza o delta do movimento da roda do mouse.

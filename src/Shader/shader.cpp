@@ -112,7 +112,10 @@ ShaderProgramSource Shader::parseShader(const std::string &filepath) {
             ss[static_cast<int>(type)] << line << '\n';
         }
     }
-    return {ss[0].str(), ss[1].str()};
+    return {
+        .vertex_src = ss[0].str(),
+        .fragment_src = ss[1].str(),
+    };
 }
 
 /*!

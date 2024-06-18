@@ -29,6 +29,8 @@ Render::Render() {
     spectrum3D_ptr = std::make_shared<Spectrum3D>(window, hud_ptr, fft_ptr);
 }
 
+Render::~Render() { ImGui_ImplOpenGL3_Shutdown(); }
+
 /*!
  * Ajuste da taxa de quadros.
  *
@@ -64,6 +66,7 @@ void Render::frameRate(time_point<high_resolution_clock> &prev_time) {
  * - Controlar a taxa de quadros da aplicação.
  */
 void Render::run() {
+    ImGui_ImplOpenGL3_Init();
     window->setVerticalSyncEnabled(true);
     auto prev_time = high_resolution_clock::now();
 

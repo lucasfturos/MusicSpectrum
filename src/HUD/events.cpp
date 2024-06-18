@@ -18,7 +18,7 @@ void HUD::handleEvents(sf::Event &event) {
     case sf::Keyboard::M:
         toggleMusicMute();
         break;
-    case sf::Keyboard::Q:
+    case sf::Keyboard::Escape:
         window->close();
         break;
     case sf::Keyboard::Left:

@@ -38,7 +38,6 @@ void HUD::styleWidget() {
  * arquivos de áudio
  */
 void HUD::openFileDialog() {
-
     ImVec2 dialog_maxsize = ImVec2(HUD_WIDTH * 2.f, HUD_HEIGHT * 2.f);
     ImGui::Text("Select Audio File");
 

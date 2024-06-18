@@ -130,7 +130,7 @@ Teclas de funções do programa:
 - Use <kbd>↑</kbd> ou <kbd>↓</kbd> para Aumentar ou Diminuir o volume
 - Use <kbd>←</kbd> ou <kbd>→</kbd> para Avançar ou Retroceder a música
 - Use <kbd>,</kbd> ou <kbd>.</kbd> para Voltar ou pular para a Próxima música
-- Use <kbd>Q</kbd> para Sair do programa.
+- Use <kbd>Esc</kbd> para Sair do programa.
 
 ## Créditos
 

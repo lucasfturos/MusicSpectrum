@@ -5,7 +5,6 @@
 #include "../Plane/plane.hpp"
 #include "../Sample/sample.hpp"
 #include "../Shader/shader.hpp"
-#include "../Spectrum/spectrum.hpp"
 #include "../Timer/timer.hpp"
 
 #include <GL/glew.h>
@@ -29,7 +28,8 @@ class Spectrum3D {
 
   private:
     const glm::mat4 view_default_mat =
-        glm::lookAt(glm::vec3(0.0f, 0.0f, 1.6f), glm::vec3(0.0f, 0.1f, 0.0f),
+        glm::lookAt(glm::vec3(0.0f, 3.0f, 20.0f), 
+                    glm::vec3(0.0f, 1.5f, 0.0f),
                     glm::vec3(0.0f, 1.0f, 0.0f));
 
     int whell_delta;
@@ -58,5 +58,4 @@ class Spectrum3D {
 
     Spectrum3D(std::shared_ptr<sf::RenderWindow> win, std::shared_ptr<HUD> hud,
                std::shared_ptr<FFT<sf::Int16>> fft);
-    ~Spectrum3D();
 };

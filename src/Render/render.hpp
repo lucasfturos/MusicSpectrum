@@ -26,8 +26,8 @@ class Render {
 
     std::shared_ptr<HUD> hud_ptr;
     std::shared_ptr<Spectrum> spectrum_ptr;
-    std::shared_ptr<Spectrum3D> spectrum3D_ptr;
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
+    std::shared_ptr<Spectrum3D> spectrum3D_ptr;
 
     std::shared_ptr<sf::VideoMode> desktop;
     std::shared_ptr<sf::RenderWindow> window;
@@ -39,4 +39,5 @@ class Render {
   public:
     void run();
     Render();
+    ~Render();
 };
