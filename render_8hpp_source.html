@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MusicSpectrum: Código-Fonte de /home/runner/work/MusicSpectrum/MusicSpectrum/src/Render/render.hpp</title>
+<title>MusicSpectrum: Código-Fonte de render.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -107,13 +107,13 @@ $(document).ready(function(){initNavTree('render_8hpp_source.html',''); initResi
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">   25</a></span>&#160;    sf::Clock <a class="code" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">clock</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">   27</a></span>&#160;    std::shared_ptr&lt;HUD&gt; <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">   28</a></span>&#160;    std::shared_ptr&lt;Spectrum&gt; <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRender.html#ac935530df90770f016dc575c55c6a300">   29</a></span>&#160;    std::shared_ptr&lt;Spectrum3D&gt; <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">   30</a></span>&#160;    std::shared_ptr&lt;FFT&lt;sf::Int16&gt;&gt; <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">   32</a></span>&#160;    std::shared_ptr&lt;sf::VideoMode&gt; <a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">   33</a></span>&#160;    std::shared_ptr&lt;sf::RenderWindow&gt; <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">   27</a></span>&#160;    std::shared_ptr&lt;sf::RenderWindow&gt; <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">   28</a></span>&#160;    std::shared_ptr&lt;sf::VideoMode&gt; <a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">   30</a></span>&#160;    std::shared_ptr&lt;HUD&gt; <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">   31</a></span>&#160;    std::shared_ptr&lt;Spectrum&gt; <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">   32</a></span>&#160;    std::shared_ptr&lt;FFT&lt;sf::Int16&gt;&gt; <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classRender.html#ac935530df90770f016dc575c55c6a300">   33</a></span>&#160;    std::shared_ptr&lt;Spectrum3D&gt; <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> handlePlot(std::vector&lt;std::complex&lt;float&gt;&gt; spectrum,</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    std::size_t fft_size);</div>
@@ -122,15 +122,16 @@ $(document).ready(function(){initNavTree('render_8hpp_source.html',''); initResi
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> run();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classRender.html">Render</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ~<a class="code" href="classRender.html">Render</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="ttc" id="aclassRender_html"><div class="ttname"><a href="classRender.html">Render</a></div><div class="ttdef"><b>Definition:</b> render.hpp:20</div></div>
-<div class="ttc" id="aclassRender_html_a0c939879f84e1e0eb8409c65854148aa"><div class="ttname"><a href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">Render::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:27</div></div>
-<div class="ttc" id="aclassRender_html_a1a3f00fc4d778ad22337bad9051b04cd"><div class="ttname"><a href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">Render::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:30</div></div>
-<div class="ttc" id="aclassRender_html_a305d3c33676b2dd7bfe784d2db736019"><div class="ttname"><a href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">Render::spectrum_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum &gt; spectrum_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:28</div></div>
+<div class="ttc" id="aclassRender_html_a0c939879f84e1e0eb8409c65854148aa"><div class="ttname"><a href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">Render::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:30</div></div>
+<div class="ttc" id="aclassRender_html_a1a3f00fc4d778ad22337bad9051b04cd"><div class="ttname"><a href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">Render::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:32</div></div>
+<div class="ttc" id="aclassRender_html_a305d3c33676b2dd7bfe784d2db736019"><div class="ttname"><a href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">Render::spectrum_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum &gt; spectrum_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:31</div></div>
 <div class="ttc" id="aclassRender_html_aa2f522e42439e367cb3c4016ac7bb183"><div class="ttname"><a href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">Render::clock</a></div><div class="ttdeci">sf::Clock clock</div><div class="ttdef"><b>Definition:</b> render.hpp:25</div></div>
-<div class="ttc" id="aclassRender_html_ac935530df90770f016dc575c55c6a300"><div class="ttname"><a href="classRender.html#ac935530df90770f016dc575c55c6a300">Render::spectrum3D_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum3D &gt; spectrum3D_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:29</div></div>
-<div class="ttc" id="aclassRender_html_acae8449a081e5ed2358660f2ac81b912"><div class="ttname"><a href="classRender.html#acae8449a081e5ed2358660f2ac81b912">Render::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> render.hpp:33</div></div>
-<div class="ttc" id="aclassRender_html_ad2027accb38742b5771e5eb8d48febfd"><div class="ttname"><a href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">Render::desktop</a></div><div class="ttdeci">std::shared_ptr&lt; sf::VideoMode &gt; desktop</div><div class="ttdef"><b>Definition:</b> render.hpp:32</div></div>
+<div class="ttc" id="aclassRender_html_ac935530df90770f016dc575c55c6a300"><div class="ttname"><a href="classRender.html#ac935530df90770f016dc575c55c6a300">Render::spectrum3D_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum3D &gt; spectrum3D_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:33</div></div>
+<div class="ttc" id="aclassRender_html_acae8449a081e5ed2358660f2ac81b912"><div class="ttname"><a href="classRender.html#acae8449a081e5ed2358660f2ac81b912">Render::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> render.hpp:27</div></div>
+<div class="ttc" id="aclassRender_html_ad2027accb38742b5771e5eb8d48febfd"><div class="ttname"><a href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">Render::desktop</a></div><div class="ttdeci">std::shared_ptr&lt; sf::VideoMode &gt; desktop</div><div class="ttdef"><b>Definition:</b> render.hpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -284,20 +284,20 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Função para exibir a lista de áudio disponível </p>
-<div class="fragment"><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                    {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> item = 0UL; item &lt; <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.size(); ++item) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> isSelected = (<a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a> == item);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        std::size_t lastSlash = <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[item].find_last_of(<span class="charliteral">&#39;/&#39;</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        std::string filename = <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[item].substr(lastSlash + 1);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">if</span> (ImGui::Selectable(filename.c_str(), isSelected)) {</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            <a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a> = item;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            std::cout &lt;&lt; <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[<a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a>] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="classHUD.html#aad890ada46e6c41f706fef7876976914">setSoundBuffer</a>(<a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[<a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a>]);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> item = 0UL; item &lt; <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.size(); ++item) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">bool</span> isSelected = (<a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a> == item);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        std::size_t lastSlash = <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[item].find_last_of(<span class="charliteral">&#39;/&#39;</span>);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        std::string filename = <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[item].substr(lastSlash + 1);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (ImGui::Selectable(filename.c_str(), isSelected)) {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a> = item;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            std::cout &lt;&lt; <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[<a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a>] &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <a class="code" href="classHUD.html#aad890ada46e6c41f706fef7876976914">setSoundBuffer</a>(<a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>[<a class="code" href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">selectedIndex</a>]);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
 <div class="ttc" id="aclassHUD_html_a374b2538a2741720a9269ef1f8cdc5bf"><div class="ttname"><a href="classHUD.html#a374b2538a2741720a9269ef1f8cdc5bf">HUD::selectedIndex</a></div><div class="ttdeci">std::size_t selectedIndex</div><div class="ttdef"><b>Definition:</b> hud.hpp:39</div></div>
 <div class="ttc" id="aclassHUD_html_aad890ada46e6c41f706fef7876976914"><div class="ttname"><a href="classHUD.html#aad890ada46e6c41f706fef7876976914">HUD::setSoundBuffer</a></div><div class="ttdeci">void setSoundBuffer(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> hud.cpp:74</div></div>
 <div class="ttc" id="aclassHUD_html_ab685e4d36adcdfb3412c9afe056f9449"><div class="ttname"><a href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">HUD::list_audio</a></div><div class="ttdeci">std::vector&lt; std::string &gt; list_audio</div><div class="ttdef"><b>Definition:</b> hud.hpp:40</div></div>
@@ -327,47 +327,47 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Função para exibir controles de reprodução de áudio </p>
-<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                       {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Audio&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ImGui::Spacing();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(!<a class="code" href="classHUD.html#a7372295dbb24fc25fc3c691493f72a58">isPlaying</a> ? <a class="code" href="classHUD.html#a171b345d62fe08b316072a00d21b18c0">play_tex</a> : <a class="code" href="classHUD.html#af813fd8c9a8c099896f8549a959dcceb">pause_tex</a>,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                           sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classHUD.html#a458478848e4c5d0a53e732fc92363387">toggleMusicPlayback</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#adaa12bc44cab23f241387283a0fa242b">previous_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classHUD.html#af3159bcb6f42828fedf2a554cc610868">playPreviousAudio</a>();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#ac7a9b06d3a876a786b241026b55ab7e3">backward_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classHUD.html#a6e2ca5d53cbdf3bcce03d4c64b7f4054">skipBackward</a>();</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a96d8249d83acd4722ec1c29505398498">stop_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classHUD.html#accc0923f6acef0e5f66421ea17885135">sound</a>.stop();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classHUD.html#a7372295dbb24fc25fc3c691493f72a58">isPlaying</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a348b87b4458406c30e83d74f1221977d">forward_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classHUD.html#a77e5bcf3197ae58815769d111bf739d8">skipForward</a>();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a36c112978990681fa766974169722eea">next_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classHUD.html#a2414683767c3c7497512250807a782d7">playNextAudio</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                       {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Audio&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    ImGui::Spacing();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(!<a class="code" href="classHUD.html#a7372295dbb24fc25fc3c691493f72a58">isPlaying</a> ? <a class="code" href="classHUD.html#a171b345d62fe08b316072a00d21b18c0">play_tex</a> : <a class="code" href="classHUD.html#af813fd8c9a8c099896f8549a959dcceb">pause_tex</a>,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                           sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classHUD.html#a458478848e4c5d0a53e732fc92363387">toggleMusicPlayback</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#adaa12bc44cab23f241387283a0fa242b">previous_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classHUD.html#af3159bcb6f42828fedf2a554cc610868">playPreviousAudio</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#ac7a9b06d3a876a786b241026b55ab7e3">backward_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classHUD.html#a6e2ca5d53cbdf3bcce03d4c64b7f4054">skipBackward</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a96d8249d83acd4722ec1c29505398498">stop_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classHUD.html#accc0923f6acef0e5f66421ea17885135">sound</a>.stop();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classHUD.html#a7372295dbb24fc25fc3c691493f72a58">isPlaying</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a348b87b4458406c30e83d74f1221977d">forward_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classHUD.html#a77e5bcf3197ae58815769d111bf739d8">skipForward</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a36c112978990681fa766974169722eea">next_tex</a>, sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a>))) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classHUD.html#a2414683767c3c7497512250807a782d7">playNextAudio</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    ImGui::Spacing();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ImGui::Spacing();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ImGui::Spacing();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a7be73fe86b9d16aa5ec10400de7c3e62">isMuted</a> ? <a class="code" href="classHUD.html#ad019677e966f3c681d8560b49d986954">mute_tex</a> : <a class="code" href="classHUD.html#a827fb24b78b31f684b22e37ccaa3bfe9">volume_tex</a>,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                           sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a> + 3, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a> + 3))) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <a class="code" href="classHUD.html#a88911b7da7630474a1210ca85710a1c7">toggleMusicMute</a>();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (ImGui::SliderFloat(<span class="stringliteral">&quot; &quot;</span>, &amp;<a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a>, 0.f, 100.f, <span class="stringliteral">&quot;%.0f&quot;</span>)) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a> += 0.f;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a> = std::max(0.f, std::min(100.f, <a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a>));</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <a class="code" href="classHUD.html#accc0923f6acef0e5f66421ea17885135">sound</a>.setVolume(<a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a>);</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (ImGui::ImageButton(<a class="code" href="classHUD.html#a7be73fe86b9d16aa5ec10400de7c3e62">isMuted</a> ? <a class="code" href="classHUD.html#ad019677e966f3c681d8560b49d986954">mute_tex</a> : <a class="code" href="classHUD.html#a827fb24b78b31f684b22e37ccaa3bfe9">volume_tex</a>,</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                           sf::Vector2f(<a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a> + 3, <a class="code" href="classHUD.html#a3ba689c57f5c886835e37a20040f3008">icon_size</a> + 3))) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <a class="code" href="classHUD.html#a88911b7da7630474a1210ca85710a1c7">toggleMusicMute</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">if</span> (ImGui::SliderFloat(<span class="stringliteral">&quot; &quot;</span>, &amp;<a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a>, 0.f, 100.f, <span class="stringliteral">&quot;%.0f&quot;</span>)) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a> += 0.f;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a> = std::max(0.f, std::min(100.f, <a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a>));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <a class="code" href="classHUD.html#accc0923f6acef0e5f66421ea17885135">sound</a>.setVolume(<a class="code" href="classHUD.html#acea096977362dd5f0627a462a81c8417">volume</a>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="ttc" id="aclassHUD_html_a171b345d62fe08b316072a00d21b18c0"><div class="ttname"><a href="classHUD.html#a171b345d62fe08b316072a00d21b18c0">HUD::play_tex</a></div><div class="ttdeci">sf::Texture play_tex</div><div class="ttdef"><b>Definition:</b> hud.hpp:42</div></div>
 <div class="ttc" id="aclassHUD_html_a2414683767c3c7497512250807a782d7"><div class="ttname"><a href="classHUD.html#a2414683767c3c7497512250807a782d7">HUD::playNextAudio</a></div><div class="ttdeci">void playNextAudio()</div><div class="ttdef"><b>Definition:</b> events.cpp:91</div></div>
 <div class="ttc" id="aclassHUD_html_a348b87b4458406c30e83d74f1221977d"><div class="ttname"><a href="classHUD.html#a348b87b4458406c30e83d74f1221977d">HUD::forward_tex</a></div><div class="ttdeci">sf::Texture forward_tex</div><div class="ttdef"><b>Definition:</b> hud.hpp:43</div></div>
@@ -442,7 +442,7 @@ Atributos Privados</h2></td></tr>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">case</span> sf::Keyboard::M:</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classHUD.html#a88911b7da7630474a1210ca85710a1c7">toggleMusicMute</a>();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">case</span> sf::Keyboard::Q:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">case</span> sf::Keyboard::Escape:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classHUD.html#aa816e63dc71766f39b5a77f620730c47">window</a>-&gt;close();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">case</span> sf::Keyboard::Left:</div>
@@ -593,50 +593,50 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Função para exibir opções de modo de áudio </p>
-<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                    {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Mode&quot;</span>);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    ImGui::Spacing();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;NoFFT&quot;</span>, &amp;<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a>, 0);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;FFT&quot;</span>, &amp;<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a>, 1);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    ImGui::Spacing();</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;Spectrum&quot;</span>, &amp;<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>, 1);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;Oscillation&quot;</span>, &amp;<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>, 0);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    ImGui::SameLine();</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;Oscillation3D&quot;</span>, &amp;<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>, 2);</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a> == 0) {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>) {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 2;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 4;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 6;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a> == 1) {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>) {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 1;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 3;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 5;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Mode&quot;</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ImGui::Spacing();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;NoFFT&quot;</span>, &amp;<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a>, 0);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;FFT&quot;</span>, &amp;<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a>, 1);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ImGui::Spacing();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;Spectrum&quot;</span>, &amp;<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>, 1);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;Oscillation&quot;</span>, &amp;<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>, 0);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    ImGui::RadioButton(<span class="stringliteral">&quot;Oscillation3D&quot;</span>, &amp;<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>, 2);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a> == 0) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>) {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 2;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 4;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 6;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        }</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">fftMode</a> == 1) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">spectrumMode</a>) {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 1;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 3;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            <a class="code" href="classHUD.html#ad07450bf051a757a91a99779b47b9211">option</a> = 5;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;}</div>
 <div class="ttc" id="aclassHUD_html_a25553244c35ad5ec798bbf3680a6151f"><div class="ttname"><a href="classHUD.html#a25553244c35ad5ec798bbf3680a6151f">HUD::fftMode</a></div><div class="ttdeci">int fftMode</div><div class="ttdef"><b>Definition:</b> hud.hpp:31</div></div>
 <div class="ttc" id="aclassHUD_html_aa8e724d10e080b656ad38d10a21d01d5"><div class="ttname"><a href="classHUD.html#aa8e724d10e080b656ad38d10a21d01d5">HUD::spectrumMode</a></div><div class="ttdeci">int spectrumMode</div><div class="ttdef"><b>Definition:</b> hud.hpp:32</div></div>
 <div class="ttc" id="aclassHUD_html_ad07450bf051a757a91a99779b47b9211"><div class="ttname"><a href="classHUD.html#ad07450bf051a757a91a99779b47b9211">HUD::option</a></div><div class="ttdeci">int option</div><div class="ttdef"><b>Definition:</b> hud.hpp:74</div></div>
@@ -667,43 +667,42 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Implementação para abrir a caixa de diálogo e lidar com a seleção de arquivos de áudio </p>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                         {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ImVec2 dialog_maxsize = ImVec2(<a class="code" href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a> * 2.f, <a class="code" href="hud_8hpp.html#af738c35edef72417fddd21d7a683e6b3">HUD_HEIGHT</a> * 2.f);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Select Audio File&quot;</span>);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;Select File&quot;</span>)) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *filter = <span class="stringliteral">&quot;Audio File (*.flac,*.wav){.flac,.wav}&quot;</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        IGFD::FileDialogConfig config;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        config.path = <span class="stringliteral">&quot;../audio&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        config.sidePaneWidth = 450.0f;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        ImGuiFileDialog::Instance()-&gt;OpenDialog(<span class="stringliteral">&quot;ChooseFileDlgKey&quot;</span>,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                                <span class="stringliteral">&quot;Choose File&quot;</span>, filter, config);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (ImGuiFileDialog::Instance()-&gt;Display(<span class="stringliteral">&quot;ChooseFileDlgKey&quot;</span>,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                             ImGuiWindowFlags_NoCollapse |</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                                 ImGuiWindowFlags_NoResize,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                             dialog_maxsize, dialog_maxsize)) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (ImGuiFileDialog::Instance()-&gt;IsOk()) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            std::string filePathName =</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                ImGuiFileDialog::Instance()-&gt;GetFilePathName();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.empty()) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <a class="code" href="classHUD.html#aad890ada46e6c41f706fef7876976914">setSoundBuffer</a>(filePathName);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keyword">auto</span> it =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                std::find(<a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.begin(), <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.end(), filePathName);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="keywordflow">if</span> (it == <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.end()) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.push_back(filePathName);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <a class="code" href="classHUD.html#aad890ada46e6c41f706fef7876976914">setSoundBuffer</a>(filePathName);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        ImGuiFileDialog::Instance()-&gt;Close();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ImVec2 dialog_maxsize = ImVec2(<a class="code" href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a> * 2.f, <a class="code" href="hud_8hpp.html#af738c35edef72417fddd21d7a683e6b3">HUD_HEIGHT</a> * 2.f);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Select Audio File&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;Select File&quot;</span>)) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *filter = <span class="stringliteral">&quot;Audio File (*.flac,*.wav){.flac,.wav}&quot;</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        IGFD::FileDialogConfig config;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        config.path = <span class="stringliteral">&quot;../audio&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        config.sidePaneWidth = 450.0f;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ImGuiFileDialog::Instance()-&gt;OpenDialog(<span class="stringliteral">&quot;ChooseFileDlgKey&quot;</span>,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                <span class="stringliteral">&quot;Choose File&quot;</span>, filter, config);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (ImGuiFileDialog::Instance()-&gt;Display(<span class="stringliteral">&quot;ChooseFileDlgKey&quot;</span>,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                             ImGuiWindowFlags_NoCollapse |</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                                 ImGuiWindowFlags_NoResize,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                             dialog_maxsize, dialog_maxsize)) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (ImGuiFileDialog::Instance()-&gt;IsOk()) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            std::string filePathName =</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ImGuiFileDialog::Instance()-&gt;GetFilePathName();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.empty()) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <a class="code" href="classHUD.html#aad890ada46e6c41f706fef7876976914">setSoundBuffer</a>(filePathName);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keyword">auto</span> it =</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                std::find(<a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.begin(), <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.end(), filePathName);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordflow">if</span> (it == <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.end()) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <a class="code" href="classHUD.html#ab685e4d36adcdfb3412c9afe056f9449">list_audio</a>.push_back(filePathName);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="classHUD.html#aad890ada46e6c41f706fef7876976914">setSoundBuffer</a>(filePathName);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        ImGuiFileDialog::Instance()-&gt;Close();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="ttc" id="ahud_8hpp_html_af738c35edef72417fddd21d7a683e6b3"><div class="ttname"><a href="hud_8hpp.html#af738c35edef72417fddd21d7a683e6b3">HUD_HEIGHT</a></div><div class="ttdeci">const int HUD_HEIGHT</div><div class="ttdef"><b>Definition:</b> hud.hpp:15</div></div>
 <div class="ttc" id="ahud_8hpp_html_af886cc5d6c5d745333d590164ff89885"><div class="ttname"><a href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a></div><div class="ttdeci">const int HUD_WIDTH</div><div class="ttdef"><b>Definition:</b> hud.hpp:14</div></div>
 </div><!-- fragment -->
@@ -856,9 +855,9 @@ Atributos Privados</h2></td></tr>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    ImGui::SFML::Render(*<a class="code" href="classHUD.html#aa816e63dc71766f39b5a77f620730c47">window</a>);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="ttc" id="aclassHUD_html_a568b18e021ccb432c7b32639f7ed97da"><div class="ttname"><a href="classHUD.html#a568b18e021ccb432c7b32639f7ed97da">HUD::showAudioListWindow</a></div><div class="ttdeci">void showAudioListWindow()</div><div class="ttdef"><b>Definition:</b> ui.cpp:185</div></div>
-<div class="ttc" id="aclassHUD_html_a599e1e23cf2fef4a6f289ef0213f8f67"><div class="ttname"><a href="classHUD.html#a599e1e23cf2fef4a6f289ef0213f8f67">HUD::controlAudio</a></div><div class="ttdeci">void controlAudio()</div><div class="ttdef"><b>Definition:</b> ui.cpp:80</div></div>
-<div class="ttc" id="aclassHUD_html_a7896ca01a77dbb11e008ba3e1bbf27e6"><div class="ttname"><a href="classHUD.html#a7896ca01a77dbb11e008ba3e1bbf27e6">HUD::modeAudio</a></div><div class="ttdeci">void modeAudio()</div><div class="ttdef"><b>Definition:</b> ui.cpp:123</div></div>
+<div class="ttc" id="aclassHUD_html_a568b18e021ccb432c7b32639f7ed97da"><div class="ttname"><a href="classHUD.html#a568b18e021ccb432c7b32639f7ed97da">HUD::showAudioListWindow</a></div><div class="ttdeci">void showAudioListWindow()</div><div class="ttdef"><b>Definition:</b> ui.cpp:184</div></div>
+<div class="ttc" id="aclassHUD_html_a599e1e23cf2fef4a6f289ef0213f8f67"><div class="ttname"><a href="classHUD.html#a599e1e23cf2fef4a6f289ef0213f8f67">HUD::controlAudio</a></div><div class="ttdeci">void controlAudio()</div><div class="ttdef"><b>Definition:</b> ui.cpp:79</div></div>
+<div class="ttc" id="aclassHUD_html_a7896ca01a77dbb11e008ba3e1bbf27e6"><div class="ttname"><a href="classHUD.html#a7896ca01a77dbb11e008ba3e1bbf27e6">HUD::modeAudio</a></div><div class="ttdeci">void modeAudio()</div><div class="ttdef"><b>Definition:</b> ui.cpp:122</div></div>
 <div class="ttc" id="aclassHUD_html_aef728cdb2a328d02d198e76bc9bca668"><div class="ttname"><a href="classHUD.html#aef728cdb2a328d02d198e76bc9bca668">HUD::openFileDialog</a></div><div class="ttdeci">void openFileDialog()</div><div class="ttdef"><b>Definition:</b> ui.cpp:40</div></div>
 </div><!-- fragment -->
 </div>
@@ -921,23 +920,23 @@ Atributos Privados</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Função para exibir a janela de lista de áudio </p>
-<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                              {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;Show Audio List&quot;</span>)) {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">audioListWindow</a> = !<a class="code" href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">audioListWindow</a>;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">audioListWindow</a>) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;Audio List&quot;</span>, <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        ImGui::SetWindowPos(ImVec2(<a class="code" href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a> + 10, 0));</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        ImGui::SetWindowSize(ImVec2(<a class="code" href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a>, <a class="code" href="hud_8hpp.html#af738c35edef72417fddd21d7a683e6b3">HUD_HEIGHT</a> - 100));</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="classHUD.html#a50a91f917176593ca57a6479454b0efe">audioList</a>();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        ImGui::End();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
-<div class="ttc" id="aclassHUD_html_a50a91f917176593ca57a6479454b0efe"><div class="ttname"><a href="classHUD.html#a50a91f917176593ca57a6479454b0efe">HUD::audioList</a></div><div class="ttdeci">void audioList()</div><div class="ttdef"><b>Definition:</b> ui.cpp:169</div></div>
+<div class="fragment"><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                              {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;Show Audio List&quot;</span>)) {</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">audioListWindow</a> = !<a class="code" href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">audioListWindow</a>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">audioListWindow</a>) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        ImGui::Begin(<span class="stringliteral">&quot;Audio List&quot;</span>, <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                     ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        ImGui::SetWindowPos(ImVec2(<a class="code" href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a> + 10, 0));</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        ImGui::SetWindowSize(ImVec2(<a class="code" href="hud_8hpp.html#af886cc5d6c5d745333d590164ff89885">HUD_WIDTH</a>, <a class="code" href="hud_8hpp.html#af738c35edef72417fddd21d7a683e6b3">HUD_HEIGHT</a> - 100));</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <a class="code" href="classHUD.html#a50a91f917176593ca57a6479454b0efe">audioList</a>();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        ImGui::End();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="ttc" id="aclassHUD_html_a50a91f917176593ca57a6479454b0efe"><div class="ttname"><a href="classHUD.html#a50a91f917176593ca57a6479454b0efe">HUD::audioList</a></div><div class="ttdeci">void audioList()</div><div class="ttdef"><b>Definition:</b> ui.cpp:168</div></div>
 <div class="ttc" id="aclassHUD_html_ac70bd9d7cc85a42cdd687626f93b5c23"><div class="ttname"><a href="classHUD.html#ac70bd9d7cc85a42cdd687626f93b5c23">HUD::audioListWindow</a></div><div class="ttdeci">bool audioListWindow</div><div class="ttdef"><b>Definition:</b> hud.hpp:37</div></div>
 </div><!-- fragment -->
 </div>
@@ -1603,10 +1602,10 @@ Atributos Privados</h2></td></tr>
 </div>
 </div>
 <hr/>A documentação para essa classe foi gerada a partir dos seguintes arquivos:<ul>
-<li>/home/runner/work/MusicSpectrum/MusicSpectrum/src/HUD/<a class="el" href="hud_8hpp_source.html">hud.hpp</a></li>
-<li>/home/runner/work/MusicSpectrum/MusicSpectrum/src/HUD/<a class="el" href="events_8cpp.html">events.cpp</a></li>
-<li>/home/runner/work/MusicSpectrum/MusicSpectrum/src/HUD/<a class="el" href="hud_8cpp.html">hud.cpp</a></li>
-<li>/home/runner/work/MusicSpectrum/MusicSpectrum/src/HUD/<a class="el" href="ui_8cpp.html">ui.cpp</a></li>
+<li><a class="el" href="hud_8hpp_source.html">hud.hpp</a></li>
+<li><a class="el" href="events_8cpp.html">events.cpp</a></li>
+<li><a class="el" href="hud_8cpp.html">hud.cpp</a></li>
+<li><a class="el" href="ui_8cpp.html">ui.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

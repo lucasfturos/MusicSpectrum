@@ -1,6 +1,7 @@
 var classRender =
 [
     [ "Render", "classRender.html#a8610cc11739ef679b5935dd819021351", null ],
+    [ "~Render", "classRender.html#ab0f4b917605cb15902f8d045a4197faf", null ],
     [ "frameRate", "classRender.html#ad70331c720486fdcea98bca2e0268fa6", null ],
     [ "handlePlot", "classRender.html#a0c102b18dfce458e53fa5925a893071a", null ],
     [ "run", "classRender.html#afc8071b96073b5b628166aafdefbd62d", null ],
