@@ -1,7 +1,7 @@
 #include "plane.hpp"
 
 /*!
- * Constrói um novo objeto Plane com as dimensões e número de
+ * Construtor da classe Plane com as dimensões e número de
  * segmentos especificados.
  *
  * `w`: A largura do plano.
@@ -13,13 +13,6 @@
  */
 Plane::Plane(GLfloat w, GLfloat h, GLint num_seg)
     : width(w), height(h), num_segments(num_seg) {}
-
-/*!
- * Destroi o objeto Plane.
- *
- * Libera quaisquer recursos alocados pelo objeto Plane.
- */
-Plane::~Plane() {}
 
 /*!
  * Gera índices para renderizar o plano.

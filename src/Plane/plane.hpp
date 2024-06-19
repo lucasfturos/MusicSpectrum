@@ -8,7 +8,7 @@
 /*!
  * A classe Plane representa um plano retangular simples no espaço 3D.
  *
- * Esta classe gera a geometria para um plano retangular com uma largura,
+ * Esta classe gera a forma geométrica de um plano retangular com uma largura,
  * altura e número de segmentos dados. Ela fornece funções para gerar índices
  * e vértices para renderizar o plano usando OpenGL.
  */
@@ -23,5 +23,4 @@ class Plane {
     std::vector<glm::vec3> genVertices();
 
     Plane(GLfloat w, GLfloat h, GLint num_seg);
-    ~Plane();
 };
