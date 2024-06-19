@@ -11,13 +11,11 @@ void Spectrum3D::viewWaveform() {
     shader_wave_ptr->bind();
     shader_wave_ptr->setUniform4f("uColor", glm::vec4(red, green, blue, 1.0f));
 
-    glm::mat4 view_mat_string =
-        glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.1f, 0.0f),
-                    glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::mat4 view_mat_wave = view_default_mat;
 
     handleMouse();
 
-    glm::mat4 mvp = proj_mat * view_mat_string * view_wave_mat;
+    glm::mat4 mvp = proj_mat * view_mat_wave * view_wave_mat;
 
     float angle = time * glm::radians(90.0f);
     glm::mat4 rotationMatrix =
@@ -25,11 +23,7 @@ void Spectrum3D::viewWaveform() {
 
     mvp *= rotationMatrix;
 
-    shader_wave_ptr->bind();
     shader_wave_ptr->setUniformMat4f("uMVP", mvp);
-
-    clear();
-    glBegin(GL_LINE_STRIP);
 
     std::vector<GLuint> indices = plane_ptr->genIndices();
     std::vector<glm::vec3> vertices = plane_ptr->genVertices();
@@ -46,11 +40,16 @@ void Spectrum3D::viewWaveform() {
         GLfloat current_time = t - distance;
         vertex.y =
             4.5f * amplitude * sin(-pi * distance * frequency + current_time);
-        glVertex3fv(glm::value_ptr(vertex));
+        vertices[indices[i]] = vertex;
     }
 
-    glEnd();
-    glFlush();
+    glBindBuffer(GL_ARRAY_BUFFER, vbo_wave);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(glm::vec3) * vertices.size(),
+                    vertices.data());
+
+    glBindVertexArray(vao_wave);
+    glDrawArrays(GL_LINE_STRIP, 0, vertices.size());
+    glBindVertexArray(0);
 
     shader_wave_ptr->unbind();
 }
@@ -65,13 +64,11 @@ void Spectrum3D::viewWaveformFFT() {
     shader_wfft_ptr->bind();
     shader_wfft_ptr->setUniform4f("uColor", glm::vec4(red, green, blue, 1.0f));
 
-    glm::mat4 view_mat_cubo =
-        glm::lookAt(glm::vec3(0.0f, 0.0f, 10.0f), glm::vec3(0.0f, 0.1f, 0.0f),
-                    glm::vec3(0.0f, 1.0f, 0.0f));
+    glm::mat4 view_mat_fft = view_default_mat;
 
     handleMouse();
 
-    glm::mat4 mvp = proj_mat * view_mat_cubo * view_wff_mat;
+    glm::mat4 mvp = proj_mat * view_mat_fft * view_wff_mat;
 
     float angle = time * glm::radians(90.0f);
     glm::mat4 rotationMatrix =
@@ -79,11 +76,7 @@ void Spectrum3D::viewWaveformFFT() {
 
     mvp *= rotationMatrix;
 
-    shader_wfft_ptr->bind();
     shader_wfft_ptr->setUniformMat4f("uMVP", mvp);
-
-    clear();
-    glBegin(GL_LINE_STRIP);
 
     std::vector<GLuint> indices = plane_ptr->genIndices();
     std::vector<glm::vec3> vertices = plane_ptr->genVertices();
@@ -100,11 +93,16 @@ void Spectrum3D::viewWaveformFFT() {
         GLfloat current_time = t - distance;
         GLfloat w = frequency * 2 * pi;
         vertex.y = 4.5f * amplitude * cos(w + current_time);
-        glVertex3fv(glm::value_ptr(vertex));
+        vertices[indices[i]] = vertex;
     }
 
-    glEnd();
-    glFlush();
+    glBindBuffer(GL_ARRAY_BUFFER, vbo_fft);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(glm::vec3) * vertices.size(),
+                    vertices.data());
+
+    glBindVertexArray(vao_fft);
+    glDrawArrays(GL_LINE_STRIP, 0, vertices.size());
+    glBindVertexArray(0);
 
     shader_wfft_ptr->unbind();
 }

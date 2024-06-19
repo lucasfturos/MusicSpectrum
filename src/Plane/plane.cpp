@@ -1,4 +1,5 @@
 #include "plane.hpp"
+#include <glm/fwd.hpp>
 
 /*!
  * Construtor da classe Plane com as dimensões e número de
@@ -24,14 +25,10 @@ Plane::Plane(GLfloat w, GLfloat h, GLint num_seg)
  */
 std::vector<GLuint> Plane::genIndices() {
     std::vector<GLuint> indices;
-    for (auto i = 0; i < num_segments; ++i) {
-        for (auto j = 0; j < num_segments; ++j) {
-            // Mesh
-            // GLint row = (j + 1) * (num_segments + 1);
-            // indices.push_back(row + i + 1);
-            // indices.push_back(row + i);
-            // Lines
-            GLint row = j * (num_segments + 1);
+    indices.reserve(2 * num_segments * (num_segments + 1));
+    for (GLint j = 0; j < num_segments; ++j) {
+        GLint row = j * (num_segments + 1);
+        for (GLint i = 0; i < num_segments; ++i) {
             indices.push_back(row + i);
         }
     }
@@ -49,17 +46,20 @@ std::vector<GLuint> Plane::genIndices() {
  */
 std::vector<glm::vec3> Plane::genVertices() {
     std::vector<glm::vec3> vertices;
-    for (auto i = 0; i <= num_segments; ++i) {
-        for (auto j = 0; j <= num_segments; ++j) {
-            GLfloat t = static_cast<GLfloat>(i) / num_segments;
+    vertices.reserve((num_segments + 1) * (num_segments + 1));
+
+    GLfloat halfWidth = width / 2.0f;
+    GLfloat halfHeight = height / 2.0f;
+
+    for (GLint i = 0; i <= num_segments; ++i) {
+        GLfloat t = static_cast<GLfloat>(i) / num_segments;
+        GLfloat x = t * width - halfWidth;
+        for (GLint j = 0; j <= num_segments; ++j) {
             GLfloat s = static_cast<GLfloat>(j) / num_segments;
-
-            GLfloat x = (t - 0.5f) * width;
-            GLfloat y = 0.0f;
-            GLfloat z = (s - 0.5f) * height;
-
-            vertices.push_back(glm::vec3(x, y, z));
+            GLfloat z = s * height - halfHeight;
+            vertices.emplace_back(x, 0.0f, z);
         }
     }
+
     return vertices;
 }

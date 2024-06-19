@@ -15,7 +15,7 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
       timer_ptr(std::make_shared<Timer>()),
       sample_ptr(std::make_unique<Sample>(hud)),
       proj_mat(
-          glm::perspective(glm::radians(45.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
+          glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
       view_wave_mat(view_default_mat), view_wff_mat(view_default_mat) {
         
     glewExperimental = GL_TRUE;

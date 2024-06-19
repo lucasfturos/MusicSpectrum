@@ -22,7 +22,7 @@
 class Spectrum3D {
   protected:
     const glm::mat4 view_default_mat =
-        glm::lookAt(glm::vec3(0.0f, 3.0f, 20.0f), glm::vec3(0.0f, 1.5f, 0.0f),
+        glm::lookAt(glm::vec3(0.0f, 3.0f, 12.0f), glm::vec3(0.0f, 1.5f, 0.0f),
                     glm::vec3(0.0f, 1.0f, 0.0f));
 
   private:
@@ -42,12 +42,18 @@ class Spectrum3D {
   private:
     int whell_delta;
 
+    GLuint vao_wave;
+    GLuint vbo_wave;
+    GLuint vao_fft;
+    GLuint vbo_fft;
+
     std::shared_ptr<Shader> shader_wave_ptr;
     std::shared_ptr<Shader> shader_wfft_ptr;
 
     void clear();
     void initOpenGL();
     void handleMouse();
+    void setupBuffers(GLuint &vao, GLuint &vbo);
 
   public:
     void viewWaveform();
