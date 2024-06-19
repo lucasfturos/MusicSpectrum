@@ -11,10 +11,9 @@
 Spectrum::Spectrum(std::shared_ptr<sf::RenderWindow> win,
                    std::shared_ptr<HUD> hud,
                    std::shared_ptr<FFT<sf::Int16>> fft)
-    : window(win), hud_ptr(hud), fft_ptr(fft) {
-    timer_ptr = std::make_unique<Timer>();
-    sample_ptr = std::make_unique<Sample>(hud);
-}
+    : window(win), hud_ptr(hud), fft_ptr(fft),
+      timer_ptr(std::make_unique<Timer>()),
+      sample_ptr(std::make_unique<Sample>(hud)) {}
 
 /*!
  * Executa o loop principal da aplicação, processando e renderizando a

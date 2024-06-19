@@ -25,6 +25,9 @@ class Spectrum {
     std::shared_ptr<HUD> hud_ptr;
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
 
+    std::unique_ptr<Timer> timer_ptr;
+    std::unique_ptr<Sample> sample_ptr;
+
   private:
     float gravity_velocity = 0.001f;
     const float gravity_acceleration = 9.81f;
@@ -33,9 +36,6 @@ class Spectrum {
     sf::Color end_color = sf::Color::Magenta;
 
     std::vector<sf::RectangleShape> rectangles;
-
-    std::unique_ptr<Timer> timer_ptr;
-    std::unique_ptr<Sample> sample_ptr;
 
   public:
     void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>

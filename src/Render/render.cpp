@@ -13,12 +13,13 @@
  * - `spectrum3D_ptr`: Ponteiro compartilhado para a instância da classe
  * Spectrum3D.
  */
-Render::Render() {
-    window = std::make_shared<sf::RenderWindow>(
-        sf::VideoMode(WIDTH, HEIGHT), "Music Spectrum",
-        sf::Style::Titlebar | sf::Style::Close);
+Render::Render()
+    : window(std::make_shared<sf::RenderWindow>(
+          sf::VideoMode(WIDTH, HEIGHT), "Music Spectrum",
+          sf::Style::Titlebar | sf::Style::Close)),
+      desktop(
+          std::make_shared<sf::VideoMode>(sf::VideoMode::getDesktopMode())) {
 
-    desktop = std::make_shared<sf::VideoMode>(sf::VideoMode::getDesktopMode());
     window->setPosition(
         sf::Vector2i(desktop->width / 2.f - window->getSize().x / 2.f,
                      desktop->height / 2.f - window->getSize().y / 2.f));
