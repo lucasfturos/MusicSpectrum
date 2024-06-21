@@ -64,6 +64,8 @@ else()
     doxygen_add_docs(documentation 
         ${PROJECT_SOURCE_DIR}/src 
         "${PROJECT_SOURCE_DIR}/README.md"
+        "${PROJECT_SOURCE_DIR}/CONTRIBUTING.md"
+        "${PROJECT_SOURCE_DIR}/INSTALLING.md"
         COMMENT "Generating documentation")
 endif()
 
