@@ -2,12 +2,14 @@
 
 #include "../FFT/fft.hpp"
 #include "../HUD/hud.hpp"
-#include "../Plane/plane.hpp"
+#include "../Objects/MobiusStrip/mobius_strip.hpp"
+#include "../Objects/Plane/plane.hpp"
 #include "../Sample/sample.hpp"
 #include "../Shader/shader.hpp"
 #include "../Timer/timer.hpp"
 
 #include <GL/glew.h>
+#include <functional>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -32,6 +34,8 @@ class Spectrum3D {
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
 
     std::shared_ptr<Plane> plane_ptr;
+    std::shared_ptr<MobiusStrip> mobius_ptr;
+
     std::shared_ptr<Timer> timer_ptr;
     std::unique_ptr<Sample> sample_ptr;
 
@@ -44,16 +48,21 @@ class Spectrum3D {
 
     GLuint vao_wave;
     GLuint vbo_wave;
+    GLuint ebo_wave;
+    std::shared_ptr<Shader> shader_wave_ptr;
+
     GLuint vao_fft;
     GLuint vbo_fft;
-
-    std::shared_ptr<Shader> shader_wave_ptr;
+    GLuint ebo_fft;
     std::shared_ptr<Shader> shader_wfft_ptr;
 
     void clear();
     void initOpenGL();
     void handleMouse();
-    void setupBuffers(GLuint &vao, GLuint &vbo);
+    void setupBuffers(GLuint &vao, GLuint &vbo, GLuint &ebo);
+    void bindAndDraw(GLuint vao, GLuint vbo, GLuint ebo,
+                     std::vector<glm::vec3> &vertices,
+                     std::vector<GLuint> &indices, GLenum mode);
 
   public:
     void viewWaveform();

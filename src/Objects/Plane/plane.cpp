@@ -1,5 +1,4 @@
 #include "plane.hpp"
-#include <glm/fwd.hpp>
 
 /*!
  * Construtor da classe Plane com as dimensões e número de
@@ -26,10 +25,10 @@ Plane::Plane(GLfloat w, GLfloat h, GLint num_seg)
 std::vector<GLuint> Plane::genIndices() {
     std::vector<GLuint> indices;
     indices.reserve(2 * num_segments * (num_segments + 1));
-    for (GLint j = 0; j < num_segments; ++j) {
-        GLint row = j * (num_segments + 1);
-        for (GLint i = 0; i < num_segments; ++i) {
-            indices.push_back(row + i);
+    for (GLint i = 0; i < num_segments; ++i) {
+        GLint row = i * (num_segments + 1);
+        for (GLint j = 0; j < num_segments; ++j) {
+            indices.push_back(row + j);
         }
     }
     return indices;

@@ -1,4 +1,6 @@
 #include "hud.hpp"
+#include "../../external/ImGui-SFML/imgui-SFML.h"
+#include "../../external/ImGuiFileDialog/ImGuiFileDialog.h"
 
 /*! Função para estilizar os elementos do ImGui */
 void HUD::styleWidget() {
@@ -174,7 +176,6 @@ void HUD::audioList() {
 
         if (ImGui::Selectable(filename.c_str(), isSelected)) {
             selectedIndex = item;
-            std::cout << list_audio[selectedIndex] << '\n';
             setSoundBuffer(list_audio[selectedIndex]);
         }
     }

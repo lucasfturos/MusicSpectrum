@@ -1,11 +1,8 @@
 #pragma once
 
-#include "../../external/ImGui-SFML/imgui-SFML.h"
-#include "../../external/ImGuiFileDialog/ImGuiFileDialog.h"
 #include "../../external/imgui/imgui.h"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include <memory>
 
 // Constantes

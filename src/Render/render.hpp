@@ -4,8 +4,6 @@
 #include "../HUD/hud.hpp"
 #include "../Spectrum/spectrum.hpp"
 #include "../Spectrum3D/spectrum3D.hpp"
-#include <chrono>
-#include <thread>
 
 using namespace std::chrono;
 

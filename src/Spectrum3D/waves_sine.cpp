@@ -1,5 +1,4 @@
 #include "spectrum3D.hpp"
-#include <glm/gtc/type_ptr.hpp>
 
 //! Visualiza a forma de onda do sinal de áudio.
 void Spectrum3D::viewWaveform() {
@@ -25,36 +24,31 @@ void Spectrum3D::viewWaveform() {
 
     shader_wave_ptr->setUniformMat4f("uMVP", mvp);
 
-    std::vector<GLuint> indices = plane_ptr->genIndices();
-    std::vector<glm::vec3> vertices = plane_ptr->genVertices();
+    std::vector<GLuint> indices = mobius_ptr->genIndices();
+    std::vector<glm::vec3> vertices = mobius_ptr->genVertices();
 
-    for (std::size_t i = 0; i < indices.size(); ++i) {
+    for (std::size_t i = 0; i < vertices.size(); ++i) {
         sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
-        GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
+        GLfloat amplitude =
+            std::abs(static_cast<float>(sample_value)) / 32767.f;
         GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds();
 
-        glm::vec3 vertex = vertices[indices[i]];
-        GLfloat distance = sqrt(vertex.x * vertex.x + vertex.z * vertex.z);
         GLfloat frequency = (t != 0) ? 1 / t : 1;
+        GLfloat wave_speed = 0.5f;
+        GLfloat phase = wave_speed * t;
+        GLfloat w = 2 * pi * frequency;
 
-        GLfloat current_time = t - distance;
-        vertex.y =
-            4.5f * amplitude * sin(-pi * distance * frequency + current_time);
-        vertices[indices[i]] = vertex;
+        glm::vec3 &vertex = vertices[i];
+        vertex.y += (4.5f * amplitude) * std::sin(w * (vertex.x + phase));
+        vertex.y += (2.0f * amplitude) * std::cos(w * (vertex.x * phase));
     }
 
-    glBindBuffer(GL_ARRAY_BUFFER, vbo_wave);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(glm::vec3) * vertices.size(),
-                    vertices.data());
-
-    glBindVertexArray(vao_wave);
-    glDrawArrays(GL_LINE_STRIP, 0, vertices.size());
-    glBindVertexArray(0);
+    bindAndDraw(vao_wave, vbo_wave, ebo_wave, vertices, indices, GL_LINE_STRIP);
 
     shader_wave_ptr->unbind();
 }
 
-//! Visualiza a FFT do sinal de áudio.
+//! Visualiza a forma de onda com aplicação da FFT no sinal de áudio.
 void Spectrum3D::viewWaveformFFT() {
     float time = timer_ptr->elapsed();
     float red = sin(time) * 0.5f + 0.5f;
@@ -81,28 +75,22 @@ void Spectrum3D::viewWaveformFFT() {
     std::vector<GLuint> indices = plane_ptr->genIndices();
     std::vector<glm::vec3> vertices = plane_ptr->genVertices();
 
-    for (std::size_t i = 0; i < indices.size(); ++i) {
+    for (std::size_t i = 0; i < vertices.size(); ++i) {
         sf::Int16 sample_value = hud_ptr->sample_buffer[i % buffer_size];
-        GLfloat amplitude = static_cast<float>(sample_value) / 32767.f;
+        GLfloat amplitude =
+            std::abs(static_cast<float>(sample_value)) / 32767.f;
         GLfloat t = hud_ptr->sound_buffer.getDuration().asSeconds();
 
-        glm::vec3 vertex = vertices[indices[i]];
-        GLfloat distance = sqrt(vertex.x * vertex.x + vertex.z * vertex.z);
+        glm::vec3 &vertex = vertices[i];
+        GLfloat distance = std::sqrt(vertex.x * vertex.x + vertex.z * vertex.z);
         GLfloat frequency = (t != 0) ? 1 / t : 1;
 
         GLfloat current_time = t - distance;
-        GLfloat w = frequency * 2 * pi;
-        vertex.y = 4.5f * amplitude * cos(w + current_time);
-        vertices[indices[i]] = vertex;
+        GLfloat w = 2 * pi * frequency;
+        vertex.y = (4.5f * amplitude) * std::cos(w + current_time);
     }
 
-    glBindBuffer(GL_ARRAY_BUFFER, vbo_fft);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(glm::vec3) * vertices.size(),
-                    vertices.data());
-
-    glBindVertexArray(vao_fft);
-    glDrawArrays(GL_LINE_STRIP, 0, vertices.size());
-    glBindVertexArray(0);
+    bindAndDraw(vao_fft, vbo_fft, ebo_fft, vertices, indices, GL_LINE_STRIP);
 
     shader_wfft_ptr->unbind();
 }

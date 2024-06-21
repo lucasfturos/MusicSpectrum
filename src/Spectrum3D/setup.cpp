@@ -6,7 +6,12 @@ void Spectrum3D::clear() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-//! Inicializa o OpenGL.
+/*!
+ * Realiza a inicialização do OpenGL:
+ * - Limpa o buffer de tela e define as configurações de profundidade e mistura.
+ * - Carrega shaders para as formas de onda e FFT.
+ * - Configura os buffers para desenho das geometrias.
+ */
 void Spectrum3D::initOpenGL() {
     clear();
 
@@ -21,13 +26,22 @@ void Spectrum3D::initOpenGL() {
     shader_wfft_ptr =
         std::make_shared<Shader>("./assets/shader/WaveSineFFT.shader");
 
-    setupBuffers(vao_wave, vbo_wave);
-    setupBuffers(vao_fft, vbo_fft);
+    setupBuffers(vao_wave, vbo_wave, ebo_wave);
+    setupBuffers(vao_fft, vbo_fft, ebo_fft);
 }
 
-void Spectrum3D::setupBuffers(GLuint &vao, GLuint &vbo) {
+/*!
+ * Configuração inicial dos buffers:
+ * `vao`: ID do Vertex Array Object (VAO) ao qual os buffers serão ligados.
+ * `vbo`: ID do Vertex Buffer Object (VBO) contendo os vértices a serem
+ * desenhados.
+ * `ebo`: ID do Element Buffer Object (EBO) contendo os índices de
+ * vértices a serem desenhados.
+ */
+void Spectrum3D::setupBuffers(GLuint &vao, GLuint &vbo, GLuint &ebo) {
     glGenVertexArrays(1, &vao);
     glGenBuffers(1, &vbo);
+    glGenBuffers(1, &ebo);
 
     glBindVertexArray(vao);
 
@@ -40,7 +54,38 @@ void Spectrum3D::setupBuffers(GLuint &vao, GLuint &vbo) {
                           (void *)0);
     glEnableVertexAttribArray(0);
 
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindVertexArray(0);
+}
+
+/*!
+ * Liga o buffer de vértices e o buffer de elementos (EBO) ao VAO especificado,
+ * e desenha a geometria utilizando o modo de desenho especificado.
+ *
+ * `vao`: ID do Vertex Array Object (VAO) ao qual os buffers serão ligados.
+ * `vbo`: ID do Vertex Buffer Object (VBO) contendo os vértices a serem
+ * desenhados. `vertices`: Vetor contendo os vértices a serem carregados no VBO.
+ * `ebo`: ID do Element Buffer Object (EBO) contendo os índices de vértices a
+ * serem desenhados. `indices`: Vetor contendo os índices que especificam a
+ * ordem dos vértices. `mode`: Modo de desenho OpenGL (por exemplo,
+ * GL_TRIANGLES, GL_LINES, GL_POINTS).
+ */
+void Spectrum3D::bindAndDraw(GLuint vao, GLuint vbo, GLuint ebo,
+                             std::vector<glm::vec3> &vertices,
+                             std::vector<GLuint> &indices, GLenum mode) {
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(glm::vec3) * vertices.size(),
+                    vertices.data());
+
+    glBindVertexArray(vao);
+
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * indices.size(),
+                 indices.data(), GL_STATIC_DRAW);
+
+    glDrawElements(mode, indices.size(), GL_UNSIGNED_INT, 0);
+
     glBindVertexArray(0);
 }
 

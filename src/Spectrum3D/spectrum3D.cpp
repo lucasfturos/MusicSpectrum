@@ -12,12 +12,13 @@ Spectrum3D::Spectrum3D(std::shared_ptr<sf::RenderWindow> win,
                        std::shared_ptr<FFT<sf::Int16>> fft)
     : window(win), hud_ptr(hud), fft_ptr(fft),
       plane_ptr(std::make_shared<Plane>(20.0f, 20.0f, 20)),
+      mobius_ptr(std::make_shared<MobiusStrip>(8.0f, 6.0f, 10)),
       timer_ptr(std::make_shared<Timer>()),
       sample_ptr(std::make_unique<Sample>(hud)),
       proj_mat(
           glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),
       view_wave_mat(view_default_mat), view_wff_mat(view_default_mat) {
-        
+
     glewExperimental = GL_TRUE;
     GLenum error = glewInit();
     if (error != GLEW_OK) {

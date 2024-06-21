@@ -1,6 +1,7 @@
 #pragma once
 
 #include <chrono>
+#include <thread>
 
 /*!
  * Classe simples para medir tempo decorrido.

@@ -1,5 +1,4 @@
 #include "spectrum.hpp"
-#include <thread>
 
 /*!
  * Construtor da classe Spectrum.

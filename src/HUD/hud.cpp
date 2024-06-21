@@ -1,4 +1,5 @@
 #include "hud.hpp"
+#include "../../external/ImGui-SFML/imgui-SFML.h"
 
 /*!
  * Construtor da classe HUD.

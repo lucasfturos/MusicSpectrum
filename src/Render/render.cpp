@@ -1,4 +1,5 @@
 #include "render.hpp"
+#include "../../external/ImGui-SFML/imgui-SFML.h"
 #include "../../external/imgui/imgui_impl_opengl3.h"
 
 /*!

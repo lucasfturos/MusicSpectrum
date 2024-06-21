@@ -6,8 +6,9 @@ set(SRC_HEADERS
   FFT/fft.hpp
   # HUD
   HUD/hud.hpp
-  # Plane
-  Plane/plane.hpp
+  # Objects
+  Objects/MobiusStrip/mobius_strip.cpp
+  Objects/Plane/plane.hpp
   # Render
   Render/render.hpp
   # Sample
@@ -30,8 +31,9 @@ set(SRC_SOURCES
   HUD/hud.cpp
   HUD/ui.cpp
   HUD/events.cpp
-  # Plane
-  Plane/plane.cpp
+  # Objects
+  Objects/MobiusStrip/mobius_strip.cpp
+  Objects/Plane/plane.cpp
   # Render
   Render/plot.cpp
   Render/render.cpp
