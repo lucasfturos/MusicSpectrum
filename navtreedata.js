@@ -28,20 +28,23 @@ var NAVTREE =
     [ "Music Spectrum", "index.html", [
       [ "Descrição", "index.html#autotoc_md1", null ],
       [ "Funcionalidades", "index.html#autotoc_md2", null ],
-      [ "Screenshot", "index.html#autotoc_md3", [
-        [ "Tela do programa", "index.html#autotoc_md4", null ],
-        [ "Tipos de visualização", "index.html#autotoc_md5", null ]
+      [ "Teclas", "index.html#autotoc_md3", null ],
+      [ "Instalação e Execução", "index.html#autotoc_md4", null ],
+      [ "Screenshot", "index.html#autotoc_md5", [
+        [ "Tela do programa", "index.html#autotoc_md6", null ],
+        [ "Tipos de visualização", "index.html#autotoc_md7", null ]
       ] ],
-      [ "Instalação e Execução", "index.html#autotoc_md6", [
-        [ "Requisitos", "index.html#autotoc_md7", null ],
-        [ "Instruções:", "index.html#autotoc_md8", null ]
-      ] ],
-      [ "Teclas", "index.html#autotoc_md9", null ],
-      [ "Créditos", "index.html#autotoc_md10", null ],
-      [ "Documentação", "index.html#autotoc_md11", null ],
-      [ "Referências", "index.html#autotoc_md12", null ],
-      [ "License", "index.html#autotoc_md13", null ]
+      [ "Documentação", "index.html#autotoc_md8", null ],
+      [ "Contribuição", "index.html#autotoc_md9", null ],
+      [ "License", "index.html#autotoc_md10", null ],
+      [ "Créditos", "index.html#autotoc_md11", null ],
+      [ "Referências", "index.html#autotoc_md12", null ]
     ] ],
+    [ "Contribuindo para este Projeto", "md__home_runner_work_MusicSpectrum_MusicSpectrum_CONTRIBUTING.html", [
+      [ "Tutorial de como Contribuir", "md__home_runner_work_MusicSpectrum_MusicSpectrum_CONTRIBUTING.html#autotoc_md14", null ],
+      [ "Pull Request", "md__home_runner_work_MusicSpectrum_MusicSpectrum_CONTRIBUTING.html#autotoc_md15", null ]
+    ] ],
+    [ "Instalação e Execução", "md__home_runner_work_MusicSpectrum_MusicSpectrum_INSTALLING.html", null ],
     [ "Classes", "annotated.html", [
       [ "Lista de Classes", "annotated.html", "annotated_dup" ],
       [ "Índice dos Componentes", "classes.html", null ],

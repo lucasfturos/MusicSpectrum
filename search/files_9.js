@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['waves_5frect_2ecpp_208',['waves_rect.cpp',['../waves__rect_8cpp.html',1,'']]]
+  ['timer_2ecpp_211',['timer.cpp',['../timer_8cpp.html',1,'']]],
+  ['timer_2ehpp_212',['timer.hpp',['../timer_8hpp.html',1,'']]]
 ];
