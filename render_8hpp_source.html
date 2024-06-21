@@ -95,43 +95,41 @@ $(document).ready(function(){initNavTree('render_8hpp_source.html',''); initResi
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../HUD/hud.hpp&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;../Spectrum/spectrum.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;../Spectrum3D/spectrum3D.hpp&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std::chrono;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using namespace </span>std::chrono;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classRender.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRender.html">Render</a> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classRender.html#a3c5b37727141b7598cec376717483b6a">   22</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> FPS = 60;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classRender.html#af3dce3e2e6e7b0785f6cb7e5fd1b4125">   23</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> frame_duration = 1.0 / FPS;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classRender.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRender.html">Render</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classRender.html#a3c5b37727141b7598cec376717483b6a">   20</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> FPS = 60;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classRender.html#af3dce3e2e6e7b0785f6cb7e5fd1b4125">   21</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> frame_duration = 1.0 / FPS;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">   23</a></span>&#160;    sf::Clock <a class="code" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">clock</a>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">   25</a></span>&#160;    sf::Clock <a class="code" href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">clock</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">   27</a></span>&#160;    std::shared_ptr&lt;sf::RenderWindow&gt; <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">   28</a></span>&#160;    std::shared_ptr&lt;sf::VideoMode&gt; <a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">   30</a></span>&#160;    std::shared_ptr&lt;HUD&gt; <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">   31</a></span>&#160;    std::shared_ptr&lt;Spectrum&gt; <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">   32</a></span>&#160;    std::shared_ptr&lt;FFT&lt;sf::Int16&gt;&gt; <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classRender.html#ac935530df90770f016dc575c55c6a300">   33</a></span>&#160;    std::shared_ptr&lt;Spectrum3D&gt; <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> handlePlot(std::vector&lt;std::complex&lt;float&gt;&gt; spectrum,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    std::size_t fft_size);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> frameRate(time_point&lt;high_resolution_clock&gt; &amp;prev_time);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> run();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classRender.html">Render</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ~<a class="code" href="classRender.html">Render</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="ttc" id="aclassRender_html"><div class="ttname"><a href="classRender.html">Render</a></div><div class="ttdef"><b>Definition:</b> render.hpp:20</div></div>
-<div class="ttc" id="aclassRender_html_a0c939879f84e1e0eb8409c65854148aa"><div class="ttname"><a href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">Render::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:30</div></div>
-<div class="ttc" id="aclassRender_html_a1a3f00fc4d778ad22337bad9051b04cd"><div class="ttname"><a href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">Render::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:32</div></div>
-<div class="ttc" id="aclassRender_html_a305d3c33676b2dd7bfe784d2db736019"><div class="ttname"><a href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">Render::spectrum_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum &gt; spectrum_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:31</div></div>
-<div class="ttc" id="aclassRender_html_aa2f522e42439e367cb3c4016ac7bb183"><div class="ttname"><a href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">Render::clock</a></div><div class="ttdeci">sf::Clock clock</div><div class="ttdef"><b>Definition:</b> render.hpp:25</div></div>
-<div class="ttc" id="aclassRender_html_ac935530df90770f016dc575c55c6a300"><div class="ttname"><a href="classRender.html#ac935530df90770f016dc575c55c6a300">Render::spectrum3D_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum3D &gt; spectrum3D_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:33</div></div>
-<div class="ttc" id="aclassRender_html_acae8449a081e5ed2358660f2ac81b912"><div class="ttname"><a href="classRender.html#acae8449a081e5ed2358660f2ac81b912">Render::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> render.hpp:27</div></div>
-<div class="ttc" id="aclassRender_html_ad2027accb38742b5771e5eb8d48febfd"><div class="ttname"><a href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">Render::desktop</a></div><div class="ttdeci">std::shared_ptr&lt; sf::VideoMode &gt; desktop</div><div class="ttdef"><b>Definition:</b> render.hpp:28</div></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">   25</a></span>&#160;    std::shared_ptr&lt;sf::RenderWindow&gt; <a class="code" href="classRender.html#acae8449a081e5ed2358660f2ac81b912">window</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">   26</a></span>&#160;    std::shared_ptr&lt;sf::VideoMode&gt; <a class="code" href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">desktop</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">   28</a></span>&#160;    std::shared_ptr&lt;HUD&gt; <a class="code" href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">hud_ptr</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">   29</a></span>&#160;    std::shared_ptr&lt;Spectrum&gt; <a class="code" href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">spectrum_ptr</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">   30</a></span>&#160;    std::shared_ptr&lt;FFT&lt;sf::Int16&gt;&gt; <a class="code" href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">fft_ptr</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classRender.html#ac935530df90770f016dc575c55c6a300">   31</a></span>&#160;    std::shared_ptr&lt;Spectrum3D&gt; <a class="code" href="classRender.html#ac935530df90770f016dc575c55c6a300">spectrum3D_ptr</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> handlePlot(std::vector&lt;std::complex&lt;float&gt;&gt; spectrum,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                    std::size_t fft_size);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> frameRate(time_point&lt;high_resolution_clock&gt; &amp;prev_time);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> run();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classRender.html">Render</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    ~<a class="code" href="classRender.html">Render</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="ttc" id="aclassRender_html"><div class="ttname"><a href="classRender.html">Render</a></div><div class="ttdef"><b>Definition:</b> render.hpp:18</div></div>
+<div class="ttc" id="aclassRender_html_a0c939879f84e1e0eb8409c65854148aa"><div class="ttname"><a href="classRender.html#a0c939879f84e1e0eb8409c65854148aa">Render::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:28</div></div>
+<div class="ttc" id="aclassRender_html_a1a3f00fc4d778ad22337bad9051b04cd"><div class="ttname"><a href="classRender.html#a1a3f00fc4d778ad22337bad9051b04cd">Render::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:30</div></div>
+<div class="ttc" id="aclassRender_html_a305d3c33676b2dd7bfe784d2db736019"><div class="ttname"><a href="classRender.html#a305d3c33676b2dd7bfe784d2db736019">Render::spectrum_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum &gt; spectrum_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:29</div></div>
+<div class="ttc" id="aclassRender_html_aa2f522e42439e367cb3c4016ac7bb183"><div class="ttname"><a href="classRender.html#aa2f522e42439e367cb3c4016ac7bb183">Render::clock</a></div><div class="ttdeci">sf::Clock clock</div><div class="ttdef"><b>Definition:</b> render.hpp:23</div></div>
+<div class="ttc" id="aclassRender_html_ac935530df90770f016dc575c55c6a300"><div class="ttname"><a href="classRender.html#ac935530df90770f016dc575c55c6a300">Render::spectrum3D_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Spectrum3D &gt; spectrum3D_ptr</div><div class="ttdef"><b>Definition:</b> render.hpp:31</div></div>
+<div class="ttc" id="aclassRender_html_acae8449a081e5ed2358660f2ac81b912"><div class="ttname"><a href="classRender.html#acae8449a081e5ed2358660f2ac81b912">Render::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> render.hpp:25</div></div>
+<div class="ttc" id="aclassRender_html_ad2027accb38742b5771e5eb8d48febfd"><div class="ttname"><a href="classRender.html#ad2027accb38742b5771e5eb8d48febfd">Render::desktop</a></div><div class="ttdeci">std::shared_ptr&lt; sf::VideoMode &gt; desktop</div><div class="ttdef"><b>Definition:</b> render.hpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

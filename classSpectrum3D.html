@@ -104,7 +104,7 @@ Membros Públicos</h2></td></tr>
 <tr class="memdesc:a67f834b73924bf9d1b7a06be4866d71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualiza a forma de onda do sinal de áudio.  <a href="classSpectrum3D.html#a67f834b73924bf9d1b7a06be4866d71b">Mais...</a><br /></td></tr>
 <tr class="separator:a67f834b73924bf9d1b7a06be4866d71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54fbe3e0cbe308410713ff303fca2ec7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a54fbe3e0cbe308410713ff303fca2ec7">viewWaveformFFT</a> ()</td></tr>
-<tr class="memdesc:a54fbe3e0cbe308410713ff303fca2ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualiza a <a class="el" href="classFFT.html">FFT</a> do sinal de áudio.  <a href="classSpectrum3D.html#a54fbe3e0cbe308410713ff303fca2ec7">Mais...</a><br /></td></tr>
+<tr class="memdesc:a54fbe3e0cbe308410713ff303fca2ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visualiza a forma de onda com aplicação da <a class="el" href="classFFT.html">FFT</a> no sinal de áudio.  <a href="classSpectrum3D.html#a54fbe3e0cbe308410713ff303fca2ec7">Mais...</a><br /></td></tr>
 <tr class="separator:a54fbe3e0cbe308410713ff303fca2ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bbaba918458bc32355411b32576e2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#aa6bbaba918458bc32355411b32576e2e">getWhellDelta</a> (int w_delta)</td></tr>
 <tr class="separator:aa6bbaba918458bc32355411b32576e2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,13 +124,14 @@ Membros Privados</h2></td></tr>
 <tr class="memdesc:abe92e5941ff421e4cefaee4c6c02aacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpa a tela.  <a href="classSpectrum3D.html#abe92e5941ff421e4cefaee4c6c02aacc">Mais...</a><br /></td></tr>
 <tr class="separator:abe92e5941ff421e4cefaee4c6c02aacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ebde996a01382cb58fce2d81be5c3df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df">initOpenGL</a> ()</td></tr>
-<tr class="memdesc:a1ebde996a01382cb58fce2d81be5c3df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa o OpenGL.  <a href="classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df">Mais...</a><br /></td></tr>
 <tr class="separator:a1ebde996a01382cb58fce2d81be5c3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3f5b162dcf0121a46d02507787f8670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">handleMouse</a> ()</td></tr>
 <tr class="memdesc:ac3f5b162dcf0121a46d02507787f8670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trata o movimento do mouse.  <a href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">Mais...</a><br /></td></tr>
 <tr class="separator:ac3f5b162dcf0121a46d02507787f8670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73f06fb953c8898af1d5ebeb142dbb8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a73f06fb953c8898af1d5ebeb142dbb8a">setupBuffers</a> (GLuint &amp;vao, GLuint &amp;vbo)</td></tr>
-<tr class="separator:a73f06fb953c8898af1d5ebeb142dbb8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abde2e65206f0011f380f86786c2e7260"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#abde2e65206f0011f380f86786c2e7260">setupBuffers</a> (GLuint &amp;vao, GLuint &amp;vbo, GLuint &amp;ebo)</td></tr>
+<tr class="separator:abde2e65206f0011f380f86786c2e7260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64cf6c2acd5c9d35f5235d2d962fc85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#af64cf6c2acd5c9d35f5235d2d962fc85">bindAndDraw</a> (GLuint vao, GLuint vbo, GLuint ebo, std::vector&lt; glm::vec3 &gt; &amp;vertices, std::vector&lt; GLuint &gt; &amp;indices, GLenum mode)</td></tr>
+<tr class="separator:af64cf6c2acd5c9d35f5235d2d962fc85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atributos Privados</h2></td></tr>
@@ -142,6 +143,8 @@ Atributos Privados</h2></td></tr>
 <tr class="separator:aaa22dd2b1ad12e3251646a08b8b9f0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f935dfc150a7408fec895480a5b148d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classPlane.html">Plane</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a></td></tr>
 <tr class="separator:a9f935dfc150a7408fec895480a5b148d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a076018da4768078b2f201d3f643f1286"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classMobiusStrip.html">MobiusStrip</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a076018da4768078b2f201d3f643f1286">mobius_ptr</a></td></tr>
+<tr class="separator:a076018da4768078b2f201d3f643f1286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab8e3da039bc1636ec08125047129fe5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classTimer.html">Timer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a></td></tr>
 <tr class="separator:aab8e3da039bc1636ec08125047129fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ff97112d2240421190a44f1531c5994"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classSample.html">Sample</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a></td></tr>
@@ -158,12 +161,16 @@ Atributos Privados</h2></td></tr>
 <tr class="separator:ac772e529894b8e70ba265765cce35d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02cf3d43053d1aa8f2dd457fe9bd34e5"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">vbo_wave</a></td></tr>
 <tr class="separator:a02cf3d43053d1aa8f2dd457fe9bd34e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e9a99fccb3932f70d9e9be46fdf994"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#ab7e9a99fccb3932f70d9e9be46fdf994">ebo_wave</a></td></tr>
+<tr class="separator:ab7e9a99fccb3932f70d9e9be46fdf994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d0f05876a13810eb27a606885edcadd"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classShader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a></td></tr>
+<tr class="separator:a9d0f05876a13810eb27a606885edcadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd1ce0187af3ebdbd64540f18c1c2d68"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">vao_fft</a></td></tr>
 <tr class="separator:acd1ce0187af3ebdbd64540f18c1c2d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a086e38f5c5c00c7f3f14ba0571eea174"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">vbo_fft</a></td></tr>
 <tr class="separator:a086e38f5c5c00c7f3f14ba0571eea174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d0f05876a13810eb27a606885edcadd"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classShader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a></td></tr>
-<tr class="separator:a9d0f05876a13810eb27a606885edcadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c814b1beb2467c5bb7caac14ec0765c"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a9c814b1beb2467c5bb7caac14ec0765c">ebo_fft</a></td></tr>
+<tr class="separator:a9c814b1beb2467c5bb7caac14ec0765c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9565279db9f4844903fac04c0b6331cf"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classShader.html">Shader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a></td></tr>
 <tr class="separator:a9565279db9f4844903fac04c0b6331cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -210,41 +217,120 @@ Atributos Privados</h2></td></tr>
 </ul>
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    : <a class="code" href="classSpectrum3D.html#ac61a13a5ea9996abb09351cb121a49a2">window</a>(win), <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>(hud), <a class="code" href="classSpectrum3D.html#aaa22dd2b1ad12e3251646a08b8b9f0d2">fft_ptr</a>(fft),</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>(std::make_shared&lt;Plane&gt;(20.0f, 20.0f, 20)),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <a class="code" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a>(std::make_shared&lt;Timer&gt;()),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <a class="code" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a>(std::make_unique&lt;Sample&gt;(hud)),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <a class="code" href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">proj_mat</a>(</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;          glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>(<a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>), <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>(<a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    glewExperimental = GL_TRUE;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    GLenum error = glewInit();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (error != GLEW_OK) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            std::string(<span class="stringliteral">&quot;Error: &quot;</span>) +</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(glewGetErrorString(error)));</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classSpectrum3D.html#ac61a13a5ea9996abb09351cb121a49a2">window</a>-&gt;setActive()) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to set window to active&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df">initOpenGL</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
-<div class="ttc" id="aclassSpectrum3D_html_a1ebde996a01382cb58fce2d81be5c3df"><div class="ttname"><a href="classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df">Spectrum3D::initOpenGL</a></div><div class="ttdeci">void initOpenGL()</div><div class="ttdoc">Inicializa o OpenGL.</div><div class="ttdef"><b>Definition:</b> setup.cpp:10</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a1ff97112d2240421190a44f1531c5994"><div class="ttname"><a href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">Spectrum3D::sample_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; Sample &gt; sample_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:36</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a4472b636c7e7e463275d5b0d638341f4"><div class="ttname"><a href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">Spectrum3D::view_wave_mat</a></div><div class="ttdeci">glm::mat4 view_wave_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:39</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a5ddcbd0ca092f4f6e6400df05febb4ab"><div class="ttname"><a href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">Spectrum3D::proj_mat</a></div><div class="ttdeci">glm::mat4 proj_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:38</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a671422b035690583b641d98764486143"><div class="ttname"><a href="classSpectrum3D.html#a671422b035690583b641d98764486143">Spectrum3D::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:31</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a9f935dfc150a7408fec895480a5b148d"><div class="ttname"><a href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">Spectrum3D::plane_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Plane &gt; plane_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:34</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_aa41fe70d8165c3f8ecd27cde8fd1abf5"><div class="ttname"><a href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">Spectrum3D::view_wff_mat</a></div><div class="ttdeci">glm::mat4 view_wff_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:40</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_aaa22dd2b1ad12e3251646a08b8b9f0d2"><div class="ttname"><a href="classSpectrum3D.html#aaa22dd2b1ad12e3251646a08b8b9f0d2">Spectrum3D::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:32</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_aab8e3da039bc1636ec08125047129fe5"><div class="ttname"><a href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">Spectrum3D::timer_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Timer &gt; timer_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:35</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_ac61a13a5ea9996abb09351cb121a49a2"><div class="ttname"><a href="classSpectrum3D.html#ac61a13a5ea9996abb09351cb121a49a2">Spectrum3D::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:30</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_ae30b50744763d97b20ab28f01e14796c"><div class="ttname"><a href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">Spectrum3D::view_default_mat</a></div><div class="ttdeci">const glm::mat4 view_default_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:24</div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <a class="code" href="classSpectrum3D.html#a076018da4768078b2f201d3f643f1286">mobius_ptr</a>(std::make_shared&lt;MobiusStrip&gt;(8.0f, 6.0f, 10)),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <a class="code" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a>(std::make_shared&lt;Timer&gt;()),</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <a class="code" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a>(std::make_unique&lt;Sample&gt;(hud)),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <a class="code" href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">proj_mat</a>(</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;          glm::perspective(glm::radians(60.0f), 4.0f / 3.0f, 0.1f, 100.0f)),</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>(<a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>), <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>(<a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>) {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    glewExperimental = GL_TRUE;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    GLenum error = glewInit();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (error != GLEW_OK) {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            std::string(<span class="stringliteral">&quot;Error: &quot;</span>) +</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(glewGetErrorString(error)));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="classSpectrum3D.html#ac61a13a5ea9996abb09351cb121a49a2">window</a>-&gt;setActive()) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Failed to set window to active&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df">initOpenGL</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="ttc" id="aclassSpectrum3D_html_a076018da4768078b2f201d3f643f1286"><div class="ttname"><a href="classSpectrum3D.html#a076018da4768078b2f201d3f643f1286">Spectrum3D::mobius_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; MobiusStrip &gt; mobius_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:37</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a1ebde996a01382cb58fce2d81be5c3df"><div class="ttname"><a href="classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df">Spectrum3D::initOpenGL</a></div><div class="ttdeci">void initOpenGL()</div><div class="ttdef"><b>Definition:</b> setup.cpp:15</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a1ff97112d2240421190a44f1531c5994"><div class="ttname"><a href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">Spectrum3D::sample_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; Sample &gt; sample_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:40</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a4472b636c7e7e463275d5b0d638341f4"><div class="ttname"><a href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">Spectrum3D::view_wave_mat</a></div><div class="ttdeci">glm::mat4 view_wave_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:43</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a5ddcbd0ca092f4f6e6400df05febb4ab"><div class="ttname"><a href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">Spectrum3D::proj_mat</a></div><div class="ttdeci">glm::mat4 proj_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:42</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a671422b035690583b641d98764486143"><div class="ttname"><a href="classSpectrum3D.html#a671422b035690583b641d98764486143">Spectrum3D::hud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; HUD &gt; hud_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:33</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a9f935dfc150a7408fec895480a5b148d"><div class="ttname"><a href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">Spectrum3D::plane_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Plane &gt; plane_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:36</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_aa41fe70d8165c3f8ecd27cde8fd1abf5"><div class="ttname"><a href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">Spectrum3D::view_wff_mat</a></div><div class="ttdeci">glm::mat4 view_wff_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:44</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_aaa22dd2b1ad12e3251646a08b8b9f0d2"><div class="ttname"><a href="classSpectrum3D.html#aaa22dd2b1ad12e3251646a08b8b9f0d2">Spectrum3D::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:34</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_aab8e3da039bc1636ec08125047129fe5"><div class="ttname"><a href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">Spectrum3D::timer_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Timer &gt; timer_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:39</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_ac61a13a5ea9996abb09351cb121a49a2"><div class="ttname"><a href="classSpectrum3D.html#ac61a13a5ea9996abb09351cb121a49a2">Spectrum3D::window</a></div><div class="ttdeci">std::shared_ptr&lt; sf::RenderWindow &gt; window</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:32</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_ae30b50744763d97b20ab28f01e14796c"><div class="ttname"><a href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">Spectrum3D::view_default_mat</a></div><div class="ttdeci">const glm::mat4 view_default_mat</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:26</div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Funções membros</h2>
+<a id="af64cf6c2acd5c9d35f5235d2d962fc85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af64cf6c2acd5c9d35f5235d2d962fc85">&#9670;&nbsp;</a></span>bindAndDraw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Spectrum3D::bindAndDraw </td>
+          <td>(</td>
+          <td class="paramtype">GLuint&#160;</td>
+          <td class="paramname"><em>vao</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint&#160;</td>
+          <td class="paramname"><em>ebo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; glm::vec3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vertices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; GLuint &gt; &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>mode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Liga o buffer de vértices e o buffer de elementos (EBO) ao VAO especificado, e desenha a geometria utilizando o modo de desenho especificado.</p>
+<p><code>vao</code>: ID do Vertex Array Object (VAO) ao qual os buffers serão ligados. <code>vbo</code>: ID do Vertex Buffer Object (VBO) contendo os vértices a serem desenhados. <code>vertices</code>: Vetor contendo os vértices a serem carregados no VBO. <code>ebo</code>: ID do Element Buffer Object (EBO) contendo os índices de vértices a serem desenhados. <code>indices</code>: Vetor contendo os índices que especificam a ordem dos vértices. <code>mode</code>: Modo de desenho OpenGL (por exemplo, GL_TRIANGLES, GL_LINES, GL_POINTS). </p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                                                      {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    glBufferSubData(GL_ARRAY_BUFFER, 0, <span class="keyword">sizeof</span>(glm::vec3) * vertices.size(),</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    vertices.data());</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    glBindVertexArray(vao);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    glBufferData(GL_ELEMENT_ARRAY_BUFFER, <span class="keyword">sizeof</span>(GLuint) * indices.size(),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                 indices.data(), GL_STATIC_DRAW);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    glDrawElements(mode, indices.size(), GL_UNSIGNED_INT, 0);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    glBindVertexArray(0);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="abe92e5941ff421e4cefaee4c6c02aacc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe92e5941ff421e4cefaee4c6c02aacc">&#9670;&nbsp;</a></span>clear()</h2>
 
@@ -293,8 +379,8 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Atualiza o delta do movimento da roda do mouse.</p>
 <p><code>w_delta</code>: Valor do delta do movimento da roda do mouse. </p>
-<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{ <a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> = w_delta; }</div>
-<div class="ttc" id="aclassSpectrum3D_html_a1a34e9be62f7babc62942a0bd190e3d5"><div class="ttname"><a href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">Spectrum3D::whell_delta</a></div><div class="ttdeci">int whell_delta</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:43</div></div>
+<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ <a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> = w_delta; }</div>
+<div class="ttc" id="aclassSpectrum3D_html_a1a34e9be62f7babc62942a0bd190e3d5"><div class="ttname"><a href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">Spectrum3D::whell_delta</a></div><div class="ttdeci">int whell_delta</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:47</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -322,65 +408,65 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Trata o movimento do mouse. </p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                             {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;bool&gt; view_mode = {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;option == 5,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;option == 6,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> sf::Vector2i prev_pos;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> first_click = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        sf::Vector2i curr_pos = sf::Mouse::getPosition();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (first_click) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            prev_pos = curr_pos;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            first_click = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            sf::Vector2i delta = curr_pos - prev_pos;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">float</span> angle = atan2(delta.y, delta.x);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (view_mode[0]) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a> = glm::rotate(<a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>, glm::radians(angle),</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                           glm::vec3(1.0f, 1.0f, 0.0f));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span> (view_mode[1]) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a> = glm::rotate(<a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>, glm::radians(angle),</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                                            glm::vec3(1.0f, 1.0f, 0.0f));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            prev_pos = curr_pos;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        first_click = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::vector&lt;float&gt; zoom_factor = {0.5f, 0.5f};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> != 0) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::vector&lt;float&gt; zoom_amount = {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            1.0f + zoom_factor[0] * abs(<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a>) / 10.0f,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            1.0f + zoom_factor[1] * abs(<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a>) / 10.0f,</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        };</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> &gt; 0) {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">if</span> (view_mode[1]) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a> =</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>, glm::vec3(zoom_amount[0]));</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (view_mode[0]) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a> =</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>, glm::vec3(zoom_amount[1]));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> &lt; 0) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">if</span> (view_mode[1]) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a> =</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>, glm::vec3(1.0f / zoom_amount[0]));</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (view_mode[0]) {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a> =</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>, glm::vec3(1.0f / zoom_amount[1]));</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> = 0;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                             {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::vector&lt;bool&gt; view_mode = {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;option == 5,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;option == 6,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> sf::Vector2i prev_pos;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> first_click = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        sf::Vector2i curr_pos = sf::Mouse::getPosition();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">if</span> (first_click) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            prev_pos = curr_pos;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            first_click = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            sf::Vector2i delta = curr_pos - prev_pos;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">float</span> angle = atan2(delta.y, delta.x);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordflow">if</span> (view_mode[0]) {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a> = glm::rotate(<a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>, glm::radians(angle),</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                           glm::vec3(1.0f, 1.0f, 0.0f));</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">if</span> (view_mode[1]) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a> = glm::rotate(<a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>, glm::radians(angle),</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                            glm::vec3(1.0f, 1.0f, 0.0f));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            prev_pos = curr_pos;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        first_click = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::vector&lt;float&gt; zoom_factor = {0.5f, 0.5f};</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> != 0) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        std::vector&lt;float&gt; zoom_amount = {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            1.0f + zoom_factor[0] * abs(<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a>) / 10.0f,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            1.0f + zoom_factor[1] * abs(<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a>) / 10.0f,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        };</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> &gt; 0) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="keywordflow">if</span> (view_mode[1]) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a> =</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>, glm::vec3(zoom_amount[0]));</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (view_mode[0]) {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a> =</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>, glm::vec3(zoom_amount[1]));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> &lt; 0) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="keywordflow">if</span> (view_mode[1]) {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a> =</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>, glm::vec3(1.0f / zoom_amount[0]));</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (view_mode[0]) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a> =</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    glm::scale(<a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>, glm::vec3(1.0f / zoom_amount[1]));</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="classSpectrum3D.html#a1a34e9be62f7babc62942a0bd190e3d5">whell_delta</a> = 0;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    }</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -406,33 +492,38 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Inicializa o OpenGL. </p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                            {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classSpectrum3D.html#abe92e5941ff421e4cefaee4c6c02aacc">clear</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    glCullFace(GL_BACK);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    glEnable(GL_BLEND);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    glMatrixMode(GL_PROJECTION);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a> =</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        std::make_shared&lt;Shader&gt;(<span class="stringliteral">&quot;./assets/shader/WaveSine.shader&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a> =</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::make_shared&lt;Shader&gt;(<span class="stringliteral">&quot;./assets/shader/WaveSineFFT.shader&quot;</span>);</div>
+<p>Realiza a inicialização do OpenGL:</p><ul>
+<li>Limpa o buffer de tela e define as configurações de profundidade e mistura.</li>
+<li>Carrega shaders para as formas de onda e <a class="el" href="classFFT.html">FFT</a>.</li>
+<li>Configura os buffers para desenho das geometrias. </li>
+</ul>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                            {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classSpectrum3D.html#abe92e5941ff421e4cefaee4c6c02aacc">clear</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    glEnable(GL_DEPTH_TEST);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    glCullFace(GL_BACK);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    glEnable(GL_BLEND);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    glMatrixMode(GL_PROJECTION);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classSpectrum3D.html#a73f06fb953c8898af1d5ebeb142dbb8a">setupBuffers</a>(<a class="code" href="classSpectrum3D.html#ac772e529894b8e70ba265765cce35d47">vao_wave</a>, <a class="code" href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">vbo_wave</a>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classSpectrum3D.html#a73f06fb953c8898af1d5ebeb142dbb8a">setupBuffers</a>(<a class="code" href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">vao_fft</a>, <a class="code" href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">vbo_fft</a>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="ttc" id="aclassSpectrum3D_html_a02cf3d43053d1aa8f2dd457fe9bd34e5"><div class="ttname"><a href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">Spectrum3D::vbo_wave</a></div><div class="ttdeci">GLuint vbo_wave</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:46</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a086e38f5c5c00c7f3f14ba0571eea174"><div class="ttname"><a href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">Spectrum3D::vbo_fft</a></div><div class="ttdeci">GLuint vbo_fft</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:48</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a73f06fb953c8898af1d5ebeb142dbb8a"><div class="ttname"><a href="classSpectrum3D.html#a73f06fb953c8898af1d5ebeb142dbb8a">Spectrum3D::setupBuffers</a></div><div class="ttdeci">void setupBuffers(GLuint &amp;vao, GLuint &amp;vbo)</div><div class="ttdef"><b>Definition:</b> setup.cpp:28</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a9565279db9f4844903fac04c0b6331cf"><div class="ttname"><a href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">Spectrum3D::shader_wfft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Shader &gt; shader_wfft_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:51</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_a9d0f05876a13810eb27a606885edcadd"><div class="ttname"><a href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">Spectrum3D::shader_wave_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Shader &gt; shader_wave_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:50</div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a> =</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::make_shared&lt;Shader&gt;(<span class="stringliteral">&quot;./assets/shader/WaveSine.shader&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a> =</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        std::make_shared&lt;Shader&gt;(<span class="stringliteral">&quot;./assets/shader/WaveSineFFT.shader&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classSpectrum3D.html#abde2e65206f0011f380f86786c2e7260">setupBuffers</a>(<a class="code" href="classSpectrum3D.html#ac772e529894b8e70ba265765cce35d47">vao_wave</a>, <a class="code" href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">vbo_wave</a>, <a class="code" href="classSpectrum3D.html#ab7e9a99fccb3932f70d9e9be46fdf994">ebo_wave</a>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classSpectrum3D.html#abde2e65206f0011f380f86786c2e7260">setupBuffers</a>(<a class="code" href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">vao_fft</a>, <a class="code" href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">vbo_fft</a>, <a class="code" href="classSpectrum3D.html#a9c814b1beb2467c5bb7caac14ec0765c">ebo_fft</a>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="ttc" id="aclassSpectrum3D_html_a02cf3d43053d1aa8f2dd457fe9bd34e5"><div class="ttname"><a href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">Spectrum3D::vbo_wave</a></div><div class="ttdeci">GLuint vbo_wave</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:50</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a086e38f5c5c00c7f3f14ba0571eea174"><div class="ttname"><a href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">Spectrum3D::vbo_fft</a></div><div class="ttdeci">GLuint vbo_fft</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:55</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a9565279db9f4844903fac04c0b6331cf"><div class="ttname"><a href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">Spectrum3D::shader_wfft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Shader &gt; shader_wfft_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:57</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a9c814b1beb2467c5bb7caac14ec0765c"><div class="ttname"><a href="classSpectrum3D.html#a9c814b1beb2467c5bb7caac14ec0765c">Spectrum3D::ebo_fft</a></div><div class="ttdeci">GLuint ebo_fft</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:56</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_a9d0f05876a13810eb27a606885edcadd"><div class="ttname"><a href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">Spectrum3D::shader_wave_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; Shader &gt; shader_wave_ptr</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:52</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_ab7e9a99fccb3932f70d9e9be46fdf994"><div class="ttname"><a href="classSpectrum3D.html#ab7e9a99fccb3932f70d9e9be46fdf994">Spectrum3D::ebo_wave</a></div><div class="ttdeci">GLuint ebo_wave</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:51</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_abde2e65206f0011f380f86786c2e7260"><div class="ttname"><a href="classSpectrum3D.html#abde2e65206f0011f380f86786c2e7260">Spectrum3D::setupBuffers</a></div><div class="ttdeci">void setupBuffers(GLuint &amp;vao, GLuint &amp;vbo, GLuint &amp;ebo)</div><div class="ttdef"><b>Definition:</b> setup.cpp:41</div></div>
 <div class="ttc" id="aclassSpectrum3D_html_abe92e5941ff421e4cefaee4c6c02aacc"><div class="ttname"><a href="classSpectrum3D.html#abe92e5941ff421e4cefaee4c6c02aacc">Spectrum3D::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Limpa a tela.</div><div class="ttdef"><b>Definition:</b> setup.cpp:4</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_ac772e529894b8e70ba265765cce35d47"><div class="ttname"><a href="classSpectrum3D.html#ac772e529894b8e70ba265765cce35d47">Spectrum3D::vao_wave</a></div><div class="ttdeci">GLuint vao_wave</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:45</div></div>
-<div class="ttc" id="aclassSpectrum3D_html_acd1ce0187af3ebdbd64540f18c1c2d68"><div class="ttname"><a href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">Spectrum3D::vao_fft</a></div><div class="ttdeci">GLuint vao_fft</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:47</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_ac772e529894b8e70ba265765cce35d47"><div class="ttname"><a href="classSpectrum3D.html#ac772e529894b8e70ba265765cce35d47">Spectrum3D::vao_wave</a></div><div class="ttdeci">GLuint vao_wave</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:49</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_acd1ce0187af3ebdbd64540f18c1c2d68"><div class="ttname"><a href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">Spectrum3D::vao_fft</a></div><div class="ttdeci">GLuint vao_fft</div><div class="ttdef"><b>Definition:</b> spectrum3D.hpp:54</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -453,30 +544,30 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Executa o loop principal da aplicação, renderizando a forma de onda ou <a class="el" href="classFFT.html">FFT</a> e chamando a função de callback para tratar os dados do plot.</p>
 <p><code>handlePlot</code>: Função callback para processar os dados do plot (forma de onda ou <a class="el" href="classFFT.html">FFT</a>). </p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a>-&gt;monoSample();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; spectrum;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sound.getStatus() == sf::SoundSource::Playing) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a>-&gt;getSampleBuffer();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::size_t fft_size = 1;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">while</span> (fft_size &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>) {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            fft_size *= 2;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        spectrum.resize(fft_size, 0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        handlePlot(spectrum, fft_size);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="ttc" id="ahud_8hpp_html_a9b2f6e031c4f0e3cc3f6c0eb4032f7b0"><div class="ttname"><a href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a></div><div class="ttdeci">const size_t buffer_size</div><div class="ttdef"><b>Definition:</b> hud.hpp:16</div></div>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a>-&gt;monoSample();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; spectrum;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sound.getStatus() == sf::SoundSource::Playing) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classSpectrum3D.html#a1ff97112d2240421190a44f1531c5994">sample_ptr</a>-&gt;getSampleBuffer();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::size_t fft_size = 1;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">while</span> (fft_size &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            fft_size *= 2;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        spectrum.resize(fft_size, 0);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        handlePlot(spectrum, fft_size);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<div class="ttc" id="ahud_8hpp_html_a9b2f6e031c4f0e3cc3f6c0eb4032f7b0"><div class="ttname"><a href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a></div><div class="ttdeci">const size_t buffer_size</div><div class="ttdef"><b>Definition:</b> hud.hpp:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a73f06fb953c8898af1d5ebeb142dbb8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73f06fb953c8898af1d5ebeb142dbb8a">&#9670;&nbsp;</a></span>setupBuffers()</h2>
+<a id="abde2e65206f0011f380f86786c2e7260"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abde2e65206f0011f380f86786c2e7260">&#9670;&nbsp;</a></span>setupBuffers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,7 +585,13 @@ Atributos Privados</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">GLuint &amp;&#160;</td>
-          <td class="paramname"><em>vbo</em>&#160;</td>
+          <td class="paramname"><em>vbo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLuint &amp;&#160;</td>
+          <td class="paramname"><em>ebo</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -508,24 +605,27 @@ Atributos Privados</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                                                      {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    glGenVertexArrays(1, &amp;vao);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    glGenBuffers(1, &amp;vbo);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    glBindVertexArray(vao);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    glBufferData(GL_ARRAY_BUFFER,</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                 <span class="keyword">sizeof</span>(glm::vec3) * <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genVertices().size(), <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                 GL_DYNAMIC_DRAW);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glm::vec3),</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                          (<span class="keywordtype">void</span> *)0);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    glEnableVertexAttribArray(0);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    glBindVertexArray(0);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p>Configuração inicial dos buffers: <code>vao</code>: ID do Vertex Array Object (VAO) ao qual os buffers serão ligados. <code>vbo</code>: ID do Vertex Buffer Object (VBO) contendo os vértices a serem desenhados. <code>ebo</code>: ID do Element Buffer Object (EBO) contendo os índices de vértices a serem desenhados. </p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                                                                   {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    glGenVertexArrays(1, &amp;vao);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    glGenBuffers(1, &amp;vbo);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    glGenBuffers(1, &amp;ebo);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    glBindVertexArray(vao);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, vbo);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    glBufferData(GL_ARRAY_BUFFER,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                 <span class="keyword">sizeof</span>(glm::vec3) * <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genVertices().size(), <span class="keyword">nullptr</span>,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                 GL_DYNAMIC_DRAW);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, <span class="keyword">sizeof</span>(glm::vec3),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                          (<span class="keywordtype">void</span> *)0);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    glEnableVertexAttribArray(0);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, 0);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    glBindVertexArray(0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -545,58 +645,54 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Visualiza a forma de onda do sinal de áudio. </p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;                              {</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">float</span> time = <a class="code" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a>-&gt;elapsed();</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">float</span> red = sin(time) * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">float</span> green = 0.5f;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">float</span> blue = cos(time) * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;bind();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;setUniform4f(<span class="stringliteral">&quot;uColor&quot;</span>, glm::vec4(red, green, blue, 1.0f));</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    glm::mat4 view_mat_wave = <a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">handleMouse</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    glm::mat4 mvp = <a class="code" href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">proj_mat</a> * view_mat_wave * <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">float</span> angle = time * glm::radians(90.0f);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    glm::mat4 rotationMatrix =</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0f, 1.0f, 0.0f));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    mvp *= rotationMatrix;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;setUniformMat4f(<span class="stringliteral">&quot;uMVP&quot;</span>, mvp);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::vector&lt;GLuint&gt; indices = <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genIndices();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::vector&lt;glm::vec3&gt; vertices = <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genVertices();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; indices.size(); ++i) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        sf::Int16 sample_value = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sample_buffer[i % <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>];</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        GLfloat amplitude = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(sample_value) / 32767.f;</div>
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;                              {</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">float</span> time = <a class="code" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a>-&gt;elapsed();</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">float</span> red = sin(time) * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">float</span> green = 0.5f;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keywordtype">float</span> blue = cos(time) * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;bind();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;setUniform4f(<span class="stringliteral">&quot;uColor&quot;</span>, glm::vec4(red, green, blue, 1.0f));</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    glm::mat4 view_mat_wave = <a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">handleMouse</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    glm::mat4 mvp = <a class="code" href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">proj_mat</a> * view_mat_wave * <a class="code" href="classSpectrum3D.html#a4472b636c7e7e463275d5b0d638341f4">view_wave_mat</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">float</span> angle = time * glm::radians(90.0f);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    glm::mat4 rotationMatrix =</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0f, 1.0f, 0.0f));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    mvp *= rotationMatrix;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;setUniformMat4f(<span class="stringliteral">&quot;uMVP&quot;</span>, mvp);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;GLuint&gt; indices = <a class="code" href="classSpectrum3D.html#a076018da4768078b2f201d3f643f1286">mobius_ptr</a>-&gt;genIndices();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::vector&lt;glm::vec3&gt; vertices = <a class="code" href="classSpectrum3D.html#a076018da4768078b2f201d3f643f1286">mobius_ptr</a>-&gt;genVertices();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; vertices.size(); ++i) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        sf::Int16 sample_value = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sample_buffer[i % <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>];</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        GLfloat amplitude =</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            std::abs(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(sample_value)) / 32767.f;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        GLfloat t = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sound_buffer.getDuration().asSeconds();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        glm::vec3 vertex = vertices[indices[i]];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        GLfloat distance = sqrt(vertex.x * vertex.x + vertex.z * vertex.z);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        GLfloat frequency = (t != 0) ? 1 / t : 1;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        GLfloat current_time = t - distance;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        vertex.y =</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            4.5f * amplitude * sin(-<a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * distance * frequency + current_time);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        vertices[indices[i]] = vertex;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        GLfloat frequency = (t != 0) ? 1 / t : 1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        GLfloat wave_speed = 0.5f;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        GLfloat phase = wave_speed * t;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        GLfloat w = 2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * frequency;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        glm::vec3 &amp;vertex = vertices[i];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        vertex.y += (4.5f * amplitude) * std::sin(w * (vertex.x + phase));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        vertex.y += (2.0f * amplitude) * std::cos(w * (vertex.x * phase));</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, <a class="code" href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">vbo_wave</a>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    glBufferSubData(GL_ARRAY_BUFFER, 0, <span class="keyword">sizeof</span>(glm::vec3) * vertices.size(),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    vertices.data());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    glBindVertexArray(<a class="code" href="classSpectrum3D.html#ac772e529894b8e70ba265765cce35d47">vao_wave</a>);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    glDrawArrays(GL_LINE_STRIP, 0, vertices.size());</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    glBindVertexArray(0);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;unbind();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="ttc" id="aclassSpectrum3D_html_ac3f5b162dcf0121a46d02507787f8670"><div class="ttname"><a href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">Spectrum3D::handleMouse</a></div><div class="ttdeci">void handleMouse()</div><div class="ttdoc">Trata o movimento do mouse.</div><div class="ttdef"><b>Definition:</b> setup.cpp:48</div></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classSpectrum3D.html#af64cf6c2acd5c9d35f5235d2d962fc85">bindAndDraw</a>(<a class="code" href="classSpectrum3D.html#ac772e529894b8e70ba265765cce35d47">vao_wave</a>, <a class="code" href="classSpectrum3D.html#a02cf3d43053d1aa8f2dd457fe9bd34e5">vbo_wave</a>, <a class="code" href="classSpectrum3D.html#ab7e9a99fccb3932f70d9e9be46fdf994">ebo_wave</a>, vertices, indices, GL_LINE_STRIP);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classSpectrum3D.html#a9d0f05876a13810eb27a606885edcadd">shader_wave_ptr</a>-&gt;unbind();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<div class="ttc" id="aclassSpectrum3D_html_ac3f5b162dcf0121a46d02507787f8670"><div class="ttname"><a href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">Spectrum3D::handleMouse</a></div><div class="ttdeci">void handleMouse()</div><div class="ttdoc">Trata o movimento do mouse.</div><div class="ttdef"><b>Definition:</b> setup.cpp:93</div></div>
+<div class="ttc" id="aclassSpectrum3D_html_af64cf6c2acd5c9d35f5235d2d962fc85"><div class="ttname"><a href="classSpectrum3D.html#af64cf6c2acd5c9d35f5235d2d962fc85">Spectrum3D::bindAndDraw</a></div><div class="ttdeci">void bindAndDraw(GLuint vao, GLuint vbo, GLuint ebo, std::vector&lt; glm::vec3 &gt; &amp;vertices, std::vector&lt; GLuint &gt; &amp;indices, GLenum mode)</div><div class="ttdef"><b>Definition:</b> setup.cpp:74</div></div>
 <div class="ttc" id="afft_8hpp_html_abce8f0db8a5282e441988c8d2e73f79e"><div class="ttname"><a href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a></div><div class="ttdeci">const float pi</div><div class="ttdef"><b>Definition:</b> fft.hpp:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -616,62 +712,100 @@ Atributos Privados</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Visualiza a <a class="el" href="classFFT.html">FFT</a> do sinal de áudio. </p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                 {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">float</span> time = <a class="code" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a>-&gt;elapsed();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">float</span> red = sin(time) * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> green = cos(time) * 0.5f + 0.5f;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span> blue = 0.5f;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;bind();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;setUniform4f(<span class="stringliteral">&quot;uColor&quot;</span>, glm::vec4(red, green, blue, 1.0f));</div>
+<p>Visualiza a forma de onda com aplicação da <a class="el" href="classFFT.html">FFT</a> no sinal de áudio. </p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                 {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> time = <a class="code" href="classSpectrum3D.html#aab8e3da039bc1636ec08125047129fe5">timer_ptr</a>-&gt;elapsed();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> red = sin(time) * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> green = cos(time) * 0.5f + 0.5f;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> blue = 0.5f;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;bind();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;setUniform4f(<span class="stringliteral">&quot;uColor&quot;</span>, glm::vec4(red, green, blue, 1.0f));</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    glm::mat4 view_mat_fft = <a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">handleMouse</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    glm::mat4 mvp = <a class="code" href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">proj_mat</a> * view_mat_fft * <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    glm::mat4 view_mat_fft = <a class="code" href="classSpectrum3D.html#ae30b50744763d97b20ab28f01e14796c">view_default_mat</a>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670">handleMouse</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">float</span> angle = time * glm::radians(90.0f);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    glm::mat4 rotationMatrix =</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0f, 1.0f, 0.0f));</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    glm::mat4 mvp = <a class="code" href="classSpectrum3D.html#a5ddcbd0ca092f4f6e6400df05febb4ab">proj_mat</a> * view_mat_fft * <a class="code" href="classSpectrum3D.html#aa41fe70d8165c3f8ecd27cde8fd1abf5">view_wff_mat</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    mvp *= rotationMatrix;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> angle = time * glm::radians(90.0f);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    glm::mat4 rotationMatrix =</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        glm::rotate(glm::mat4(1.0f), angle, glm::vec3(0.0f, 1.0f, 0.0f));</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    mvp *= rotationMatrix;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;setUniformMat4f(<span class="stringliteral">&quot;uMVP&quot;</span>, mvp);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::vector&lt;GLuint&gt; indices = <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genIndices();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::vector&lt;glm::vec3&gt; vertices = <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genVertices();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;setUniformMat4f(<span class="stringliteral">&quot;uMVP&quot;</span>, mvp);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::vector&lt;GLuint&gt; indices = <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genIndices();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    std::vector&lt;glm::vec3&gt; vertices = <a class="code" href="classSpectrum3D.html#a9f935dfc150a7408fec895480a5b148d">plane_ptr</a>-&gt;genVertices();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; vertices.size(); ++i) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        sf::Int16 sample_value = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sample_buffer[i % <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>];</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        GLfloat amplitude =</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            std::abs(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(sample_value)) / 32767.f;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        GLfloat t = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sound_buffer.getDuration().asSeconds();</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; indices.size(); ++i) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        sf::Int16 sample_value = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sample_buffer[i % <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>];</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        GLfloat amplitude = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(sample_value) / 32767.f;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        GLfloat t = <a class="code" href="classSpectrum3D.html#a671422b035690583b641d98764486143">hud_ptr</a>-&gt;sound_buffer.getDuration().asSeconds();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        glm::vec3 vertex = vertices[indices[i]];</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        GLfloat distance = sqrt(vertex.x * vertex.x + vertex.z * vertex.z);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        GLfloat frequency = (t != 0) ? 1 / t : 1;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        glm::vec3 &amp;vertex = vertices[i];</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        GLfloat distance = std::sqrt(vertex.x * vertex.x + vertex.z * vertex.z);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        GLfloat frequency = (t != 0) ? 1 / t : 1;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        GLfloat current_time = t - distance;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        GLfloat w = 2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * frequency;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        vertex.y = (4.5f * amplitude) * std::cos(w + current_time);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        GLfloat current_time = t - distance;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        GLfloat w = frequency * 2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        vertex.y = 4.5f * amplitude * cos(w + current_time);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        vertices[indices[i]] = vertex;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    glBindBuffer(GL_ARRAY_BUFFER, <a class="code" href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">vbo_fft</a>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    glBufferSubData(GL_ARRAY_BUFFER, 0, <span class="keyword">sizeof</span>(glm::vec3) * vertices.size(),</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    vertices.data());</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    glBindVertexArray(<a class="code" href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">vao_fft</a>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    glDrawArrays(GL_LINE_STRIP, 0, vertices.size());</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    glBindVertexArray(0);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;unbind();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <a class="code" href="classSpectrum3D.html#af64cf6c2acd5c9d35f5235d2d962fc85">bindAndDraw</a>(<a class="code" href="classSpectrum3D.html#acd1ce0187af3ebdbd64540f18c1c2d68">vao_fft</a>, <a class="code" href="classSpectrum3D.html#a086e38f5c5c00c7f3f14ba0571eea174">vbo_fft</a>, <a class="code" href="classSpectrum3D.html#a9c814b1beb2467c5bb7caac14ec0765c">ebo_fft</a>, vertices, indices, GL_LINE_STRIP);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classSpectrum3D.html#a9565279db9f4844903fac04c0b6331cf">shader_wfft_ptr</a>-&gt;unbind();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Atributos</h2>
+<a id="a9c814b1beb2467c5bb7caac14ec0765c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c814b1beb2467c5bb7caac14ec0765c">&#9670;&nbsp;</a></span>ebo_fft</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint Spectrum3D::ebo_fft</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7e9a99fccb3932f70d9e9be46fdf994"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e9a99fccb3932f70d9e9be46fdf994">&#9670;&nbsp;</a></span>ebo_wave</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GLuint Spectrum3D::ebo_wave</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aaa22dd2b1ad12e3251646a08b8b9f0d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaa22dd2b1ad12e3251646a08b8b9f0d2">&#9670;&nbsp;</a></span>fft_ptr</h2>
 
@@ -705,6 +839,28 @@ Atributos Privados</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::shared_ptr&lt;<a class="el" href="classHUD.html">HUD</a>&gt; Spectrum3D::hud_ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a076018da4768078b2f201d3f643f1286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a076018da4768078b2f201d3f643f1286">&#9670;&nbsp;</a></span>mobius_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classMobiusStrip.html">MobiusStrip</a>&gt; Spectrum3D::mobius_ptr</td>
         </tr>
       </table>
   </td>

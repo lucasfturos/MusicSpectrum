@@ -6,6 +6,10 @@ var files_dup =
     [ "hud.cpp", "hud_8cpp.html", null ],
     [ "hud.hpp", "hud_8hpp.html", "hud_8hpp" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
+    [ "mobius_strip.cpp", "mobius__strip_8cpp.html", null ],
+    [ "mobius_strip.hpp", "mobius__strip_8hpp.html", [
+      [ "MobiusStrip", "classMobiusStrip.html", "classMobiusStrip" ]
+    ] ],
     [ "plane.cpp", "plane_8cpp.html", null ],
     [ "plane.hpp", "plane_8hpp.html", [
       [ "Plane", "classPlane.html", "classPlane" ]

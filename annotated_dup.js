@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "FFT", "classFFT.html", "classFFT" ],
     [ "HUD", "classHUD.html", "classHUD" ],
+    [ "MobiusStrip", "classMobiusStrip.html", "classMobiusStrip" ],
     [ "Plane", "classPlane.html", "classPlane" ],
     [ "Render", "classRender.html", "classRender" ],
     [ "Sample", "classSample.html", "classSample" ],

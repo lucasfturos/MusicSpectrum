@@ -179,9 +179,9 @@ Atributos Privados</h2></td></tr>
 <li>hud: Ponteiro compartilhado para a classe <a class="el" href="classHUD.html">HUD</a>.</li>
 <li>fft: Ponteiro compartilhado para a classe <a class="el" href="classFFT.html">FFT</a>. </li>
 </ul>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    : <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>(win), <a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>(hud), <a class="code" href="classSpectrum.html#a175719d8e937f2de00784a7635e17bbc">fft_ptr</a>(fft),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <a class="code" href="classSpectrum.html#a04c9705e5b03a8844647a554346da5e9">timer_ptr</a>(std::make_unique&lt;Timer&gt;()),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>(std::make_unique&lt;Sample&gt;(hud)) {}</div>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    : <a class="code" href="classSpectrum.html#a998ece9a9593d1b8e2723655d409b569">window</a>(win), <a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>(hud), <a class="code" href="classSpectrum.html#a175719d8e937f2de00784a7635e17bbc">fft_ptr</a>(fft),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      <a class="code" href="classSpectrum.html#a04c9705e5b03a8844647a554346da5e9">timer_ptr</a>(std::make_unique&lt;Timer&gt;()),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;      <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>(std::make_unique&lt;Sample&gt;(hud)) {}</div>
 <div class="ttc" id="aclassSpectrum_html_a04c9705e5b03a8844647a554346da5e9"><div class="ttname"><a href="classSpectrum.html#a04c9705e5b03a8844647a554346da5e9">Spectrum::timer_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; Timer &gt; timer_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:28</div></div>
 <div class="ttc" id="aclassSpectrum_html_a175719d8e937f2de00784a7635e17bbc"><div class="ttname"><a href="classSpectrum.html#a175719d8e937f2de00784a7635e17bbc">Spectrum::fft_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; FFT&lt; sf::Int16 &gt; &gt; fft_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:26</div></div>
 <div class="ttc" id="aclassSpectrum_html_a94057891da534f5c3fa21a3b0bb375e1"><div class="ttname"><a href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">Spectrum::sample_ptr</a></div><div class="ttdeci">std::unique_ptr&lt; Sample &gt; sample_ptr</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:29</div></div>
@@ -208,26 +208,26 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Executa o loop principal da aplicação, processando e renderizando a forma de onda ou <a class="el" href="classFFT.html">FFT</a> do sinal de áudio. A função de callback <code>handlePlot</code> é utilizada para tratar os dados do plot (forma de onda ou <a class="el" href="classFFT.html">FFT</a>).</p>
 <p><code>handlePlot</code>: Função callback para processar os dados do plot (forma de onda ou <a class="el" href="classFFT.html">FFT</a>). </p>
-<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>-&gt;monoSample();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; spectrum;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sound.getStatus() == sf::SoundSource::Playing) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>-&gt;getSampleBuffer();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        std::size_t fft_size = 1;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">while</span> (fft_size &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            fft_size *= 2;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        spectrum.resize(fft_size, 0);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        handlePlot(spectrum, fft_size);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
-<div class="ttc" id="ahud_8hpp_html_a9b2f6e031c4f0e3cc3f6c0eb4032f7b0"><div class="ttname"><a href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a></div><div class="ttdeci">const size_t buffer_size</div><div class="ttdef"><b>Definition:</b> hud.hpp:16</div></div>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>-&gt;monoSample();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; spectrum;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSpectrum.html#a9e423fcd322be6f1b985f087447efd0d">hud_ptr</a>-&gt;sound.getStatus() == sf::SoundSource::Playing) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classSpectrum.html#a94057891da534f5c3fa21a3b0bb375e1">sample_ptr</a>-&gt;getSampleBuffer();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::size_t fft_size = 1;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">while</span> (fft_size &lt; <a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            fft_size *= 2;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        spectrum.resize(fft_size, 0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        handlePlot(spectrum, fft_size);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="ttc" id="ahud_8hpp_html_a9b2f6e031c4f0e3cc3f6c0eb4032f7b0"><div class="ttname"><a href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a></div><div class="ttdeci">const size_t buffer_size</div><div class="ttdef"><b>Definition:</b> hud.hpp:13</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -277,7 +277,7 @@ Atributos Privados</h2></td></tr>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
 <div class="ttc" id="aclassSpectrum_html_a6e610525bb41fb223d0a07534068c07b"><div class="ttname"><a href="classSpectrum.html#a6e610525bb41fb223d0a07534068c07b">Spectrum::start_color</a></div><div class="ttdeci">sf::Color start_color</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:35</div></div>
 <div class="ttc" id="aclassSpectrum_html_af69968db5b8a598fb4426425eecf0d6f"><div class="ttname"><a href="classSpectrum.html#af69968db5b8a598fb4426425eecf0d6f">Spectrum::end_color</a></div><div class="ttdeci">sf::Color end_color</div><div class="ttdef"><b>Definition:</b> spectrum.hpp:36</div></div>
-<div class="ttc" id="ahud_8hpp_html_af728b7647e0b8c49832983a31f9a2e9b"><div class="ttname"><a href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a></div><div class="ttdeci">const int HEIGHT</div><div class="ttdef"><b>Definition:</b> hud.hpp:13</div></div>
+<div class="ttc" id="ahud_8hpp_html_af728b7647e0b8c49832983a31f9a2e9b"><div class="ttname"><a href="hud_8hpp.html#af728b7647e0b8c49832983a31f9a2e9b">HEIGHT</a></div><div class="ttdeci">const int HEIGHT</div><div class="ttdef"><b>Definition:</b> hud.hpp:10</div></div>
 </div><!-- fragment -->
 </div>
 </div>
