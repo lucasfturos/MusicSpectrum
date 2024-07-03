@@ -1,7 +1,7 @@
 var classSpectrum =
 [
     [ "Spectrum", "classSpectrum.html#a4b45b54b8d2bc4d6ea7d33b98354070b", null ],
-    [ "run", "classSpectrum.html#af3aaba44fd20cc1f8227db4cbaad5b2c", null ],
+    [ "run", "classSpectrum.html#afd2fb30900484508195531cb39740640", null ],
     [ "viewWaveform", "classSpectrum.html#ac0005e1f2dadcb09426ed7c06ccf02ed", null ],
     [ "viewWaveformFFT", "classSpectrum.html#a480c73698d87203dd347a040a2fb7fb9", null ],
     [ "viewWaveformRect", "classSpectrum.html#a4345aa671788890c55531a7b7cdafe0e", null ],

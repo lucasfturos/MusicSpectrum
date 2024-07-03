@@ -6,6 +6,6 @@ var classFFT =
     [ "applyHammingWindow", "classFFT.html#ab79dfecd0aabba843abd25a98e609b75", null ],
     [ "applyHannWindow", "classFFT.html#a030df6c86a758c7edf9abaa2f22c58ba", null ],
     [ "bitReverse", "classFFT.html#a3e150435e9b9fe46d861bff03f5518fb", null ],
-    [ "fft", "classFFT.html#a3a5e1e62b599a1f54d1fd7c33d8062dd", null ],
-    [ "fftAnalyze", "classFFT.html#ad834ae7666c6ce88d95c72cf6d59e9df", null ]
+    [ "fft", "classFFT.html#a5b8ee348b44f8ac93a38a91026ba1c46", null ],
+    [ "fftAnalyze", "classFFT.html#aa3fe18c63deedb98c85547e59b0f1475", null ]
 ];

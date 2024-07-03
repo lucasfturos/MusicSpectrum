@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('classSample.html',''); initResizable()
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:a01d2e50a04862c4ece3c92c7610b0b27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSample.html#a01d2e50a04862c4ece3c92c7610b0b27">monoSample</a> ()</td></tr>
-<tr class="separator:a01d2e50a04862c4ece3c92c7610b0b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5598ff3ecc2fce753ce16b44d41af968"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSample.html#a5598ff3ecc2fce753ce16b44d41af968">processStereoToMono</a> ()</td></tr>
+<tr class="separator:a5598ff3ecc2fce753ce16b44d41af968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3511faaa025b85ba2ed3323240f95e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSample.html#ab3511faaa025b85ba2ed3323240f95e4">getSampleBuffer</a> ()</td></tr>
 <tr class="separator:ab3511faaa025b85ba2ed3323240f95e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5777262be0350b5544ca40cbb15e3788"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSample.html#a5777262be0350b5544ca40cbb15e3788">Sample</a> (std::shared_ptr&lt; <a class="el" href="classHUD.html">HUD</a> &gt; hud)</td></tr>
@@ -179,14 +179,14 @@ Atributos Privados</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a01d2e50a04862c4ece3c92c7610b0b27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01d2e50a04862c4ece3c92c7610b0b27">&#9670;&nbsp;</a></span>monoSample()</h2>
+<a id="a5598ff3ecc2fce753ce16b44d41af968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5598ff3ecc2fce753ce16b44d41af968">&#9670;&nbsp;</a></span>processStereoToMono()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Sample::monoSample </td>
+          <td class="memname">void Sample::processStereoToMono </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -195,7 +195,7 @@ Atributos Privados</h2></td></tr>
 </div><div class="memdoc">
 <p>Converte amostras de áudio estéreo para mono e as armazena no buffer de amostras do objeto <a class="el" href="classHUD.html">HUD</a>.</p>
 <p>O método verifica se o buffer de som da <a class="el" href="classHUD.html">HUD</a> possui dois canais (estéreo) e, caso positivo, realiza a conversão para mono (média dos canais esquerdo e direito) e armazena os valores no buffer de amostras. </p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                        {</div>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                 {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound_buffer.getChannelCount() == 2) {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> sf::Int16 *samples = <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sound_buffer.getSamples();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="classSample.html#aa557389534f68e24e6704d6ac2650935">hud_ptr</a>-&gt;sample_buffer.reserve(<a class="code" href="hud_8hpp.html#a9b2f6e031c4f0e3cc3f6c0eb4032f7b0">buffer_size</a>);</div>

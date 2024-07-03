@@ -98,8 +98,8 @@ $(document).ready(function(){initNavTree('classFFT.html',''); initResizable(); }
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Membros Públicos</h2></td></tr>
-<tr class="memitem:ad834ae7666c6ce88d95c72cf6d59e9df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFFT.html#ad834ae7666c6ce88d95c72cf6d59e9df">fftAnalyze</a> (std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; std::complex&lt; float &gt;&gt; &amp;out, std::size_t n)</td></tr>
-<tr class="separator:ad834ae7666c6ce88d95c72cf6d59e9df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3fe18c63deedb98c85547e59b0f1475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFFT.html#aa3fe18c63deedb98c85547e59b0f1475">fftAnalyze</a> (std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; <a class="el" href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a> &gt; &amp;out, std::size_t n)</td></tr>
+<tr class="separator:aa3fe18c63deedb98c85547e59b0f1475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Membros Privados</h2></td></tr>
@@ -115,8 +115,8 @@ Membros Privados</h2></td></tr>
 <tr class="separator:a06ac73109e8a7bdb5ad7aaa75a230980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51109ee445f3d192c5014bd5054f0e13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFFT.html#a51109ee445f3d192c5014bd5054f0e13">applyFlattopWindow</a> (std::vector&lt; T &gt; &amp;in, std::size_t n)</td></tr>
 <tr class="separator:a51109ee445f3d192c5014bd5054f0e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a5e1e62b599a1f54d1fd7c33d8062dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFFT.html#a3a5e1e62b599a1f54d1fd7c33d8062dd">fft</a> (std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; std::complex&lt; float &gt;&gt; &amp;out, std::size_t n)</td></tr>
-<tr class="separator:a3a5e1e62b599a1f54d1fd7c33d8062dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8ee348b44f8ac93a38a91026ba1c46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFFT.html#a5b8ee348b44f8ac93a38a91026ba1c46">fft</a> (std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; <a class="el" href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a> &gt; &amp;out, std::size_t n)</td></tr>
+<tr class="separator:a5b8ee348b44f8ac93a38a91026ba1c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br />
@@ -155,10 +155,8 @@ template&lt;class T &gt; </div>
 <p><code>z</code>: Um número complexo do tipo <code>std::complex&lt;float&gt;</code>.</p>
 <p>Rertono: A amplitude (módulo) do número complexo <code>z</code>, calculada como a raiz quadrada da soma dos quadrados das partes real e imaginária. </p>
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                           {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">float</span> a = z.real();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">float</span> b = z.imag();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> sqrtf(a * a + b * b);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> std::abs(z);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -201,14 +199,14 @@ template&lt;class T &gt; </div>
 <p>Aplica a janela de Blackman aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
 <p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>.</p>
 <p><code>n</code>: O tamanho do vetor de dados de entrada. </p>
-<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                                                              {</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">float</span> blackman =</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            0.42 + 0.5 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) + 0.8 * std::cos(4 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        in[i] *= blackman;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                                              {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">float</span> blackman =</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            0.42 + 0.5 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) + 0.8 * std::cos(4 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        in[i] *= blackman;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="ttc" id="afft_8hpp_html_abce8f0db8a5282e441988c8d2e73f79e"><div class="ttname"><a href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a></div><div class="ttdeci">const float pi</div><div class="ttdef"><b>Definition:</b> fft.hpp:9</div></div>
 </div><!-- fragment -->
 </div>
@@ -252,15 +250,15 @@ template&lt;class T &gt; </div>
 <p>Aplica a janela de Flattop aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
 <p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>.</p>
 <p><code>n</code>: O tamanho do vetor de dados de entrada. </p>
-<div class="fragment"><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                                             {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordtype">float</span> flattop =</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            1 - 1.93 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) + 1.29 * std::cos(4 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) -</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            0.388 * std::cos(6 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) + 0.032 * std::cos(8 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        in[i] *= flattop;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                                             {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordtype">float</span> flattop =</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            1 - 1.93 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) + 1.29 * std::cos(4 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) -</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            0.388 * std::cos(6 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) + 0.032 * std::cos(8 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        in[i] *= flattop;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -303,13 +301,13 @@ template&lt;class T &gt; </div>
 <p>Aplica a janela de Hamming aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
 <p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>.</p>
 <p><code>n</code>: O tamanho do vetor de dados de entrada. </p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                                             {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordtype">float</span> hamming = 0.54 - 0.46 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        in[i] *= hamming;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                                             {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordtype">float</span> hamming = 0.54 - 0.46 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        in[i] *= hamming;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,13 +350,13 @@ template&lt;class T &gt; </div>
 <p>Aplica a janela de Hann aos dados de entrada <code>in</code> com tamanho <code>n</code>.</p>
 <p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>.</p>
 <p><code>n</code>: O tamanho do vetor de dados de entrada. </p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                                          {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">float</span> hann = 0.5 - 0.5 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        in[i] *= hann;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                                          {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(i) / (n - 1);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">float</span> hann = 0.5 - 0.5 * std::cos(2 * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        in[i] *= hann;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -402,19 +400,19 @@ template&lt;class T &gt; </div>
 <p><code>k</code>: O índice a ser revertido.</p>
 <p><code>n</code>: O número de bits do índice <code>k</code>.</p>
 <p>Returno: O índice <code>k</code> com seus bits revertidos. </p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                                     {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::size_t reversed = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; i++) {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        reversed = (reversed &lt;&lt; 1) | (k &amp; 1);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        k &gt;&gt;= 1;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> reversed;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                                                     {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::size_t reversed = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n; ++i) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        reversed = (reversed &lt;&lt; 1) | (k &amp; 1);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        k &gt;&gt;= 1;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> reversed;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3a5e1e62b599a1f54d1fd7c33d8062dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a5e1e62b599a1f54d1fd7c33d8062dd">&#9670;&nbsp;</a></span>fft()</h2>
+<a id="a5b8ee348b44f8ac93a38a91026ba1c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8ee348b44f8ac93a38a91026ba1c46">&#9670;&nbsp;</a></span>fft()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -439,7 +437,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::complex&lt; float &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>out</em>, </td>
         </tr>
         <tr>
@@ -465,38 +463,39 @@ template&lt;class T &gt; </div>
 <p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>.</p>
 <p><code>stride</code>: O passo entre os elementos do vetor de entrada.</p>
 <p><code>out</code>: Uma referência a um vetor de número complexo do tipo</p>
-<p><code>std::complex&lt;float&gt;</code> para armazenar a saída da <a class="el" href="classFFT.html">FFT</a>.</p>
+<p><code>Float_Complex</code> para armazenar a saída da <a class="el" href="classFFT.html">FFT</a>.</p>
 <p><code>n</code>: O tamanho do vetor de dados de entrada e saída. </p>
-<div class="fragment"><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                                                 {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> (n == 1) {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        out[0] = in[0];</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    std::vector&lt;T&gt; in_reversed(n, 0);</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="keywordflow">for</span> (std::size_t k = 0; k &lt; n; k++) {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        std::size_t rev_k = <a class="code" href="classFFT.html#a3e150435e9b9fe46d861bff03f5518fb">bitReverse</a>(k, <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(log2(n)));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        in_reversed[k] = in[rev_k * stride];</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; out_reversed(n / 2, 0);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="classFFT.html#a3a5e1e62b599a1f54d1fd7c33d8062dd">fft</a>(in_reversed, stride * 2, out_reversed, n / 2);</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">for</span> (std::size_t k = 0; k &lt; n / 2; k++) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(k) / n;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        std::complex&lt;float&gt; v = exp(-2.f * 1<span class="keywordflow">if</span> * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) * out_reversed[k];</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        std::complex&lt;float&gt; e = out_reversed[k];</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        out[k] = e + v;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        out[k + n / 2] = e - v;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
-<div class="ttc" id="aclassFFT_html_a3a5e1e62b599a1f54d1fd7c33d8062dd"><div class="ttname"><a href="classFFT.html#a3a5e1e62b599a1f54d1fd7c33d8062dd">FFT::fft</a></div><div class="ttdeci">void fft(std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; std::complex&lt; float &gt;&gt; &amp;out, std::size_t n)</div><div class="ttdef"><b>Definition:</b> fft.cpp:132</div></div>
-<div class="ttc" id="aclassFFT_html_a3e150435e9b9fe46d861bff03f5518fb"><div class="ttname"><a href="classFFT.html#a3e150435e9b9fe46d861bff03f5518fb">FFT::bitReverse</a></div><div class="ttdeci">std::size_t bitReverse(std::size_t k, std::size_t n)</div><div class="ttdef"><b>Definition:</b> fft.cpp:32</div></div>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                                             {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span> (n == 1) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        out[0] = in[0];</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::vector&lt;T&gt; in_reversed(n, 0);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">for</span> (std::size_t k = 0; k &lt; n; k++) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        std::size_t rev_k = <a class="code" href="classFFT.html#a3e150435e9b9fe46d861bff03f5518fb">bitReverse</a>(k, <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(log2(n)));</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        in_reversed[k] = in[rev_k * stride];</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::vector&lt;Float_Complex&gt; out_reversed(n / 2, 0);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="classFFT.html#a5b8ee348b44f8ac93a38a91026ba1c46">fft</a>(in_reversed, stride * 2, out_reversed, n / 2);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">for</span> (std::size_t k = 0; k &lt; n / 2; k++) {</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordtype">float</span> t = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(k) / n;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <a class="code" href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a> v = exp(-2.f * 1<span class="keywordflow">if</span> * <a class="code" href="fft_8hpp.html#abce8f0db8a5282e441988c8d2e73f79e">pi</a> * t) * out_reversed[k];</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <a class="code" href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a> e = out_reversed[k];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        out[k] = e + v;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        out[k + n / 2] = e - v;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<div class="ttc" id="aclassFFT_html_a3e150435e9b9fe46d861bff03f5518fb"><div class="ttname"><a href="classFFT.html#a3e150435e9b9fe46d861bff03f5518fb">FFT::bitReverse</a></div><div class="ttdeci">std::size_t bitReverse(std::size_t k, std::size_t n)</div><div class="ttdef"><b>Definition:</b> fft.cpp:30</div></div>
+<div class="ttc" id="aclassFFT_html_a5b8ee348b44f8ac93a38a91026ba1c46"><div class="ttname"><a href="classFFT.html#a5b8ee348b44f8ac93a38a91026ba1c46">FFT::fft</a></div><div class="ttdeci">void fft(std::vector&lt; T &gt; &amp;in, std::size_t stride, std::vector&lt; Float_Complex &gt; &amp;out, std::size_t n)</div><div class="ttdef"><b>Definition:</b> fft.cpp:130</div></div>
+<div class="ttc" id="afft_8hpp_html_a92ba8d8620c9226e667c6a563a7369eb"><div class="ttname"><a href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a></div><div class="ttdeci">std::complex&lt; float &gt; Float_Complex</div><div class="ttdef"><b>Definition:</b> fft.hpp:11</div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad834ae7666c6ce88d95c72cf6d59e9df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad834ae7666c6ce88d95c72cf6d59e9df">&#9670;&nbsp;</a></span>fftAnalyze()</h2>
+<a id="aa3fe18c63deedb98c85547e59b0f1475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3fe18c63deedb98c85547e59b0f1475">&#9670;&nbsp;</a></span>fftAnalyze()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +517,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::complex&lt; float &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="fft_8hpp.html#a92ba8d8620c9226e667c6a563a7369eb">Float_Complex</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>out</em>, </td>
         </tr>
         <tr>
@@ -539,44 +538,42 @@ template&lt;class T &gt; </div>
 <p><code>in</code>: Uma referência a um vetor de dados de entrada do tipo <code>T</code>.</p>
 <p><code>stride</code>: O passo entre os elementos do vetor de entrada.</p>
 <p><code>out</code>: Uma referência a um vetor de números complexos do tipo.</p>
-<p><code>std::complex&lt;float&gt;</code> para armazenar o espectro calculado.</p>
+<p><code>Float_Complex</code> para armazenar o espectro calculado.</p>
 <p><code>n</code>: O tamanho do vetor de dados de entrada e saída. </p>
-<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                                                        {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classFFT.html#ab79dfecd0aabba843abd25a98e609b75">applyHammingWindow</a>(in, n);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// applyHannWindow(in, n);</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// applyBlackmanWindow(in, n);</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// applyFlattopWindow(in, n);</span></div>
+<div class="fragment"><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                                                                    {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="classFFT.html#ab79dfecd0aabba843abd25a98e609b75">applyHammingWindow</a>(in, n);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// applyHannWindow(in, n);</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// applyBlackmanWindow(in, n);</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// applyFlattopWindow(in, n);</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::vector&lt;Float_Complex&gt; complex_output(n, 0.0f);</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    std::vector&lt;std::complex&lt;float&gt;&gt; complex_output(n, 0.0f);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="classFFT.html#a5b8ee348b44f8ac93a38a91026ba1c46">fft</a>(in, stride, complex_output, n);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="classFFT.html#a3a5e1e62b599a1f54d1fd7c33d8062dd">fft</a>(in, stride, complex_output, n);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">float</span> step = 1.06;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">float</span> lowf = 1.0f;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    std::size_t m = 0;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">float</span> max_amp = 1.0f;</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">float</span> f = lowf; <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f) &lt; n / 2;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;         f = std::ceil(f * step)) {</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordtype">float</span> f1 = std::ceil(f * step);</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordtype">float</span> a = 0.0f;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        <span class="keywordflow">for</span> (std::size_t q = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;             q &lt; n / 2 &amp;&amp; q &lt; static_cast&lt;std::size_t&gt;(f1); ++q) {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="keywordtype">float</span> b = <a class="code" href="classFFT.html#a6584b7e6690395f4276efd3f992db0aa">amp</a>(complex_output[q]);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">if</span> (b &gt; a)</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                a = b;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <span class="keywordflow">if</span> (max_amp &lt; a)</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            max_amp = a;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        out[m++] = a;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">float</span> step = 1.06;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">float</span> lowf = 1.0f;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    std::size_t m = 0;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">float</span> max_amp = 1.0f;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">float</span> f = lowf; <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f) &lt; n / 2;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;         f = std::ceil(f * step)) {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="keywordtype">float</span> f1 = std::ceil(f * step);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keywordtype">float</span> a = 0.0f;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="keywordflow">for</span> (std::size_t q = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;             q &lt; n / 2 &amp;&amp; q &lt; static_cast&lt;std::size_t&gt;(f1); ++q) {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            <span class="keywordtype">float</span> b = <a class="code" href="classFFT.html#a6584b7e6690395f4276efd3f992db0aa">amp</a>(complex_output[q]);</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            (b &gt; a) ? a = b : 0;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        (max_amp &lt; a) ? max_amp = a : 0;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        out[m++] = a;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n / 2; ++i) {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        out[i] /= max_amp;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    }</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; n / 2; ++i) {</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;        out[i] /= max_amp;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
 <div class="ttc" id="aclassFFT_html_a6584b7e6690395f4276efd3f992db0aa"><div class="ttname"><a href="classFFT.html#a6584b7e6690395f4276efd3f992db0aa">FFT::amp</a></div><div class="ttdeci">float amp(Float_Complex z)</div><div class="ttdef"><b>Definition:</b> fft.cpp:13</div></div>
-<div class="ttc" id="aclassFFT_html_ab79dfecd0aabba843abd25a98e609b75"><div class="ttname"><a href="classFFT.html#ab79dfecd0aabba843abd25a98e609b75">FFT::applyHammingWindow</a></div><div class="ttdeci">void applyHammingWindow(std::vector&lt; T &gt; &amp;in, std::size_t n)</div><div class="ttdef"><b>Definition:</b> fft.cpp:69</div></div>
+<div class="ttc" id="aclassFFT_html_ab79dfecd0aabba843abd25a98e609b75"><div class="ttname"><a href="classFFT.html#ab79dfecd0aabba843abd25a98e609b75">FFT::applyHammingWindow</a></div><div class="ttdeci">void applyHammingWindow(std::vector&lt; T &gt; &amp;in, std::size_t n)</div><div class="ttdef"><b>Definition:</b> fft.cpp:67</div></div>
 </div><!-- fragment -->
 </div>
 </div>

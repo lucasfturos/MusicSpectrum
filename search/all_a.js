@@ -9,7 +9,6 @@ var searchData=
   ['mobius_5fstrip_2ehpp_75',['mobius_strip.hpp',['../mobius__strip_8hpp.html',1,'']]],
   ['mobiusstrip_76',['MobiusStrip',['../classMobiusStrip.html',1,'MobiusStrip'],['../classMobiusStrip.html#a0637ec66d20e7b21a7c55a65bd82ad98',1,'MobiusStrip::MobiusStrip()']]],
   ['modeaudio_77',['modeAudio',['../classHUD.html#a7896ca01a77dbb11e008ba3e1bbf27e6',1,'HUD']]],
-  ['monosample_78',['monoSample',['../classSample.html#a01d2e50a04862c4ece3c92c7610b0b27',1,'Sample']]],
-  ['music_20spectrum_79',['Music Spectrum',['../index.html',1,'']]],
-  ['mute_5ftex_80',['mute_tex',['../classHUD.html#ad019677e966f3c681d8560b49d986954',1,'HUD']]]
+  ['music_20spectrum_78',['Music Spectrum',['../index.html',1,'']]],
+  ['mute_5ftex_79',['mute_tex',['../classHUD.html#ad019677e966f3c681d8560b49d986954',1,'HUD']]]
 ];

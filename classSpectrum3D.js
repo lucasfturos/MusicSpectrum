@@ -6,7 +6,7 @@ var classSpectrum3D =
     [ "getWhellDelta", "classSpectrum3D.html#aa6bbaba918458bc32355411b32576e2e", null ],
     [ "handleMouse", "classSpectrum3D.html#ac3f5b162dcf0121a46d02507787f8670", null ],
     [ "initOpenGL", "classSpectrum3D.html#a1ebde996a01382cb58fce2d81be5c3df", null ],
-    [ "run", "classSpectrum3D.html#add8b4207679944e86558809c06ba6a66", null ],
+    [ "run", "classSpectrum3D.html#ac0482fe24f0b25596a5a25a64e0dd299", null ],
     [ "setupBuffers", "classSpectrum3D.html#abde2e65206f0011f380f86786c2e7260", null ],
     [ "viewWaveform", "classSpectrum3D.html#a67f834b73924bf9d1b7a06be4866d71b", null ],
     [ "viewWaveformFFT", "classSpectrum3D.html#a54fbe3e0cbe308410713ff303fca2ec7", null ],

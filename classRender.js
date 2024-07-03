@@ -3,7 +3,7 @@ var classRender =
     [ "Render", "classRender.html#a8610cc11739ef679b5935dd819021351", null ],
     [ "~Render", "classRender.html#ab0f4b917605cb15902f8d045a4197faf", null ],
     [ "frameRate", "classRender.html#ad70331c720486fdcea98bca2e0268fa6", null ],
-    [ "handlePlot", "classRender.html#a0c102b18dfce458e53fa5925a893071a", null ],
+    [ "handlePlot", "classRender.html#af800bf382352a03f732bf52791891d7c", null ],
     [ "run", "classRender.html#afc8071b96073b5b628166aafdefbd62d", null ],
     [ "clock", "classRender.html#aa2f522e42439e367cb3c4016ac7bb183", null ],
     [ "desktop", "classRender.html#ad2027accb38742b5771e5eb8d48febfd", null ],
