@@ -38,7 +38,7 @@ class Spectrum {
     std::vector<sf::RectangleShape> rectangles;
 
   public:
-    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
+    void run(std::function<void(std::vector<Float_Complex>, std::size_t)>
                  handlePlot);
 
     void viewWaveform();

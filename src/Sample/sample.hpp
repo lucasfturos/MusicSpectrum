@@ -14,7 +14,7 @@ class Sample {
     std::shared_ptr<HUD> hud_ptr;
 
   public:
-    void monoSample();
+    void processStereoToMono();
     void getSampleBuffer();
 
     Sample(std::shared_ptr<HUD> hud);

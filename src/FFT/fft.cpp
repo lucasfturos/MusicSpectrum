@@ -11,9 +11,7 @@
  * raiz quadrada da soma dos quadrados das partes real e imaginária.
  */
 template <class T> inline float FFT<T>::amp(Float_Complex z) {
-    float a = z.real();
-    float b = z.imag();
-    return sqrtf(a * a + b * b);
+    return std::abs(z);
 }
 
 /*!
@@ -31,7 +29,7 @@ template <class T> inline float FFT<T>::amp(Float_Complex z) {
 template <class T>
 std::size_t FFT<T>::bitReverse(std::size_t k, std::size_t n) {
     std::size_t reversed = 0;
-    for (std::size_t i = 0; i < n; i++) {
+    for (std::size_t i = 0; i < n; ++i) {
         reversed = (reversed << 1) | (k & 1);
         k >>= 1;
     }
@@ -124,13 +122,13 @@ void FFT<T>::applyFlattopWindow(std::vector<T> &in, std::size_t n) {
  *
  * `out`: Uma referência a um vetor de número complexo do tipo
  *
- * `std::complex<float>` para armazenar a saída da FFT.
+ * `Float_Complex` para armazenar a saída da FFT.
  *
  * `n`: O tamanho do vetor de dados de entrada e saída.
  */
 template <class T>
 void FFT<T>::fft(std::vector<T> &in, std::size_t stride,
-                 std::vector<std::complex<float>> &out, std::size_t n) {
+                 std::vector<Float_Complex> &out, std::size_t n) {
     if (n == 1) {
         out[0] = in[0];
         return;
@@ -142,13 +140,13 @@ void FFT<T>::fft(std::vector<T> &in, std::size_t stride,
         in_reversed[k] = in[rev_k * stride];
     }
 
-    std::vector<std::complex<float>> out_reversed(n / 2, 0);
+    std::vector<Float_Complex> out_reversed(n / 2, 0);
     fft(in_reversed, stride * 2, out_reversed, n / 2);
 
     for (std::size_t k = 0; k < n / 2; k++) {
         float t = static_cast<float>(k) / n;
-        std::complex<float> v = exp(-2.f * 1if * pi * t) * out_reversed[k];
-        std::complex<float> e = out_reversed[k];
+        Float_Complex v = exp(-2.f * 1if * pi * t) * out_reversed[k];
+        Float_Complex e = out_reversed[k];
         out[k] = e + v;
         out[k + n / 2] = e - v;
     }
@@ -166,19 +164,19 @@ void FFT<T>::fft(std::vector<T> &in, std::size_t stride,
  *
  * `out`: Uma referência a um vetor de números complexos do tipo.
  *
- * `std::complex<float>` para armazenar o espectro calculado.
+ * `Float_Complex` para armazenar o espectro calculado.
  *
  * `n`: O tamanho do vetor de dados de entrada e saída.
  */
 template <class T>
 void FFT<T>::fftAnalyze(std::vector<T> &in, std::size_t stride,
-                        std::vector<std::complex<float>> &out, std::size_t n) {
+                        std::vector<Float_Complex> &out, std::size_t n) {
     applyHammingWindow(in, n);
     // applyHannWindow(in, n);
     // applyBlackmanWindow(in, n);
     // applyFlattopWindow(in, n);
 
-    std::vector<std::complex<float>> complex_output(n, 0.0f);
+    std::vector<Float_Complex> complex_output(n, 0.0f);
 
     fft(in, stride, complex_output, n);
 
@@ -194,11 +192,9 @@ void FFT<T>::fftAnalyze(std::vector<T> &in, std::size_t stride,
         for (std::size_t q = static_cast<std::size_t>(f);
              q < n / 2 && q < static_cast<std::size_t>(f1); ++q) {
             float b = amp(complex_output[q]);
-            if (b > a)
-                a = b;
+            (b > a) ? a = b : 0;
         }
-        if (max_amp < a)
-            max_amp = a;
+        (max_amp < a) ? max_amp = a : 0;
         out[m++] = a;
     }
 

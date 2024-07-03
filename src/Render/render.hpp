@@ -30,7 +30,7 @@ class Render {
     std::shared_ptr<FFT<sf::Int16>> fft_ptr;
     std::shared_ptr<Spectrum3D> spectrum3D_ptr;
 
-    void handlePlot(std::vector<std::complex<float>> spectrum,
+    void handlePlot(std::vector<Float_Complex> spectrum,
                     std::size_t fft_size);
     void frameRate(time_point<high_resolution_clock> &prev_time);
 

@@ -23,10 +23,10 @@ Spectrum::Spectrum(std::shared_ptr<sf::RenderWindow> win,
  * ou FFT).
  */
 void Spectrum::run(
-    std::function<void(std::vector<std::complex<float>>, std::size_t)>
+    std::function<void(std::vector<Float_Complex>, std::size_t)>
         handlePlot) {
-    sample_ptr->monoSample();
-    std::vector<std::complex<float>> spectrum;
+    sample_ptr->processStereoToMono();
+    std::vector<Float_Complex> spectrum;
 
     if (hud_ptr->sound.getStatus() == sf::SoundSource::Playing) {
         sample_ptr->getSampleBuffer();

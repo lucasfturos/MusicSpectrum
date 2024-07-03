@@ -17,7 +17,7 @@ Sample::Sample(std::shared_ptr<HUD> hud) : hud_ptr(hud) {}
  * e, caso positivo, realiza a conversão para mono (média dos canais
  * esquerdo e direito) e armazena os valores no buffer de amostras.
  */
-void Sample::monoSample() {
+void Sample::processStereoToMono() {
     if (hud_ptr->sound_buffer.getChannelCount() == 2) {
         const sf::Int16 *samples = hud_ptr->sound_buffer.getSamples();
         hud_ptr->sample_buffer.reserve(buffer_size);

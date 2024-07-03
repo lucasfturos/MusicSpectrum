@@ -11,7 +11,7 @@
  *
  * `fft_size`: O tamanho da transformada de Fourier rápida (FFT).
  */
-void Render::handlePlot(std::vector<std::complex<float>> spectrum,
+void Render::handlePlot(std::vector<Float_Complex> spectrum,
                         std::size_t fft_size) {
     switch (hud_ptr->option) {
     case 1:

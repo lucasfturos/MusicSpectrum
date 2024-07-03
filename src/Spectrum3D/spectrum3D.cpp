@@ -49,10 +49,9 @@ void Spectrum3D::getWhellDelta(int w_delta) { whell_delta = w_delta; }
  * ou FFT).
  */
 void Spectrum3D::run(
-    std::function<void(std::vector<std::complex<float>>, std::size_t)>
-        handlePlot) {
-    sample_ptr->monoSample();
-    std::vector<std::complex<float>> spectrum;
+    std::function<void(std::vector<Float_Complex>, std::size_t)> handlePlot) {
+    sample_ptr->processStereoToMono();
+    std::vector<Float_Complex> spectrum;
 
     if (hud_ptr->sound.getStatus() == sf::SoundSource::Playing) {
         sample_ptr->getSampleBuffer();

@@ -30,11 +30,11 @@ template <class T> class FFT {
     void applyFlattopWindow(std::vector<T> &in, std::size_t n);
 
     void fft(std::vector<T> &in, std::size_t stride,
-             std::vector<std::complex<float>> &out, std::size_t n);
+             std::vector<Float_Complex> &out, std::size_t n);
 
   public:
     void fftAnalyze(std::vector<T> &in, std::size_t stride,
-                    std::vector<std::complex<float>> &out, std::size_t n);
+                    std::vector<Float_Complex> &out, std::size_t n);
 };
 
 // Instanciações da classe para tipos de dados suportados

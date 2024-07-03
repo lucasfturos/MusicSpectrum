@@ -8,9 +8,7 @@
 #include "../Shader/shader.hpp"
 #include "../Timer/timer.hpp"
 
-#include <GL/glew.h>
 #include <functional>
-#include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
 /*!
@@ -70,7 +68,7 @@ class Spectrum3D {
 
     void getWhellDelta(int w_delta);
 
-    void run(std::function<void(std::vector<std::complex<float>>, std::size_t)>
+    void run(std::function<void(std::vector<Float_Complex>, std::size_t)>
                  handlePlot);
 
     Spectrum3D(std::shared_ptr<sf::RenderWindow> win, std::shared_ptr<HUD> hud,
