@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../external/imgui/imgui.h"
+#include "imgui/imgui.h"
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <memory>

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../FFT/fft.hpp"
-#include "../HUD/hud.hpp"
-#include "../Spectrum/spectrum.hpp"
-#include "../Spectrum3D/spectrum3D.hpp"
+#include "FFT/fft.hpp"
+#include "HUD/hud.hpp"
+#include "Spectrum/spectrum.hpp"
+#include "Spectrum3D/spectrum3D.hpp"
 
 using namespace std::chrono;
 

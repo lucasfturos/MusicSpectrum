@@ -1,12 +1,12 @@
 #pragma once
 
-#include "../FFT/fft.hpp"
-#include "../HUD/hud.hpp"
-#include "../Objects/MobiusStrip/mobius_strip.hpp"
-#include "../Objects/Plane/plane.hpp"
-#include "../Sample/sample.hpp"
-#include "../Shader/shader.hpp"
-#include "../Timer/timer.hpp"
+#include "FFT/fft.hpp"
+#include "HUD/hud.hpp"
+#include "Objects/MobiusStrip/mobius_strip.hpp"
+#include "Objects/Plane/plane.hpp"
+#include "Sample/sample.hpp"
+#include "Shader/shader.hpp"
+#include "Timer/timer.hpp"
 
 #include <functional>
 #include <glm/gtc/matrix_transform.hpp>

@@ -1,6 +1,6 @@
 #include "hud.hpp"
-#include "../../external/ImGui-SFML/imgui-SFML.h"
-#include "../../external/ImGuiFileDialog/ImGuiFileDialog.h"
+#include "ImGui-SFML/imgui-SFML.h"
+#include "ImGuiFileDialog/ImGuiFileDialog.h"
 
 /*! Função para estilizar os elementos do ImGui */
 void HUD::styleWidget() {

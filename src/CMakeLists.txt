@@ -71,7 +71,7 @@ add_executable(${PROJECT_NAME}
 
 # Specifies include directories to use when compiling
 target_include_directories(${PROJECT_NAME} 
-  PRIVATE src
+  PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/
   PRIVATE ${OPENGL_INCLUDE_DIRS}
 )
 

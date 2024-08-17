@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../FFT/fft.hpp"
-#include "../HUD/hud.hpp"
-#include "../Sample/sample.hpp"
-#include "../Timer/timer.hpp"
+#include "FFT/fft.hpp"
+#include "HUD/hud.hpp"
+#include "Sample/sample.hpp"
+#include "Timer/timer.hpp"
 #include <SFML/Graphics.hpp>
 #include <functional>
 #include <iostream>

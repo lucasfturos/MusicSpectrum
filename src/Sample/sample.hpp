@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../HUD/hud.hpp"
+#include "HUD/hud.hpp"
 
 /*!
  * Classe auxiliar para processamento de amostras de áudio.
